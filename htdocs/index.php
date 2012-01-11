@@ -15,7 +15,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != 'index')
 }
 else	// anders (geen geldige page-parameter in de url)
 {
-	$page = 'home';	//laad de homepage
+	$page = 'agenda_week';	//laad de homepage
 }
 
 if(file_exists($page.$ext))   // als het gevraagde bestand bestaat, laat dit zien

@@ -1,0 +1,83 @@
+html, body {
+	padding: 0px;
+	margin: 0px;
+}
+
+div#header {
+	background: url('afbeeldingen/achtergrond-top.jpg') bottom no-repeat;
+}
+
+div#title {
+float: left;
+font-size: 20px;
+}
+
+div#content {
+	background: url('afbeeldingen/achtergrond-rest.jpg') top no-repeat;
+	padding: 15px;
+}
+
+
+form.inloggen, div.ingelogd {
+    width: 250px;
+    padding: 10px;
+    border: none;
+	background: rgba(255, 255, 255, 0.5);
+	float: right;
+}
+
+input#inlogbutton, button {
+    width:  auto;
+    background: #ddd;
+    border: 1px solid black;
+    padding:  3px;
+    margin-top:  10px;
+	float: left;
+}
+
+input {
+    display:  block;
+    margin:  auto;
+    width: 200px;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+a img {
+	border: none;
+}
+
+h2{
+	margin: 0px;
+}
+
+div#menu {
+	clear: right;
+}
+
+div#menu a {
+	padding: 5px;
+	color: black;
+	text-decoration: none;
+}
+
+div#menu a:hover {
+	text-decoration: underline;
+}
+
+div#menu a:active {
+	text-decoration: none;
+}
+
+div#menu a:visited {
+	color: black;
+}
+
+table{
+	 background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+	 }
