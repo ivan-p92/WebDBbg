@@ -1,0 +1,211 @@
+* {
+	font-family: arial, verdana, serif;
+<<<<<<< HEAD
+	font-size: 12px
+}
+=======
+	font-size: 10px;
+}
+
+>>>>>>> 4609e59b351f48b90e230d868fb0cbb073405d3e
+html, body {
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+}
+
+div#maincontainer {
+	width: 1000px;
+	margin: auto;
+}
+
+
+div#header {
+	background: url('afbeeldingen/achtergrond-top.jpg') bottom no-repeat;
+}
+
+div#title {
+	float: left;
+	font-size: 20px;
+}
+
+div#content {
+	background: url('afbeeldingen/achtergrond-rest.jpg') top no-repeat;
+	padding: 15px;
+	height: 100%;
+}
+
+form.inloggen, div.ingelogd {
+    width: 250px;
+    padding: 10px;
+    border: none;
+	background: rgba(255, 255, 255, 0.5);
+	float: right;
+}
+
+input#inlogbutton, button {
+    width:  auto;
+    background: #ddd;
+    border: 1px solid black;
+    padding:  3px;
+    margin-top:  10px;
+	float: left;
+}
+
+input {
+    display:  block;
+    margin:  auto;
+    width: 200px;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+form#doelgroepen {
+    border: 1px solid #900;
+    width: 250px;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+form#doelgroepen span {
+    display: block;
+    width: 200px;
+}
+
+form#doelgroepen span input, form#doelgroepen span label {
+    display: inline;
+    width: auto;
+    padding:  5px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+input#doelgroep_bar + label, .bar {
+    color: blue;
+}
+input#doelgroep_afwas + label, .afwas {
+    color: darkorange;
+}
+input#doelgroep_kok + label, .kok {
+    color: indigo;
+}
+input#doelgroep_klant + label, .klant {
+    color: darkgreen;
+}
+form#doelgroepen span label {
+    width: 100px;
+}
+
+form#doelgroepen span label {
+    width: 100px;
+}
+
+a img {
+	border: none;
+}
+
+h2{
+	margin: 0px;
+}
+
+div#menu {
+	clear: right;
+}
+
+div#menu a {
+	padding: 5px;
+	color: black;
+	text-decoration: none;
+}
+
+div#menu a:hover {
+	text-decoration: underline;
+}
+
+div#menu a:active {
+	text-decoration: none;
+}
+
+div#menu a:visited {
+	color: black;
+}
+
+div#weeklijst {
+    background: none repeat scroll 0 0 blanchedAlmond;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+div#weeklijst a:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}
+div#weeklijst a {
+    color: inherit;
+    text-decoration: none;
+}
+div#weeklijst a:visited {
+    font-weight: normal;
+}
+
+
+div#weeklijst h1 {
+    color: darkblue;
+    font-size: 16pt;
+    margin-top: 10px;
+}
+div#weeklijst ul.leeg {
+    color: red;
+}
+div#weeklijst ul {
+    font-weight: bold;
+}
+
+table{
+	 background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+	 }
+div.clearer {
+clear: both;
+height: 1px;
+width: 1px;
+}
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+a.button {
+    background: transparent url('afbeeldingen/bg_button_a.png') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.button span {
+    background: transparent url('afbeeldingen/bg_button_span.png') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+} 
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+} 
