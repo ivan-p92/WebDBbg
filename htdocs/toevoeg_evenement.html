@@ -1,7 +1,7 @@
-<form name="input" action="" method="get">
-Titel: <input type="text" name="titel" /><br />
-Omschrijving: <input type="text" name="omschrijving" /><br />
-Begindatum: <select name="datum">
+<div class="form"><form name="input" action="" method="get">
+<label for="titel">Titel: </label><input type="text" name="titel" id="titel" />
+<label for="omschrijving">Omschrijving: </label><input type="text" name="omschrijving" id="omschrijving"/>
+<label for="datum1">Begindatum: </label><select name="datum">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -55,7 +55,7 @@ Begindatum: <select name="datum">
 <option value="2015">2015</option>
 <option value="2016">2016</option>
 </select>
-Begintijd:<select name="begintijd">
+<label for="tijd1">Begintijd:</label><select name="begintijd">
 <option value="00:00">00:00</option>
 <option value="00:15">00:15</option>
 <option value="00:30">00:30</option>
@@ -153,7 +153,7 @@ Begintijd:<select name="begintijd">
 <option value="23:30">23:30</option>
 <option value="23:45">23:45</option>
 </select><br />
-Einddatum: <select name="einddatum">
+<label for="datum2">Einddatum: </label><select name="einddatum">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -207,7 +207,7 @@ Einddatum: <select name="einddatum">
 <option value="2015">2015</option>
 <option value="2016">2016</option>
 </select>
-Eindtijd: <select name="begintijd"> 
+<label for="tijd2">Eindtijd: </label><select name="begintijd"> 
 <option value="00:00">00:00</option>
 <option value="00:15">00:15</option>
 <option value="00:30">00:30</option>
@@ -305,10 +305,9 @@ Eindtijd: <select name="begintijd">
 <option value="23:30">23:30</option>
 <option value="23:45">23:45</option>
 </select>
-<br />
-Voor: <input type="checkbox" name="doelgroep" value="Klant" /> Klant<br />
-<input type="checkbox" name="doelgroep" value="Kok" /> Keuken<br />
-<input type="checkbox" name="doelgroep" value="Afwas" /> Afwassers<br />
-<input type="checkbox" name="doelgroep" value="Bar" /> Barpersoneel<br />
+<label>Categorie </label><input type="checkbox" name="doelgroep" value="Klant" /><label> Klant</label>
+<input type="checkbox" name="doelgroep" value="Kok" /><label> Keuken</label>
+<input type="checkbox" name="doelgroep" value="Afwas" /><label> Afwassers</label>
+<input type="checkbox" name="doelgroep" value="Bar" /> <label>Barpersoneel</label>
 <input type="submit" value="Maak evenement aan" />
-</form>
+</form></div>
