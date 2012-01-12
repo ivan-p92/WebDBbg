@@ -68,16 +68,16 @@ form#doelgroepen span input, form#doelgroepen span label {
     font-weight: bold;
 }
 
-input#doelgroep_bar + label {
+input#doelgroep_bar + label, .bar {
     color: blue;
 }
-input#doelgroep_afwas + label {
+input#doelgroep_afwas + label, .afwas {
     color: darkorange;
 }
-input#doelgroep_kok + label {
+input#doelgroep_kok + label, .kok {
     color: indigo;
 }
-input#doelgroep_klant + label {
+input#doelgroep_klant + label, .klant {
     color: darkgreen;
 }
 form#doelgroepen span label {
@@ -136,18 +136,6 @@ div#weeklijst ul.leeg {
 }
 div#weeklijst ul {
     font-weight: bold;
-}
-div#weeklijst il.bar {
-    color: blue;
-}
-div#weeklijst il.afwas {
-    color: darkorange;
-}
-div#weeklijst il.kok {
-    color: indigo;
-}
-div#weeklijst il.klant {
-    color: darkgreen;
 }
 
 table{
