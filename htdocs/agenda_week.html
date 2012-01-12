@@ -1,44 +1,80 @@
-<html>
-<head>
-</head>
-<body>
 
-<input type="checkbox" name="doelgroep" value="Klant"  checked="yes" /> Klant
-<input type="checkbox" name="doelgroep" value="Kok" checked="yes" /> Keuken
-<input type="checkbox" name="doelgroep" value="Afwas" checked="yes" /> Afwassers
-<input type="checkbox" name="doelgroep" value="Bar" checked="yes" /> Barpersoneel
+<form id="doelgroepen" name="doelgroepen" action="">
+	<p>Selecteer de doelgroepen waarvan u de afspraken wilt zien</p>
+	<span><input type="checkbox" name="doelgroep" id="doelgroep_klant" value="Klant"  checked="yes" /><label for="doelgroep_klant">Klant</label></span>
+	<span><input type="checkbox" name="doelgroep" id="doelgroep_kok" value="Kok" checked="yes" /><label for="doelgroep_kok">Keuken</label></span>
+	<span><input type="checkbox" name="doelgroep" id="doelgroep_afwas" value="Afwas" checked="yes" /><label for="doelgroep_afwas">Afwassers</label></span>
+	<span><input type="checkbox" name="doelgroep" id="doelgroep_bar" value="Bar" checked="yes" /><label for="doelgroep_bar">Barpersoneel</label></span>
+</form>
 
 <a href="index.php?page=agenda_week" title="Vorige week">
-		<img src="afbeeldingen/icons/arrow_left.png" /></a>
+		<img src="afbeeldingen/pijl_links.jpg" /></a>
 <a href="index.php?page=agenda_week" title="Volgende week">
-		<img src="afbeeldingen/icons/arrow_right.png" /></a>
+		<img src="afbeeldingen/pijl_rechts.jpg" /></a>
 
-<Table Border="1" Width="100%" cellspacing="0">
-<TR><TH width="40"></TH><TH width="14.2%">Maandag</TH><TH width="14.2%">Dinsdag</TH><TH width="14.2%">Woensdag</TH><TH width="14.2%">Donderdag</TH><TH width="14.2%">Vrijdag</TH><TH width="14.2%">Zaterdag</TH><TH width="14.2%">Zondag</TH></TR>
-<TR id="u0"><TD>00:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u1"><TD>01:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u2"><TD>02:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u3"><TD>03:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u4"><TD>04:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u5"><TD>05:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u6"><TD>06:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u7"><TD>07:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u8"><TD>08:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u9"><TD>09:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u10"><TD>10:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u11"><TD>11:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u12"><TD>12:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u13"><TD>13:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u14"><TD>14:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u15"><TD>15:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u16"><TD>16:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u17"><TD>17:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u18"><TD>18:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u19"><TD>19:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u20"><TD>20:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u21"><TD>21:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u22"><TD>22:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-<TR id="u23"><TD>23:00</TD><TD>&nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD> &nbsp;</TD><TD>&nbsp; </TD><TD>&nbsp; </TD><TD>&nbsp;</TD></TR>
-</Table>
-</body>
-</html>
+<div id="weeklijst">
+
+<h1>Maandag</h1>
+<ul class="leeg">   
+    <li>Geen activiteiten</li>
+</ul>
+
+<h1>Dinsdag</h1>
+<ul>   
+    <li>Activiteit 1</li>
+    <li>Activiteit 2</li>
+</ul>
+
+<h1>Woensdag</h1>
+<ul class="leeg">  
+    <li>Geen activiteiten</li>
+</ul>
+
+<h1>Donderdag</h1>
+<ul class="leeg">     
+    <li>Geen activiteiten</li>
+</ul>
+
+<h1>Vrijdag</h1>
+<ul class="leeg">     
+    <li>Geen activiteiten</li>
+</ul>
+
+<h1>Zaterdag</h1>
+<ul class="leeg">    
+    <li>Geen activiteiten</li>
+</ul>
+
+<h1>Zondag</h1>
+<ul class="leeg">    
+    <li>Geen activiteiten</li>
+</ul>
+</div>
+
+<table border="1" width="100%" cellspacing="0">
+	<tr><th width="40"></th><th width="14.2%">maandag</th><th width="14.2%">dinsdag</th><th width="14.2%">woensdag</th><th width="14.2%">donderdag</th><th width="14.2%">vrijdag</th><th width="14.2%">zaterdag</th><th width="14.2%">zondag</th></tr>
+	<tr id="u0"><td>00:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u1"><td>01:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u2"><td>02:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u3"><td>03:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u4"><td>04:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u5"><td>05:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u6"><td>06:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u7"><td>07:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u8"><td>08:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u9"><td>09:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u10"><td>10:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u11"><td>11:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u12"><td>12:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u13"><td>13:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u14"><td>14:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u15"><td>15:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u16"><td>16:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u17"><td>17:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u18"><td>18:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u19"><td>19:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u20"><td>20:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u21"><td>21:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u22"><td>22:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+	<tr id="u23"><td>23:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
+</table>

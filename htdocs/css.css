@@ -48,6 +48,28 @@ label {
     width: 200px;
 }
 
+form#doelgroepen {
+    border: 1px solid #900;
+    width: 250px;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+form#doelgroepen span {
+    display: block;
+    width: 200px;
+}
+
+form#doelgroepen span input, form#doelgroepen span label {
+    display: inline;
+    width: auto;
+    padding:  5px;
+    margin: 5px;
+}
+
+form#doelgroepen span label {
+    width: 100px;
+}
+
 a img {
 	border: none;
 }
@@ -76,6 +98,26 @@ div#menu a:active {
 
 div#menu a:visited {
 	color: black;
+}
+
+div#weeklijst {
+    background: none repeat scroll 0 0 blanchedAlmond;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div#weeklijst h1 {
+    color: darkblue;
+    font-size: 16pt;
+    margin-top: 10px;
+}
+div#weeklijst ul.leeg {
+    color: red;
+}
+div#weeklijst ul {
+    color: darkgreen;
+    font-weight: bold;
 }
 
 table{
