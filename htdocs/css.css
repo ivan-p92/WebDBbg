@@ -1,12 +1,18 @@
 * {
 	font-family: arial, verdana, serif;
-	font-size: 10px
-
+	font-size: 12px
+}
 html, body {
 	padding: 0px;
 	margin: 0px;
 	height: 100%;
 }
+
+div#maincontainer {
+	width: 1000px;
+	margin: auto;
+}
+
 
 div#header {
 	background: url('afbeeldingen/achtergrond-top.jpg') bottom no-repeat;
