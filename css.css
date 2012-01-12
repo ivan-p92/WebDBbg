@@ -1,7 +1,13 @@
 * {
 	font-family: arial, verdana, serif;
+<<<<<<< HEAD
 	font-size: 12px
 }
+=======
+	font-size: 10px;
+}
+
+>>>>>>> 4609e59b351f48b90e230d868fb0cbb073405d3e
 html, body {
 	padding: 0px;
 	margin: 0px;
