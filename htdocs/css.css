@@ -65,6 +65,7 @@ form#doelgroepen span input, form#doelgroepen span label {
     width: auto;
     padding:  5px;
     margin: 5px;
+    font-weight: bold;
 }
 
 input#doelgroep_bar + label {
@@ -136,16 +137,16 @@ div#weeklijst ul.leeg {
 div#weeklijst ul {
     font-weight: bold;
 }
-div#weeklijst ul.bar {
+div#weeklijst il.bar {
     color: blue;
 }
-div#weeklijst ul.afwas {
+div#weeklijst il.afwas {
     color: darkorange;
 }
-div#weeklijst ul.kok {
+div#weeklijst il.kok {
     color: indigo;
 }
-div#weeklijst ul.klant {
+div#weeklijst il.klant {
     color: darkgreen;
 }
 
