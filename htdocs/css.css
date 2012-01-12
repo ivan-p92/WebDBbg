@@ -126,6 +126,20 @@ div#weeklijst {
     padding-right: 10px;
     width: 50%;
 }
+
+div#weeklijst a:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}
+div#weeklijst a {
+    color: inherit;
+    text-decoration: none;
+}
+div#weeklijst a:visited {
+    font-weight: normal;
+}
+
+
 div#weeklijst h1 {
     color: darkblue;
     font-size: 16pt;
