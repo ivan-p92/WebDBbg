@@ -3,7 +3,6 @@
 error_reporting(E_ALL); // E_ALL (alle foutmeldingen) in ontwikkelomgeving, 0 (geen) in  de live omgeving
 ini_set('display_errors', true); // true in ontwikkelomgeving, false in  de live omgeving
 
-include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
 
 
 $ext = '.php'; // de bestandsextensie van de pagina's (nu .html later .php)  
@@ -19,6 +18,8 @@ else	// anders (geen geldige page-parameter in de url)
 }
 
 define('PAGE', $page);
+
+include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
 
 if(file_exists($page.$ext))   // als het gevraagde bestand bestaat, laat dit zien
 {
