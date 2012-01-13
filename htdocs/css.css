@@ -62,7 +62,7 @@ input, textarea {
 
 input[type=checkbox] {
 	display: inline;
-	width 25px;
+	width: 25px;
 }
 
 label {
