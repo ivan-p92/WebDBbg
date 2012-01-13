@@ -130,6 +130,14 @@ div#menu ul {
 				 float: left;
 				 height: 31px;
 			}
+			
+	div#menu ul li.active a span {
+    	background: url("afbeeldingen/tabblad-active-background.jpg") no-repeat scroll right top transparent;
+	}
+	
+	div#menu ul li.active a {
+		background: url("afbeeldingen/tabblad-active-lhoek.jpg") no-repeat scroll left top transparent;
+	}
 
 /* Evenement toevoegen */
 
