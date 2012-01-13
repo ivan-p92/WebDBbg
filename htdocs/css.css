@@ -12,16 +12,17 @@ html, body {
 	padding: 0px;
 	margin: 0px;
 	height: 100%;
+	background: #343434
 }
 
 div#maincontainer {
-	width: 1000px;
+	width: 1017px;
 	margin: auto;
 }
 
 
 div#header {
-	background: url('afbeeldingen/achtergrond-top.jpg') bottom no-repeat;
+	background: url('afbeeldingen/header-background.jpg') bottom no-repeat;
 }
 
 div#title {
@@ -30,7 +31,7 @@ div#title {
 }
 
 div#content {
-	background: url('afbeeldingen/achtergrond-rest.jpg') top no-repeat;
+	background: url('afbeeldingen/content-background.jpg') top repeat;
 	padding: 15px;
 	height: 100%;
 }
