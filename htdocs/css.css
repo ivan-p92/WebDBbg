@@ -62,7 +62,7 @@ input {
 
 label {
     cursor: pointer;
-    display: block;
+    display: inline-block;
     margin: auto;
     width: 200px;
 }
