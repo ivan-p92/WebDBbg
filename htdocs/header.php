@@ -49,7 +49,7 @@
 			
 			foreach($menuItems as $fileName => $screenName)
 			{
-				echo '<li '.(($fileName == PAGE || $semiPage == PAGE) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
+				echo '<li '.(($fileName == PAGE || $semiPage == $fileName) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
 			}
 
 			?>
