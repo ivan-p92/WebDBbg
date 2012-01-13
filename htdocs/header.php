@@ -21,7 +21,7 @@
 					<input id="inlogbutton" type="submit" value="Inloggen" />
 				</fieldset>
 			</form>
-			
+			<!--
 			<div class="ingelogd">
 				<fieldset>
 					<legend>Ingelogd als</legend>
@@ -29,6 +29,7 @@
 					<button>Uitloggen</button>
 				</fieldset>
 			</div>
+			-->
 	</div>
 	<div id="menu">
 		<ul>
