@@ -36,13 +36,13 @@
 		<ul>
 			<?php
 			
-			if(!isset($_GET['semiPage']))
+			if(!isset($_GET['semipage']))
 			{
 				$semiPage = null;
 			}
 			else
 			{
-				$semiPage = $_GET['semiPage'];
+				$semiPage = $_GET['semipage'];
 			}
 			
 			$menuItems = array('agenda_week' => 'Agenda', 'toevoeg_evenement' => 'Evenement toevoegen', 'keuren' => 'Evenement goedkeuren');
