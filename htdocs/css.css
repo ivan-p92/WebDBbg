@@ -131,12 +131,20 @@ div#menu ul {
 				 height: 31px;
 			}
 			
-	div#menu ul li.active a span {
+	div#menu ul li.active a span, div#menu ul li.active a:hover span {
     	background: url("afbeeldingen/tabblad-active-background.jpg") no-repeat scroll right top transparent;
 	}
 	
-	div#menu ul li.active a {
-		background: url("afbeeldingen/tabblad-active-lhoek.jpg") no-repeat scroll left top transparent;
+	div#menu ul li.active a, div#menu ul li.active a:hover {
+	     background: url("afbeeldingen/tabblad-active-lhoek.jpg") no-repeat scroll left top transparent;
+	}
+	
+	div#menu ul li a:hover span {
+	     background: url("afbeeldingen/tabblad-hover-background.jpg") no-repeat scroll right top transparent;
+	}
+	
+	div#menu ul li a:hover {
+	     background: url("afbeeldingen/tabblad-hover-lhoek.jpg") no-repeat scroll left top transparent;
 	}
 
 /* Evenement toevoegen */
