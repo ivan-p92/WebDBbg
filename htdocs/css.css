@@ -19,6 +19,7 @@ div#maincontainer {
 
 div#header {
 	background: url('afbeeldingen/header-background.jpg') bottom no-repeat;
+	height: 171px;
 }
 
 div#topcontent{
