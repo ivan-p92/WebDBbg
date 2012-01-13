@@ -49,10 +49,15 @@ input#inlogbutton, button {
 	float: left;
 }
 
-input {
+input, textarea {
     display:  block;
     margin:  auto;
     width: 200px;
+}
+
+input[type=checkbox] {
+	display: inline;
+	width: 25px;
 }
 
 label {
