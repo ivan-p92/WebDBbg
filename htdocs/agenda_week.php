@@ -26,8 +26,8 @@
 
 <h1>Dinsdag 10 januari 2012</h1>
 <ul>   
-    <li class="kok"><a href="index.php?page=evenement">Test evenement kok (10:00-17:00)</a></li>
-    <li class="afwas"><a href="index.php?page=evenement">Test afwas</a></li>
+    <li class="kok"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test evenement kok (10:00-17:00)</a></li>
+    <li class="afwas"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test afwas</a></li>
 </ul>
 
 <h1>Woensdag 11 januari 2012</h1>
@@ -37,8 +37,8 @@
 
 <h1>Donderdag 12 januari 2012</h1>
 <ul>     
-    <li class="bar"><a href="index.php?page=evenement">Test bar</a></li>
-    <li class="klant"><a href="index.php?page=evenement">Test klant</a></li>
+    <li class="bar"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test bar</a></li>
+    <li class="klant"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test klant</a></li>
 </ul>
 
 <h1>Vrijdag 13 januari 2012</h1>
