@@ -25,10 +25,6 @@ div#header {
 	background: url('afbeeldingen/header-background.jpg') bottom no-repeat;
 }
 
-div#title {
-	float: left;
-	font-size: 20px;
-}
 
 div#content {
 	background: url('afbeeldingen/content-background.jpg') top repeat;
