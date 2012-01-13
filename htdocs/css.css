@@ -10,6 +10,53 @@ html, body {
 	height: 100%;
 	background: #343434
 }
+div#menu {
+    clear: both;
+    float: left;
+    width: 1017px;
+    background: #291010;
+}
+
+div#menu ul li.active {
+    background: url('afbeeldingen/tabblad-active-lhoek.jpg') no-repeat;
+}
+
+div#menu ul li:hover {
+    background: url('afbeeldingen/tabblad-hover-lhoek.jpg') no-repeat;
+}
+
+div#menu ul li.active:hover {
+    background: auto;
+}
+
+div#menu ul li a:hover {
+    background: url('afbeeldingen/tabblad-hover-background.jpg') right top no-repeat;
+    text-decoration: none;
+}
+
+div#menu ul li.active a {
+    background: url('afbeeldingen/tabblad-active-background.jpg') right top no-repeat;
+}
+
+div#menu ul {
+    list-style: none outside none;
+}
+
+div#menu ul li a {
+    background: url('afbeeldingen/tabblad-nonactive-background.jpg') right top no-repeat;
+    margin-left: 13px;
+    height: 31px;
+    padding: 10px 13px 0px 0px;
+    float: left;
+}
+
+div#menu ul li {
+    float: left;
+    background: url('afbeeldingen/tabblad-nonactive-lhoek.jpg') no-repeat;
+    height: 31px;
+    margin: 0px 1px 0px 0px;
+    padding: 0px;
+}
 
 div#maincontainer {
 	width: 1017px;
@@ -63,6 +110,7 @@ input, textarea {
 input[type=checkbox] {
 	display: inline;
 	width: 25px;
+	vertical-align: text-top;
 }
 
 label {
