@@ -25,6 +25,9 @@ div#header {
 	background: url('afbeeldingen/header-background.jpg') bottom no-repeat;
 }
 
+divt#topcontent{
+	background: url('afbeelding/content-top-background.jpg') top no-repeat;
+}
 
 div#content {
 	background: url('afbeeldingen/content-background.jpg') top repeat;
