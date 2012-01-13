@@ -33,6 +33,10 @@ div#content {
 	height: 100%;
 }
 
+div#namen {
+	background: url('afbeeldingen/content-footer-background')
+}
+
 form.inloggen, div.ingelogd {
     width: 250px;
     padding: 10px;
