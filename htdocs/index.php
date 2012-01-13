@@ -18,6 +18,8 @@ else	// anders (geen geldige page-parameter in de url)
 	$page = 'agenda_week';	//laad de homepage
 }
 
+define('PAGE', $page);
+
 if(file_exists($page.$ext))   // als het gevraagde bestand bestaat, laat dit zien
 {
 	include($page.$ext);	// naam en extensie aan elkaar plakken

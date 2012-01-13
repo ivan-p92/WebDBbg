@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ne" xml:lang="ne">
 
 <head>
-	<title>Welkom bij de openbare agenda van Grand Café L'Ambiance!</title>
+	<title>Welkom bij de openbare agenda van De Zuipschuit!</title>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<link rel="stylesheet" type="text/css" href="css.css" title="CSS" />
 	<link rel="shortcut icon" type="image/x-icon" href="afbeeldingen/favicon.ico" />
@@ -32,9 +32,15 @@
 	</div>
 	<div id="menu">
 		<ul>
-			<li class="active"><a href="index.php?page=agenda_week"><span>Agenda</span></a></li>
-			<li><a href="index.php?page=toevoeg_evenement"><span>Evenement toevoegen</span></a></li>
-			<li><a href="index.php?page=keuren"><span>Evenement goedkeuren</span></a></li>
+			<?php
+			$menuItems = array('agenda_week' => 'Agenda', 'toevoeg_evenement' => 'Evenement toevoegen', 'keuren' => 'Evenement goedkeuren');
+			
+			foreach($menuItems as $fileName => $screenName)
+			{
+				echo '<li '.(($fileName == PAGE) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
+			}
+
+			?>
 		</ul>
 	</div>
 	
