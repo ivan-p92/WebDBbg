@@ -34,7 +34,7 @@ div#content {
 }
 
 div#namen {
-	background: url('afbeeldingen/content-footer-background')
+	background: url('afbeeldingen/content-footer-background.jpg')
 }
 
 form.inloggen, div.ingelogd {
@@ -54,15 +54,10 @@ input#inlogbutton, button {
 	float: left;
 }
 
-input, textarea {
+input {
     display:  block;
     margin:  auto;
     width: 200px;
-}
-
-input[type=checkbox] {
-	display: inline;
-	width: 25px;
 }
 
 label {
