@@ -6,7 +6,7 @@ ini_set('display_errors', true); // true in ontwikkelomgeving, false in  de live
 include('header.html');		// laad de header (deze moet op elke pagina verschijnen)
 
 
-$ext = '.html'; // de bestandsextensie van de pagina's (nu .html later .php)  
+$ext = '.php'; // de bestandsextensie van de pagina's (nu .html later .php)  
 
 // controleer of er een page is gespecificeerd in de url, als dat zo is en het is niet leeg en niet gelijk aan index 
 if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != 'index')
