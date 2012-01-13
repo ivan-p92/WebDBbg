@@ -127,6 +127,8 @@ div#menu ul {
 				 background: url("afbeeldingen/tabblad-nonactive-background.jpg") no-repeat scroll right top transparent;
 				 margin-left: 13px;
 				 padding: 8px 20px 0px 10px;
+				 float: left;
+				 height: 31px;
 			}
 
 /* Evenement toevoegen */
