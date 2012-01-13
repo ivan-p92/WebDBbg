@@ -21,6 +21,7 @@
 					<input id="inlogbutton" type="submit" value="Inloggen" />
 				</fieldset>
 			</form>
+			
 			<!--
 			<div class="ingelogd">
 				<fieldset>
@@ -34,11 +35,21 @@
 	<div id="menu">
 		<ul>
 			<?php
+			
+			if(!isset($_GET['semiPage']))
+			{
+				$semiPage = null;
+			}
+			else
+			{
+				$semiPage = $_GET['semiPage'];
+			}
+			
 			$menuItems = array('agenda_week' => 'Agenda', 'toevoeg_evenement' => 'Evenement toevoegen', 'keuren' => 'Evenement goedkeuren');
 			
 			foreach($menuItems as $fileName => $screenName)
 			{
-				echo '<li '.(($fileName == PAGE) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
+				echo '<li '.(($fileName == PAGE || $semiPage == PAGE) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
 			}
 
 			?>
