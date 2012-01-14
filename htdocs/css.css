@@ -79,7 +79,8 @@ div#content {
 }
 
 div#namen_text {
-    bottom: 666666p  position: relative;
+    position: relative;
+    bottom: 6px;
     text-align: center;
     width: 1017px;
 }
