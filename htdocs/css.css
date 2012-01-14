@@ -173,6 +173,7 @@ form#doelgroepen {
 
 form#doelgroepen fieldset label {
 	margin: 3px;
+	width: auto;
 }
 
 form#doelgroepen span {

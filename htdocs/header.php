@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ne" xml:lang="ne">
 
 <head>
-	<title>Welkom bij de openbare agenda van De Zuipschuit!</title>
+	<title>Welkom bij de openbare agenda van Grand Café L'Ambiance!</title>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<link rel="stylesheet" type="text/css" href="css.css" title="CSS" />
 	<link rel="shortcut icon" type="image/x-icon" href="afbeeldingen/favicon.ico" />
