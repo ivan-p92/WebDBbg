@@ -78,10 +78,16 @@ div#content {
 	height: 100%;
 }
 
-div#namen {
-	background: url('afbeeldingen/content-footer-background.jpg')
+div#namen_text {
+    bottom: 3px;
+    position: relative;
+    text-align: center;
+    width: 1017px;
 }
 
+div#namen {
+    background: url("afbeeldingen/content-footer-background.jpg") no-repeat scroll 0 0 transparent;
+}
 
 /* MENU */
 
