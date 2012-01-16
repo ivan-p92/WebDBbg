@@ -152,6 +152,32 @@ div#menu ul {
 	div#menu ul li a:hover {
 	     background: url("afbeeldingen/tabblad-hover-lhoek.jpg") no-repeat scroll left top transparent;
 	}
+	
+/* Inlog box */
+div#inlogbox {
+	float: right;
+	width: 365px;
+	height: 171px;
+}
+	
+	div#inlogbox form {
+		border: 1px solid black;
+	}
+	
+	div#inlogbox form input {
+		margin: 0px;
+		left: 70px;
+		height: 42px;
+		width: 230px;
+		border: none;
+		background: url("afbeeldingen/input_background.jpg") no-repeat;
+	}
+	
+	iv#inlogbox form input:focus {
+		outline: none;
+		background: url("afbeeldingen/input_background_focus.jpg") no-repeat;
+	}
+	
 
 /* Evenement toevoegen */
 
