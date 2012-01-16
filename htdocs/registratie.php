@@ -16,7 +16,7 @@ Alle velden zijn verplicht
 <td>Wachtwoord nogmaals: </td><td><input type="password" id="pswd2" name="pswd2"></td>
 </tr>
 <tr>
-<td>&nbsp;</td><td><input type="input" value="Registreer" /></td>
+<td>&nbsp;</td><td><input type="submit" value="Registreer" /></td>
 </tr>
 </tbody>
 </table>
