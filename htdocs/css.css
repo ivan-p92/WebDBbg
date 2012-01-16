@@ -158,6 +158,7 @@ div#inlogbox {
 	float: right;
 	width: 365px;
 	height: 171px;
+	background: url("afbeeldingen/inlogbox.jpg") no-repeat;
 }
 	
 	div#inlogbox form {
