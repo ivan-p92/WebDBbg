@@ -44,8 +44,10 @@
 	</ul>
 </div>
 
-<span class="prev"></span>
-<span class="next"></span>
+<div id="buttons">
+	<span class="prev"></span>
+	<span class="next"></span>
+</div>
 
 <table id="agenda">
 	<tr><th>&nbsp;</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>vrijdag</th><th>zaterdag</th><th>zondag</th></tr>
