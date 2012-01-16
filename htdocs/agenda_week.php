@@ -12,45 +12,42 @@
 <span class="prev"></span>
 <span class="next"></span>
 
-<div id="weeklijst">
+<div id="weeklijst_container">
 
-<h1>Maandag 9 januari 2012</h1>
-<ul class="leeg">   
-    <li>Geen evenementen</li>
+<ul class="event_lijst">
+    <li class="event">
+        <p class="eendags_event">
+            <span class="begin_datum">
+                <span class="jaar">2012</span>
+				<span class="dd-mm">16<br />JAN</span>
+			</span>
+        </p>
+        <div class="event_details">
+            <p class="event_titel">
+                <a class="event_link" href="index.php?page=evenement&semipage=agenda">Titel van het event</a>
+            </p>
+            <p class="begintijd">11:00u</p>
+		</div>
+    </li>
+
+    <li class="event">
+        <p class="eendags_event">
+            <span class="begin_datum">
+                <span class="jaar">2012</span>
+				<span class="dd-mm">18 JAN<br />19 JAN</span>
+			</span>
+        </p>
+        <div class="event_details">
+            <p class="event_titel">
+                <a class="event_link" href="index.php?page=evenement&semipage=agenda">Titel van het event</a>
+            </p>
+            <p class="begintijd">12:00u</p>
+		</div>
+	</li>
 </ul>
 
-<h1>Dinsdag 10 januari 2012</h1>
-<ul>   
-    <li class="kok"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test evenement kok (10:00-17:00)</a></li>
-    <li class="afwas"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test afwas</a></li>
-</ul>
-
-<h1>Woensdag 11 januari 2012</h1>
-<ul class="leeg">  
-    <li>Geen evenementen</li>
-</ul>
-
-<h1>Donderdag 12 januari 2012</h1>
-<ul>     
-    <li class="bar"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test bar</a></li>
-    <li class="klant"><a href="index.php?page=evenement&amp;semipage=agenda_week">Test klant</a></li>
-</ul>
-
-<h1>Vrijdag 13 januari 2012</h1>
-<ul class="leeg">     
-    <li>Geen evenementen</li>
-</ul>
-
-<h1>Zaterdag 14 januari 2012</h1>
-<ul class="leeg">    
-    <li>Geen evenementen</li>
-</ul>
-
-<h1>Zondag 15 januari 2012</h1>
-<ul class="leeg">    
-    <li>Geen evenementen</li>
-</ul>
 </div>
+
 
 <table border="1" width="100%" cellspacing="0">
 	<tr><th width="40px"></th><th width="14.2%">maandag</th><th width="14.2%">dinsdag</th><th width="14.2%">woensdag</th><th width="14.2%">donderdag</th><th width="14.2%">vrijdag</th><th width="14.2%">zaterdag</th><th width="14.2%">zondag</th></tr>
