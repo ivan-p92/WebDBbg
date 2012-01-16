@@ -162,6 +162,10 @@ div#inlogbox {
 	background: url("afbeeldingen/inlogbox.jpg") no-repeat;
 }
 
+	div#inlogbox form {
+		border: 1px solid black;
+	}
+
 
 
 /* Evenement toevoegen */
