@@ -175,11 +175,16 @@ div#inlogbox {
 		background: url("afbeeldingen/input_background.jpg") no-repeat;
 	}
 	
+	div#inlogbox form input:focus {
+		background: url("afbeeldingen/input_background_focus.jpg") no-repeat;
+	}
+	
 	div#inlogbox form input[type=submit] {
 		background: url("afbeeldingen/inlog_button.jpg") no-repeat;
 		width: 40px;
 		height: 29px;
 		cursor: pointer;
+		margin-left: 185px;
 	}
 	
 	div#inlogbox form input[type=submit]:hover {
