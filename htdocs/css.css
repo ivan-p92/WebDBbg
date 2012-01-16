@@ -356,3 +356,29 @@ span.next {
 span.prev {
 	background: url("afbeeldingen/prev.png") no-repeat;
 }
+
+
+/* Tabel agenda */
+
+table#agenda td:first-child, table#agenda th:first-child {
+    border-right-width: 2px;
+}
+
+table#agenda th {
+    border-bottom-width: 2px;
+}
+
+table#agenda td, table#agenda th {
+    background: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 1px;
+}
+
+table#agenda {
+    margin: 0px;
+    padding: 0px;
+    border: medium none;
+    background: none;
+    border-collapse: collapse;
+}
