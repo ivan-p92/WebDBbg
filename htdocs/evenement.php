@@ -24,6 +24,7 @@
 	<tr>
 		<td>Locatie</td>
 		<td>Hier komt de locatie</td>
+	</tr>
 	<tr>
 		<td>Begintijd</td>
 		<td class="rechts">Hier komt de begintijd en datum</td>
@@ -34,16 +35,16 @@
 	</tr>
 	<tr>
 		<td rowspan="4">Categorie</td>
-		<td class="rechts">(check) Klant</td>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" /> Klant</td>
 	</tr>
 	<tr>
-		<td class="rechts">(check) Keuken</td>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" /> Keuken</td>
 	</tr>
 	<tr>
-		<td class="rechts">(check) Afwassers</td>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" /> Afwassers</td>
 	</tr>
 	<tr>
-		<td class="rechts">(check) Barpersoneel</td>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" /> Barpersoneel</td>
 	</tr>
 	</tbody>
 </table>
