@@ -14,6 +14,8 @@
 
 <div id="weeklijst_container">
 
+<h1 id="event_lijst_titel">Aankomende evenementen</h1>
+
 <ul class="event_lijst">
     <li class="event">
         <p class="eendags_event">
@@ -24,7 +26,7 @@
         </p>
         <div class="event_details">
             <p class="event_titel">
-                <a class="event_link" href="index.php?page=evenement&semipage=agenda">Titel van het event</a>
+                <a class="event_link" href="index.php?page=evenement&amp;semipage=agenda">Titel van het event</a>
             </p>
             <p class="begintijd">11:00u</p>
 		</div>
