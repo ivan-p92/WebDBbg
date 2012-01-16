@@ -167,11 +167,13 @@ div#inlogbox {
 	}
 	
 		div#inlogbox form input {
+			position: relative;
 			margin: 0px;
 			padding: 0px;
 			width: 220px;
 			background: url("afbeeldingen/input_background.jpg") no-repeat;
 			left: 170px;
+			height: 42px;
 		}
 		
 		div#inlogbox form input:focus {
