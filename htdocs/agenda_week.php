@@ -21,7 +21,7 @@
 			</p>
 			<div class="event_details">
 				<p class="event_titel">
-					<a class="event_link" href="index.php?page=evenement&amp;semipage=agenda">Titel van het event</a>
+					<a class="event_link" href="index.php?page=evenement&amp;semipage=agenda_week">Titel van het event</a>
 				</p>
 				<p class="begintijd">11:00u - 19:00u</p>
 			</div>
@@ -36,7 +36,7 @@
 			</p>
 			<div class="event_details">
 				<p class="event_titel">
-					<a class="event_link" href="index.php?page=evenement&amp;semipage=agenda">Titel van het event</a>
+					<a class="event_link" href="index.php?page=evenement&amp;semipage=agenda_week">Titel van het event</a>
 				</p>
 				<p class="begintijd">12:00u - 3:00u</p>
 			</div>
