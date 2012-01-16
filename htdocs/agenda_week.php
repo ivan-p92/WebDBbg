@@ -50,9 +50,6 @@
 </div>
 
 <table id="agenda">
-	
-
-<table border="1" width="100%" cellspacing="0">
 	<tr><th>&nbsp;</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>vrijdag</th><th>zaterdag</th><th>zondag</th></tr>
 	<tr id="u0"><td>00:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
 	<tr id="u1"><td>01:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
