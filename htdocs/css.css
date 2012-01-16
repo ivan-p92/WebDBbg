@@ -1,9 +1,12 @@
 /* Algemeen */
+
+/* algemene lettertype instellingen */
 * {
 	font-family: arial, verdana, serif;
 	font-size: 12px;
 }
 
+/* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
 html, body {
@@ -13,6 +16,7 @@ html, body {
 	background: #343434
 }
 
+/* dit zijn de labels van bv. de doelgroepen selectie op het hoofdscherm */
 label {
     cursor: pointer;
     display: inline-block;
@@ -26,6 +30,7 @@ input, textarea {
     width: 200px;
 }
 
+/* plaatjes die ook als link dienen mogen geen border meekrijgen */
 a img {
 	border: none;
 }
@@ -34,6 +39,7 @@ h1, h2, h3 {
 	margin: 0px;
 }
 
+/* opmaak van de checkboxes bij bv de doelgroepen selectie */
 input[type=checkbox] {
 	display: inline;
 	width: 25px;
@@ -43,16 +49,19 @@ input[type=checkbox] {
 
 /* Algemeen */
 
+/* breedte van de pagina */
 div#maincontainer {
 	width: 1017px;
 	margin: auto;
 }
 
+/* header achtergrond */
 div#header {
 	background: url('afbeeldingen/header-background.jpg') bottom no-repeat;
 	height: 171px;
 }
 
+/* tabbladen menu */
 div#menu {
     clear: both;
     float: left;
@@ -60,18 +69,21 @@ div#menu {
     background: #291010;
 }
 
+/* afgeronde bovenrand (onder tabbladen) */
 div#topcontent{
 	background: url('afbeeldingen/content-top-background.jpg') bottom no-repeat;
 	height: 7px;
 	clear: both;
 }
 
+/* achtergrond content (zonder boven en onderrand) */
 div#content {
 	background: url('afbeeldingen/content-background.jpg') top repeat;
 	padding: 15px;
 	height: 100%;
 }
 
+/* text van de footer */
 div#namen_text {
     position: relative;
     bottom: 6px;
@@ -79,50 +91,56 @@ div#namen_text {
     width: 1017px;
 }
 
+/* afgeronde onderrand van de content (dus footer) */
 div#namen {
     background: url("afbeeldingen/content-footer-background.jpg") no-repeat scroll 0 0 transparent;
 }
 
-/* MENU */
+/* Tabbladen MENU */
 
-div#menu a {
+/* oude opmaak KAN DIT WEG???? */
+div#menu a {		/* de text van de tabbladen */
 	padding: 5px;
 	color: black;
 	text-decoration: none;
 }
-
+	/* onderstreept bij zweven boven link */
 	div#menu a:hover {
 		text-decoration: underline;
 	}
-
+	
+	/* bij inklikken onderstreping weer weg */
 	div#menu a:active {
 		text-decoration: none;
 	}
-
+	
+	/* bij bezocht ook zwart */
 	div#menu a:visited {
 		color: black;
 	}
 
+/* nieuwe opmaak */
 div#menu ul {
      list-style: none outside none;
      margin: 0px;
      padding: 0px 0px 0px 50px;
 }
-
+	/* hoogte etc van individuele tabs */
 	div#menu ul li {
 		 float: left;
 		 height: 31px;
 		 margin: 0px 1px 0px 0px;
 		 padding: 0px;
 	}
-
+		/* achtergrond (linkerhoek) van de (inactieve) tabs */
 		div#menu ul li a {
 			 background: url("afbeeldingen/tabblad-nonactive-lhoek.jpg") no-repeat scroll left top transparent;
 			 float: left;
 			 height: 31px;
 			 padding: 0px;
 		}
-
+			/* rest van de afbeelding van de tabs
+ * 			   de lengte is flexibel */
 			div#menu ul li a span {
 				 background: url("afbeeldingen/tabblad-nonactive-background.jpg") no-repeat scroll right top transparent;
 				 margin-left: 13px;
@@ -130,19 +148,23 @@ div#menu ul {
 				 float: left;
 				 height: 31px;
 			}
-			
+	
+	/* rechterdeel achtergrond van ACTIEF tabblad, ook bij hover */		
 	div#menu ul li.active a span, div#menu ul li.active a:hover span {
     	background: url("afbeeldingen/tabblad-active-background.jpg") no-repeat scroll right top transparent;
 	}
 	
+	/* linkerhoek achtergrond van ACTIEF tabblad, ook bij hover */
 	div#menu ul li.active a, div#menu ul li.active a:hover {
 	     background: url("afbeeldingen/tabblad-active-lhoek.jpg") no-repeat scroll left top transparent;
 	}
 	
+	/* rechterdeel achtergrond van INACTIEF tabblad, bij hover */
 	div#menu ul li a:hover span {
 	     background: url("afbeeldingen/tabblad-hover-background.jpg") no-repeat scroll right top transparent;
 	}
-	
+
+	/* linkerhoek achtergrond van INACTIEF tabblad, bij hover */	
 	div#menu ul li a:hover {
 	     background: url("afbeeldingen/tabblad-hover-lhoek.jpg") no-repeat scroll left top transparent;
 	}
@@ -154,13 +176,14 @@ div#inlogbox {
 	height: 171px;
 	background: url("afbeeldingen/inlogbox.jpg") no-repeat;
 }
-	
+	/* het form bevat de twee invoervelden, inlogknop & registratieknop */
 	div#inlogbox form {
 		position: relative;
 		left: 102px;
 		top: 28px;
 	}
 	
+	/* achtergrond en opmaak van de invoervelden */
 	div#inlogbox form input {
 		margin: 0px;
 		height: 42px;
@@ -171,10 +194,13 @@ div#inlogbox {
 		color: #291010;
 	}
 	
+	/* achtergrond en opmaak van de invoervelden bij focus */
 	div#inlogbox form input:focus {
 		background: url("afbeeldingen/input_background_focus.jpg") no-repeat;
+		outline: none;
 	}
 	
+	/* inlog knop (pijltje) */
 	div#inlogbox form input[type=submit] {
 		background: url("afbeeldingen/inlog_button.jpg") no-repeat;
 		width: 40px;
@@ -183,17 +209,13 @@ div#inlogbox {
 		margin-left: 185px;
 	}
 	
+	/* inlogknop iets lichter bij hover*/
 	div#inlogbox form input[type=submit]:hover {
 		opacity: 0.5;
 	}
 	
-	iv#inlogbox form input:focus {
-		outline: none;
-		background: url("afbeeldingen/input_background_focus.jpg") no-repeat;
-	}
 	
-
-/* Evenement toevoegen */
+/* Evenement toevoegen tabel */
 
 div.form table tr tr {
 	padding: 5px;
@@ -203,7 +225,7 @@ div.form form table {
 	margin-left: 18px;
 }
 
-/* Form doelgroepen */	
+/* Form doelgroepen (doelgroepen selectie) */	
 
 form#doelgroepen {
     border: 1px solid #900;
@@ -229,34 +251,22 @@ form#doelgroepen span input, form#doelgroepen span label {
     font-weight: bold;
 }
 
-input#doelgroep_bar + label, .bar {
-    color: blue;
-}
-input#doelgroep_afwas + label, .afwas {
-    color: darkorange;
-}
-input#doelgroep_kok + label, .kok {
-    color: indigo;
-}
-input#doelgroep_klant + label, .klant {
-    color: darkgreen;
-}
 form#doelgroepen span label {
     width: 100px;
 }
 
-form#doelgroepen span label {
-    width: 100px;
-}
-
-/* LIJST */
+/* LIJST VAN EVENEMENTEN*/
 
 div#weeklijst_container {
     clear: left;
 }
+
+/* datum en details evenement moeten naast elkaar */
 .eendags_event, .event_details {
     float: left;
 }
+
+/* header 'Aankomende evenementen*/
 h1#event_lijst_titel {
     color: #2A1011;
     font-family: papyrus;
@@ -265,9 +275,13 @@ h1#event_lijst_titel {
     margin-bottom: 10px;
     padding-top: 10px;
 }
+
+/* breedte van de lijst zelf */
 ul.event_lijst {
     width: 50%;
 }
+
+/* opmaak lijst elementen, inclusief kalender icoon als achtergrond */
 li.event {
     height: 50px;
     list-style: none outside none;
@@ -275,41 +289,53 @@ li.event {
     width: auto;
     background: url(afbeeldingen/kalender_icon.png) no-repeat scroll 0 0 white;
 }
+
 .event_lijst, .eendags_event {
     margin: 0;
     padding: 0;
 }
+
+/* juiste uitlijning van de datum */
 .jaar, .dd-mm {
     display: block;
     text-align: center;
     width: 50px;
 }
+
+/* opmaak jaar */
 .jaar {
     color: white;
     font-weight: bold;
     height: 15px;
 }
+
 .event_details {
     margin-left: 20px;
 }
+
+/* opmaak dag/maand */
 .dd-mm {
     font-weight: bold;
     margin-top: 2px;
 }
+
+/* titel en tijd van evenementen*/
 .event_titel, .begintijd {
     line-height: 1.5;
     margin: 0;
 }
-table#evenement td.rechts {
-    width: 500px;
-}
+
 .begintijd {
     font-family: calibri,verdana;
     font-size: 12pt;
 }
+
+/* titel event bij hover */
 .event_titel a:hover {
     text-decoration: underline;
 }
+
+/* titel event algemeen */
 .event_titel a {
     color: #2A1011;
     font-family: Comic Sans MS,verdana;

@@ -1,3 +1,6 @@
+<!-- Header wordt hiervoor geladen -->
+
+<!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
 <form id="doelgroepen" action="">
 	<fieldset>
 	<legend>Categorie&euml;n</legend>
@@ -8,10 +11,13 @@
 	</fieldset>
 </form>
 
-
-<div id="weeklijst_container">
+<!-- div#weeklijst container bevat de lijst van de evenementen 
+     De hoofdstructuur ervan is een unordered list -->
+<div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	<ul class="event_lijst">
+
+		<!-- Elk list item is een evenement -->
 		<li class="event">
 			<p class="eendags_event">
 				<span class="begin_datum">
@@ -44,11 +50,13 @@
 	</ul>
 </div>
 
+<!-- Dit zijn de navigatieknoppen voor de vorige/volgende lijst evenementen-->
 <div id="buttons">  
 	<span class="prev"></span>
 	<span class="next"></span>
 </div>
 
+<!-- De tabelweergave (week) van de evenementen-->
 <table id="agenda">
 	<tr><th>&nbsp;</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>vrijdag</th><th>zaterdag</th><th>zondag</th></tr>
 	<tr id="u0"><td>00:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
