@@ -156,12 +156,12 @@ div#inlogbox {
 	div#inlogbox form {
 		position: relative;
 		left: 102px;
-		top: 22px;
+		top: 28px;
 	}
 	
 	div#inlogbox form input {
 		margin: 0px;
-		height: 46px;
+		height: 42px;
 		width: 230px;
 		border: none;
 		background: url("afbeeldingen/input_background.jpg") no-repeat;
