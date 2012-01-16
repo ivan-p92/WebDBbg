@@ -250,6 +250,7 @@ form#doelgroepen span label {
 /* LIJST */
 
 div#weeklijst_container {
+	clear: left;
 }
 
 
