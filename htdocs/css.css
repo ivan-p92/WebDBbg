@@ -162,10 +162,9 @@ div#inlogbox {
 }
 	
 	div#inlogbox form {
-		border: 1px solid black;
 		position: relative;
-		left: 75px;
-		top: 40px;
+		left: 102px;
+		top: 22px;
 	}
 	
 	div#inlogbox form input {
