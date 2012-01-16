@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="afbeeldingen/favicon.ico" />
 </head>
 
-<body>
+<body>TESTTESTTEST
 <div id="maincontainer">
 	<div id="header">
 		<div id="inlogbox">
