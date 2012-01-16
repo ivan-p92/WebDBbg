@@ -290,6 +290,22 @@ div#weeklijst ul {
 		color: red;
 	}
 
+/*  TABELLEN */
+
+table#evenement {
+    border: medium solid black;
+}
+
+table#evenement td.rechts {
+    width: 500px;
+}
+
+table#evenement td {
+    border: 1px solid black;
+    width: 100px;
+    padding: 5px;
+}
+
 /*  BUTTONS */
 
 button {
