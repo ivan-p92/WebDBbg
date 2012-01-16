@@ -152,6 +152,17 @@ div#menu ul {
 	div#menu ul li a:hover {
 	     background: url("afbeeldingen/tabblad-hover-lhoek.jpg") no-repeat scroll left top transparent;
 	}
+	
+/* Inlog box */
+
+div#inlogbox {
+	float: right;
+	width: 365px;
+	height: 171px;
+	background: url("afbeeldingen/inlogbox.jpg") no-repeat;
+}
+
+
 
 /* Evenement toevoegen */
 

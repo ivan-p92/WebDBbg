@@ -11,26 +11,23 @@
 <body>
 <div id="maincontainer">
 	<div id="header">
-			<form class="inloggen" action="">
-				<fieldset>
-					<legend>Inloggen</legend>
-					<label for="naam">Gebruikersnaam:</label>
-					<input id="naam" type="text" name="naam" />
-					<label for="pwd">Wachtwoord:</label>
-					<input id="pwd" type="password" name="pwd" />
-					<input id="inlogbutton" type="submit" value="Inloggen" />
-				</fieldset>
+		<div id="inlogbox">
+			<form action="" method="post">
+				<input id="naam" type="text" name="naam" />
+				<input id="pwd" type="password" name="pwd" />
+				<input id="inlogbutton" type="submit" value="" />				
 			</form>
+		</div>
 			
-			<!--
-			<div class="ingelogd">
-				<fieldset>
-					<legend>Ingelogd als</legend>
-					<p>gebruiker: 'naam'</p>
-					<button>Uitloggen</button>
-				</fieldset>
-			</div>
-			-->
+		<!--
+		<div class="ingelogd">
+			<fieldset>
+				<legend>Ingelogd als</legend>
+				<p>gebruiker: 'naam'</p>
+				<button>Uitloggen</button>
+			</fieldset>
+		</div>
+		-->
 	</div>
 	<div id="menu">
 		<ul>
