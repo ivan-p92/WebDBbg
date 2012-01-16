@@ -327,6 +327,7 @@ a.button {
 span.next, span.prev {
 	width: 48px;
 	height: 33px;
+	float: left;
 }
 
 span.next {
