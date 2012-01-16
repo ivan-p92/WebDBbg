@@ -163,12 +163,13 @@ div#inlogbox {
 	
 	div#inlogbox form {
 		border: 1px solid black;
+		position: relative;
+		left: 75px;
+		top: 40px;
 	}
 	
 	div#inlogbox form input {
-		position: relative;
 		margin: 0px;
-		left: 70px;
 		height: 42px;
 		width: 230px;
 		border: none;
