@@ -13,9 +13,9 @@
 	<div id="header">
 		<div id="inlogbox">
 			<form action="" method="post">
-				<input id="naam" type="text" value="Email adres" name="naam" />
-				<input id="pwd" type="password" value="Wachtwoord" name="pwd" />
-				<input id="inlogbutton" type="submit" value="" />				
+				<input id="naam" type="text" placeholder="Email adres" name="naam" />
+				<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
+				<input id="inlogbutton" type="submit" value="" title="inloggen" />				
 			</form>
 		</div>
 			
