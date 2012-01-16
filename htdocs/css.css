@@ -249,40 +249,43 @@ form#doelgroepen span label {
 
 /* LIJST */
 
-div#weeklijst {
-    background: none repeat scroll 0 0 blanchedAlmond;
-    margin-top: 50px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 50%;
-}
-
-	div#weeklijst a:hover {
-		font-weight: normal;
-		text-decoration: underline;
-	}
-	div#weeklijst a {
-		color: inherit;
-		text-decoration: none;
-	}
-	div#weeklijst a:visited {
-		font-weight: normal;
-	}
-
-div#weeklijst h1 {
-    color: darkblue;
-    font-size: 16pt;
-    margin-top: 10px;
+div#weeklijst_container {
 }
 
 
-div#weeklijst ul {
-    font-weight: bold;
+li.event, .eendags_event, .event_details {
+    float: left;
 }
-	div#weeklijst ul.leeg {
-		color: red;
-	}
+
+li.event {
+    list-style: none outside none;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.event_lijst, .eendags_event {
+    margin: 0;
+    padding: 0;
+}
+
+.jaar, .dd-mm {
+    display: block;
+    text-align: center;
+    width: 50px;
+}
+
+.jaar {
+    height: 15px;
+}
+
+.event_details {
+    margin-left: 20px;
+}
+
+.event_titel, .begintijd {
+    line-height: 1.5;
+    margin: 0;
+}
 
 /* TABLES */
 
