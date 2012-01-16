@@ -44,7 +44,7 @@
 	</ul>
 </div>
 
-<div id="buttons">
+<div id="buttons">  
 	<span class="prev"></span>
 	<span class="next"></span>
 </div>
