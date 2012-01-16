@@ -166,6 +166,7 @@ div#inlogbox {
 	}
 	
 	div#inlogbox form input {
+		position: relative;
 		margin: 0px;
 		left: 70px;
 		height: 42px;
