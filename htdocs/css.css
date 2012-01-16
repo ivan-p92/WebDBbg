@@ -172,8 +172,9 @@ div#inlogbox {
 			padding: 0px;
 			width: 220px;
 			background: url("afbeeldingen/input_background.jpg") no-repeat;
-			left: 170px;
+			left: 70px;
 			height: 42px;
+			border: none;
 		}
 		
 		div#inlogbox form input:focus {
