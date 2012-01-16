@@ -51,14 +51,6 @@ div#header {
 	height: 171px;
 }
 
-	form.inloggen, div.ingelogd {
-		width: 250px;
-		padding: 10px;
-		border: none;
-		background: rgba(255, 255, 255, 0.5);
-		float: right;
-	}
-
 div#menu {
     clear: both;
     float: left;
@@ -173,6 +165,8 @@ div#inlogbox {
 		width: 230px;
 		border: none;
 		background: url("afbeeldingen/input_background.jpg") no-repeat;
+		padding-left: 7px;
+		color: #291010;
 	}
 	
 	div#inlogbox form input:focus {
@@ -289,22 +283,6 @@ div#weeklijst ul {
 	div#weeklijst ul.leeg {
 		color: red;
 	}
-
-/*  TABELLEN */
-
-table#evenement {
-    border: medium solid black;
-}
-
-table#evenement td.rechts {
-    width: 500px;
-}
-
-table#evenement td {
-    border: 1px solid black;
-    width: 100px;
-    padding: 5px;
-}
 
 /*  BUTTONS */
 
