@@ -165,6 +165,19 @@ div#inlogbox {
 	div#inlogbox form {
 		border: 1px solid black;
 	}
+	
+		div#inlogbox form input {
+			margin: 0px;
+			padding: 0px;
+			width: 220px;
+			background: url("afbeeldingen/input_background.jpg") no-repeat;
+			left: 170px;
+		}
+		
+		div#inlogbox form input:focus {
+			outline: none;
+			background: url("afbeeldingen/input_background_focus.jpg) no-repeat;
+		}
 
 
 
