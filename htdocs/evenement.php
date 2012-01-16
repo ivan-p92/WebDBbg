@@ -24,6 +24,7 @@
 	<tr>
 		<td>Locatie</td>
 		<td>Hier komt de locatie</td>
+	</tr>
 	<tr>
 		<td>Begintijd</td>
 		<td class="rechts">Hier komt de begintijd en datum</td>
