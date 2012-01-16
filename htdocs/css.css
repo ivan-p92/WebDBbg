@@ -362,6 +362,7 @@ span.prev {
 
 table#agenda td:first-child, table#agenda th:first-child {
     border-right-width: 2px;
+	width: 40px;
 }
 
 table#agenda th {
@@ -381,4 +382,5 @@ table#agenda {
     border: medium none;
     background: none;
     border-collapse: collapse;
+	width: 100%;
 }
