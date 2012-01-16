@@ -9,13 +9,8 @@
 	</fieldset>
 </form>
 
-<a href="index.php?page=agenda_week" title="Vorige week">
-	<button>Vorige week</button>
-</a>
-
-<a href="index.php?page=agenda_week" title="Volgende week">
-	<button>Volgende week</button>
-</a>
+<span class="prev"></span>
+<span class="next"></span>
 
 <div id="weeklijst">
 
