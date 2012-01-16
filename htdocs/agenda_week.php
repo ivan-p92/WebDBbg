@@ -1,4 +1,3 @@
-
 <form id="doelgroepen" action="">
 	<fieldset>
 	<legend>Categorie&euml;n</legend>
@@ -52,8 +51,8 @@
 </ul>
 </div>
 
-<table border="1" width="100%" cellspacing="0">
-	<tr><th width="40px"></th><th width="14.2%">maandag</th><th width="14.2%">dinsdag</th><th width="14.2%">woensdag</th><th width="14.2%">donderdag</th><th width="14.2%">vrijdag</th><th width="14.2%">zaterdag</th><th width="14.2%">zondag</th></tr>
+<table id="agenda">
+	<tr><th></th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>vrijdag</th><th>zaterdag</th><th>zondag</th></tr>
 	<tr id="u0"><td>00:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
 	<tr id="u1"><td>01:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
 	<tr id="u2"><td>02:00</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td> &nbsp;</td><td>&nbsp; </td><td>&nbsp; </td><td>&nbsp;</td></tr>
