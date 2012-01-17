@@ -1,0 +1,23 @@
+Login:
+SELECT id FROM users WHERE email='?' AND password =SHA1('?');
+
+Categorieen ophalen:
+SELECT * FROM groups;
+
+Te tonen evenemten:
+SELECT title, start_date, end_date, id FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC LIMIT 10 OFFSET 0;
+
+Nog te keuren evenementen:
+SELECT title, id FROM events WHERE aprove_id IS NULL ORDER BY start_date ASC;
+
+Evenemnt wordt gekeurd:
+UPDATE events SET aprove_id='?' AND aprove_date=NOW() AND public='?' WHERE id='?';
+
+Evenement wordt aangemaakt:
+INSERT INTO events (id, title, description, start_date, end_date, create_id, create_date, location) VALUES (NULL, ?, ?, ?, ?, ?, NOW(), ?);
+
+Registratie:
+INSERT INTO users (id, email, password, name) VALUES (NULL, ?, ?, ?);
+
+Details 1 specifiek evenement:
+SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id='1';  
