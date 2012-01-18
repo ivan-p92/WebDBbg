@@ -20,4 +20,17 @@ Registratie:
 INSERT INTO users (id, email, password, name) VALUES (NULL, ?, ?, ?);
 
 Details 1 specifiek evenement:
-SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id='1';  
+SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id='1'; 
+
+Rechten bij gebruker weergeven:
+SELECT description FROM permissions JOIN users_permissions ON permissions.id=users_permissions.permission_id WHERE users_permissions.user_id=?;
+
+Gebruikers ophalen en alfabetisch sorteren:
+SELECT name, id FROM users ORDER BY name ASC;
+
+Rechten aanpassen:
+DELETE * FROM users_permissions WHERE user_id=?;
+INSERT into users_permissions (user_id, permission_id) VALUES (?,?), (?,?),(?,?);
+
+Conrole (kan gebruiker actie uitvoeren?):
+SELECT count(*) AS aantal FROM users_permissions JOIN permissions ON permission_id=permissions.id WHERE user_id=? AND permissions.permission=?;
