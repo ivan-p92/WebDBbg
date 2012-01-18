@@ -1,4 +1,4 @@
-<div class="admin>
+<div class="admin">
 <h1>Pas de rechten van %naam% aan</h1>
 <p>Op dit moment heeft %naam% de volgende rechten:
 <ul>
