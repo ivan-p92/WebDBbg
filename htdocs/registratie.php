@@ -1,5 +1,6 @@
 <h1>Registratie formulier</h1>
 Alle velden zijn verplicht
+<div class="form">
 <form id="register" action="" method="get">
 <table>
 <tbody>
@@ -21,3 +22,4 @@ Alle velden zijn verplicht
 </tbody>
 </table>
 </form>
+</div>
