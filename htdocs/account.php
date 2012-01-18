@@ -25,7 +25,7 @@
 	<td>Wachtwoord nogmaals: </td><td><input type="password" id="newpswd2" name="pswd2"></td>
 	</tr>
 	<tr>
-	<td>&nbsp;</td><td><input type="submit" value="Registreer" /><input type="reset" value="Velden wissen" /></td>
+	<td>&nbsp;</td><td><input type="submit" value="Wachtwoord opslaan" /><input type="reset" value="Velden wissen" /></td>
 	</tr>
 </tbody>
 </table>
