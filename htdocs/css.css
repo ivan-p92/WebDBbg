@@ -224,9 +224,9 @@ div#inlogbox {
    	 text-decoration: underline;
 	}
 	span#registratielink {
-   	position: absolute;
-  	right: 400px;
-    	top: 124px;
+   	position: relative;
+    	right: -103px;
+    	top: 7px;
 	}
 
 
