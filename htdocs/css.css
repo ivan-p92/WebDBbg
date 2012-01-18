@@ -368,7 +368,7 @@ button {
 	float: left;
 }
 	
-a.button {
+a.button, .button .right{
     background: transparent url('afbeeldingen/bg_button_a.png') no-repeat scroll top right;
     color: #444;
     display: block;
@@ -390,7 +390,7 @@ a.button {
 		padding: 6px 0 4px 18px; /* push text down 1px */
 	} 
 	
-	a.button span {
+	a.button span, .button .inner{
 		background: transparent url('afbeeldingen/bg_button_span.png') no-repeat;
 		display: block;
 		line-height: 14px;
