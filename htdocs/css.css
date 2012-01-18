@@ -214,7 +214,22 @@ div#inlogbox {
 		opacity: 0.5;
 	}
 	
+	/* registratielink bij inlogbox */
+	span#registratielink a, span#registratielink a:visited {
+ 	   color: #291010;
+   	 text-decoration: none;
+	}
 	
+	span#registratielink a:hover {
+   	 text-decoration: underline;
+	}
+	span#registratielink {
+   	position: absolute;
+  	right: 400px;
+    	top: 124px;
+	}
+
+
 /* Evenement toevoegen tabel */
 
 div.form table tr tr {
@@ -438,4 +453,6 @@ table#agenda {
     background: none;
     border-collapse: collapse;
 	width: 100%;
+    table-layout: fixed;
 }
+
