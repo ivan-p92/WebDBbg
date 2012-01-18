@@ -399,7 +399,7 @@ a.button, *.submit_button .button .right{
 		outline: none; /* hide dotted outline in Firefox */
 	}
 	
-	a.button:active span *.submit_button .button:active .right{
+	a.button:active span, *.submit_button .button:active .right{
 		background-position: bottom left;
 		padding: 6px 0 4px 18px; /* push text down 1px */
 	} 
