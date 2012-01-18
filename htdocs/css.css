@@ -362,13 +362,13 @@ table#evenement {
 button {
     width:  auto;
     background: #ddd;
-    border: 1px solid black;
+    border: 0 none;
     padding:  3px;
     margin-top:  10px;
 	float: left;
 }
 	
-a.button, .button .right{
+a.button, p.submit_button .button .right{
     background: transparent url('afbeeldingen/bg_button_a.png') no-repeat scroll top right;
     color: #444;
     display: block;
@@ -379,18 +379,18 @@ a.button, .button .right{
     padding-right: 18px; /* sliding doors padding */
     text-decoration: none;
 }
-	a.button:active {
+	a.button:active, p.submit_button .button:active .inner {
 		background-position: bottom right;
 		color: #000;
 		outline: none; /* hide dotted outline in Firefox */
 	}
 	
-	a.button:active span {
+	a.button:active span p.submit_button .button:active .right{
 		background-position: bottom left;
 		padding: 6px 0 4px 18px; /* push text down 1px */
 	} 
 	
-	a.button span, .button .inner{
+	a.button span, p.submit_button .button .inner{
 		background: transparent url('afbeeldingen/bg_button_span.png') no-repeat;
 		display: block;
 		line-height: 14px;
