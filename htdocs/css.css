@@ -359,6 +359,15 @@ table#evenement {
 
 /*  BUTTONS */
 
+button {
+    width:  auto;
+    background: #ddd;
+    border: 1px solid black;
+    padding:  3px;
+    margin-top:  10px;
+	float: left;
+}
+
 .button {
     background: none repeat scroll 0 0 transparent;
     clear: both;
