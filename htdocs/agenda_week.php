@@ -2,8 +2,8 @@
 <!-- Dit zijn de navigatieknoppen voor de vorige/volgende lijst evenementen-->
 
 <div id="weergave">
-	<a href="index.php?page=agenda&amp;view=blok">Blok weergave</a>
-	<a href="index.php?page=agenda&amp;view=lijst">Lijst weergave</a>
+	<a href="index.php?page=agenda_week&amp;view=blok">Blok weergave</a>
+	<a href="index.php?page=agenda_week&amp;view=lijst">Lijst weergave</a>
 </div>
 <?php
 
