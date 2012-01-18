@@ -326,6 +326,14 @@
 </select></td>
 	</tr>
 	<tr>
+		<td>
+		Locatie
+		</td>
+		<td>
+		<input id="locatie" type="text" name="locatie" />
+		</td>
+	</tr>
+	<tr>
 		<td rowspan="4">Categorie</td>
 		<td><input type="checkbox" value="klant" />Klant</td>
 	</tr>
