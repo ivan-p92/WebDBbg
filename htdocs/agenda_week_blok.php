@@ -1,7 +1,3 @@
-<div id="buttons">  
-	<span class="prev"></span>
-	<span class="next"></span>
-</div>
 
 <!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
 <form id="doelgroepen" action="">
@@ -14,6 +10,13 @@
 	</fieldset>
 </form>
 
+
+<div id="buttons">  
+	<span class="prev"></span>
+	<span class="next"></span>
+</div>
+
+<div class="clearer"></div>
 <!-- De tabelweergave (week) van de evenementen-->
 <table id="agenda">
 	<tr><th>&nbsp;</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>vrijdag</th><th>zaterdag</th><th>zondag</th></tr>
