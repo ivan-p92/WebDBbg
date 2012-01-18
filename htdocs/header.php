@@ -5,7 +5,7 @@
 	<title>Welkom bij de openbare agenda van Grand Café L'Ambiance!</title>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<link rel="stylesheet" type="text/css" href="css.css" title="CSS" />
-	<link rel="shortcut icon" type="image/jpg" href="afbeeldingen/favicon.jpg" />
+	<link rel="shortcut icon" type="image/x-ico" href="afbeeldingen/favicon.ico" />
 </head>
 
 <body>
