@@ -17,11 +17,11 @@ Alle velden zijn verplicht
 <td>Wachtwoord nogmaals: </td><td><input type="password" id="pswd2" name="pswd2"></td>
 </tr>
 <tr>
-<td>&nbsp;</td><td><p class="submit_button">
+<td>&nbsp;</td><td class="submit_button">
 	<button type="submit" class="button" href="#">
 		<span class="right">
 		<span class="inner">Registreer</span></span>
-</button></p></td>
+</button></td>
 </tr>
 </tbody>
 </table>
