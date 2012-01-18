@@ -14,7 +14,7 @@
 
 <p>Deze evenementen zijn door u aangemaakt:</p>
 <div class="user_events">
-	<table>
+	<table id="user_events">
 		<tbody>
 			<tr>
 				<th>
