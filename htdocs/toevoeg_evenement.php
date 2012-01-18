@@ -348,7 +348,11 @@
 	</tr>
 	<tr>
 		<td>&nbsp</td>
-		<td><input type="submit" value="Maak evenement aan" /></td>
+		<td class="submit_button">
+	<button type="submit" class="button" id="event_aanmaken">
+		<span class="right">
+		<span class="inner">Maak evenement aan</span></span>
+</button></td>
 	</tr>
 	</tbody>
 </table></form></div>
