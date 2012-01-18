@@ -376,6 +376,18 @@ table#evenement {
     border: medium solid black;
 }
 
+table#user_events {
+    border: 3px black solid;
+    margin: auto;
+}
+table#user_events th {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+table#user_events td {
+    border: 1px solid black;
+}
+
 /*  BUTTONS */
 
 button {

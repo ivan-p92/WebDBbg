@@ -1,5 +1,47 @@
 <div class="admin">
 <h1>Pas de rechten van %naam% aan</h1>
+<p>De volgende evenementen zijn door %naam% aangemaakt:</p>
+
+<div class="user_events">
+	<table id="user_events">
+		<tbody>
+			<tr>
+				<th>
+				Ongekeurde Evenementen
+				</th>
+				<th>
+				Goedgekeurde Evenementen
+				</th>
+				<th>
+				Afgekeurde Evenementen
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<ul>
+					<li>
+						<a href="index.php?page=evenement">TEST</a>
+					</li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+					<li>
+						<a href="index.php?page=evenement">TEST</a>
+					</li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+					<li>
+						<a href="index.php?page=evenement">TEST</a>
+					</li>
+					</ul>
+				</td>
+		</tbody>
+	</table>
+</div>
+
 <p>Op dit moment heeft %naam% de volgende rechten:</p>
 <ul>
 <li>
