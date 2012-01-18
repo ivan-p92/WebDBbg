@@ -455,3 +455,6 @@ table#agenda {
     table-layout: fixed;
 }
 
+.clearer {
+	clear: both;
+}
