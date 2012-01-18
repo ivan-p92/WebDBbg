@@ -34,3 +34,8 @@ INSERT into users_permissions (user_id, permission_id) VALUES (?,?), (?,?),(?,?)
 
 Conrole (kan gebruiker actie uitvoeren?):
 SELECT count(*) AS aantal FROM users_permissions JOIN permissions ON permission_id=permissions.id WHERE user_id=? AND permissions.permission=?;
+
+Alle unaproved, aproved en declined evenementen ophalen van 1 gebruiker;
+SELECT title, id FROM unaproved WHERE create_id=?;
+SELECT title, id FROM aproved WHERE create_id=?;
+SELECT title, id FROM declined WHERE creatie=?;
