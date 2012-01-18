@@ -13,7 +13,7 @@ Geef %naam% de volgende rechten:
 <input type="checkbox" value="create" />Evenementen aanmaken
 <input type="checkbox" value="approve" />Evenementen keuren
 <input type="checkbox" value="admin" />Admin rechten
-<input type="submit" value="Pas rechten aan" />
+<input type="submit" href="index.php?page=lijst_van_gebruikers" value="Pas rechten aan" />
 </form>
 </p>
 </div>
