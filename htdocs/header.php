@@ -17,6 +17,7 @@
 				<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
 				<input id="inlogbutton" type="submit" value="" title="inloggen" />				
 			</form>
+			<span id="registratielink"><label><a href="index.php?page=registratie" title="registreren">Registreren </a></label></span>
 		</div>
 			
 		<!--
