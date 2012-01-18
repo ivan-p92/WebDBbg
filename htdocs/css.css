@@ -393,13 +393,13 @@ a.button, *.submit_button .button .right{
     padding-right: 18px; /* sliding doors padding */
     text-decoration: none;
 }
-	a.button:active, *.submit_button .button:active .inner {
+	a.button:active, *.submit_button .button:active .right {
 		background-position: bottom right;
 		color: #000;
 		outline: none; /* hide dotted outline in Firefox */
 	}
 	
-	a.button:active span, *.submit_button .button:active .right{
+	a.button:active span, *.submit_button .button:active .inner{
 		background-position: bottom left;
 		padding: 6px 0 4px 18px; /* push text down 1px */
 	} 
