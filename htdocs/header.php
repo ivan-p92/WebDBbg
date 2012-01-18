@@ -43,7 +43,7 @@
 			}
 			
 			$menuItems = array('agenda_week' => 'Agenda', 'toevoeg_evenement' => 'Evenement toevoegen', 
-				'keuren' => 'Evenement goedkeuren' 'lijst_van_gebruikers' => 'Gebruikers rechten aanpassen');
+				'keuren' => 'Evenement goedkeuren', 'lijst_van_gebruikers' => 'Gebruikers rechten aanpassen');
 			
 			foreach($menuItems as $fileName => $screenName)
 			{
