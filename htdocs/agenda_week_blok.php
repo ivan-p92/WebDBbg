@@ -2,15 +2,14 @@
 <h1>Weekweergave evenementen</h1>
 
 <!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
-<form id="doelgroepen" action="">
-	<fieldset>
-	<legend>Categorie&euml;n</legend>
-	<label for="doelgroep_klant"><input type="checkbox" name="doelgroep" id="doelgroep_klant" value="Klant"  checked="checked" />Klant</label><br />
-	<label for="doelgroep_kok"><input type="checkbox" name="doelgroep" id="doelgroep_kok" value="Kok" checked="checked" />Keuken</label><br />
-	<label for="doelgroep_afwas"><input type="checkbox" name="doelgroep" id="doelgroep_afwas" value="Afwas" checked="checked" />Afwassers</label><br />
-	<label for="doelgroep_bar"><input type="checkbox" name="doelgroep" id="doelgroep_bar" value="Bar" checked="checked" />Barpersoneel</label><br />
-	</fieldset>
-</form>
+<div id="doelgroepen">
+	<ul>
+		<li>Klant</li>
+		<li>Keuken</li>
+		<li>Afwassers</li>
+		<li>Barpersoneel</li>
+	</ul>
+</div>
 
 
 <div id="buttons">  
