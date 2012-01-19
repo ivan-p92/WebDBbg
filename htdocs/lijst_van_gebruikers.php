@@ -12,7 +12,7 @@
 			<li><input type="checkbox" value="keuren" />Keuren</li>
 			<li><input type="checkbox" value="admin" />Admin</li>
 		</ul></form></td>
-		<td id="zoek"><span id="zoek_text">Zoek:</span><input type="text" id="zoek_box" name="zoek"></td>
+		<td id="zoek"><span id="zoek_text">Zoek:</span><input type="text" id="zoek_box" name="zoek" /></td>
 		</tr>
 	</table>
 	<h1>Lijst van gebruikers</h1>
