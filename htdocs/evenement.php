@@ -37,16 +37,16 @@
 	</tr>
 	<tr>
 		<td rowspan="4">Categorie</td>
-		<td class="rechts"><img src="afbeeldingen/icons/tick.png" /> Klant</td>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>
 	</tr>
 	<tr>
-		<td class="rechts"><img src="afbeeldingen/icons/cross.png" /> Keuken</td>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>
 	</tr>
 	<tr>
-		<td class="rechts"><img src="afbeeldingen/icons/tick.png" /> Afwassers</td>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwassers</td>
 	</tr>
 	<tr>
-		<td class="rechts"><img src="afbeeldingen/icons/cross.png" /> Barpersoneel</td>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>
 	</tr>
 	</tbody>
 </table>
