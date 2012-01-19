@@ -23,11 +23,10 @@
 			
 		
 		<div class="ingelogd">
-			<fieldset>
-				<legend>Ingelogd als</legend>
-				<p>gebruiker: 'naam'</p>
+			<div id="ingelogd_info">
+				<p>Ingelogd als:<a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
 				<button>Uitloggen</button>
-			</fieldset>
+			</div>
 		</div>
 		
 	</div>

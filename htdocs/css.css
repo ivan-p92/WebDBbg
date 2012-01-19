@@ -184,7 +184,7 @@ div#menu ul {
 	}
 	
 /* Inlog box */
-div#inlogbox {
+div#inlogbox, div#ingelogd {
 	float: right;
 	width: 365px;
 	height: 171px;
@@ -192,6 +192,12 @@ div#inlogbox {
 }
 	/* het form bevat de twee invoervelden, inlogknop & registratieknop */
 	div#inlogbox form {
+		position: relative;
+		left: 102px;
+		top: 28px;
+	}
+	
+	div#ingelogd{
 		position: relative;
 		left: 102px;
 		top: 28px;
