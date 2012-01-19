@@ -8,12 +8,11 @@
 			<option value="Rechten">Rechten</option>
 			<option value="ID">ID</option>
 		</select></td>
-		<td id="recht_checkbox">
-		<ul>
-			<li><span class="red"></span>Aanmaken</li>
-			<li><span class="green"></span>Keuren</li>
-			<li><span class="blue"></span>Admin</li>
-		</ul></td>
+		<td id="recht_checkbox"><form><ul>
+			<li><input type="checkbox" value="aanmaken">Aanmaken</li>
+			<li><input type="checkbox" value="keuren">Keuren</li>
+			<li><input type="checkbox" value="admin">Admin</li>
+		</ul></form></td>
 		<td id="zoek">Zoek: <input type="text" name="zoek"></td>
 		</tr>
 	</table>
