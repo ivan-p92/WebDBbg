@@ -60,9 +60,11 @@
 	<td>Wachtwoord nogmaals: </td><td><input type="password" id="newpswd2" name="pswd2" required="" /></td>
 	</tr>
 	<tr>
-	<td>&nbsp;</td><td class="submit_button" id="wijzigww_buttons"><button type="submit" class="button">
-		<span class="right"><span class="inner">Wachtwoord opslaan</span></span></button><br />
-		<button type="reset" class="button"><span class="right"><span class="inner">Velden wissen</span></span><button></td>
+	<td>&nbsp;</td>
+`	<td class="submit_button" id="wijzigww_buttons">
+		<button type="submit" class="button"><span class="right"><span class="inner">Wachtwoord opslaan</span></span></button><br />
+		<button type="reset" class="button"><span class="right"><span class="inner">Velden wissen</span></span><button>
+	</td>
 	</tr>
 </tbody>
 </table>
