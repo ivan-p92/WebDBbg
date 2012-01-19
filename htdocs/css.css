@@ -256,7 +256,7 @@ div.form form table {
 
 /* Form doelgroepen (doelgroepen selectie) */	
 
-fdiv#doelgroepen  ul {
+div#doelgroepen  ul {
 	list-style: none;
 	padding: 0px;
 	margin: 0px;
@@ -370,6 +370,7 @@ table#evenement td {
 }
 table#evenement {
     border: medium solid black;
+	margin-bottom: 8px;
 }
 
 table#user_events {
