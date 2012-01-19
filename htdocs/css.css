@@ -461,6 +461,19 @@ table#user_events td {
     border: 1px solid black;
 }
 
+td#zoek {
+    float: right;
+}
+table#sort_table {
+    width: 100%;
+}
+td#sort_name, td#sorteer {
+    width: 77px;
+}
+td#recht_checkbox {
+    width: 500px;
+}
+
 /*  BUTTONS */
 
 button {
