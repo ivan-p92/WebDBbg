@@ -3,9 +3,9 @@
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
 
 <form id="contact">
-	<table>	<tbody>
+	<table id="contact"><tbody>
 	<tr>
-		<td>Naam</td>
+		<td id="eerstecel">Naam</td>
 		<td><input required="" placeholder="Typ hier uw naam" name="contact_naam"></td>
 	</tr><tr>
 		<td>Email</td>
