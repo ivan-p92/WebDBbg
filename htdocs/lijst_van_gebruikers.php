@@ -1,5 +1,4 @@
 <div class="userlist">
-	<h1>Lijst van gebruikers<h1>
 	<table id="sort_table">
 		<tr><td id="sort_name">Sorteren op:</td>
 		<td id="sorteer"><select name="sorteer">
@@ -13,9 +12,10 @@
 			<li><input type="checkbox" value="keuren">Keuren</li>
 			<li><input type="checkbox" value="admin">Admin</li>
 		</ul></form></td>
-		<td id="zoek">Zoek: <input type="text" name="zoek"></td>
+		<td id="zoek"><span id="zoek_text">Zoek:</span><input type="text" id="zoek_box" name="zoek"></td>
 		</tr>
 	</table>
+	<h1>Lijst van gebruikers</h1>
 	<p>Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen
 		<ul>
 		<li>
