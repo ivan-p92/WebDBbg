@@ -1,10 +1,5 @@
 <!-- Header wordt hiervoor geladen -->
 <!-- Dit zijn de navigatieknoppen voor de vorige/volgende lijst evenementen-->
-
-<div id="weergave">
-	<a href="index.php?page=agenda_week&amp;view=blok">Weekweergave</a>
-	<a href="index.php?page=agenda_week&amp;view=lijst">Lijst weergave</a>
-</div>
 <?php
 
 if(!isset($_GET['view']) || empty($_GET['view']))
@@ -16,6 +11,13 @@ if($_GET['view'] != 'blok' && $_GET['view'] != 'lijst')
 {
 	$_GET['view'] = 'blok';
 }
+
+echo '
+	<div id="weergave">
+		<a '.(($_GET['view'] == 'blok') ? 'class="active" ' : '').'href="index.php?page=agenda_week&amp;view=blok">Blok</a>
+		<a '.(($_GET['view'] == 'lijst') ? 'class="active" ' : '').'href="index.php?page=agenda_week&amp;view=lijst">Lijst</a>
+	</div>';
+
 
 include('agenda_week_'.$_GET['view'].'.php');
 
