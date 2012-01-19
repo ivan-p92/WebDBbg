@@ -1,12 +1,7 @@
 TO DO:
 
-- Blok weergave
-- Checkbox
-* Evenementenlijst opleuken
+- Lijst gebruikers: sorteren (naam/rechten/id), interne zoekfunctie
 - optioneel: dropdown list? ander wel: mooiere weergaveoptie knoppen
 - nadenken SQL queries voor ophalen evenementen (type, etc)
-- toevoeg form opleuken (apple feel)
+- toevoegform opleuk (applefeel)
 - lijst van gebruikers: verschillende weergave checkboxes en intern zoeken
-- optioneel wachtwoord vergeten
-- account pagina integreren in website
-- contact informatie pagina maken
