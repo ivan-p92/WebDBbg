@@ -619,3 +619,21 @@ div#weergave {
 		margin: 0;
 		width: 1px;
 	}
+
+/* OPMAAK ACCOUNT PAGINA */
+
+table#wijzigww_tabel td {
+    padding-bottom: 5px;
+}
+
+td#wijzigww_buttons button {
+    position: relative;
+    padding: 0px;
+}
+button#wwopslaan {
+    left: 8px;
+    margin-bottom: 5px;
+}
+button#wwreset {
+    left: 27px;
+}
