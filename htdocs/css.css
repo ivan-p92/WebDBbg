@@ -466,7 +466,8 @@ span.prev {
 
 div#buttons {
 	position: relative;
-	left: 45%;
+	left: 298px;
+	float: left;
 }
 
 
