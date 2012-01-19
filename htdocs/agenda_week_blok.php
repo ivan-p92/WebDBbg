@@ -4,10 +4,9 @@
 <!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
 <div id="doelgroepen">
 	<ul>
-		<li><span class="legenda_item"></span>Klant</li>
-		<li><span class="legenda_item"></span>Keuken</li>
-		<li><span class="legenda_item"></span>Afwassers</li>
-		<li><span class="legenda_item"></span>Barpersoneel</li>
+		<li><span class="red"></span>Klant</li>
+		<li><span class="green"></span>Keuken</li>
+		<li><span class="blue"></span>Afwassers</li>
 	</ul>
 </div>
 
