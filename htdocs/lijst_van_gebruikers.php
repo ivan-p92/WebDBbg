@@ -7,16 +7,16 @@
 			<option value="Rechten">Rechten</option>
 			<option value="ID">ID</option>
 		</select></td>
-		<td id="recht_checkbox"><form><ul>
-			<li><input type="checkbox" value="aanmaken">Aanmaken</li>
-			<li><input type="checkbox" value="keuren">Keuren</li>
-			<li><input type="checkbox" value="admin">Admin</li>
+		<td id="recht_checkbox"><form action="" method="post"><ul>
+			<li><input type="checkbox" value="aanmaken" />Aanmaken</li>
+			<li><input type="checkbox" value="keuren" />Keuren</li>
+			<li><input type="checkbox" value="admin" />Admin</li>
 		</ul></form></td>
 		<td id="zoek"><span id="zoek_text">Zoek:</span><input type="text" id="zoek_box" name="zoek"></td>
 		</tr>
 	</table>
 	<h1>Lijst van gebruikers</h1>
-	<p>Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen
+	<p>Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen</p>
 		<ul>
 		<li>
 		<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Freek Boutkan</a>
@@ -30,6 +30,5 @@
 		<li>
 		<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">David Woudenberg</a>
 		</li>
-		</ul>
-	</p>	
+		</ul>	
 </div> 
