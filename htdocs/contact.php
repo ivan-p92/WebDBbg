@@ -3,16 +3,24 @@
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
 
 <form id="contact">
-	<label>Naam</label>
-	<input required="" placeholder="Typ hier uw naam" name="contact_naam">
-	<label>Email</label>
-	<input required="" placeholder="Typ hier uw e-mail adres" name="contact_mail">
-	<label>Bericht</label>
-	<textarea required="" placeholder="Typ hier uw bericht" name="contact_message">
-
-	<span class="submit_button" id="submit_contact">
-		<button type="submit" class="button" href="#">
-			<span class="right">
-			<span class="inner">Verstuur bericht</span></span>
-	</button></span>
+	<table>	<tbody>
+	<tr>
+		<td>Naam</td>
+		<td><input required="" placeholder="Typ hier uw naam" name="contact_naam"></td>
+	</tr><tr>
+		<td>Email</td>
+		<td><input required="" placeholder="Typ hier uw e-mail adres" name="contact_mail"></td>
+	</tr><tr>
+		<td>Bericht</td>
+		<td><textarea required="" placeholder="Typ hier uw bericht" name="contact_message"></td>
+	</tr><tr>
+		<td>&nbsp</td>
+		<td><span class="submit_button" id="submit_contact">
+			<button type="submit" class="button" href="#">
+				<span class="right">
+				<span class="inner">Verstuur bericht</span></span>
+			</button></span>
+		</td>
+	</tr>
+	</tbody></table>
 </form>
