@@ -2,12 +2,22 @@
 
 /* algemene lettertype instellingen */
 * {
-	font-family: arial, verdana, serif;
-	font-size: 12px;
+	font-family: calibri, arial, verdana, serif;
+	font-size: 11pt;
 }
 
 *:active {
 	outline: none;
+}
+
+/* algemene h1 opmaak */
+h1 {
+    color: #2A1011;
+    font-family: papyrus;
+    font-size: 24pt;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 /* papyrus font wordt ingebed voor zekerheid */
@@ -283,16 +293,6 @@ div#event_lijst_container {
 /* datum en details evenement moeten naast elkaar */
 .eendags_event, .event_details {
     float: left;
-}
-
-/* header 'Aankomende evenementen*/
-h1#event_lijst_titel {
-    color: #2A1011;
-    font-family: papyrus;
-    font-size: 24pt;
-    font-weight: normal;
-    margin-bottom: 10px;
-    padding-top: 10px;
 }
 
 /* breedte van de lijst zelf */
