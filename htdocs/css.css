@@ -506,6 +506,7 @@ span.next, span.prev {
 	width: 48px;
 	height: 33px;
 	float: left;
+	cursor: pointer;
 }
 
 span.next {
