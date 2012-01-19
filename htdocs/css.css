@@ -309,10 +309,6 @@ li.event {
     background: url(afbeeldingen/kalender_icon.png) no-repeat scroll 0 0 white;
 }
 
-li.event:hover {
-	background: url("afbeeldingen/kalender_icon.png") no-repeat scroll 0 0 #2A1011;
-}
-
 .event_lijst, .eendags_event {
     margin: 0;
     padding: 0;
@@ -367,6 +363,14 @@ li.event:hover {
     text-decoration: none;
 }
 
+/* hover effect*/
+li.event:hover {
+    background: url("afbeeldingen/kalender_icon.png") no-repeat scroll 0 0 #2A1011;
+}
+li.event:hover > div p a, li.event:hover > div p.begintijd {
+    color: #EBB8B7;
+}
+
 /* TABLES */
 
 table#evenement td.rechts {
@@ -399,7 +403,8 @@ button {
     width:  auto;
     background: none repeat scroll 0 0 transparent;
     border: 0 none;
-    padding:  3px;
+    padding-top:  8px;
+	padding-bottom: 8px;
 	float: left;
 	cursor: pointer;
 }
