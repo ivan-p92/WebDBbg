@@ -464,6 +464,11 @@ span.prev {
 	background: url("afbeeldingen/prev.png") no-repeat;
 }
 
+div#buttons {
+	position: relative;
+	left: 45%;
+}
+
 
 /* Tabel agenda */
 
