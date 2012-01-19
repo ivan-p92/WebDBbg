@@ -92,8 +92,8 @@ div#topcontent{
 /* achtergrond content (zonder boven en onderrand) */
 div#content {
 	background: url('afbeeldingen/content-background.jpg') top repeat;
-	padding: 15px;
 	padding: 15px 25px 25px 25px;
+	min-height: 600px;
 	height: 100%;
 }
 
