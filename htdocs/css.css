@@ -369,8 +369,8 @@ li.event {
     margin-bottom: 15px;
     width: auto;
     background: url(afbeeldingen/kalender_icon.png) no-repeat scroll 0 0 white;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 5px 10px 10px 0px;
+	border-radius: 5px 10px 10px 0px;
 }
 
 .event_lijst, .eendags_event {
