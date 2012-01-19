@@ -12,7 +12,7 @@ Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u o
 		<td><input required="" placeholder="Typ hier uw e-mail adres" name="contact_mail"></td>
 	</tr><tr>
 		<td>Bericht</td>
-		<td><textarea required="" placeholder="Typ hier uw bericht" name="contact_message"></td>
+		<td><textarea required="" placeholder="Typ hier uw bericht" name="contact_message" /></td>
 	</tr><tr>
 		<td>&nbsp</td>
 		<td><span class="submit_button" id="submit_contact">
