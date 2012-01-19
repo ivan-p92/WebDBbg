@@ -260,16 +260,17 @@ div.form form table {
 	margin-left: 18px;
 }
 
-table#event_toevoegen {
+table#event_toevoegen, table#contact {
     width: 50%;
 }
 td#eerstecel {
     width: 90px;
 }
-table#event_toevoegen input#titel, table#event_toevoegen input#locatie,table#event_toevoegen textarea {
+table.formtable input {
     width: 100%;
 }
-table#event_toevoegen textarea {
+table.formtable textarea {
+	width: 100%;
     height: 90px;
 }
 
@@ -548,6 +549,7 @@ table#agenda {
     border-collapse: collapse;
 	width: 100%;
     table-layout: fixed;
+	margin-top: 5px;
 }
 
 .clearer {
