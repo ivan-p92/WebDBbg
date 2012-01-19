@@ -1,7 +1,7 @@
 TO DO:
 
 - Blok weergave
-- Checkbox
+* Checkbox
 * Evenementenlijst opleuken
 - optioneel: dropdown list? ander wel: mooiere weergaveoptie knoppen
 - nadenken SQL queries voor ophalen evenementen (type, etc)
