@@ -51,7 +51,16 @@
 	</tbody>
 </table>
 
-<a class="button" href="#"onclick="this.blur();"><span>Goedkeuren</span></a>
-<a class="button" href="#"onclick="this.blur();"><span>Afkeuren</span></a>
-<a class="button" href="#"onclick="this.blur();"><span>Aanpassen</span></a>
-<a class="button" href="#"onclick="this.blur();"><span>Voeg evenement toe</span></a>
+<div id="event_buttons">
+<a class="submit_button" href="#" title="Goedkeuren">
+	<button class="button"><span class="right"><span class="inner">Goedkeuren</span></span></button>
+</a>	
+<a class="submit_button" href="#" title="Afkeuren">
+        <button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
+</a>
+<a class="submit_button" href="#" title="Aanpassen">
+        <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
+</a>
+
+</div>
+
