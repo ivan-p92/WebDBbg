@@ -266,14 +266,16 @@ div#doelgroepen  ul {
 
 div#doelgroepen ul li {
 	width: 100px;
-	padding: 5px;
+	padding: 0px;
 	float: left;
+	margin: 5px;
+	height: 16px;
 }
 
 div#doelgroepen ul li span {
 	display: block;
-	height: 12px;
-	width: 12px;	
+	height: 16px;
+	width: 16px;	
 	float: left;
 	margin-right: 5px;	
 }
