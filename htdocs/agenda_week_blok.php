@@ -11,6 +11,7 @@
 	</ul>
 </div>
 
+<div class="clearer"></div>
 
 <div id="buttons">  
 	<span class="prev"></span>
