@@ -100,7 +100,7 @@ div#content {
 /* text van de footer */
 div#namen_text {
     position: relative;
-    bottom: 6px;
+    bottom: 8px;
     text-align: center;
     width: 1017px;
 }
