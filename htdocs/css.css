@@ -298,6 +298,7 @@ div#doelgroepen ul li {
 	}
 	
 	div#doelgroepen ul li:hover > span.blue, div#doelgroepen ul li:hover > span.blue_off{
+		
 		background:	rgba(0, 0, 255, 0.7;
 	}
 
