@@ -519,6 +519,10 @@ span.prev {
 	background: url("afbeeldingen/prev.png") no-repeat;
 }
 
+span.next:hover, span.prev:hover {
+	opacity: 0.5;
+}
+
 div#buttons {
 	position: relative;
 	left: 198px;
@@ -558,3 +562,40 @@ table#agenda {
 .clearer {
 	clear: both;
 }
+
+/* Weergave selectie */
+
+div#weergave {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.25);
+    border: 1px solid #AAAAAA;
+    float: right;
+    height: 40px;
+    padding: 0;
+}
+
+	div#weergave a {
+		color: #000000;
+		display: block;
+		float: left;
+		height: 20px;
+		padding: 10px 20px;
+		text-decoration: none;
+		vertical-align: bottom;
+	}
+	
+	div#weergave a.active:hover {
+		text-decoration: none;
+	}
+	
+	div#weergave a:hover {
+		text-decoration: underline;
+	}
+	
+	div#weergave span {
+		background: none repeat scroll 0 0 #CCCCCC;
+		display: block;
+		float: left;
+		height: 40px;
+		margin: 0;
+		width: 1px;
+	}
