@@ -56,8 +56,8 @@ Geef %naam% de volgende rechten:
 <form id="admin" action="" method="get">
 <input type="checkbox" value="create" />Evenementen aanmaken
 <input type="checkbox" value="approve" />Evenementen keuren
-<input type="checkbox" value="admin" />Admin rechten
-<span class="submit_button"><button href="#" class="button" type="submit">
+<input type="checkbox" value="admin" />Admin rechten<br />
+<span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
 		<span class="right">
 		<span class="inner">Pas rechten aan</span></span>
 </button>
