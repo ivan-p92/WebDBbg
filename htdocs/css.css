@@ -230,15 +230,15 @@ div#inlogbox {
 	
 	/* registratielink bij inlogbox */
 	span#registratielink a, span#registratielink a:visited {
- 	   color: #291010;
-   	 text-decoration: none;
+		color: #291010;
+		text-decoration: none;
 	}
 	
 	span#registratielink a:hover {
    	 text-decoration: underline;
 	}
 	span#registratielink {
-   	position: relative;
+		position: relative;
     	right: -103px;
     	top: 7px;
 	}
@@ -256,33 +256,20 @@ div.form form table {
 
 /* Form doelgroepen (doelgroepen selectie) */	
 
-form#doelgroepen {
-    border: 1px solid #900;
-    width: 250px;
-    background: rgba(255, 0, 0, 0.2);
+fdiv#doelgroepen  ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	width: 250px;
+	float: left;
 }
 
-form#doelgroepen fieldset label {
-	margin: 3px;
-	width: auto;
+div#doelgroepen ul li {
+	width: 100px;
+	padding: 5px;
+	float: left;
 }
-
-form#doelgroepen span {
-    display: block;
-    width: 200px;
-}
-
-form#doelgroepen span input, form#doelgroepen span label {
-    display: inline;
-    width: auto;
-    padding:  5px;
-    margin: 5px;
-    font-weight: bold;
-}
-
-form#doelgroepen span label {
-    width: 100px;
-}
+	
 
 /* LIJST VAN EVENEMENTEN*/
 
