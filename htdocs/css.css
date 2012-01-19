@@ -475,6 +475,23 @@ table#user_events th {
 table#user_events td {
     border: 1px solid black;
 }
+td#sorteer, td#sort_name {
+    width: 77px;
+}
+table#sort_table {
+    width: 100%;
+}
+td#recht_checkbox form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+td#recht_checkbox form ul li {
+    float: left;
+}
+td#zoek {
+	float:right;
+}
 
 /*  BUTTONS */
 
