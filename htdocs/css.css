@@ -93,6 +93,7 @@ div#topcontent{
 div#content {
 	background: url('afbeeldingen/content-background.jpg') top repeat;
 	padding: 15px;
+	padding-left: 30px;
 	height: 100%;
 }
 
@@ -269,10 +270,6 @@ div#ingelogd_info {
 
 div.form table tr tr {
 	padding: 5px;
-}
-
-div.form form table {
-	margin-left: 18px;
 }
 
 table#event_toevoegen, table#contact {
