@@ -1,7 +1,7 @@
 <h1>Evenement toevoegen</h1>
 <p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
 <div class="form"><form id="input" action="" method="get">
-<table id="event_toevoegen">
+<table class="formtable" id="event_toevoegen">
 	<tbody>
 	<tr>
 		<td id="eerstecel">Titel</td>
