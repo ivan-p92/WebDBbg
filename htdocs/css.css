@@ -261,10 +261,12 @@ div#ingelogd_info {
 }
 
 	div#ingelogd_info p {
-	
-		border: 1px solid black;
+		padding: 5px;
 	}
-
+	
+	div#ingelogd_info p  a {
+		color: inherit;
+	}
 
 /* Evenement toevoegen tabel */
 
