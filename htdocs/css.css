@@ -248,6 +248,22 @@ div#inlogbox, div.ingelogd {
     	top: 7px;
 	}
 
+/* INGELOGD BOX */
+
+div#ingelogd_info {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+    height: 116px;
+    left: 100px;
+    position: relative;
+    top: 12px;
+    width: 237px;
+}
+
+	div#ingelogd_info p {
+	
+		border: 1px solid black;
+	}
+
 
 /* Evenement toevoegen tabel */
 
