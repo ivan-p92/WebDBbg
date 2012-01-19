@@ -100,7 +100,7 @@ div#content {
 /* text van de footer */
 div#namen_text {
     position: relative;
-    bottom: 8px;
+    bottom: 10px;
     text-align: center;
     width: 1017px;
 }
@@ -288,6 +288,18 @@ div#doelgroepen ul li {
 	div#doelgroepen ul li:hover {
 		text-decoration: underline;
 	}
+	
+	div#doelgroepen ul li:hover > span.red, div#doelgroepen ul li:hover > span.red_off {
+		border:	1px solid rgba(255, 0, 0, 0.7);
+	}
+	
+	div#doelgroepen ul li:hover > span.green, div#doelgroepen ul li:hover > span.green_off {
+		border:	1px solid rgba(0, 255, 0, 0.7);
+	}
+	
+	div#doelgroepen ul li:hover > span.blue, div#doelgroepen ul li:hover > span.blue_off{
+		border:	1px solid rgba(0, 0, 255, 0.7;
+	}
 
 	div#doelgroepen ul li span {
 		display: block;
@@ -312,6 +324,19 @@ span.blue {
 	border:	1px solid rgba(0, 0, 255, 0.5);
 	background: rgba(0, 0, 255, 0.5);
 }
+
+span.red_off {
+	background: rgba(255, 0, 0, 0.3);
+}
+
+span.green_off {
+	background: rgba(0, 255, 0, 0.3);
+}
+
+span.blue_off {
+	background: rgba(0, 0, 255, 0.3);
+}
+
 	
 
 /* LIJST VAN EVENEMENTEN*/
