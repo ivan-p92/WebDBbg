@@ -10,12 +10,8 @@
 	outline: none;
 }
 
-<<<<<<< HEAD
-h1{
-=======
 /* algemene h1 opmaak */
 h1 {
->>>>>>> a678c88a93baff726248bfe02930e37c992474ac
     color: #2A1011;
     font-family: papyrus;
     font-size: 24pt;
@@ -299,10 +295,6 @@ div#event_lijst_container {
     float: left;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a678c88a93baff726248bfe02930e37c992474ac
 /* breedte van de lijst zelf */
 ul.event_lijst {
     width: 50%;
