@@ -48,7 +48,7 @@
 	</table>
 </div>
 
-<form id="wijzigww" action="" method="get">
+<form id="wijzigww" action="" method="post">
 <table id="wijzigww_tabel">
 <tbody>
 	<tr>
@@ -62,7 +62,7 @@
 	</tr>
 	<tr>
 	<td>&nbsp;</td>
-`	<td id="wijzigww_buttons" class="submit_button">
+	<td id="wijzigww_buttons" class="submit_button">
 		<button type="submit" class="button" id="wwopslaan"><span class="right"><span class="inner">Wachtwoord opslaan</span></span></button><br />
 		<button type="reset" class="button" id="wwreset"><span class="right"><span class="inner">Velden wissen</span></span></button>
 	</td>
