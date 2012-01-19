@@ -1,11 +1,5 @@
 TO DO:
 
-
-- Lijst gebruikers: sorteren (naam/rechten/id), interne zoekfunctie
 - Blok weergave
-* Checkbox
-* Evenementenlijst opleuken
-- optioneel: dropdown list? ander wel: mooiere weergaveoptie knoppen
-- nadenken SQL queries voor ophalen evenementen (type, etc)
 - toevoegform opleuk (applefeel)
-- lijst van gebruikers: verschillende weergave checkboxes en intern zoeken
+- lijst van gebruikers: mooiere opmaak
