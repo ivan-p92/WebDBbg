@@ -2,9 +2,7 @@ TO DO:
 
 - Blok weergave
 - Checkbox
-* Evenementenlijst hover effect + opleuken
-- Font typen veranderen (calibri)
-- Elke pagina Titel
+* Evenementenlijst opleuken
 - boxje ingelogd maken
 - optioneel: dropdown list? ander wel: mooiere weergaveoptie knoppen
 - nadenken SQL queries voor ophalen evenementen (type, etc)
