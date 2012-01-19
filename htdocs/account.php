@@ -3,14 +3,8 @@
 <p> Op deze pagina vindt u informatie over uw account. <br />
     U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.</p>
 
-<table>
-<tbody>
-	<tr>
-	<td>Accountnaam (email)</td><td>Het betreffende email-adres</td>
-	</tr>
-	<td>Huidige permissies</td><td>Evenementen toevoegen/goedkeuren/admin</td>
-</tbody>
-</table>
+<p>Accountnaam (email): Het betreffende email-adres<br />
+   Huidige permissies: Evenementen toevoegen/goedkeuren/admin</p>
 
 <p>Deze evenementen zijn door u aangemaakt:</p>
 <div class="user_events">
@@ -57,16 +51,18 @@
 <table>
 <tbody>
 	<tr>
-	<td>Oud wachtwoord: </td><td><input type="password" id="oldpswd" name="mail" /></td>
+	<td>Oud wachtwoord: </td><td><input type="password" id="oldpswd" name="mail" required="" /></td>
 	</tr>
 	<tr>
-	<td>Nieuw wachtwoord: </td><td><input type="password" id="newpswd" name="pswd" /></td>
+	<td>Nieuw wachtwoord: </td><td><input type="password" id="newpswd" name="pswd" required="" /></td>
 	</tr>
 	<tr>
-	<td>Wachtwoord nogmaals: </td><td><input type="password" id="newpswd2" name="pswd2"></td>
+	<td>Wachtwoord nogmaals: </td><td><input type="password" id="newpswd2" name="pswd2" required="" /></td>
 	</tr>
 	<tr>
-	<td>&nbsp;</td><td><input type="submit" value="Wachtwoord opslaan" /><input type="reset" value="Velden wissen" /></td>
+	<td>&nbsp;</td><td class="submit_button"><button type="submit" class="button">
+		<span class="right"><span class="inner">Wachtwoord opslaan</span></span><br />
+		<button type="reset" class="button"><span class="right"><span class="inner">Velden wissen</span></span></td>
 	</tr>
 </tbody>
 </table>
