@@ -1,4 +1,3 @@
-<h1>Lijstweergave evenementen</h1>
 
 <!-- div#weeklijst container bevat de lijst van de evenementen 
      De hoofdstructuur ervan is een unordered list -->
