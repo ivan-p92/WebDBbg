@@ -254,6 +254,19 @@ div.form form table {
 	margin-left: 18px;
 }
 
+table#event_toevoegen {
+    width: 50%;
+}
+td#eerstecel {
+    width: 90px;
+}
+table#event_toevoegen input#titel, table#event_toevoegen input#locatie,table#event_toevoegen textarea {
+    width: 100%;
+}
+table#event_toevoegen textarea {
+    height: 90px;
+}
+
 /* Form doelgroepen (doelgroepen selectie) */	
 
 div#doelgroepen  ul {
