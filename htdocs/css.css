@@ -54,7 +54,7 @@ h1, h2, h3 {
 }
 
 /* opmaak van de checkboxes bij bv de doelgroepen selectie */
-input[type=checkbox] {
+input[type=checkbox], table.formtable input[type=checkbox] {
 	display: inline;
 	width: 25px;
 	vertical-align: sub;
