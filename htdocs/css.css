@@ -580,6 +580,7 @@ div#weergave {
 		height: 20px;
 		padding: 10px 20px;
 		text-decoration: none;
+		background: #eee;
 	}
 	
 	div#weergave a.active {
