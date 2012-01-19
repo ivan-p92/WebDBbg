@@ -480,6 +480,11 @@ td#sorteer, td#sort_name {
 }
 table#sort_table {
     width: 100%;
+	border: 1px solid #2a1011;
+    background: #967782;
+    border-radius: 5px 5px 5px 5px;
+    ~moz-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
 }
 td#recht_checkbox form ul {
     list-style: none;
