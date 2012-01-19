@@ -1,5 +1,7 @@
 <div class="admin">
-<h1>Pas de rechten van %naam% aan</h1>
+<h1>Admin pagina van %naam%</h1>
+<p>U kunt hier zien welke evenementen door %naam% aangemaakt/goedgekeurd/afgekeurd zijn.<br />
+   Ook kunt u diens rechten hier aanpassen.</p>
 <p>De volgende evenementen zijn door %naam% aangemaakt:</p>
 
 <div class="user_events">

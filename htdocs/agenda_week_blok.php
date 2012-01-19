@@ -1,4 +1,6 @@
 
+<h1>Weekweergave evenementen</h1>
+
 <!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
 <form id="doelgroepen" action="">
 	<fieldset>
