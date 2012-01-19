@@ -11,7 +11,7 @@
 <body>
 <div id="maincontainer">
 	<div id="header">
-		<div id="inlogbox">
+		<!--<div id="inlogbox">
 			<form action="" method="post">
 				<input id="naam" type="text" placeholder="Email adres" name="naam" />
 				<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
@@ -19,8 +19,9 @@
 			</form>
 			<span id="registratielink"><a href="index.php?page=registratie" title="registreren">Registreren </a></span>
 		</div>
+		-->
 			
-		<!--
+		
 		<div class="ingelogd">
 			<fieldset>
 				<legend>Ingelogd als</legend>
@@ -28,7 +29,7 @@
 				<button>Uitloggen</button>
 			</fieldset>
 		</div>
-		-->
+		
 	</div>
 	<div id="menu">
 		<ul>
