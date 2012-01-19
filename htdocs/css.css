@@ -2,12 +2,21 @@
 
 /* algemene lettertype instellingen */
 * {
-	font-family: arial, verdana, serif;
-	font-size: 12px;
+	font-family: calibri, arial, verdana, serif;
+	font-size: 11pt;
 }
 
 *:active {
 	outline: none;
+}
+
+h1{
+    color: #2A1011;
+    font-family: papyrus;
+    font-size: 24pt;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 /* papyrus font wordt ingebed voor zekerheid */
@@ -285,15 +294,6 @@ div#event_lijst_container {
     float: left;
 }
 
-/* header 'Aankomende evenementen*/
-h1#event_lijst_titel {
-    color: #2A1011;
-    font-family: papyrus;
-    font-size: 24pt;
-    font-weight: normal;
-    margin-bottom: 10px;
-    padding-top: 10px;
-}
 
 /* breedte van de lijst zelf */
 ul.event_lijst {
@@ -307,6 +307,10 @@ li.event {
     margin-bottom: 15px;
     width: auto;
     background: url(afbeeldingen/kalender_icon.png) no-repeat scroll 0 0 white;
+}
+
+li.event:hover {
+	background: url("afbeeldingen/kalender_icon.png") no-repeat scroll 0 0 #2A1011;
 }
 
 .event_lijst, .eendags_event {
@@ -326,6 +330,7 @@ li.event {
     color: white;
     font-weight: bold;
     height: 15px;
+	margin-top: -2px;
 }
 
 .event_details {
