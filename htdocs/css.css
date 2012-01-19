@@ -293,14 +293,13 @@ div#doelgroepen ul li {
 		background:	rgba(255, 0, 0, 0.7);
 	}
 	
-	div#doelgroepen ul li:hover > span.green, div#doelgroepen ul li:hover > span.green_off {
-		background:	rgba(0, 255, 0, 0.7);
+	div#doelgroepen ul li:hover > span.blue, div#doelgroepen ul li:hover > span.blue_off {
+		background:	rgba(0, 0, 255, 0.7);
 	}
 	
-	div#doelgroepen ul li:hover > span.blue, div#doelgroepen ul li:hover > span.blue_off{
-		
-		background:	rgba(0, 0, 255, 0.7;
-	}
+	div#doelgroepen ul li:hover > span.green, div#doelgroepen ul li:hover > span.green_off {
+		background:	rgba(0, 255, 0, 0.7);
+	}	
 
 	div#doelgroepen ul li span {
 		display: block;
