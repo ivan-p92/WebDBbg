@@ -40,7 +40,7 @@ label {
 
 input, textarea {
     display:  block;
-    margin:  auto;
+    margin: 0;
     width: 200px;
 }
 
