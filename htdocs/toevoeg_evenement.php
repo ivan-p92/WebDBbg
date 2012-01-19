@@ -1,4 +1,4 @@
-<h1>Evenemtent toevoegen</h1>
+<h1>Evenement toevoegen</h1>
 <p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
 <div class="form"><form id="input" action="" method="get">
 <table>
