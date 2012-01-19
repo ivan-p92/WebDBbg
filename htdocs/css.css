@@ -270,15 +270,20 @@ div#doelgroepen ul li {
 	float: left;
 	margin: 5px;
 	height: 16px;
+	cursor: pointer;
 }
+	div#doelgroepen ul li:hover {
+		text-decoration: underline;
+	}
 
-div#doelgroepen ul li span {
-	display: block;
-	height: 16px;
-	width: 16px;	
-	float: left;
-	margin-right: 5px;	
-}
+	div#doelgroepen ul li span {
+		display: block;
+		height: 16px;
+		width: 16px;	
+		float: left;
+		margin-right: 5px;
+		cursor: pointer;
+	}
 
 span.red {
 	border:	1px solid rgba(255, 0, 0, 0.5);
