@@ -184,7 +184,7 @@ div#menu ul {
 	}
 	
 /* Inlog box */
-div#inlogbox, div#ingelogd {
+div#inlogbox, div.ingelogd {
 	float: right;
 	width: 365px;
 	height: 171px;
@@ -197,7 +197,7 @@ div#inlogbox, div#ingelogd {
 		top: 28px;
 	}
 	
-	div#ingelogd{
+	div#ingelogd_info{
 		position: relative;
 		left: 102px;
 		top: 28px;
