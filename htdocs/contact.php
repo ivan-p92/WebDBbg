@@ -2,7 +2,7 @@
 <p>Heeft u vragen of opmerkingen, dan horen wij dat graag. <br />
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
 
-<form action="">
+<form action="contact_dank">
 	<table class="formtable" id="contact"><tbody>
 	<tr>
 		<td id="eerstecel">Naam</td>
