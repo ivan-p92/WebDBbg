@@ -269,6 +269,29 @@ div#doelgroepen ul li {
 	padding: 5px;
 	float: left;
 }
+
+div#doelgroepen ul li span {
+	display: block;
+	height: 12px;
+	width: 12px;	
+	float: left;
+	margin-right: 5px;	
+}
+
+span.red {
+	border:	1px solid rgba(255, 0, 0, 0.5);
+	background: rgba(255, 0, 0, 0.5);
+}
+
+span.green {
+	border:	1px solid rgba(0, 255, 0, 0.5);
+	background: rgba(0, 255, 0, 0.5);
+}
+
+span.blue {
+	border:	1px solid rgba(0, 0, 255, 0.5);
+	background: rgba(0, 0, 255, 0.5);
+}
 	
 
 /* LIJST VAN EVENEMENTEN*/
