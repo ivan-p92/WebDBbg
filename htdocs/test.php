@@ -34,4 +34,5 @@ catch (PDOException $e)
 	echo 'Connection failed: ' . $e->getMessage();
 }
 
-var_dump($db->query("SELECT NOW();"));
+$res = $db->query("SELECT NOW();")
+var_dump($res);
