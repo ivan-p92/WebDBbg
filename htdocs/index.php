@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+include('functions.php');
 
 error_reporting(E_ALL); // E_ALL (alle foutmeldingen) in ontwikkelomgeving, 0 (geen) in  de live omgeving
 ini_set('display_errors', true); // true in ontwikkelomgeving, false in  de live omgeving
