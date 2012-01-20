@@ -58,7 +58,7 @@
 					echo '</p>';
 					echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
 					echo '</div>';
-					echo '</li';
+					echo '</li>';
 				}
 				else
 				{
@@ -76,7 +76,7 @@
                                         echo '</p>';
                                         echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
                                         echo '</div>';
-                                        echo '</li';
+					echo '</li>';
 	
 				}
 			}
