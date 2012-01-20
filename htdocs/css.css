@@ -20,6 +20,10 @@ h1 {
     padding-top: 10px;
 }
 
+.error {
+	color: red;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
@@ -41,11 +45,6 @@ label {
 input, textarea {
     margin: 0;
     width: 200px;
-<<<<<<< HEAD
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	border: 1px solid #2a1011;
-	padding: 5px;
 }
 
 /* plaatjes die ook als link dienen mogen geen border meekrijgen */
