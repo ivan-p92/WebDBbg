@@ -46,7 +46,7 @@
 <option value="30">30</option>
 <option value="31">31</option>
 </select>
-<select name="maand">
+<select name="maand1">
 <option value="januari">januari</option>
 <option value="februari">februari</option>
 <option value="maart">maart</option>
@@ -60,7 +60,7 @@
 <option value="november">november</option>
 <option value="december">december</option>
 </select>
-<select name="jaar">
+<select name="jaar1">
 <option value="2012">2012</option>
 <option value="2013">2013</option>
 <option value="2014">2014</option>
@@ -204,7 +204,7 @@
 <option value="30">30</option>
 <option value="31">31</option>
 </select>
-<select name="maand">
+<select name="maand2">
 <option value="januari">januari</option>
 <option value="februari">februari</option>
 <option value="maart">maart</option>
@@ -218,7 +218,7 @@
 <option value="november">november</option>
 <option value="december">december</option>
 </select>
-<select name="jaar">
+<select name="jaar2">
 <option value="2012">2012</option>
 <option value="2013">2013</option>
 <option value="2014">2014</option>
@@ -337,16 +337,16 @@
 	</tr>
 	<tr>
 		<td rowspan="4">Categorie</td>
-		<td><input type="checkbox" value="klant" />Klant</td>
+		<td><input type="checkbox" value="klant" name="categorie" />Klant</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="keuken" />Keuken</td>
+		<td><input type="checkbox" value="keuken" name="categorie" />Keuken</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="afwas" />Afwassers</td>
+		<td><input type="checkbox" value="afwas" name="categorie" />Afwassers</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="bar" />Barpersoneel</td>
+		<td><input type="checkbox" value="bar" name="categorie" />Barpersoneel</td>
 	</tr>
 	<tr>
 		<td>&nbsp</td>
