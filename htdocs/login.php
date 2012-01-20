@@ -15,11 +15,10 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 }
 
 $db = Functions::getDB();
-var_dump($db);
-die();
 $stmt = $db->prepare("SELECT id FROM users WHERE email = ? AND password = ?;");
 $stmt->bind_param('ss', $_POST['naam'], Functions::hashPass($_POST['pwd']));
 $stmt->execute();
+var_dump($stmt);
 
 if($stmt->num_rows == 1)
 {
