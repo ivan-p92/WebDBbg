@@ -42,8 +42,18 @@
 			{	
 			while($row = $stmt->fetch())
 			{
-				if($row['diff'] == 0)
+				if(strlen($row['title']) > 45)
 				{
+					$row['title']= substr($row['title'], 0, 45).'...';
+				}
+
+				if(strlen($row['location']) > 30)
+				{
+					$row['location'] = substr($row['location'], 0, 30).'...';
+				}
+
+				if($row['diff'] == 0)
+				{					
 					echo '<li class="event">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
