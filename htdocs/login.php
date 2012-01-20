@@ -28,7 +28,6 @@ if($stmt->rowCount() == 1)
 }
 else
 {
-	$stmt->close();
 	header('Location: index.php?notice=invalid_login');
 }
 
