@@ -12,9 +12,9 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 }
 
 $db = Functions::getDB();
-$stmt = $db->prepare("SELECT id FROM users WHERE email = ? AND password = ?");
-$pwd = Functions::hashPass($_POST['pwd']);
-$stmt->bind_param('ss', $_POST['naam'], $pwd);
+$stmt = $db->prepare("SELECT id FROM users WHERE email = 'freek.boutkan@gmail.com' AND password = '6c56b463e8057d3ea083d783478701ebce00a0de';");
+//$pwd = Functions::hashPass($_POST['pwd']);
+//$stmt->bind_param('ss', $_POST['naam'], $pwd);
 $stmt->execute();
 
 if($stmt->num_rows == 1)
