@@ -24,6 +24,10 @@ h1 {
 	color: red;
 }
 
+.small {
+	font-size: 11px;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
