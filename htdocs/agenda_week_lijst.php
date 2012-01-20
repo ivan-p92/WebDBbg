@@ -8,7 +8,7 @@
 		
 		<?php
 	
-	$arr = array(bla, JAN, FEB, MAA, APR, MEI, JUN, JUL, AUG, SEP, OKT, NOV, DEC);
+	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
     $mysqli = new mysqli('websec.science.uva.nl', 'webdb1235', 'sadru2ew', 'webdb1235');
     if(mysqli_connect_errno())
