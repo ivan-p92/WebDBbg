@@ -23,10 +23,16 @@ class Functions
 	{
 		if(self::$db === null)
 		{
-			self::$db = new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');
-			if(self::$db->connect_error)
+			$dsn = 'mysql:dbname=webdb1235;host=localhost';
+			$user = 'webdb1235';
+			$password = 'sadru2ew';
+
+			try
 			{
-				self::$db = null;
+				self::$db = new PDO($dsn, $user, $password);
+			}
+			catch (PDOException $e)
+			{
 				header('Location: index.php?notice=fatal_error');
 			}
 		}
