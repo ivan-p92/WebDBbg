@@ -10,26 +10,21 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 	header('Location: index.php?notice=incomplete_form');
 	die();
 }
-$sql = "SELECT id FROM users WHERE email = 'freek.boutkan@gmail.com' AND password = '6c56b463e8057d3ea083d783478701ebce00a0de';";
+$sql = "SELECT id FROM users WHERE email = ':email' AND password = ':pass';";
 $db = Functions::getDB();
 $stmt = $db->prepare($sql);
 
-//$stmt = $db->prepare("SELECT id FROM users WHERE email = 'freek.boutkan@gmail.com' AND password = '6c56b463e8057d3ea083d783478701ebce00a0de';");
-//$pwd = Functions::hashPass($_POST['pwd']);
-//$stmt->bind_param('ss', $_POST['naam'], $pwd);
+$stmt->bindParam(':email', $_POST['naam']);
+$stmt->bindParam(':pass', Functions::hashPass($_POST['pwd']));
 $stmt->execute();
 
-var_dump($stmt);
-die();
 
-if($stmt->num_rows == 1)
+if($stmt->rowCount() == 1)
 {
-	$stmt->bind_result($id);
-	$stmt->fetch();
+	$row = $stmt->fetch();
 	
-	$_SESSION['userid'] = $id;
-	
-	$stmt->close();
+	$_SESSION['userid'] = $row['id'];
+
 }
 else
 {
