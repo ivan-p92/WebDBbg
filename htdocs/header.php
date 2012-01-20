@@ -24,7 +24,7 @@
 					</form>
 					<span id="registratielink">
 						<a href="index.php?page=registratie" title="registreren">Registreren </a>
-						'.(($_GET['notice'] == 'incomplete_form') ? '<span class="error">Vul alle velden in!</span>' : '').
+						'.(($_GET['notice'] == 'incomplete_form') ? '<span class="error">Vul alle velden in!</span>' : '').'
 					</span>
 				</div>';
 		}
