@@ -21,15 +21,15 @@ class Functions
 	
 	public static function getDB()
 	{
-		if(self::$db === null)
+		if(self::db === null)
 		{
-			self::$db = new mysqli('websec.science.uva.nl', 'webdb1235', 'sadru2ew', 'webdb1235');
+			self::db = new mysqli('websec.science.uva.nl', 'webdb1235', 'sadru2ew', 'webdb1235');
 			if(self::db->connect_error)
 			{
-				self::$db = null;
+				self::db = null;
 				header('Location: index.php');
 			}
 		}
-		return self::$db;
+		return self::db;
 	}
 }
