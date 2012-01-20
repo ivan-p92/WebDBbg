@@ -11,11 +11,7 @@
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
     $mysqli = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
-    if(mysqli_connect_errno())
-    {
-        trigger_error('Fout bij verbinding: '.$mysqli->error);
-    }
-
+    
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
 			DAYOFMONTH(start_date) AS begin_dag,
@@ -29,14 +25,14 @@
 
     if($stmt = $mysqli->prepare($sql))
     {
-		if(!$stmt->execute())
+		if(!$stmt->exec())
 		{
 			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
 		}
 		else
 		{
-			var_dump($stmt);
-			$stmt->bind_result($titel, $id, $locatie, $jaar, $begin_dag, $begin_maand, $eind_dag, $eind_maand, $begin_tijd, $eind_tijd, $diff);
+			//var_dump($stmt);
+			//$stmt->bind_column($titel, $id, $locatie, $jaar, $begin_dag, $begin_maand, $eind_dag, $eind_maand, $begin_tijd, $eind_tijd, $diff);
 			
 			if($stmt->num_rows == 0)
 			{
@@ -44,43 +40,44 @@
 			}
 			else
 			{	
-			while($stmt->fetch())
+			while($row = $stmt->fetch())
 			{
 				if(diff == 0)
 				{
 					echo '<li class="event">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
-					echo '<span class="jaar">'.$jaar.'</span>';
-					echo '<span class="dd-mm">'.$begin_dag.'<br />'.$arr[$begin_maand].'</span>';
+					echo '<span class="jaar">'.$row['jaar'].'</span>';
+					echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
 					echo '</span>';
 					echo '</p>';
 					
 					echo '<div class="event_details">';
 					echo '<p class="event_titel">';
-					echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$id.'&amp;semipage=agenda_week">'.$titel.'</a>';
+					echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.$row['titel'].'</a>';
 					echo '</p>';
-					echo '<p class="begintijd">Begin: '.$begin_tijd.'u. Eind: '.$eind_tijd.'u. @'.$locatie.'</p>';
+					echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['locatie'].'</p>';
 					echo '</div>';
 					echo '</li';
 				}
 				else
 				{
 					echo '<li class="event">';
-					echo '<p class="eendags_event">';
-					echo '<span class="begin_datum">';
-					echo '<span class="jaar">'.$jaar.'</span>';
-					echo '<span class="dd-mm">'.$begin_dag.' '.$arr[$begin_maand].'<br />'.$eind_dag.' '.$arr[$eind_maand].'</span>';
-					echo '</span>';
-					echo '</p>';
-					
-					echo '<div class="event_details">';
-					echo '<p class="event_titel">';
-					echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$id.'&amp;semipage=agenda_week">'.$titel.'</a>';
-					echo '</p>';
-					echo '<p class="begintijd">Begin: '.$begin_tijd.'u. Eind: '.$eind_tijd.'u. @'.$locatie.'</p>';
-					echo '</div>';
-					echo '</li';
+                                        echo '<p class="eendags_event">';
+                                        echo '<span class="begin_datum">';
+                                        echo '<span class="jaar">'.$row['jaar'].'</span>';
+                                        echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
+                                        echo '</span>';
+                                        echo '</p>';
+
+                                        echo '<div class="event_details">';
+                                        echo '<p class="event_titel">';
+                                        echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.$row['titel'].'</a>';
+                                        echo '</p>';
+                                        echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['locatie'].'</p>';
+                                        echo '</div>';
+                                        echo '</li';
+	
 				}
 			}
 		}
