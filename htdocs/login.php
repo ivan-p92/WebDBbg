@@ -18,7 +18,7 @@ $stmt = $db->prepare($sql);
 
 
 $stmt->bindParam(':email', $_POST['naam']);
-$stmt->bindParam(':pass', );
+$stmt->bindParam(':pass', $pwd);
 $stmt->execute();
 
 
