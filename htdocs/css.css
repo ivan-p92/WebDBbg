@@ -330,7 +330,7 @@ div#doelgroepen ul li {
 		margin-right: 5px;
 		cursor: pointer;
 	}
-
+/* kleuren voor categorien voor afspraken */
 span.red {
 	border:	1px solid rgba(255, 0, 0, 0.5);
 	background: rgba(255, 0, 0, 0.5);
@@ -669,3 +669,39 @@ button#wwopslaan {
 button#wwreset {
     left: 27px;
 }
+
+/* Opmaak userlist */
+
+ul#userlistlist {
+     float: left;
+     list-style: none outside none;
+     margin: 0pt;
+     padding: 0pt;
+     width: 800px;
+}
+
+	ul#userlistlist li {
+		 -moz-border-radius: 8px 8px 8px 8px;
+		 border-radus: 8px;
+		 background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.8);
+		 border: 1px solid rgba(0, 0, 0, 0.2);
+		 cursor: pointer;
+		 float: left;
+		 margin: 5px;
+		 padding: 7px;
+		 width: 250px;
+	}
+
+	ul#userlistlist li a {
+		 color: inherit;
+		 float: left;
+		 text-decoration: none;
+	}
+
+	ul#userlistlist li:hover {
+		 background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.4);
+	}
+
+	ul#userlistlist li:hover > a {
+		 font-weight: bold;
+	}
