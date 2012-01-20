@@ -25,7 +25,7 @@
 
     if($stmt = $mysqli->prepare($sql))
     {
-		if(!$stmt->exec())
+		if(!$stmt->execute())
 		{
 			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
 		}
