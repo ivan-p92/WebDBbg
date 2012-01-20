@@ -22,7 +22,7 @@ $stmt = $db->prepare($sql);
 
 
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-$stmt->bindParam(':pass', $pwd, , PDO::PARAM_STR, 40);
+$stmt->bindParam(':pass', $pwd, PDO::PARAM_STR, 40);
 $stmt->execute();
 
 
