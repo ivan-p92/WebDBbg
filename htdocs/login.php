@@ -17,7 +17,8 @@ $stmt = $db->prepare($sql);
 $stmt->bindParam(':email', $_POST['naam']);
 $stmt->bindParam(':pass', Functions::hashPass($_POST['pwd']));
 $stmt->execute();
-
+var_dump($stmt);
+die();
 
 if($stmt->rowCount() == 1)
 {
