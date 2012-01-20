@@ -11,7 +11,7 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 	die();
 }
 
-$sql = "SELECT id FROM users WHERE email = 'freek.boutkan@gmail.com' AND password = '6c56b463e8057d3ea083d783478701ebce00a0de';";
+$sql = "SELECT id FROM users WHERE email = ':email' AND password = ':pass';";
 $pwd = Functions::hashPass($_POST['pwd']);
 $email = $_POST['naam'];
 
@@ -21,8 +21,8 @@ $stmt = $db->prepare($sql);
 
 
 
-//$stmt->bindValue(':email', $email, PDO::PARAM_STR);
-//$stmt->bindValue(':pass', $pwd, PDO::PARAM_STR);
+$stmt->bindValue(':email', $email, PDO::PARAM_STR);
+$stmt->bindValue(':pass', $pwd, PDO::PARAM_STR);
 
 $stmt->execute();
 
