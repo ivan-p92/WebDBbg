@@ -14,7 +14,7 @@
 	
 		<?php
 		
-		if(ingelogd())
+		if(!ingelogd())
 		{
 			echo '<div id="inlogbox">
 					<form action="" method="post">
