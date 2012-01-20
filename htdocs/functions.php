@@ -23,11 +23,11 @@ class Functions
 	{
 		if(self::$db === null)
 		{
-			self::$db = new mysqli('websec.science.uva.nl', 'webdb1235', 'sadru2ew', 'webdb1235');
+			self::$db = new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');
 			if(self::$db->connect_error)
 			{
 				self::$db = null;
-				header('Location: index.php');
+				header('Location: index.php?notice=fatal_error');
 			}
 		}
 		return self::$db;
