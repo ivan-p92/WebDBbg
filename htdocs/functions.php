@@ -30,7 +30,7 @@ class Functions
 			try
 			{
 				self::$db = new PDO($dsn, $user, $password);
-				$db->query("SET NAMES 'utf8';");
+				self::$db->query("SET NAMES 'utf8';");
 			}
 			catch (PDOException $e)
 			{
