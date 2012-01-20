@@ -10,15 +10,19 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 	header('Location: index.php?notice=incomplete_form');
 	die();
 }
+
 $sql = "SELECT id FROM users WHERE email = ':email' AND password = ':pass';";
 $pwd = Functions::hashPass($_POST['pwd']);
+$email = $_POST['naam']
+
+
 $db = Functions::getDB();
 $stmt = $db->prepare($sql);
 
 
 
-$stmt->bindParam(':email', $_POST['naam']);
-$stmt->bindParam(':pass', $pwd);
+$stmt->bindParam(':email', $email, PDO::PARAM_STR);
+$stmt->bindParam(':pass', $pwd, , PDO::PARAM_STR, 40);
 $stmt->execute();
 
 
