@@ -10,7 +10,7 @@
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
-    $mysqli = new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');
+    $mysqli = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
     if(mysqli_connect_errno())
     {
         trigger_error('Fout bij verbinding: '.$mysqli->error);
