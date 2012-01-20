@@ -29,6 +29,6 @@ if($stmt->num_rows == 1)
 else
 {
 	$stmt->close();
-	header('Location: index.php?notice=invalid_login');
+	header('Location: index.php?notice='.$stmt->num_rows.'invalid_login');
 }
 
