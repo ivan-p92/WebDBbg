@@ -19,7 +19,7 @@ $stmt->execute();
 
 if($stmt->num_rows === 1)
 {
-	$stmt->bind_result($id)
+	$stmt->bind_result($id);
 	$stmt->fetch();
 	
 	$_SESSION['userid'] = $id;
