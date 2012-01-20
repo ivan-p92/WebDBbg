@@ -13,7 +13,7 @@ if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || e
 
 $sql = "SELECT id FROM users WHERE email = ':email' AND password = ':pass';";
 $pwd = Functions::hashPass($_POST['pwd']);
-$email = $_POST['naam']
+$email = $_POST['naam'];
 
 
 $db = Functions::getDB();
