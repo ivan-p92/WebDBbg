@@ -28,7 +28,7 @@ if($stmt->num_rows === 1)
 }
 else
 {
-	%stmt->close();
+	$stmt->close();
 	header('Location: index.php?notice=invalid_login');
 }
 
