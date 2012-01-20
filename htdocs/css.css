@@ -45,6 +45,9 @@ label {
 input, textarea {
     margin: 0;
     width: 200px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid 2a1011;	
 }
 
 /* plaatjes die ook als link dienen mogen geen border meekrijgen */
