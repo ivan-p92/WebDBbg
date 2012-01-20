@@ -26,12 +26,11 @@ if($page == 'inloggen')
 	include($page.$ext);
 }
 
-if($page != 'inloggen')
-{
-	include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
-}
 
-if(file_exists($page.$ext))   // als het gevraagde bestand bestaat, laat dit zien
+include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
+
+
+if(file_exists($page.$ext) && $page != 'inloggen')   // als het gevraagde bestand bestaat, laat dit zien
 {
 	include($page.$ext);	// naam en extensie aan elkaar plakken
 }
