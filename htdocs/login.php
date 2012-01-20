@@ -6,6 +6,12 @@ if($_SERVER['REQUEST'] != 'POST')
 	die();
 }
 
+if(!isset($_POST['naam']) || !isset($_POST['pwd']) || empty($_POST['naam']) || empty($_POST['pwd']))
+{
+	header('Location: index.php?notice=incomplete_form');
+	die();
+}
+
 $db = Functions::getDB();
 $stmt = $db->prepare("SELECT id FROM users WHERE email = ? AND password = ?;");
 $stmt->bind_param('ss', $_POST['naam'], Functions::hashPass($_POST['pwd']));
