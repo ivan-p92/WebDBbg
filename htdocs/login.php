@@ -19,6 +19,9 @@ $stmt = $db->prepare($sql);
 //$stmt->bind_param('ss', $_POST['naam'], $pwd);
 $stmt->execute();
 
+var_dump($stmt);
+die();
+
 if($stmt->num_rows == 1)
 {
 	$stmt->bind_result($id);
