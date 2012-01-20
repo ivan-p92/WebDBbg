@@ -45,9 +45,7 @@ input, textarea {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	border: 1px solid #2a1011;
-	padding-left: 7px;
-=======
->>>>>>> a8d2ef9b2a67b544403ad148385b2ac0cd4298d6
+	padding: 5px;
 }
 
 /* plaatjes die ook als link dienen mogen geen border meekrijgen */
