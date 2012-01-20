@@ -33,7 +33,7 @@ if($stmt->rowCount() == 1)
 }
 else
 {
-	echo $stmt->rowCount(), $pwd, $_POST['naam'];
+	var_dump($stmt);
 	die();
 	header('Location: index.php?notice=invalid_login');
 }
