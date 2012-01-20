@@ -34,7 +34,7 @@
 			//var_dump($stmt);
 			//$stmt->bind_column($titel, $id, $locatie, $jaar, $begin_dag, $begin_maand, $eind_dag, $eind_maand, $begin_tijd, $eind_tijd, $diff);
 			
-			if($stmt->num_rows == 0)
+			if($stmt->rowCount() == 0)
 			{
 				echo '<p>Er zijn geen aankomende evenementen.</p>';
 			}
