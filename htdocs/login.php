@@ -28,7 +28,7 @@ if($stmt->rowCount() == 1)
 	$_SESSION['userid'] = $row['id'];
 
 	header("Location index.php");
-	
+}
 else
 {
 	header('Location: index.php?notice=invalid_login');
