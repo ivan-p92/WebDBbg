@@ -43,7 +43,7 @@ input, textarea {
     width: 200px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	border: medium none;
+	border: 1px solid #2a1011;
 	padding: 5px;
 }
 
