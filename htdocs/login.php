@@ -31,6 +31,7 @@ if($stmt->rowCount() == 1)
 {
 	$row = $stmt->fetch();	
 	$_SESSION['userid'] = $row['id'];
+	header("Location: index.php?page=".PAGE);
 }
 else
 {
