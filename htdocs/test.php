@@ -1,15 +1,5 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-	print_r($_POST);
-}
-?>
 
+include('functions.php');
 
-<form action="" method="post">
-		<input type="checkbox" name="bla[]" value="klant" />Klant
-<input type="checkbox" name="bla[]" value="keuken" />Keuken
-	<input type="checkbox" name="bla[]" value="afwas" />Afwassers
-	<input type="checkbox" name="bla[]" value="bar" />Barpersoneel
-	<input type="submit" />
-	</form>
+printf("%s %s\n%s %s\n%s %s\n%s %s\n", 'freek', Functions::hashPass('freek'), 'ivan', Functions::hashPass('ivan'), 'vincent', Functions::hashPass('vincent'), 'david', Functions::hashPass('david'));
