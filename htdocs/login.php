@@ -1,5 +1,5 @@
 <?php
-
+echo 'lululukjfdsjaf;jsadl;fjsa;jf;saj';
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
 	header('Location: index.php?i=a');
@@ -31,7 +31,7 @@ if($stmt->num_rows == 1)
 }
 else
 {
-	
-	header('Location: index.php?notice='.$stmt->num_rows.'invalid_login');$stmt->close();
+	$stmt->close();
+	header('Location: index.php?notice=invalid_login');
 }
 
