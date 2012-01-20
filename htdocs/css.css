@@ -43,10 +43,10 @@ label {
 }
 
 input, textarea {
-    border: 1px solid 2a1011;
+    border: 1px solid #2A1011;
 	margin: 0px;
-    width: 200px;
 	border-radius: 5px;
+    width: 200px;
 	-moz-border-radius: 5px;	
 	padding: 5px;
 }
