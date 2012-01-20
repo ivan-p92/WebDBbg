@@ -17,7 +17,7 @@ $stmt = $db->prepare("SELECT id FROM users WHERE email = ? AND password = ?;");
 $stmt->bind_param('ss', $_POST['naam'], Functions::hashPass($_POST['pwd']));
 $stmt->execute();
 
-var_dump($_POST['naam'], Functions::hashPass($_POST['pwd']));
+echo $_POST['naam'], Functions::hashPass($_POST['pwd']);
 
 if($stmt->num_rows == 1)
 {
