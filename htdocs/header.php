@@ -24,7 +24,7 @@
 		
 		<div class="ingelogd">
 			<div id="ingelogd_info">
-				<p>Ingelogd als:<a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
+				<p>Ingelogd als: <a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
 				<p><a href="index.php?page=goodbye">Uitloggen</a></p>
 			</div>
 		</div>
