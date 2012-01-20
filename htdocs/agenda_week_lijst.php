@@ -35,6 +35,7 @@
 		}
 		else
 		{
+			var_dump($stmt);
 			$stmt->bind_result($titel, $id, $locatie, $jaar, $begin_dag, $begin_maand, $eind_dag, $eind_maand, $begin_tijd, $eind_tijd, $diff);
 			
 			if($stmt->num_rows == 0)
