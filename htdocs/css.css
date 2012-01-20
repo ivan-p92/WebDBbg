@@ -687,8 +687,8 @@ ul#userlistlist {
 		 border: 1px solid rgba(0, 0, 0, 0.2);
 		 cursor: pointer;
 		 float: left;
-		 margin: 5px;
-		 padding: 7px;
+		 margin: 5px 10px 5px 0px;
+		 padding: 5px;
 		 width: 250px;
 	}
 
