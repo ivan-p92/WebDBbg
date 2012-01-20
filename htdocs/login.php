@@ -26,7 +26,6 @@ $stmt->bindValue(':pass', $pwd, PDO::PARAM_STR);
 
 $stmt->execute();
 
-
 if($stmt->rowCount() == 1)
 {
 	$row = $stmt->fetch();	
@@ -35,8 +34,6 @@ if($stmt->rowCount() == 1)
 }
 else
 {
-	var_dump($stmt);
-	die();
 	header('Location: index.php?notice=invalid_login');
 }
 
