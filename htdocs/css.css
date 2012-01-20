@@ -41,10 +41,6 @@ label {
 input, textarea {
     margin: 0;
     width: 200px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	border: 1px solid #2a1011;
-	padding: 5px;
 }
 
 /* plaatjes die ook als link dienen mogen geen border meekrijgen */
@@ -214,6 +210,7 @@ div#inlogbox, div.ingelogd {
 		width: 230px;
 		border: none;
 		background: url("afbeeldingen/input_background.jpg") no-repeat;
+		padding: 0px;
 		padding-left: 7px;
 		color: #291010;
 	}
