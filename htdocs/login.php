@@ -24,10 +24,12 @@ $stmt->execute();
 
 if($stmt->rowCount() == 1)
 {
-	$row = $stmt->fetch();	
+	$row = $stmt->fetch();
 	$_SESSION['userid'] = $row['id'];
-
-	header("Location index.php");
+	
+	
+	header("Location: index.php?p=agenda_week");
+	
 }
 else
 {
