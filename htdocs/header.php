@@ -15,9 +15,9 @@
 		<?php
 		
 		if(!ingelogd())
-		{
+		{			
 			echo '<div id="inlogbox">
-					<form action="" method="post">
+					<form action="index.php?page=login" method="post">
 						<input id="naam" type="text" placeholder="Email adres" name="naam" />
 						<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
 						<input id="inlogbutton" type="submit" value="" title="inloggen" />				

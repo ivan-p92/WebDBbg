@@ -19,10 +19,17 @@ else	// anders (geen geldige page-parameter in de url)
 {
 	$page = 'agenda_week';	//laad de homepage
 }
-
 define('PAGE', $page);
 
-include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
+if($page == 'inloggen')
+{
+	include($page.$ext);
+}
+
+if($page != 'inloggen')
+{
+	include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
+}
 
 if(file_exists($page.$ext))   // als het gevraagde bestand bestaat, laat dit zien
 {
