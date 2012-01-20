@@ -10,7 +10,7 @@
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
-    $mysqli = new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');
+    $mysqli = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
     if(mysqli_connect_errno())
     {
         trigger_error('Fout bij verbinding: '.$mysqli->error);
@@ -25,7 +25,7 @@
 			TIME_FORMAT(TIME(start_date), '%H:%i') AS begin_tijd,
 			TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 			DATEDIFF(end_date, start_date) AS diff
-			FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC LIMIT  OFFSET 0;";
+			FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC LIMIT 20 OFFSET 0;";
 
     if($stmt = $mysqli->prepare($sql))
     {
