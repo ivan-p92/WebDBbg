@@ -1,7 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
-	header('Location: index.php?i=a');
+	header('Location: index.php');
 	die();
 }
 
@@ -26,7 +26,14 @@ if($stmt->rowCount() == 1)
 {
 	$row = $stmt->fetch();	
 	$_SESSION['userid'] = $row['id'];
-	header("Location: index.php?page=".PAGE);
+	if(PAGE != 'login')
+	{
+		header("Location: index.php?page=".PAGE);
+	}
+	else
+	{
+		header("Location index.php");
+	}
 }
 else
 {
