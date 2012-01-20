@@ -11,23 +11,30 @@
 <body>
 <div id="maincontainer">
 	<div id="header">
-		<!--<div id="inlogbox">
-			<form action="" method="post">
-				<input id="naam" type="text" placeholder="Email adres" name="naam" />
-				<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
-				<input id="inlogbutton" type="submit" value="" title="inloggen" />				
-			</form>
-			<span id="registratielink"><a href="index.php?page=registratie" title="registreren">Registreren </a></span>
-		</div>
-		-->
-			
+	
+		<?php
 		
-		<div class="ingelogd">
-			<div id="ingelogd_info">
-				<p>Ingelogd als: <a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
-				<p><a href="index.php?page=goodbye">Uitloggen</a></p>
-			</div>
-		</div>
+		if(ingelogd())
+		{
+			echo '<div id="inlogbox">
+					<form action="" method="post">
+						<input id="naam" type="text" placeholder="Email adres" name="naam" />
+						<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
+						<input id="inlogbutton" type="submit" value="" title="inloggen" />				
+					</form>
+					<span id="registratielink"><a href="index.php?page=registratie" title="registreren">Registreren </a></span>
+				</div>';
+		}
+		else
+		{
+			echo '<div class="ingelogd">
+					<div id="ingelogd_info">
+						<p>Ingelogd als: <a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
+						<p><a href="index.php?page=goodbye">Uitloggen</a></p>
+					</div>
+				</div>';
+		}
+	?>
 		
 	</div>
 	<div id="menu">
