@@ -26,15 +26,9 @@ if($stmt->rowCount() == 1)
 {
 	$row = $stmt->fetch();	
 	$_SESSION['userid'] = $row['id'];
-	if(PAGE != 'login')
-	{
-		header("Location: index.php?page=".PAGE);
-	}
-	else
-	{
-		header("Location index.php");
-	}
-}
+
+	header("Location index.php");
+	
 else
 {
 	header('Location: index.php?notice=invalid_login');
