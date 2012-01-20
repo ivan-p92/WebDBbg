@@ -13,6 +13,10 @@
 	<div id="header">
 	
 		<?php
+		if(!isset($_GET['notice']))
+		{
+			$_GET['notice'] = false;
+		}
 		
 		if(!Functions::ingelogd())
 		{			
@@ -25,6 +29,7 @@
 					<span id="registratielink">
 						<a href="index.php?page=registratie" title="registreren">Registreren </a>
 						'.(($_GET['notice'] == 'incomplete_form') ? '<span class="error">Vul alle velden in!</span>' : '').'
+						'.(($_GET['notice'] == 'invalid_login') ? '<span class="error">Verkeerde gegevens</span>' : '').'
 					</span>
 				</div>';
 		}
