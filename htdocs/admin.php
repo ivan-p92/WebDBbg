@@ -16,7 +16,7 @@ $mysqli = Functions::getDB();
 		{
 		$row = $stmt->fetch();
 		echo'
-		<h1>Admin pagina van '$row.['name'].'</h1>
+		<h1>Admin pagina van '.$row['name'].'</h1>
 			<p>U kunt hier zien welke evenementen door '.$row['name'].' aangemaakt/goedgekeurd/afgekeurd zijn.<br />
 				Ook kunt u diens rechten hier aanpassen.</p>
 			<p>De volgende evenementen zijn door '.$row['name'].' aangemaakt:</p>
