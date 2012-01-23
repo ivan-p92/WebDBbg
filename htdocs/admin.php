@@ -1,3 +1,23 @@
+<script type="text/javascript">
+	function check_rechten( id )
+	{
+		switch(id)
+		{
+		case 1:
+			document.getElementById("check1").checked=true;
+			break;
+		case 2:
+			document.getElementById("check1").checked=true
+			break;
+		case 3:
+			document.getElementById("check1").checked=true
+			break;
+		}
+		default:
+			document.write("Permission_id niet correct");
+	}
+</script>
+			
 <div class="admin">
 	
 	<?php
@@ -9,6 +29,10 @@ try
 	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
 			
+	$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
+	$stmt_check = $mysqli->prepare($sq1);
+	$stmt_check->execute();
+	
 	if($stmt->rowCount() == 0)
 	{
 		echo '<p>Deze gebruiker bestaat niet</p>';
@@ -63,19 +87,18 @@ try
 			</div>
 
 			<p>Op dit moment heeft '.$row['name'].' de volgende rechten:</p>
-			<ul>
-			<li>
-			geen
-			</li>
-			</ul>
-			<p>
-			Geef '.$row['name'].' de volgende rechten:
-			</p>
 			<form id="admin" action="" method="get">
-			<input type="checkbox" value="create" />Evenementen aanmaken
-			<input type="checkbox" value="approve" />Evenementen keuren
-			<input type="checkbox" value="admin" />Admin rechten<br />
-			<span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
+			
+			<input type="checkbox" value="create" checked=false />Evenementen aanmaken
+			<input type="checkbox" value="approve" checked=true />Evenementen keuren
+			<input type="checkbox" value="admin" checked=true />Admin rechten<br />'
+			
+			while($check = $stmt_check->fetch())
+			{
+				check_rechten( $check['permission_id'] );
+			}
+			
+			echo' <span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
 					<span class="right">
 					<span class="inner">Pas rechten aan</span></span>
 			</button>
