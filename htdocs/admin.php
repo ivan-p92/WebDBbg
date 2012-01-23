@@ -1,19 +1,20 @@
 <div class="admin">
 	
 	<?php
-
-$mysqli = Functions::getDB();
-
+try
+{
+	$mysqli = Functions::getDB();
+	
 	$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
-
-	if($stmt = $mysqli->prepare($sql))
-    {
-		if(!$stmt->execute())
-		{
-			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
-		}
-		else
-		{
+	$stmt = $mysqli->prepare($sql));
+	$stmt->execute();
+			
+	if($stmt->rowCount() == 0)
+	{
+		echo '<p>Deze gebruiker bestaat niet</p>'
+	}
+	else
+	{
 		$row = $stmt->fetch();
 		echo'
 		<h1>Admin pagina van '.$row['name'].'</h1>
@@ -79,11 +80,11 @@ $mysqli = Functions::getDB();
 					<span class="inner">Pas rechten aan</span></span>
 			</button>
 			</form>';
-		}
 	}
-	else
-    {
-        echo 'Er zit een fout in de query: '.$mysqli->error;
-    }
+}
+catch(Exception &exception)
+{
+	echo '<p>Er is iets fout gegaan</p>';
+}
 ?>
 </div>
