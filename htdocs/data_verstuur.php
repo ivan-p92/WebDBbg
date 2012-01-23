@@ -31,7 +31,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 	
 	$sql='INSERT INTO events_groups (event_id, group_id) VALUES (:event_id, (SELECT id FROM groups WHERE group=:group))';
 	
-	$stmt=database->prepare(sql);
+	$stmt=$database->prepare($sql);
 	
 	foreach($_SESSION["tijdelijke_evenementwaardes"]["categorie"] as $groep)
 	{
