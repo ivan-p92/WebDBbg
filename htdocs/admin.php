@@ -4,13 +4,13 @@
 		switch(id)
 		{
 		case 1:
-			document.getElementById("check1").checked=true;
+			document.getElementById("create").checked=true;
 			break;
 		case 2:
-			document.getElementById("check1").checked=true
+			document.getElementById("approve").checked=true
 			break;
 		case 3:
-			document.getElementById("check1").checked=true
+			document.getElementById("admin").checked=true
 			break;
 		}
 		default:
@@ -90,8 +90,8 @@ try
 			<form id="admin" action="" method="get">
 			
 			<input type="checkbox" value="create" checked=false />Evenementen aanmaken
-			<input type="checkbox" value="approve" checked=true />Evenementen keuren
-			<input type="checkbox" value="admin" checked=true />Admin rechten<br />';
+			<input type="checkbox" value="approve" checked=false />Evenementen keuren
+			<input type="checkbox" value="admin" checked=false />Admin rechten<br />';
 			
 			while($check = $stmt_check->fetch())
 			{
