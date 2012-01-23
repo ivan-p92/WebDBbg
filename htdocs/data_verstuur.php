@@ -35,10 +35,10 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 	
 	foreach($_SESSION["tijdelijke_evenementwaardes"]["categorie"] as $groep)
 	{
-		$stmt->bindParam(':event_id', $event_id, PDO::PARAM_INT);
-		$stmt->bindParam(':group', $groep, PDO::PARAM_STR);
+		$stmt2->bindParam(':event_id', $event_id, PDO::PARAM_INT);
+		$stmt2->bindParam(':group', $groep, PDO::PARAM_STR);
 		
-		$stmt->execute();
+		$stmt2->execute();
 	}
 	
 	echo'<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php" />';
