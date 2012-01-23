@@ -3,9 +3,8 @@
   
 	if(Functions::auth("approve_event"))
 	{
-		print <<<EOT
-		<div id="event_lijst_container">
-        <ul class="event_lijst">
+		echo '<div id="event_lijst_container">';
+       		echo '<ul class="event_lijst">';
 		$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 		
 		$mysqli = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
@@ -96,11 +95,8 @@
 		{
 			echo 'Er zit een fout in de query: '.$mysqli->error;
 		}
-
-	?>
 			</ul>
 	</div>
-EOT;
 }
 else
 {
