@@ -1,5 +1,5 @@
 <?php
-if(Functions::auth("admin_rights")
+if(Functions::auth("admin_rights"))
 {
 	try
 	{
