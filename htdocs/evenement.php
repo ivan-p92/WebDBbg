@@ -52,6 +52,9 @@ if($_GET["semipage"]=="toevoeg_evenement")
 	</tr>
 	</tbody>
 </table>
+';echo
+$_POST["categorie"];
+echo'
 
 <a class="submit_button" href="#" title="Aanpassen">
         <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
@@ -62,7 +65,7 @@ if($_GET["semipage"]=="toevoeg_evenement")
 
 </div>';
 }
-else if($_GET["semipage"]=="toevoeg_evenement")
+else if($_GET["semipage"]=="keuren")
 {echo'
 <h1>Evenement</h1>
 
