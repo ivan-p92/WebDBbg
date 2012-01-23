@@ -1,6 +1,6 @@
 <h1>Evenement toevoegen</h1>
 <p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
-<div class="form"><form id="input" action="evenement.php" method="post">
+<div class="form"><form id="input" action="evenement.php&semipage=toevoeg_evenement" method="post">
 <table class="formtable" id="event_toevoegen">
 	<tbody>
 	<tr>
