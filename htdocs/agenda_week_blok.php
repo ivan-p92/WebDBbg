@@ -1,12 +1,3 @@
-
-<?php
-if(Functions::auth('admin_rights'))
-{
-	echo '<h1>TESTING</h1>';
-}
-
-?>
-
 <h1>Weekweergave evenementen</h1>
 
 <!-- Deze form is voor het selecteren van de te tonen doelgroepen -->
