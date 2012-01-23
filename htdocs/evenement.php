@@ -78,7 +78,7 @@ $sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=eve
 
 $stmt = $database->prepare($sql);
 
-$stmt->execute;
+$stmt->execute();
 
 $info=$stmt->fetch();
 
