@@ -30,7 +30,9 @@ class Functions
 			try
 			{
 				self::$db = new PDO($dsn, $user, $password);
+				self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ATTR_EXCEPTION);
 				self::$db->query("SET NAMES 'utf8';");
+				
 			}
 			catch (PDOException $e)
 			{
@@ -38,5 +40,33 @@ class Functions
 			}
 		}
 		return self::$db;
+	}
+	
+	public static function auth($id, $action)
+	{
+		try
+		{
+			$db = self::getDB();
+			
+			$sql = "SELECT count(*) AS aantal FROM users_permissions JOIN permissions ON permission_id = permissions.id WHERE user_id = :id AND permissions.permission = :action;";
+			$stmt = $db->prepare($sql);
+			$stmt->bind_param(':id', $id, PDO::PARAM_INT);
+			$stmt->bind_param(':action', $action, PDO::PARAM_STR);
+			$stmt->execute();
+			
+			$row = $stmt->fetch();
+			if($row['aantal'] == 1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		catch(Exception $e)
+		{
+			return false;
+		}
 	}
 }
