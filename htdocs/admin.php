@@ -100,9 +100,9 @@ try
 			<p>Op dit moment heeft '.$row['name'].' de volgende rechten:</p>
 			<form id="admin" action="" method="get">
 			
-			<input type="checkbox" value="create" />Evenementen aanmaken
-			<input type="checkbox" value="approve" />Evenementen keuren
-			<input type="checkbox" value="admin" />Admin rechten<br />';
+			<input type="checkbox" value="create" id="create" />Evenementen aanmaken
+			<input type="checkbox" value="approve" id="approve" />Evenementen keuren
+			<input type="checkbox" value="admin" id="admin" />Admin rechten<br />';
 			
 		
 			
