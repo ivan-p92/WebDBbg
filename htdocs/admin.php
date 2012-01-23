@@ -13,8 +13,10 @@ $mysqli = Functions::getDB();
 			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
 		}
 		else
-		{echo'
-			<h1>Admin pagina van '.['name'].'</h1>
+		{
+		$row = $stmt->fetch();
+		echo'
+			<h1>Admin pagina van '$row.['name'].'</h1>
 			<p>U kunt hier zien welke evenementen door '.$row['name'].' aangemaakt/goedgekeurd/afgekeurd zijn.<br />
 				Ook kunt u diens rechten hier aanpassen.</p>
 			<p>De volgende evenementen zijn door '.$row['name'].' aangemaakt:</p>
