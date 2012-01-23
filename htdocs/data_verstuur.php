@@ -27,7 +27,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 	
 	$stmt->execute();
 	
-	$event_id=$database->latInsertId();
+	$event_id=$database->lastInsertId();
 	
 	$sql='INSERT INTO events_groups (event_id, group_id) VALUES (:event_id, (SELECT id FROM groups WHERE group=:group))';
 	
