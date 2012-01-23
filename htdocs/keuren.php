@@ -70,19 +70,19 @@
 					else
 					{
 						echo '<li class="event">';
-											echo '<p class="eendags_event">';
-											echo '<span class="begin_datum">';
-											echo '<span class="jaar">'.$row['jaar'].'</span>';
-											echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
-											echo '</span>';
-											echo '</p>';
+						echo '<p class="eendags_event">';
+						echo '<span class="begin_datum">';
+						echo '<span class="jaar">'.$row['jaar'].'</span>';
+						echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
+						echo '</span>';
+						echo '</p>';
 
-											echo '<div class="event_details">';
-											echo '<p class="event_titel">';
-											echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.$row['title'].'</a>';
-											echo '</p>';
-											echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
-											echo '</div>';
+						echo '<div class="event_details">';
+						echo '<p class="event_titel">';
+						echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.$row['title'].'</a>';
+						echo '</p>';
+						echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
+						echo '</div>';
 						echo '</li>';
 		
 					}
@@ -95,7 +95,7 @@
 		{
 			echo 'Er zit een fout in de query: '.$mysqli->error;
 		}
-			</ul>
+		</ul>
 	</div>
 }
 else
