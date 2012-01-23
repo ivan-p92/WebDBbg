@@ -82,7 +82,7 @@ try
 			</form>';
 	}
 }
-catch(Exception &exception)
+catch(Exception $exception)
 {
 	echo '<p>Er is iets fout gegaan</p>';
 }
