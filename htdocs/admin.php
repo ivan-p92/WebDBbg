@@ -78,7 +78,7 @@ $mysqli = Functions::getDB();
 			</button>
 			</form>'
 		
-		}
+		;}
 	}
 	else
     {
