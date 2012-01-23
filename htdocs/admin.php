@@ -11,7 +11,7 @@ try
 			
 	if($stmt->rowCount() == 0)
 	{
-		echo '<p>Deze gebruiker bestaat niet</p>'
+		echo '<p>Deze gebruiker bestaat niet</p>';
 	}
 	else
 	{
