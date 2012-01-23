@@ -139,7 +139,7 @@ echo'
 </div>';
 } 
 
-elseif(($_GET["semipage"]=="agenda_week_lijst" || $_GET["semipage"]=="agenda_week_blok") && isset($_GET["id"]))
+elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 
 {
 $database=Functions::getDB();
