@@ -5,8 +5,20 @@
 <div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	<ul class="event_lijst">
-		
-		<?php
+	
+	<form id="sorteer_events" action="http://websec.science.uva.nl/webdb1235/index.php?page=agenda_week_lijst" method="post">
+	<label><input type="checkbox" value="klant" name="categorie[]" />Klant</label>
+	<label><input type="checkbox" value="keuken" name="categorie[]" />Keuken</label>
+	<label><input type="checkbox" value="afwas" name="categorie[]" />Afwassers</label>
+	<label><input type="checkbox" value="bar" name="categorie[]" />Barpersoneel</label>
+	<label class="submit_button">
+	<button type="submit" class="button" id="event_aanmaken">
+		<span class="right">
+		<span class="inner">Herladen</span></span>
+	</button></label>
+	</form>
+	
+<?php
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
