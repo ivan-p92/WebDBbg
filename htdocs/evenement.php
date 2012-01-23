@@ -20,11 +20,11 @@ echo'
 	</tr>
 	<tr>
 		<td>Begintijd</td>
-		<td class="rechts">'.$_POST["datum1"].":".$_POST["maand1"].":".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
+		<td class="rechts">'.$_POST["datum1"]." ".$_POST["maand1"]." ".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
 	</tr>
 	<tr>
 		<td>Eindtijd</td>
-		<td class="rechts">'.$_POST["datum2"].":".$_POST["maand2"].":".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
+		<td class="rechts">'.$_POST["datum2"]." ".$_POST["maand2"]." ".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
 	</tr>
 	<tr>
 		<td rowspan="4">Categorie</td>
@@ -54,10 +54,11 @@ echo'
 	</tbody>
 </table>
 
-<a class="submit_button" href="#" title="Aanpassen">
+<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=evenement.php" title="Aanpassen">
         <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
 </a>
-<a class="submit_button" href="#" title="Aanmaken">
+<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php" 
+			onclick="alert(\'Uw evenement wordt zo snel mogelijk gekeurd en in de agenda gezet\')" title="Aanmaken">
         <button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
 </a>
 
