@@ -35,12 +35,30 @@
 		}
 		else
 		{
-			echo '<div class="ingelogd">
-					<div id="ingelogd_info">
-						<p>Ingelogd als: <a href="index.php?page=account" title="Account Informatie">Jan-Pieter de Vries</a></p>
-						<p><a href="index.php?page=goodbye">Uitloggen</a></p>
-					</div>
-				</div>';
+			try
+			{
+				$db = Functions::getDB();
+				$stmt = $db->prepare("SELECT name FROM users WHERE id = :id;");
+				$stmt->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
+				$stmt->execute();
+				$row = $stmt->fetch();
+				
+				echo '<div class="ingelogd">
+						<div id="ingelogd_info">
+							<p>Ingelogd als: <a href="index.php?page=account&amp;id='.$_SESSION['userid'].'" title="Account Informatie">'.$row['name'].'</a></p>
+							<p><a href="index.php?page=goodbye">Uitloggen</a></p>
+						</div>
+					</div>';
+			}
+			catch(Exception $e)
+			{
+				echo '<div class="ingelogd">
+						<div id="ingelogd_info">
+							<p class="error">Informatie kon niet worden opgehaald</p>
+							<p><a href="index.php?page=goodbye">Uitloggen</a></p>
+						</div>
+					</div>';
+			}
 		}
 	?>
 		
