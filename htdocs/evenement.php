@@ -82,7 +82,7 @@ $stmt->execute;
 
 $info=$stmt->fetch();
 
-{echo'
+echo'
 <h1>Evenement</h1>
 
 <table id="evenement">
@@ -136,6 +136,7 @@ $info=$stmt->fetch();
 
 </div>';
 } 
+
 /*else
 {
 echo'
