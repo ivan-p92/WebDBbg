@@ -1,6 +1,6 @@
 
 <?php
-if(auth('admin_rights'))
+if(Functions::auth('admin_rights'))
 {
 	echo '<h1>TESTING</h1>';
 }
