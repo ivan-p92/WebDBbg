@@ -99,6 +99,6 @@
 }
 else
 {
-	echo '<p>Log in om evenementen te kunnen keuren!</p>'
+	echo '<p>Log in om evenementen te kunnen keuren!</p>';
 }
 ?>
