@@ -6,7 +6,7 @@ try
 	$mysqli = Functions::getDB();
 	
 	$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
-	$stmt = $mysqli->prepare($sql));
+	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
 			
 	if($stmt->rowCount() == 0)
