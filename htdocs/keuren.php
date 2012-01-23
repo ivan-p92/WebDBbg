@@ -95,8 +95,7 @@
 		{
 			echo 'Er zit een fout in de query: '.$mysqli->error;
 		}
-		</ul>
-	</div>
+		echo '</ul></div>';
 }
 else
 {
