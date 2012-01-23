@@ -1,6 +1,8 @@
 <?php
 if($_GET["semipage"]=="toevoeg_evenement")
-{echo'
+{
+var_dump($_POST);
+echo'
 <h1>Evenement</h1>
 
 <table id="evenement">
