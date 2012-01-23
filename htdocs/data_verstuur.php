@@ -27,7 +27,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 	
 	$stmt->execute();
 	
-	echo'<meta http-equiv="refresh" content="0"; url="http://websec.science.uva.nl/webdb1235/index.php';
+	echo'<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php" />';
 }
 
 catch(Exception $e){
