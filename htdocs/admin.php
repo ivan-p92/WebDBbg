@@ -18,13 +18,13 @@ try
 		switch(id)
 		{
 		case 1:
-			document.getElementById("create").checked=true;
+			document.getElementById("create").checked="checked";
 			break;
 		case 2:
-			document.getElementById("approve").checked=true
+			document.getElementById("approve").checked="checked";
 			break;
 		case 3:
-			document.getElementById("admin").checked=true
+			document.getElementById("admin").checked="checked";
 			break;
 		default:
 			document.write("Permission_id niet correct");
