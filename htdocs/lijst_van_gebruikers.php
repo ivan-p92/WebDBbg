@@ -68,8 +68,7 @@
         echo 'Er zit een fout in de query: '.$mysqli->error;
     }
 
-?>
-
+	/*Statische weergave: nog gebruiken??
 	<ul id="userlistlist">
 		<li>
 			<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Freek Boutkan</a>
@@ -83,5 +82,6 @@
 		<li>
 			<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">David Woudenberg</a>
 		</li>
-	</ul>	
+	</ul>*/
+?>
 </div> 
