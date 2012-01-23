@@ -95,7 +95,7 @@ try
 			
 			while($check = $stmt_check->fetch())
 			{
-				check_rechten( $check['permission_id'] );
+				echo 'check_rechten( '.$check['permission_id'].' );';
 			}
 			
 			echo' <span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
