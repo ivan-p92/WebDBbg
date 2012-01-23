@@ -30,12 +30,18 @@ try
 			document.write("Permission_id niet correct");
 		}
 	}
+	
+	function init()
+	{
 	<?php
 		while($check = $stmt_check->fetch())
 		{
-			echo 'check_rechten('.$check['permission_id'].');';
+			echo "check_rechten('.$check['permission_id'].');\n";
 		}
 	?>
+	}
+	
+	document.addEventListener("DOMContentLoaded", init, false);
 </script>
 			
 <div class="admin">
