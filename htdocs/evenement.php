@@ -54,10 +54,15 @@ echo'
 	</tbody>
 </table>
 
+';
+$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
+
+echo'
+
 <a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" title="Aanpassen">
         <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
 </a>
-<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php" 
+<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?data_verstuur" 
 			onclick="alert(\'Uw evenement wordt zo snel mogelijk gekeurd en in de agenda gezet\')" title="Aanmaken">
         <button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
 </a>

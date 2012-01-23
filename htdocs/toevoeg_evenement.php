@@ -47,18 +47,18 @@
 <option value="31">31</option>
 </select>
 <select name="maand1">
-<option value="januari">januari</option>
-<option value="februari">februari</option>
-<option value="maart">maart</option>
-<option value="april">april</option>
-<option value="mei">mei</option>
-<option value="juni">juni</option>
-<option value="juli">juli</option>
-<option value="augustus">augustus</option>
-<option value="september">september</option>
-<option value="oktober">oktober</option>
-<option value="november">november</option>
-<option value="december">december</option>
+<option value="01">januari</option>
+<option value="02">februari</option>
+<option value="03">maart</option>
+<option value="04">april</option>
+<option value="05">mei</option>
+<option value="06">juni</option>
+<option value="07">juli</option>
+<option value="08">augustus</option>
+<option value="09">september</option>
+<option value="10">oktober</option>
+<option value="11">november</option>
+<option value="12">december</option>
 </select>
 <select name="jaar1">
 <option value="2012">2012</option>
@@ -205,18 +205,18 @@
 <option value="31">31</option>
 </select>
 <select name="maand2">
-<option value="januari">januari</option>
-<option value="februari">februari</option>
-<option value="maart">maart</option>
-<option value="april">april</option>
-<option value="mei">mei</option>
-<option value="juni">juni</option>
-<option value="juli">juli</option>
-<option value="augustus">augustus</option>
-<option value="september">september</option>
-<option value="oktober">oktober</option>
-<option value="november">november</option>
-<option value="december">december</option>
+<option value="01">januari</option>
+<option value="02">februari</option>
+<option value="03">maart</option>
+<option value="04">april</option>
+<option value="05">mei</option>
+<option value="06">juni</option>
+<option value="07">juli</option>
+<option value="08">augustus</option>
+<option value="09">september</option>
+<option value="10">oktober</option>
+<option value="11">november</option>
+<option value="12">december</option>
 </select>
 <select name="jaar2">
 <option value="2012">2012</option>
