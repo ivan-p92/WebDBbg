@@ -91,7 +91,7 @@ try
 			
 			<input type="checkbox" value="create" checked=false />Evenementen aanmaken
 			<input type="checkbox" value="approve" checked=true />Evenementen keuren
-			<input type="checkbox" value="admin" checked=true />Admin rechten<br />'
+			<input type="checkbox" value="admin" checked=true />Admin rechten<br />';
 			
 			while($check = $stmt_check->fetch())
 			{
