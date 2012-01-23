@@ -53,7 +53,7 @@ if($_GET["semipage"]=="toevoeg_evenement")
 	</tbody>
 </table>
 ';echo
-$_POST["categorie"];
+$_POST["categorie[]"];
 echo'
 
 <a class="submit_button" href="#" title="Aanpassen">
