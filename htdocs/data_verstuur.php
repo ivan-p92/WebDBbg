@@ -3,10 +3,10 @@ try{
 
 
 $begindatum = new DateTime($_SESSION["tijdelijke_evenementwaardes"]["jaar1"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand1"]."-".
-					$_SESSION["tijdelijke_evenementwaardes"]["datum1"]." ".$_SESSION["tijdelijke_evenementwaardes"]["begintijd"].":"."00")
+					$_SESSION["tijdelijke_evenementwaardes"]["datum1"]." ".$_SESSION["tijdelijke_evenementwaardes"]["begintijd"].":"."00");
 					
 $einddatum = new DateTime($_SESSION["tijdelijke_evenementwaardes"]["jaar2"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand2"]."-".
-					$_SESSION["tijdelijke_evenementwaardes"]["datum2"]." ".$_SESSION["tijdelijke_evenementwaardes"]["eindtijd"].":"."00")
+					$_SESSION["tijdelijke_evenementwaardes"]["datum2"]." ".$_SESSION["tijdelijke_evenementwaardes"]["eindtijd"].":"."00");
 					
 
 					
@@ -31,7 +31,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 }
 
 catch(Exception $e){
-echo'Er was een fout bij het versturen van de data.'
+echo'Er was een fout bij het versturen van de data.';
 }
 
 ?>
