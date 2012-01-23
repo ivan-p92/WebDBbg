@@ -69,8 +69,8 @@ echo'
 
 </div>';
 }
-//elseif($_GET["semipage"]=="keuren")
-else
+elseif($_GET["semipage"]=="keuren")
+
 {
 $database=Functions::getDB();
 
@@ -95,7 +95,7 @@ echo'
 	</tr>
 	<tr>
 		<td>Plaatsing</td>
-		<td class="rechts">'."Op".$info["create_date"]."door".$info["name"].'</td>
+		<td class="rechts">'."Op ".$info["create_date"]." door ".$info["name"].'</td>
 	</tr>
 	<tr>
 		<td>Omschrijving</td>
@@ -135,11 +135,11 @@ echo'
 </a>	
 <a class="submit_button" href="#" title="Afkeuren">
         <button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
-
+</a>	
 </div>';
 } 
 
-/*else
+else
 {
 echo'
 <h1>Evenement</h1>
@@ -207,5 +207,5 @@ echo'
 </a>
 
 </div>';
-}*/
+}
 ?>
