@@ -13,6 +13,8 @@ ini_set('display_errors', true); // true in ontwikkelomgeving, false in  de live
 
 $ext = '.php'; // de bestandsextensie van de pagina's (nu .html later .php)  
 
+$valid_pages = array("404", "agenda_week", "footer", "header", "lijst_van_gebruikers", "tabel_events", "toevoeg_evenement", "account", "agenda_week_blok", "contact_dank", "index", "admin", "agenda_week_lijst", "contact", "evenement", "goodbye", "keuren", "registratie");
+
 // controleer of er een page is gespecificeerd in de url, als dat zo is en het is niet leeg en niet gelijk aan index 
 if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != 'index')
 {
@@ -33,8 +35,9 @@ if($page == 'inloggen')
 include('header.php');		// laad de header (deze moet op elke pagina verschijnen)
 
 
-if(file_exists($page.$ext) && $page != 'inloggen')   // als het gevraagde bestand bestaat, laat dit zien
+if(file_exists($page.$ext) && $page != 'inloggen' && in_array($page, $valid_pages))   // als het gevraagde bestand bestaat, laat dit zien
 {
+	
 	include($page.$ext);	// naam en extensie aan elkaar plakken
 }
 else
