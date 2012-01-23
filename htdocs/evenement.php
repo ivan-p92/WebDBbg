@@ -69,7 +69,8 @@ echo'
 
 </div>';
 }
-elseif($_GET["semipage"]=="keuren")
+//elseif($_GET["semipage"]=="keuren")
+else
 {
 $database=Functions::getDB();
 
