@@ -134,6 +134,7 @@ $info=$stmt->fetch();
         <button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
 
 </div>';
+} 
 else
 {echo'
 <h1>Evenement</h1>
