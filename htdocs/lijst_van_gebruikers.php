@@ -52,7 +52,7 @@
 			}
 			else
 			{
-				echo <ul id="userlistlist">
+				echo '<ul id="userlistlist">'
 				while($row = $stmt->fetch())
 				{
 					echo '<li>'
