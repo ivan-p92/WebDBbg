@@ -135,7 +135,7 @@ $info=$stmt->fetch();
 
 </div>';
 } 
-else
+/*else
 {
 echo'
 <h1>Evenement</h1>
@@ -203,5 +203,5 @@ echo'
 </a>
 
 </div>';
-}
+}*/
 ?>
