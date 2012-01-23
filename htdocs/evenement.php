@@ -69,8 +69,8 @@ echo'
 
 </div>';
 }
-else if($_GET["semipage"]=="keuren")
-
+elseif($_GET["semipage"]=="keuren")
+{
 $database=Functions::getDB();
 
 $sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=$_GET["id"]';
@@ -136,7 +136,8 @@ $info=$stmt->fetch();
 </div>';
 } 
 else
-{echo'
+{
+echo'
 <h1>Evenement</h1>
 
 <table id="evenement">
