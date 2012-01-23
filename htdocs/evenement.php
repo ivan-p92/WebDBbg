@@ -69,7 +69,72 @@ echo'
 
 </div>';
 }
-else if($_GET["semipage"]=="keuren")
+else if($_GET["id"]!="")
+
+$database=Functions::getDB();
+
+$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=$_GET["id"]';
+
+$stmt = $database->prepare($sql);
+
+$stmt->execute;
+
+$info=$stmt->fetch();
+
+{echo'
+<h1>Evenement</h1>
+
+<table id="evenement">
+	<tbody>
+	<tr>
+		<td>Titel</td>
+		<td class="rechts">'.$info["title"].'</td>
+	</tr>
+	<tr>
+		<td>Plaatsing</td>
+		<td class="rechts">'."Op".$info["create_date"]."door".$info["name"].'</td>
+	</tr>
+	<tr>
+		<td>Omschrijving</td>
+		<td class="rechts">'.$info["description"].'.</td>
+	</tr>
+	<tr>
+		<td>Locatie</td>
+		<td>'.$info["location"].'</td>
+	</tr>
+	<tr>
+		<td>Begintijd</td>
+		<td class="rechts">'.$info["start_date"].'</td>
+	</tr>
+	<tr>
+		<td>Eindtijd</td>
+		<td class="rechts">'.$info["end_date"].'</td>
+	</tr>
+	<tr>
+		<td rowspan="4">Categorie</td>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>
+	</tr>
+	<tr>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>
+	</tr>
+	<tr>
+		<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwassers</td>
+	</tr>
+	<tr>
+		<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>
+	</tr>
+	</tbody>
+</table>
+
+<div id="event_buttons">
+<a class="submit_button" href="#" title="Goedkeuren">
+	<button class="button"><span class="right"><span class="inner">Goedkeuren</span></span></button>
+</a>	
+<a class="submit_button" href="#" title="Afkeuren">
+        <button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
+
+</div>';
+else
 {echo'
 <h1>Evenement</h1>
 
