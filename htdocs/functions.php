@@ -59,8 +59,8 @@ class Functions
 			
 			$sql = "SELECT count(*) AS aantal FROM users_permissions JOIN permissions ON permission_id = permissions.id WHERE user_id = :id AND permissions.permission = :action;";
 			$stmt = $db->prepare($sql);
-			$stmt->bind_param(':id', $userid, PDO::PARAM_INT);
-			$stmt->bind_param(':action', $action, PDO::PARAM_STR);
+			$stmt->bindParam(':id', $userid, PDO::PARAM_INT);
+			$stmt->bindParam(':action', $action, PDO::PARAM_STR);
 			$stmt->execute();
 			
 			$row = $stmt->fetch();
