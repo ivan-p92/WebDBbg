@@ -32,6 +32,43 @@
 		<p>
 			Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen
 		</p>
+	
+		<?php
+		
+	$mysqli = Functions::getDB();
+
+	$sql = "SELECT id, name FROM users;";
+
+	if($stmt = $mysqli->prepare($sql))
+    {
+		if(!$stmt->execute())
+		{
+			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
+		}
+		else
+			f($stmt->rowCount() == 0)
+			{
+				echo '<p>Er zijn geen gebruikers gevonden.</p>';
+			}
+			else
+			{
+				echo <ul id="userlistlist">
+				while($row = $stmt->fetch())
+				{
+					echo '<li>'
+					echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>'
+					echo '</li>'
+				}
+			}
+		}
+	}
+	else
+    {
+        echo 'Er zit een fout in de query: '.$mysqli->error;
+    }
+
+?>
+
 	<ul id="userlistlist">
 		<li>
 			<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Freek Boutkan</a>
