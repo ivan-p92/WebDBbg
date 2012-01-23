@@ -1,7 +1,7 @@
 <h1>Evenement toevoegen</h1>
 
 <?php
-if(!Functions::auth(1)) 
+if(Functions::auth("submit_event")) 
 {
 	echo <<<EOT
 	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
