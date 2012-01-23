@@ -2,10 +2,10 @@
 try{
 
 
-$begindatum = new DateTime("$_SESSION["tijdelijke_evenementwaardes"]["jaar1"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand1"]."-".
+$begindatum = new DateTime($_SESSION["tijdelijke_evenementwaardes"]["jaar1"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand1"]."-".
 					$_SESSION["tijdelijke_evenementwaardes"]["datum1"]." ".$_SESSION["tijdelijke_evenementwaardes"]["begintijd"].":"."00")
 					
-$einddatum = new DateTime("$_SESSION["tijdelijke_evenementwaardes"]["jaar2"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand2"]."-".
+$einddatum = new DateTime($_SESSION["tijdelijke_evenementwaardes"]["jaar2"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand2"]."-".
 					$_SESSION["tijdelijke_evenementwaardes"]["datum2"]." ".$_SESSION["tijdelijke_evenementwaardes"]["eindtijd"].":"."00")
 					
 
