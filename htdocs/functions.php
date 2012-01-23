@@ -46,7 +46,7 @@ class Functions
 	{
 		if($userid == null)
 		{
-			if(!ingelogd())
+			if(!self::ingelogd())
 			{
 				return false;
 			}
