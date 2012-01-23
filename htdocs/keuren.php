@@ -17,7 +17,7 @@
 			TIME_FORMAT(TIME(start_date), '%H:%i') AS begin_tijd,
 			TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 			DATEDIFF(end_date, start_date) AS diff
-			FROM events WHERE aprove_id IS NULL ORDER BY start_date ASC LIMIT 20 OFFSET 0;";
+			FROM events WHERE approve_id IS NULL ORDER BY start_date ASC LIMIT 20 OFFSET 0;";
 
     if($stmt = $mysqli->prepare($sql))
     {
