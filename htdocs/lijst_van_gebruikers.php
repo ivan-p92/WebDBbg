@@ -46,6 +46,7 @@
 			echo 'Het uitvoeren van de query is mislukt: '.$stmt->error.' in query: '.$sql;
 		}
 		else
+		{
 			if($stmt->rowCount() == 0)
 			{
 				echo '<p>Er zijn geen gebruikers gevonden.</p>';
