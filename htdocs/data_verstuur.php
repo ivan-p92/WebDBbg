@@ -21,7 +21,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
     $stmt->bindParam(':title', $_SESSION["tijdelijke_evenementwaardes"]["titel"], PDO::PARAM_STR);
 	$stmt->bindParam(':description', $_SESSION["tijdelijke_evenementwaardes"]["omschrijving"], PDO::PARAM_STR);
 	$stmt->bindParam(':start_date', $begindatum->format('Y:m:d H:i:s'), PDO::PARAM_STR);
-	$stmt->bindParam(':end_date', $begindatum->format('Y:m:d H:i:s'), PDO::PARAM_STR);
+	$stmt->bindParam(':end_date', $einddatum->format('Y:m:d H:i:s'), PDO::PARAM_STR);
 	$stmt->bindParam(':create_id', $_SESSION["userid"], PDO::PARAM_STR);
 	$stmt->bindParam(':location', $_SESSION["tijdelijke_evenementwaardes"]["locatie"], PDO::PARAM_STR);
 	
