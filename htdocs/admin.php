@@ -12,9 +12,9 @@
 		case 3:
 			document.getElementById("admin").checked=true
 			break;
-		}
 		default:
 			document.write("Permission_id niet correct");
+		}
 	}
 </script>
 			
