@@ -1,5 +1,5 @@
 <?php
-if($_GET["semipage"]=="toevoeg_evenement" && Functions::auth(submit_event))
+if($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event"))
 {
 echo'
 <h1>Evenement</h1>
@@ -69,7 +69,7 @@ echo'
 
 </div>';
 }
-elseif($_GET["semipage"]=="keuren" && Functions::auth(approve_event))
+elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event"))
 
 {
 $database=Functions::getDB();
