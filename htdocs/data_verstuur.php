@@ -31,7 +31,7 @@ $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew
 }
 
 catch(Exception $e){
-echo'Er was een fout bij het versturen van de data.';
+echo'Er was een fout bij het versturen van de data.'.$e;
 }
 
 ?>
