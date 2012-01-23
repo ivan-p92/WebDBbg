@@ -30,7 +30,7 @@ try
 	$stmt->execute();
 			
 	$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
-	$stmt_check = $mysqli->prepare($sq1);
+	$stmt_check = $mysqli->prepare($sql_check);
 	$stmt_check->execute();
 	
 	if($stmt->rowCount() == 0)
