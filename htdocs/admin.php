@@ -125,7 +125,7 @@ if(Functions::auth("admin_rights"))
 	{
 		echo '<p>Er is iets fout gegaan</p>';
 	}
-		echo</div>
+		echo '</div>';
 }
 else
 {
