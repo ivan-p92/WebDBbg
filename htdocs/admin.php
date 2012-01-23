@@ -36,7 +36,7 @@ try
 	<?php
 		while($check = $stmt_check->fetch())
 		{
-			echo "check_rechten('.$check['permission_id'].');\n";
+			echo "check_rechten(".$check['permission_id'].");\n";
 		}
 	?>
 	}
