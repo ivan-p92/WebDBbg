@@ -74,7 +74,9 @@ else
 {
 $database=Functions::getDB();
 
-$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=$_GET["id"]';
+$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=:id';
+
+$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 
 $stmt = $database->prepare($sql);
 
