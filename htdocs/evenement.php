@@ -1,7 +1,6 @@
 <?php
 if($_GET["semipage"]=="toevoeg_evenement")
 {
-var_dump($_POST);
 echo'
 <h1>Evenement</h1>
 
@@ -54,9 +53,6 @@ echo'
 	</tr>
 	</tbody>
 </table>
-';echo
-$_POST["categorie[]"];
-echo'
 
 <a class="submit_button" href="#" title="Aanpassen">
         <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>

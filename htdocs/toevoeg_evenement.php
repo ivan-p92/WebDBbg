@@ -337,16 +337,16 @@
 	</tr>
 	<tr>
 		<td rowspan="4">Categorie</td>
-		<td><input type="checkbox" value="klant" name="categorie" />Klant</td>
+		<td><input type="checkbox" value="klant" name="categorie[]" />Klant</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="keuken" name="categorie" />Keuken</td>
+		<td><input type="checkbox" value="keuken" name="categorie[]" />Keuken</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="afwas" name="categorie" />Afwassers</td>
+		<td><input type="checkbox" value="afwas" name="categorie[]" />Afwassers</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" value="bar" name="categorie" />Barpersoneel</td>
+		<td><input type="checkbox" value="bar" name="categorie[]" />Barpersoneel</td>
 	</tr>
 	<tr>
 		<td>&nbsp</td>
