@@ -1,3 +1,17 @@
+	<?php
+try
+{
+	$mysqli = Functions::getDB();
+	
+	$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
+	$stmt = $mysqli->prepare($sql);
+	$stmt->execute();
+			
+	$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
+	$stmt_check = $mysqli->prepare($sql_check);
+	$stmt_check->execute();
+	?>
+
 <script type="text/javascript">
 	function check_rechten( id )
 	{
@@ -27,17 +41,8 @@
 <div class="admin">
 	
 	<?php
-try
-{
-	$mysqli = Functions::getDB();
-	
-	$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
-	$stmt = $mysqli->prepare($sql);
-	$stmt->execute();
-			
-	$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
-	$stmt_check = $mysqli->prepare($sql_check);
-	$stmt_check->execute();
+
+
 	
 	if($stmt->rowCount() == 0)
 	{
