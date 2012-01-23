@@ -54,7 +54,7 @@ echo'
 	</tbody>
 </table>
 
-<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=evenement.php" title="Aanpassen">
+<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" title="Aanpassen">
         <button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
 </a>
 <a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php" 
