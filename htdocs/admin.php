@@ -16,6 +16,12 @@
 			document.write("Permission_id niet correct");
 		}
 	}
+	<?php
+		while($check = $stmt_check->fetch())
+		{
+			echo 'check_rechten('.$check['permission_id'].');';
+		}
+	?>
 </script>
 			
 <div class="admin">
@@ -93,10 +99,7 @@ try
 			<input type="checkbox" value="approve" checked=false />Evenementen keuren
 			<input type="checkbox" value="admin" checked=false />Admin rechten<br />';
 			
-			while($check = $stmt_check->fetch())
-			{
-				check_rechten( $check['permission_id'] );
-			}
+		
 			
 			echo' <span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
 					<span class="right">
