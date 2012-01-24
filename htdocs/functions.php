@@ -12,6 +12,11 @@ class Functions
 		}
 		return false;
 	}
+	
+	public static function out($string)
+	{
+		return htmlentities($string, ENT_QUOTES, "UTF-8");
+	}
 
 	public static function hashPass($pwd)
 	{
