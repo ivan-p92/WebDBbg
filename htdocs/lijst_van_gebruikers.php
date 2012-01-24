@@ -62,7 +62,7 @@ if(Functions::auth("admin_rights"))
 					{
 						echo '<li>';
 						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
-						echo '</li>';
+						echo '</li></ul>';
 					}
 				}
 			}
