@@ -74,48 +74,65 @@ else
 			}
 			?>
 		</p>
-
-		<p>Deze evenementen zijn door u aangemaakt:</p>
-		<div class="user_events">
-			<table id="user_events">
-				<tbody>
-					<tr>
-						<th>
-						Ongekeurde Evenementen
-						</th>
-						<th>
-						Goedgekeurde Evenementen
-						</th>
-						<th>
-						Afgekeurde Evenementen
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<ul>
-							<li>
-								<a href="index.php?page=evenement">TEST</a>
-							</li>
-							</ul>
-						</td>
-						<td>
-							<ul>
-							<li>
-								<a href="index.php?page=evenement">TEST</a>
-							</li>
-							</ul>
-						</td>
-						<td>
-							<ul>
-							<li>
-								<a href="index.php?page=evenement">TEST</a>
-							</li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		
+		<?php
+		$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY STATUS";
+		$stmtEvents = $db->prepare($sqlEvents);
+		$stmtEvents->bindParam(':user_id', $_GET['id'], PDO::PARAM_INT);
+		$stmtEvents->execute();
+		
+		if($stmtEvents->rowCount() == 0)
+		{
+			echo '<p>U heeft nog geen events aangemaakt</p>';
+		}
+		else
+		{
+			echo '<pre>', $stmtEvents->fetchAll(), '</pre>';
+		?>
+			<p>Deze evenementen zijn door u aangemaakt:</p>
+			<div class="user_events">
+				<table id="user_events">
+					<tbody>
+						<tr>
+							<th>
+							Ongekeurde Evenementen
+							</th>
+							<th>
+							Goedgekeurde Evenementen
+							</th>
+							<th>
+							Afgekeurde Evenementen
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<ul>
+								<li>
+									<a href="index.php?page=evenement">TEST</a>
+								</li>
+								</ul>
+							</td>
+							<td>
+								<ul>
+								<li>
+									<a href="index.php?page=evenement">TEST</a>
+								</li>
+								</ul>
+							</td>
+							<td>
+								<ul>
+								<li>
+									<a href="index.php?page=evenement">TEST</a>
+								</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		<?php
+		}
+		?>
 
 		<form id="wijzigww" action="" method="post">
 			<table id="wijzigww_tabel">
