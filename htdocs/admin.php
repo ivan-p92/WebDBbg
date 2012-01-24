@@ -13,8 +13,24 @@ if(Functions::auth("admin_rights"))
 		$stmt_check = $mysqli->prepare($sql_check);
 		$stmt_check->execute();
 		?>
+				
+	<div class="admin">
 		
-	<script type="text/javascript">
+		<?php
+		
+		if($stmt->rowCount() == 0)
+		{
+			echo '<p>Deze gebruiker bestaat niet</p>';
+		}
+		elseif(!empty($_POST))
+		{
+			echo 'tralalalalala';
+		}
+		elseif(empty($_POST))
+		{
+			?>
+			
+		<script type="text/javascript">
 		function check_rechten( id )
 		{
 			switch(id)
@@ -44,22 +60,9 @@ if(Functions::auth("admin_rights"))
 		}
 		
 		document.addEventListener("DOMContentLoaded", init, false);
-	</script>
-				
-	<div class="admin">
+		</script>
 		
 		<?php
-		
-		if($stmt->rowCount() == 0)
-		{
-			echo '<p>Deze gebruiker bestaat niet</p>';
-		}
-		elseif(!empty($_POST))
-		{
-			echo 'tralalalalala';
-		}
-		elseif(empty($_POST))
-		{
 			$row = $stmt->fetch();
 			echo'
 			<h1>Admin pagina van '.$row['name'].'</h1>
