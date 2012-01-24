@@ -53,7 +53,7 @@ else
 			<h1>Account informatie</h1>
 
 			<form class="right" id="wijzigww" action="" method="post">
-				<h3>Wachtwoord aanpassen</h3>
+				<h3 class="big nopadding">Wachtwoord aanpassen</h3>
 				<table id="wijzigww_tabel">
 					<tbody>
 						<tr>
