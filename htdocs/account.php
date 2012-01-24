@@ -145,7 +145,7 @@ else
 	}
 	catch(Exception $e)
 	{
-		echo '<h1>Foutje</h1><p>Excuses, technische fout</p>';
+		echo $e.'<br /><h1>Foutje</h1><p>Excuses, technische fout</p>';
 	}
 }
 ?>
