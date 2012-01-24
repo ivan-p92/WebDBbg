@@ -59,7 +59,7 @@ else
 				{
 					try
 					{
-						if(!isset($_POST['newpswd']) || !isset($_POST['newpswd2']) || !isset($_POST['oldpswd'])
+						if(!isset($_POST['newpswd']) || !isset($_POST['newpswd2']) || !isset($_POST['oldpswd']))
 						{
 							throw new Exception("Vul alle velden in");
 						}
