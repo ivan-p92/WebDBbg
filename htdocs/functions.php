@@ -83,4 +83,42 @@ class Functions
 			return false;
 		}
 	}
+	
+	//valideert of een String (input) geldig is ingevuld
+	public static function validateString($string, $type, $length)
+	{
+		$type='is_'.$type;
+		
+		if(!$type($string))
+		{
+			return FALSE;
+		}
+		elseif(empty($string))
+		{
+			return FALSE;
+		}
+		elseif(strlen($string)>$length)
+		{
+			return	FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}	
+	}
+	
+	//valideert of minstens één checkbox is ingevuld
+	public static function validateCheckbox($array)
+	{
+		$length=.count($array);
+		
+		if($length<1)
+		{
+			return FALSE
+		}
+		else
+		{
+			return TRUE
+		}
+	}
 }
