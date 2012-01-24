@@ -4,7 +4,6 @@
      De hoofdstructuur ervan is een unordered list -->
 <div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
-	<ul class="event_lijst">
 	
 	<form id="sorteer_events" action="http://websec.science.uva.nl/webdb1235/index.php?page=agenda_week_lijst" method="post">
 	<label><input type="checkbox" value="klant" name="categorie[]" checked="checked" />Klant</label>
@@ -17,7 +16,7 @@
 		<span class="inner">Herladen</span></span>
 	</button></label>
 	</form>
-	
+	<ul class="event_lijst">
 <?php
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
