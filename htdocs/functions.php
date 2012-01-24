@@ -121,4 +121,17 @@ class Functions
 			return TRUE
 		}
 	}
+	
+	//valideert of twee wachtwoorden hetzelfde zijn
+	public static function validatePwd($ww1, $ww2)
+	{
+		if($ww1 != $ww2)
+		{
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}
+	}
 }
