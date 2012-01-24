@@ -18,14 +18,16 @@ if(Functions::auth("admin_rights"))
 		}
 		elseif(!empty($_POST))
 		{
-			$sql_submit = "DELETE * FROM users_permissions WHERE user_id=:user_id;";
+			$sql_submit = "DELETE * 
+						   FROM users_permissions
+						   WHERE user_id=:user_id;";
 			$stmt_submit = $mysqli->prepare($sql_submit);
 			$stmt_submit->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
 			$stmt_submit->execute();
 			echo 'sql_submit doet t?';
 			
-			$sql_submit2 = "INSERT into users_permissions (user_id, permission_id) VALUES (:user_id,
-						    (SELECT id FROM permissions WHERE permission = :permission));";
+			$sql_submit2 = "INSERT into users_permissions (user_id, permission_id)
+							VALUES (:user_id,(SELECT id FROM permissions WHERE permission = :permission));";
 			$stmt_submit2 = $mysqli->prepare($sql_submit2);
 			
 			foreach( $_POST['admin_check'] as $recht )
@@ -140,6 +142,7 @@ if(Functions::auth("admin_rights"))
 	catch(Exception $exception)
 	{
 		echo '<p>Er is iets fout gegaan</p>';
+		var_dump($exception);
 	}
 		echo '</div>';
 }
