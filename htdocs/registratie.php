@@ -10,7 +10,6 @@ else
 	<h1>Registratie formulier</h1>
 
 	<div class="form">
-		Alle velden zijn verplicht
 		<?php
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
@@ -48,7 +47,7 @@ else
 					throw new Exception("Technisch probleem, excuses", 0, $e);
 				}			
 				
-				echo '<p class="succes">Registratie gelukt, u bent nu direct ingelogd</p>';
+				echo '<p class="succes">Registratie gelukt, u bent nu direct ingelogd<br /><a href="index.php">Voltooien</a></p>';
 			}
 			catch(Exception $e)
 			{
