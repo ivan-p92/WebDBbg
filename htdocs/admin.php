@@ -8,6 +8,7 @@ if(Functions::auth("admin_rights"))
 		$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
 		$stmt = $mysqli->prepare($sql);
 		$stmt->execute();
+		$row = $stmt->fetch();
 				
 	echo '<div class="admin">';
 		
@@ -33,6 +34,8 @@ if(Functions::auth("admin_rights"))
 				$stmt_addPermission->bindParam(':permission', $recht, PDO::PARAM_STR);
 				$stmt_addPermission->execute();
 			}
+			echo '<h1>Succes!</h1>
+				<p>Rechten voor '.$row['name'].' aangepast.</p>';
 		}
 		elseif(empty($_POST))
 		{
@@ -75,7 +78,6 @@ if(Functions::auth("admin_rights"))
 			</script>
 			
 			<?php
-				$row = $stmt->fetch();
 				echo'
 				<h1>Admin pagina van '.$row['name'].'</h1>
 					<p>U kunt hier zien welke evenementen door '.$row['name'].' aangemaakt/goedgekeurd/afgekeurd zijn.<br />
@@ -99,8 +101,7 @@ if(Functions::auth("admin_rights"))
 								<tr>
 									<td>
 										<ul>';
-										
-										$sql_ongekeurd = "SELECT title FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
+										$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
 										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
 										$stmt_ongekeurd->execute();
 										
@@ -110,26 +111,53 @@ if(Functions::auth("admin_rights"))
 										}
 										else
 										{
-											while($ongekeurd = $stmt_ongekeurd->fetch())
+											while($on = $stmt_ongekeurd->fetch())
 											{
-												echo '<li>'.$ongekeurd['title'].'</li>';
+												echo '<li><a class="admin_link" 
+															 href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
 									</td>
 									<td>
-										<ul>
-										<li>
-											<a href="index.php?page=evenement">TEST</a>
-										</li>
-										</ul>
+										<ul>';
+										$sql_goedgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='approved'";
+										$stmt_goedgekeurd = $mysqli->prepare($sql_goedgekeurd);
+										$stmt_goedgekeurd->execute();
+										
+										if($stmt_goedgekeurd->rowCount() == 0)
+										{
+											echo '<li>Geen events</li>';
+										}
+										else
+										{
+											while($goed = $stmt_goedgekeurd->fetch())
+											{
+												echo '<li><a class="admin_link" 
+															 href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=keuren">'.$goed['title'].'</a></li>';
+											}
+										}
+										echo '</ul>
 									</td>
 									<td>
-										<ul>
-										<li>
-											<a href="index.php?page=evenement">TEST</a>
-										</li>
-										</ul>
+										<ul>';
+										$sql_afgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='declined'";
+										$stmt_afgekeurd = $mysqli->prepare($sql_afgekeurd);
+										$stmt_afgekeurd->execute();
+										
+										if($stmt_afgekeurd->rowCount() == 0)
+										{
+											echo '<li>Geen events</li>';
+										}
+										else
+										{
+											while($af = $stmt_afgekeurd->fetch())
+											{
+												echo '<li><a class="admin_link" 
+															 href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=keuren">'.$af['title'].'</a></li>';
+											}
+										}
+										echo '</ul>
 									</td>
 							</tbody>
 						</table>

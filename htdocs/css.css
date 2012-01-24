@@ -44,6 +44,22 @@ h1 {
 	padding: 10px 0px 0px 0px;
 }
 
+.big {
+	font-size: 17px;
+}
+
+.nopadding {
+	padding: 0px;
+}
+
+.nomargintop {
+	margin-top: 0px;
+}
+
+.right {
+	float: right;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
