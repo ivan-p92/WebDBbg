@@ -48,10 +48,36 @@ else
 		else
 		{
 			$userInfo = $stmtUserInfo->fetch();
-?>
+			?>
+			
 			<h1>Account informatie</h1>
 
-
+			<form class="right" id="wijzigww" action="" method="post">
+				<h3>Wachtwoord aanpassen</h3>
+				<table id="wijzigww_tabel">
+					<tbody>
+						<tr>
+							<td>Oud wachtwoord: </td>
+							<td><input type="password" id="oldpswd" name="mail" required="" /></td>
+						</tr>
+						<tr>
+							<td>Nieuw wachtwoord: </td>
+							<td><input type="password" id="newpswd" name="pswd" required="" /></td>
+						</tr>
+						<tr>
+							<td>Wachtwoord nogmaals: </td>
+							<td><input type="password" id="newpswd2" name="pswd2" required="" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td id="wijzigww_buttons" class="submit_button">
+								<button type="submit" class="button" id="wwopslaan"><span class="right"><span class="inner">Wachtwoord opslaan</span></span></button><br />
+								<button type="reset" class="button" id="wwreset"><span class="right"><span class="inner">Velden wissen</span></span></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
 			
 			<h3 class="big nopadding">Persoonlijke informatie</h3>
 

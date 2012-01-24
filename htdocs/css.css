@@ -56,6 +56,10 @@ h1 {
 	margin-top: 0px;
 }
 
+.right {
+	float: right;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
