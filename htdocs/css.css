@@ -24,6 +24,15 @@ h1 {
 	color: red;
 }
 
+.succes {
+    background: rgba(0, 255, 0, 0.2);
+    padding: 10px;
+    border: 1px solid rgba(0, 175, 0, 0.4);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-weight: bold;
+}
+
 .small {
 	font-size: 11px;
 }
@@ -505,6 +514,23 @@ li.event:hover {
 li.event:hover > div p a, li.event:hover > div p.begintijd {
     color: #EBB8B7;
 }
+
+/* lijst van evenementen op de admin pagina */
+li.no_li {
+	list-style: circle;
+}
+
+li.admin_li {
+	list-style: decimal;
+}
+
+li.admin_li a {
+	color: black;
+	text-decoration: none;
+}
+	li.admin_li a:hover {
+		text-decoration: underline;
+	}
 
 /* TABLES */
 

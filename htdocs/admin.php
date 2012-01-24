@@ -99,59 +99,63 @@ if(Functions::auth("admin_rights"))
 									</th>
 								</tr>
 								<tr>
-									<td>';
+									<td>
+										<ul>';
 										$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
 										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
 										$stmt_ongekeurd->execute();
 										
 										if($stmt_ongekeurd->rowCount() == 0)
 										{
-											echo 'Geen events';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												echo '<span class="admin_li">
-														<a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a><br/ >
-													  </span>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a></li>';
 											}
 										}
-										echo '</td>
-									<td>';
+										echo '</ul>
+									</td>
+									<td>
+										<ul>';
 										$sql_goedgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='approved'";
 										$stmt_goedgekeurd = $mysqli->prepare($sql_goedgekeurd);
 										$stmt_goedgekeurd->execute();
 										
 										if($stmt_goedgekeurd->rowCount() == 0)
 										{
-											echo 'Geen events';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												echo '<span class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a><br /></span>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></li>';
 											}
 										}
-										echo '</td>
-									<td>';
+										echo '</ul>
+									</td>
+									<td>
+										<ul>';
 										$sql_afgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='declined'";
 										$stmt_afgekeurd = $mysqli->prepare($sql_afgekeurd);
 										$stmt_afgekeurd->execute();
 										
 										if($stmt_afgekeurd->rowCount() == 0)
 										{
-											echo 'Geen events';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												echo '<span class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a><br /></span>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></li>';
 											}
 										}
-										echo '</td>
+										echo '</ul>
+									</td>
 							</tbody>
 						</table>
 					</div>
