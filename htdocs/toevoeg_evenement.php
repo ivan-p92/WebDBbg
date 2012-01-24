@@ -4,7 +4,7 @@
 if(Functions::auth("submit_event") && in_array("tijdelijke_evenementwaardes",$_SESSION)) 
 {
 	echo'
-	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
+	<p>DEBUG Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
 	<div class="form"><form id="input" action="http://websec.science.uva.nl/webdb1235/index.php?page=evenement&amp;semipage=toevoeg_evenement" method="post">
 	<table class="formtable" id="event_toevoegen">
 		<tbody>
