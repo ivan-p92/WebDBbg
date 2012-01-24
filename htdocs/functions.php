@@ -161,5 +161,7 @@ class Functions
 	}
 	
 	//kijkt of einddatum, na begintijd is
-	public static function validatStartEnd($startDate, $
+	public static function validatStartEnd($startDate, $)
+	{
+	}
 }
