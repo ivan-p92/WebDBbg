@@ -156,6 +156,7 @@ if(Functions::auth("admin_rights"))
 										}
 										echo '</ul>
 									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -170,7 +171,7 @@ if(Functions::auth("admin_rights"))
 					echo' <span id="submit_rechten" class="submit_button"><button class="button" type="submit">
 							<span class="right">
 							<span class="inner">Pas rechten aan</span></span>
-					</button>
+					</button></span>
 					</form>';
 		}
 	}
