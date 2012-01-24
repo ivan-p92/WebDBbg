@@ -66,6 +66,14 @@
 	<div id="menu">
 		<ul>
 			<?php
+			if(Functions::ingelogd())
+			{
+				$db = Functions::getDB();
+				$s = $db->prepare("SELECT permission FROM permissions JOIN users_permissions ON permissions.id = users_permissions.permission_id WHERE users_permissions.user_id = :id");
+				$s->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
+				$s->execute();
+				print_r($s->fetchAll());
+			}
 			
 			if(!isset($_GET['semipage']))
 			{
@@ -78,10 +86,21 @@
 			
 			$menuItems = array('agenda_week' => 'Agenda', 'toevoeg_evenement' => 'Evenement toevoegen', 
 				'keuren' => 'Evenementen keuren', 'lijst_van_gebruikers' => 'Gebruikersrechten aanpassen', 'contact' => 'Contact');
+				
+						
+			$showItems = array('agenda_week' => array(), 'toevoeg_evenement' => array('submit_event'), 'keuren' => array('approve_event'), 'lijst_van_gebruikers' => array('admin_rights'), 'contact' => array(), 'registreren' => array());
 			
 			foreach($menuItems as $fileName => $screenName)
 			{
 				echo '<li '.(($fileName == PAGE || $semiPage == $fileName) ? 'class="active" ' : '').'><a href="index.php?page='.$fileName.'"><span>'.$screenName.'</span></a></li>';
+				if(!isset($showItems[$fileName]))
+				{
+				
+				}
+				else
+				{
+					
+				}
 			}
 
 			?>
