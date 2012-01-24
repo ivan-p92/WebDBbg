@@ -60,6 +60,18 @@ h1 {
 	float: right;
 }
 
+.colorinherit {
+	color: inherit;
+}
+
+.underlineswap {
+	text-decoration: none;
+}
+
+.underlineswap:hover {
+	text-decoration: underline;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
