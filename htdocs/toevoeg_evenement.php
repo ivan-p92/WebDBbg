@@ -326,6 +326,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		</tbody>
 	</table></form></div>
 ';
+unset($_SESSION["tijdelijke_evenementwaardes"]);
 }
 elseif(Functions::auth("submit_event")) 
 {
