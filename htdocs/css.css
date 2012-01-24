@@ -32,6 +32,10 @@ h1 {
 	font-weight: bold;
 }
 
+.block {
+	display: block;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 

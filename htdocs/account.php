@@ -55,11 +55,11 @@ else
 			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.</p>
 
 		<p>
-			<span class="b">Naam:</span>
+			<span class="b block">Naam:</span>
 			<?php echo $userInfo['name']; ?><br />
-			<span class="b">Accountnaam (email):</span>
+			<span class="b block">Accountnaam (email):</span>
 			<?php echo $userInfo['email']; ?><br />
-			<span class="b">Huidige permissies:</span>
+			<span class="b block">Huidige permissies:</span>
 			<?php
 			if($stmtUserRights->rowCount() == 0)
 			{
