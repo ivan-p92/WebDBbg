@@ -33,6 +33,8 @@ if(Functions::auth("admin_rights"))
 				$stmt_addPermission->bindParam(':permission', $recht, PDO::PARAM_STR);
 				$stmt_addPermission->execute();
 			}
+			echo '<h1>Succes!</h1>
+				<p>Rechten voor '.$row['namen'].' aangepast</p>';
 		}
 		elseif(empty($_POST))
 		{
@@ -100,7 +102,7 @@ if(Functions::auth("admin_rights"))
 									<td>
 										<ul>';
 										
-										$sql_ongekeurd = "SELECT title FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
+										$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
 										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
 										$stmt_ongekeurd->execute();
 										
@@ -112,7 +114,8 @@ if(Functions::auth("admin_rights"))
 										{
 											while($ongekeurd = $stmt_ongekeurd->fetch())
 											{
-												echo '<li>'.$ongekeurd['title'].'</li>';
+												echo '<li><a class="admin_link" 
+															 href="index.php?page=evenement&amp;id='.$ongekeurd['id'].'&amp;semipage=keuren>'.$ongekeurd['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
