@@ -13,6 +13,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	}
 
 }
+
+try
+{
+	if(Functions::ingelogd())
+	{
+		$db = Functions::getDB();
+		$sql = "SELECT name, email FROM users WHERE id = :id;";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
+		$stmt->execute();
+		$row = null;
+		if($stmt->rowCount() == 1)
+		{		
+			$row = $stmt->fetch();
+		}
+
+}
+catch(Exception $e)
+{
+
+}
+
 ?>
 <p>Heeft u vragen of opmerkingen, dan horen wij dat graag. <br />
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
@@ -21,10 +43,10 @@ Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u o
 	<table class="formtable" id="contact"><tbody>
 	<tr>
 		<td id="eerstecel">Naam</td>
-		<td><input required="required" placeholder="Typ hier uw naam" name="contact_naam" /></td>
+		<td><input <?php echo ((isset($row['name'])) ? 'value="'.$row['name'].'"' : '');?> required="required" placeholder="Typ hier uw naam" name="contact_naam" /></td>
 	</tr><tr>
 		<td>Email</td>
-		<td><input required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" /></td>
+		<td><input <?php echo ((isset($row['email'])) ? 'value="'.$row['email'].'"' : '');?>required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" /></td>
 	</tr><tr>
 		<td>Bericht</td>
 		<td><textarea required="required" placeholder="Typ hier uw bericht" rows="10" cols="10" name="contact_message"></textarea></td>
