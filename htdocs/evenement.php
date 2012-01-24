@@ -130,7 +130,7 @@ echo'
 </table>
 
 <div id="event_buttons">
-<a class="submit_button" href="&amp;k=G" title="Goedkeuren">
+<a class="submit_button" href="index.php?page=evenement&amp;id='.$_GET["id"].'&amp;k=G&amp;semipage=keuren" title="Goedkeuren">
 	<button class="button"><span class="right"><span class="inner">Goedkeuren</span></span></button>
 </a>	
 <a class="submit_button" href="#" title="Afkeuren">
