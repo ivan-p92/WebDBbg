@@ -100,7 +100,7 @@ if(Functions::auth("admin_rights"))
 									<td>
 										<ul>';
 										
-										$sql_ongekeurd = "SELECT title FROM events_status WHERE create_id=".$_GET['id']." AND status=unapproved";
+										$sql_ongekeurd = "SELECT title FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
 										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
 										$stmt_ongekeurd->execute();
 										
