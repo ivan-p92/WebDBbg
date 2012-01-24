@@ -56,7 +56,7 @@ else
 			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.
 		</p>
 		
-		<h3>Persoonlijke informatie</h3>
+		<h3 class="big nopadding">Persoonlijke informatie</h3>
 
 		<p>
 			<span class="b block paddingtop">Naam:</span>
@@ -81,7 +81,7 @@ else
 		
 		<?php
 		
-		echo '<h3>Deze evenementen zijn door u aangemaakt:</h3>';	
+		echo '<h3 class="big nopadding">Deze evenementen zijn door u aangemaakt:</h3>';	
 		
 		$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY `status` ASC, `create_date` DESC";
 		$stmtEvents = $db->prepare($sqlEvents);
