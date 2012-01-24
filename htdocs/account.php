@@ -54,6 +54,12 @@ else
 
 			<form class="right" id="wijzigww" action="" method="post">
 				<h3 class="big nopadding">Wachtwoord aanpassen</h3>
+				<?php
+				if($_SERVER['REQUEST_METHOD'] == 'POST')
+				{
+					echo '<p>Wachtwoord veranderd</p>';
+				}
+				?>
 				<table id="wijzigww_tabel">
 					<tbody>
 						<tr>
