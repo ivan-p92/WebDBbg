@@ -93,6 +93,8 @@ else
 				$events[$row['status']][] = $row;
 			}
 			
+			print_r($events);
+			
 			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';
 			
 			if(count($events['unapproved']) != 0)
