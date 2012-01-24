@@ -88,6 +88,10 @@ else
 		else
 		{
 			$events = array('approved' => array(), 'unapproved' => array(), 'declined' => array());
+			while($row = $stmtEvents->fetch())
+			{
+				$events[$row['status']] = $row;
+			}
 			
 			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';
 			
@@ -96,7 +100,7 @@ else
 				echo '<span class="b block paddingtop">Nog te keuren:</span>';
 				foreach($events['approved'] as $value)
 				{
-					echo $value.'<br />';
+					echo $value['name'].'<br />';
 				}
 			}
 			
