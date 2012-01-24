@@ -19,7 +19,7 @@ function translateRights($right)
 	}
 }
 
-if(!Functions::ingelogd() || !isset($_GET['id']) || !ctype_digit($_GET['id']))
+if(!Functions::ingelogd())
 {
 	echo '<h1>Geen rechten</h1><p>U kunt deze pagina niet bekijken omdat u onvoldoende rechten heeft.</p>';
 }
@@ -31,12 +31,12 @@ else
 		
 		$sqlUserInfo = "SELECT email, name FROM users WHERE id = :id;";
 		$stmtUserInfo = $db->prepare($sqlUserInfo);
-		$stmtUserInfo->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
+		$stmtUserInfo->bindParam(":id", $_SESSION['userid'], PDO::PARAM_INT);
 		$stmtUserInfo->execute();
 		
 		$sqlUserRights = "SELECT permissions.permission FROM permissions JOIN users_permissions ON users_permissions.permission_id = permissions.id WHERE users_permissions.user_id = :id;";
 		$stmtUserRights = $db->prepare($sqlUserRights);
-		$stmtUserRights->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+		$stmtUserRights->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
 		$stmtUserRights->execute();
 		
 
@@ -57,7 +57,46 @@ else
 				<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					echo '<p>Wachtwoord veranderd</p>';
+					try
+					{
+						if(!isset($_POST['newpswd']) || !isset($_POST['newpswd2']) || !isset($_POST['oldpswd'])
+						{
+							throw new Exception("Vul alle velden in");
+						}
+						
+						if($_POST['newpswd'] != $_POST['newpswd2'])
+						{
+							throw new Exception("Nieuwe wachtwoorden ongelijk");
+						}
+						
+						if(strlen($_POST['newpswd']) < 4)
+						{
+							throw new Exception("Minimaal 4 tekens");
+						}
+						
+						try
+						{
+							$sql = "UPDATE users SET password = :password_new WHERE id = :id AND password = :password_old;";
+							$stmt = $db->prepare($sql);
+							$stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
+							$stmt->bindParam(':password_new', Functions::hashPass($_POST['newpswd']), PDO::PARAM_STR);
+							$stmt->bindParam(':password_old', Functions::hashPass($_POST['oldpswd']), PDO::PARAM_STR);
+							$stmt->execute();
+						}
+						catch(Exception $e)
+						{
+							throw new Exception("Technische fout", 0, $e);
+						}
+						
+						if($stmt->rowCount() != 1)
+						{
+							throw new Exception("Oud wachtwoord incorrect");
+						}						
+					}
+					catch(Exception $e)
+					{
+						echo '<p class="error">'.$e->getMessage().'</p>';
+					}
 				}
 				?>
 				<table id="wijzigww_tabel">
@@ -111,7 +150,7 @@ else
 			
 			$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY `status` ASC, `create_date` DESC";
 			$stmtEvents = $db->prepare($sqlEvents);
-			$stmtEvents->bindParam(':user_id', $_GET['id'], PDO::PARAM_INT);
+			$stmtEvents->bindParam(':user_id', $_SESSION['userid'], PDO::PARAM_INT);
 			$stmtEvents->execute();
 			
 			if($stmtEvents->rowCount() == 0)
