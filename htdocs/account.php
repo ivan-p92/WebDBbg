@@ -93,16 +93,13 @@ else
 				$events[$row['status']][] = $row;
 			}
 			
-			print_r($events);
-			
-			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';
-			
+			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';			
 			if(count($events['unapproved']) != 0)
 			{
 				echo '<span class="b block paddingtop">Nog te keuren:</span>';
 				foreach($events['approved'] as $value)
 				{
-					echo $value['name'].'<br />';
+					echo $value['title'].'<br />';
 				}
 			}
 			
@@ -111,7 +108,7 @@ else
 				echo '<span class="b block paddingtop">Goedgekeurde evenementen:</span>';
 				foreach($events['approved'] as $value)
 				{
-					echo $value.'<br />';
+					echo $value['title'].'<br />';
 				}
 			}
 			
@@ -120,7 +117,7 @@ else
 				echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
 				foreach($events['approved'] as $value)
 				{
-					echo $value.'<br />';
+					echo $value['title'].'<br />';
 				}
 			}
 		?>
