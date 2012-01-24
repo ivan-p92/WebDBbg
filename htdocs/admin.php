@@ -99,8 +99,8 @@ if(Functions::auth("admin_rights"))
 									</th>
 								</tr>
 								<tr>
-									<td>
-										<ul>';
+									<td class="admin_td">
+										<ol>';
 										$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
 										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
 										$stmt_ongekeurd->execute();
@@ -113,13 +113,17 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
+												if(strlen($on['title']) > 50)
+												{
+													$on['title']= substr($on['title'], 0, 50).'...';
+												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.out($on['title']).'</a></li>';
 											}
 										}
-										echo '</ul>
+										echo '</ol>
 									</td>
-									<td>
-										<ul>';
+									<td class="admin_td">
+										<ol>';
 										$sql_goedgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='approved'";
 										$stmt_goedgekeurd = $mysqli->prepare($sql_goedgekeurd);
 										$stmt_goedgekeurd->execute();
@@ -132,13 +136,17 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
+												if(strlen($goed['title']) > 50)
+												{
+													$goed['title']= substr($goed['title'], 0, 50).'...';
+												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.out($goed['title']).'</a></li>';
 											}
 										}
-										echo '</ul>
+										echo '</ol>
 									</td>
-									<td>
-										<ul>';
+									<td class="admin_td">
+										<ol>';
 										$sql_afgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='declined'";
 										$stmt_afgekeurd = $mysqli->prepare($sql_afgekeurd);
 										$stmt_afgekeurd->execute();
@@ -151,10 +159,14 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
+												if(strlen($af['title']) > 50)
+												{
+													$af['title']= substr($af['title'], 0, 50).'...';
+												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.out($af['title']).'</a></li>';
 											}
 										}
-										echo '</ul>
+										echo '</ol>
 									</td>
 								</tr>
 							</tbody>
