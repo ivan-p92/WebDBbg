@@ -9,7 +9,7 @@ if(Functions::auth("admin_rights"))
 		$stmt = $mysqli->prepare($sql);
 		$stmt->execute();
 				
-	echo '<div class="admin">'
+	echo '<div class="admin">';
 		
 		
 		if($stmt->rowCount() == 0)
