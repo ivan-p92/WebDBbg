@@ -1,19 +1,7 @@
 <?php
 if(Functions::auth("admin_rights"))
 {
-	try
-	{
-		$mysqli = Functions::getDB();
-		
-		$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
-		$stmt = $mysqli->prepare($sql);
-		$stmt->execute();
-				
-		$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
-		$stmt_check = $mysqli->prepare($sql_check);
-		$stmt_check->execute();
-		?>
-
+	?>
 	<script type="text/javascript">
 		function check_rechten( id )
 		{
@@ -50,13 +38,27 @@ if(Functions::auth("admin_rights"))
 		
 		<?php
 
-
+	try
+	{
+		$mysqli = Functions::getDB();
 		
+		$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
+		$stmt = $mysqli->prepare($sql);
+		$stmt->execute();
+				
+		$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
+		$stmt_check = $mysqli->prepare($sql_check);
+		$stmt_check->execute();
+				
 		if($stmt->rowCount() == 0)
 		{
 			echo '<p>Deze gebruiker bestaat niet</p>';
 		}
-		else
+		elseif(!empty($_POST))
+		{
+			
+		}
+		elseif(empty($_POST))
 		{
 			$row = $stmt->fetch();
 			echo'
@@ -106,15 +108,15 @@ if(Functions::auth("admin_rights"))
 				</div>
 
 				<p>Op dit moment heeft '.$row['name'].' de volgende rechten:</p>
-				<form id="admin" action="" method="get">
+				<form id="admin" action="index.php?page=admin&amp;semipage=lijst_van_gebruikers&amp;id='.$_GET['id'].'" method="post">
 				
-				<input type="checkbox" value="create" id="create" />Evenementen aanmaken
-				<input type="checkbox" value="approve" id="approve" />Evenementen keuren
-				<input type="checkbox" value="admin" id="admin1" />Admin rechten<br />';
+				<input type="checkbox" name="admin_check[]" value="create" id="create" />Evenementen aanmaken
+				<input type="checkbox" name="admin_check[]" value="approve" id="approve" />Evenementen keuren
+				<input type="checkbox" name="admin_check[]" value="admin" id="admin1" />Admin rechten<br />';
 				
 			
 				
-				echo' <span id="submit_rechten" class="submit_button"><button href="#" class="button" type="submit">
+				echo' <span id="submit_rechten" class="submit_button"><button class="button" type="submit">
 						<span class="right">
 						<span class="inner">Pas rechten aan</span></span>
 				</button>
