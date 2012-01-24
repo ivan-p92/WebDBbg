@@ -64,12 +64,12 @@ else
 							throw new Exception("Vul alle velden in");
 						}
 						
-						if($_POST['newpswd'] != $_POST['newpswd2'])
+						if($_POST['pswd'] != $_POST['pswd2'])
 						{
 							throw new Exception("Nieuwe wachtwoorden ongelijk");
 						}
 						
-						if(strlen($_POST['newpswd']) < 4)
+						if(strlen($_POST['pswd']) < 4)
 						{
 							throw new Exception("Minimaal 4 tekens");
 						}
@@ -79,8 +79,8 @@ else
 							$sql = "UPDATE users SET password = :password_new WHERE id = :id AND password = :password_old;";
 							$stmt = $db->prepare($sql);
 							$stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
-							$stmt->bindParam(':password_new', Functions::hashPass($_POST['newpswd']), PDO::PARAM_STR);
-							$stmt->bindParam(':password_old', Functions::hashPass($_POST['oldpswd']), PDO::PARAM_STR);
+							$stmt->bindParam(':password_new', Functions::hashPass($_POST['pswd']), PDO::PARAM_STR);
+							$stmt->bindParam(':password_old', Functions::hashPass($_POST['pswdo']), PDO::PARAM_STR);
 							$stmt->execute();
 						}
 						catch(Exception $e)
@@ -91,7 +91,9 @@ else
 						if($stmt->rowCount() != 1)
 						{
 							throw new Exception("Oud wachtwoord incorrect");
-						}						
+						}	
+						
+						echo '<p>Wachtwoord veranderd</p>';
 					}
 					catch(Exception $e)
 					{
