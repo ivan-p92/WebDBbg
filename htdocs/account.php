@@ -55,11 +55,11 @@ else
 			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.</p>
 
 		<p>
-			<span class="b block padding">Naam:</span>
+			<span class="b block paddingtop">Naam:</span>
 			<?php echo $userInfo['name']; ?><br />
-			<span class="b block padding">Accountnaam (email):</span>
+			<span class="b block paddingtop">Accountnaam (email):</span>
 			<?php echo $userInfo['email']; ?><br />
-			<span class="b block padding">Huidige permissies:</span>
+			<span class="b block paddingtop">Huidige permissies:</span>
 			<?php
 			if($stmtUserRights->rowCount() == 0)
 			{
@@ -76,7 +76,7 @@ else
 		</p>
 		
 		<?php
-		$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY STATUS";
+		$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY `status` ASC, `create_date` DESC";
 		$stmtEvents = $db->prepare($sqlEvents);
 		$stmtEvents->bindParam(':user_id', $_GET['id'], PDO::PARAM_INT);
 		$stmtEvents->execute();
@@ -87,8 +87,38 @@ else
 		}
 		else
 		{
-			echo '<pre>', print_r($stmtEvents->fetchAll(), true), '</pre>';
+			$events = array('approved' => array(), 'unapproved' => array(), 'declined' => array());
+			
+			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';
+			
+			if(count($events['unapproved']) != 0)
+			{
+				echo '<span class="b block paddingtop">Nog te keuren:</span>';
+				foreach($events['approved'] as $value)
+				{
+					echo $value.'<br />';
+				}
+			}
+			
+			if(count($events['approved']) != 0)
+			{
+				echo '<span class="b block paddingtop">Goedgekeurde evenementen:</span>';
+				foreach($events['approved'] as $value)
+				{
+					echo $value.'<br />';
+				}
+			}
+			
+			if(count($events['declined']) != 0)
+			{
+				echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
+				foreach($events['approved'] as $value)
+				{
+					echo $value.'<br />';
+				}
+			}
 		?>
+			<!--
 			<p>Deze evenementen zijn door u aangemaakt:</p>
 			<div class="user_events">
 				<table id="user_events">
@@ -130,6 +160,7 @@ else
 					</tbody>
 				</table>
 			</div>
+			-->
 		<?php
 		}
 		?>
