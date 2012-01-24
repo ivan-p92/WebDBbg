@@ -3,7 +3,7 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 {
 	$database=Functions::getDB();
 
-	$sql = 'UPDATE events SET approve_id=:uid AND approve_date=NOW() AND public=1 WHERE id=:eid AND approve_id IS NULL';
+	$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=1 WHERE id=:eid AND approve_id IS NULL';
 
 	$stmt = $database->prepare($sql);
 
