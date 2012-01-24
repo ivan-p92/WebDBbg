@@ -20,9 +20,9 @@ if(Functions::auth("admin_rights"))
 		{
 			$sql_submit = "DELETE * 
 						   FROM users_permissions
-						   WHERE user_id=:user_id;";
+						   WHERE user_id=:user_id";
 			$stmt_submit = $mysqli->prepare($sql_submit);
-			$stmt_submit->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
+			$stmt_submit->bindParam(":user_id",$_GET['id'],PDO::PARAM_INT);
 			$stmt_submit->execute();
 			echo 'sql_submit doet t?';
 			
