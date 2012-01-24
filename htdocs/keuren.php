@@ -61,9 +61,9 @@
 						
 						echo '<div class="event_details">';
 						echo '<p class="event_titel">';
-						echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.$row['title'].'</a>';
+						echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.out($row['title']).'</a>';
 						echo '</p>';
-						echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
+						echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 						echo '</div>';
 						echo '</li>';
 					}
@@ -79,9 +79,9 @@
 
 						echo '<div class="event_details">';
 						echo '<p class="event_titel">';
-						echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.$row['title'].'</a>';
+						echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=keuren">'.out($row['title']).'</a>';
 						echo '</p>';
-						echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.$row['location'].'</p>';
+						echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 						echo '</div>';
 						echo '</li>';
 		
