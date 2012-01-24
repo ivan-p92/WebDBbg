@@ -76,13 +76,13 @@ else
 						
 						try
 						{
-							$sql = "UPDATE users SET password = :password_new WHERE id = :id AND password = :password_old;";
+							$sql = "UPDATE `users` SET `password` = :password_new WHERE `id` = :id AND `password` = :password_old;";
 							echo Functions::hashPass($_POST['pswdo']);
 							$stmt = $db->prepare($sql);
 							$stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
 							$stmt->bindParam(':password_new', Functions::hashPass($_POST['pswd']), PDO::PARAM_STR);
 							$stmt->bindParam(':password_old', Functions::hashPass($_POST['pswdo']), PDO::PARAM_STR);
-							$stmt->execute();
+							$stmt->execute();								
 						}
 						catch(Exception $e)
 						{
@@ -92,7 +92,7 @@ else
 						if($stmt->rowCount() != 1)
 						{
 							throw new Exception("Oud wachtwoord incorrect");
-						}	
+						}
 						
 						echo '<p>Wachtwoord veranderd</p>';
 					}
