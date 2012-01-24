@@ -112,9 +112,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												echo '<p class="admin_li">
+												echo '<span class="admin_li">
 														<a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a><br/ >
-													  </p>';
+													  </span>';
 											}
 										}
 										echo '</td>
@@ -131,7 +131,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												echo '<p class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></p>';
+												echo '<span class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></span>';
 											}
 										}
 										echo '</td>
@@ -148,7 +148,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												echo '<p class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></p>';
+												echo '<span class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></span>';
 											}
 										}
 										echo '</td>
