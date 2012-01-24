@@ -77,7 +77,7 @@ else
 						try
 						{
 							$sql = "UPDATE `users` SET `password` = :password_new WHERE `id` = :id AND `password` = :password_old;";
-							echo Functions::hashPass($_POST['pswdo']);
+			
 							$stmt = $db->prepare($sql);
 							$stmt->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
 							$stmt->bindParam(':password_new', Functions::hashPass($_POST['pswd']), PDO::PARAM_STR);
@@ -94,7 +94,7 @@ else
 							throw new Exception("Oud wachtwoord incorrect");
 						}
 						
-						echo '<p>Wachtwoord veranderd</p>';
+						echo '<p class="succes">Wachtwoord veranderd</p>';
 					}
 					catch(Exception $e)
 					{
