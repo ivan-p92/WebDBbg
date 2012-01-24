@@ -134,4 +134,29 @@ class Functions
 			return TRUE;
 		}
 	}
+	
+	//kijkt of er een geldige datum is ingevuld
+	public static function validateDate($date, $maand, $jaar)
+	{
+		if($dag>31)
+		{
+			return FALSE;
+		}	
+		elseif($maand=="februari" && date=29 && (($jaar%4)!=0 || ($jaar%100)=0))
+		{
+			return FALSE;
+		}
+		elseif($maand=="februari" && date>29)
+		{
+			return FALSE;
+		}
+		elseif(($maand=="april" || $maand=="juni" || $maand=="oktober" || $maand=="november") && $dag>=31)
+		{
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}	
+	}
 }
