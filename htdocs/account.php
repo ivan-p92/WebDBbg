@@ -51,8 +51,12 @@ else
 ?>
 		<h1>Account informatie</h1>
 
-		<p> Op deze pagina vindt u informatie over uw account. <br />
-			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.</p>
+		<p>
+			Op deze pagina vindt u informatie over uw account. <br />
+			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.
+		</p>
+		
+		<h3>Persoonlijke informatie</h3>
 
 		<p>
 			<span class="b block paddingtop">Naam:</span>
@@ -76,6 +80,9 @@ else
 		</p>
 		
 		<?php
+		
+		echo '<h3>Deze evenementen zijn door u aangemaakt:</h3>';	
+		
 		$sqlEvents = "SELECT * FROM `events_status` WHERE create_id = :user_id ORDER BY `status` ASC, `create_date` DESC";
 		$stmtEvents = $db->prepare($sqlEvents);
 		$stmtEvents->bindParam(':user_id', $_GET['id'], PDO::PARAM_INT);
@@ -92,8 +99,7 @@ else
 			{
 				$events[$row['status']][] = $row;
 			}
-			
-			echo '<p class="b big">Deze evenementen zijn door u aangemaakt:</p>';			
+					
 			if(count($events['unapproved']) != 0)
 			{
 				echo '<span class="b block paddingtop">Nog te keuren:</span>';
