@@ -113,9 +113,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												if(strlen($on['title']) > 10)
+												if(strlen($on['title']) > 15)
 												{
-													$on['title']= substr($on['title'], 0, 10).'...';
+													$on['title']= substr($on['title'], 0, 15).'...';
 												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.out($on['title']).'</a></li>';
 											}
@@ -159,9 +159,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												if(strlen($af['title']) > 18)
+												if(strlen($af['title']) > 15)
 												{
-													$af['title']= substr($af['title'], 0, 10).'...';
+													$af['title']= substr($af['title'], 0, 15).'...';
 												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.out($af['title']).'</a></li>';
 											}
