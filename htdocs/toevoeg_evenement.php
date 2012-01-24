@@ -3,53 +3,30 @@
 <?php
 if(Functions::auth("submit_event") && in_array("tijdelijke_evenementwaardes",$_SESSION)) 
 {
-	echo <<<EOT
+	echo'
 	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
 	<div class="form"><form id="input" action="http://websec.science.uva.nl/webdb1235/index.php?page=evenement&amp;semipage=toevoeg_evenement" method="post">
 	<table class="formtable" id="event_toevoegen">
 		<tbody>
 		<tr>
 			<td id="eerstecel">Titel</td>
-			<td><input id="titel" type="text" name="titel" /></td>
+			<td><input id="titel" type="text" name="titel" />'.$_SESSION["tijdelijke_evenementwaardes"]["titel"].'</td>
 		</tr>
 		<tr id="omschrijving">
 			<td>Omschrijving</td>
-			<td><textarea name="omschrijving" rows="" cols=""></textarea></td>
+			<td><textarea name="omschrijving" rows="" cols="">'.$_SESSION["tijdelijke_evenementwaardes"]["omschrijving"].'</textarea></td>
 		</tr>
 		<tr>
 			<td>Begindatum</td>
 			<td><select id="datum1" name="datum1">
-	<option value="1">1</option>
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-	<option value="5">5</option>
-	<option value="6">6</option>
-	<option value="7">7</option>
-	<option value="8">8</option>
-	<option value="9">9</option>
-	<option value="10">10</option>
-	<option value="11">11</option>
-	<option value="12">12</option>
-	<option value="13">13</option>
-	<option value="14">14</option>
-	<option value="15">15</option>
-	<option value="16">16</option>
-	<option value="17">17</option>
-	<option value="18">18</option>
-	<option value="19">19</option>
-	<option value="20">20</option>
-	<option value="21">21</option>
-	<option value="22">22</option>
-	<option value="23">23</option>
-	<option value="24">24</option>
-	<option value="25">25</option>
-	<option value="26">26</option>
-	<option value="27">27</option>
-	<option value="28">28</option>
-	<option value="29">29</option>
-	<option value="30">30</option>
-	<option value="31">31</option>
+	';
+		$datum = $_SESSION["tijdelijke_evenementwaardes"]["datum1"];
+		for($i=1; $i<=31; $i++)
+		{
+			if($i == $datum) echo'<option value="'.$i.'" selected="selected">'.$i.'</option>';
+			else echo'<option value="'.$i.'">'.$i.'</option>';
+		}
+	echo'
 	</select>
 	<select name="maand1">
 	<option value="01">januari</option>
