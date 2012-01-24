@@ -13,7 +13,7 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 	$stmt->execute();
 
 	$count = $stmt->rowCount();
-	if(count == 1)
+	if($count == 1)
 		echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
 	else
 		echo '<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds goedgekeurd!</p>';
