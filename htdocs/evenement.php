@@ -14,8 +14,8 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 
 		$stmt->execute();
 
-		$count = $stmt->rowCount();
-		if($count == 1)
+		$count = $stmt->errorCode();
+		if($count == 00000)
 			echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
 		else
 			echo $count.'<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
@@ -33,8 +33,8 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 
 		$stmt->execute();
 
-		$count = $stmt->rowCount();
-		if($count == 1)
+		$count = $stmt->errorCode();
+		if($count == 00000)
 			echo '<h1>Evenement afgekeurd!</h1> <p>Het evenement is succesvol afgekeurd!</p>';
 		else
 			echo $count.'<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
