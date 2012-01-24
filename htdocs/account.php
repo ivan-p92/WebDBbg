@@ -131,9 +131,9 @@ else
 
 			<p class="nomargintop">
 				<span class="b block paddingtop">Naam:</span>
-				<?php echo $userInfo['name']; ?><br />
+				<?php echo out($userInfo['name']); ?><br />
 				<span class="b block paddingtop">Accountnaam (email):</span>
-				<?php echo $userInfo['email']; ?><br />
+				<?php echo out($userInfo['email']); ?><br />
 				<span class="b block paddingtop">Huidige permissies:</span>
 				<?php
 				if($stmtUserRights->rowCount() == 0)
@@ -173,7 +173,7 @@ else
 					echo '<span class="b block paddingtop">Nog te keuren:</span>';
 					foreach($events['unapproved'] as $value)
 					{
-						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.$value['title'].'</a><br />';
+						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.out($value['title']).'</a><br />';
 					}
 				}
 				
@@ -182,7 +182,7 @@ else
 					echo '<span class="b block paddingtop">Goedgekeurde evenementen:</span>';
 					foreach($events['approved'] as $value)
 					{
-						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.$value['title'].'</a><br />';
+						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.out($value['title']).'</a><br />';
 					}
 				}
 				
@@ -191,7 +191,7 @@ else
 					echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
 					foreach($events['declined'] as $value)
 					{
-						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.$value['title'].'</a><br />';
+						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.out($value['title']).'</a><br />';
 					}
 				}
 			?>
