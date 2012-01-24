@@ -34,7 +34,7 @@ else
 		$stmtUserInfo->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
 		$stmtUserInfo->execute();
 		
-		$sqlUserRights = "SELECT permissions.permission FROM permissions JOIN users_permissions ON users_permissions.permission_id = permission.id WHERE users_permissions.user_id = :id;";
+		$sqlUserRights = "SELECT permissions.permission FROM permissions JOIN users_permissions ON users_permissions.permission_id = permissions.id WHERE users_permissions.user_id = :id;";
 		$stmtUserRights = $db->prepare($sqlUserRights);
 		$stmtUserRights->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
 		$stmtUserRights->execute();
