@@ -56,7 +56,7 @@ if(Functions::auth("admin_rights"))
 		}
 		elseif(!empty($_POST))
 		{
-			
+			echo 'tralalalalala';
 		}
 		elseif(empty($_POST))
 		{
