@@ -93,7 +93,7 @@ else
 				$events[$row['status']][] = $row;
 			}
 			
-			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';			
+			echo '<p class="b big">Deze evenementen zijn door u aangemaakt:</p>';			
 			if(count($events['unapproved']) != 0)
 			{
 				echo '<span class="b block paddingtop">Nog te keuren:</span>';
