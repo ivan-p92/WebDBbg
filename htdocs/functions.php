@@ -142,7 +142,7 @@ class Functions
 		{
 			return FALSE;
 		}	
-		elseif($maand=="februari" && date=29 && (($jaar%4)!=0 || ($jaar%100)==0))
+		elseif($maand=="februari" && date==29 && (($jaar%4)!=0 || ($jaar%100)==0))
 		{
 			return FALSE;
 		}
