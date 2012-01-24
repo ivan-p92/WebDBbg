@@ -1,5 +1,10 @@
 <?php
 
+function out($string)
+{
+	return htmlentities($string, ENT_QUOTES, "UTF-8");
+}
+
 class Functions
 {
 	private static $db = null;
@@ -13,11 +18,6 @@ class Functions
 		return false;
 	}
 	
-	public static function out($string)
-	{
-		return htmlentities($string, ENT_QUOTES, "UTF-8");
-	}
-
 	public static function hashPass($pwd)
 	{
 		$SALT = 'D#%fFLKJ@#JO:%#  >?ASDA?:"@$%n asfd ;ae;é"FJ# #%b tq34"sa vf325yiougvrio*(&^$53vh(^)FDs';
