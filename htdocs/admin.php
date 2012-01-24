@@ -168,10 +168,12 @@ if(Functions::auth("admin_rights"))
 					<input type="checkbox" name="admin_check[]" value="approve_event" id="approve_event" />Evenementen keuren
 					<input type="checkbox" name="admin_check[]" value="admin_rights" id="admin_rights" />Admin rechten<br />';
 					
-					echo' <span id="submit_rechten" class="submit_button"><button class="button" type="submit">
-							<span class="right">
-							<span class="inner">Pas rechten aan</span></span>
-					</button></span>
+					echo' <span class="submit_button">
+								<button class="button" type="submit">
+									<span class="right">
+									<span class="inner">Pas rechten aan</span></span>
+								</button>
+						  </span>
 					</form>';
 		}
 	}
