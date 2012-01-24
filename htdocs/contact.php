@@ -1,8 +1,23 @@
 <h1>Contact</h1>
+
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	if(!isset($_POST['contact_name']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) || empty($_POST['contact_name']) || empty($_POST['contact_mail']) || empty($_POST['contact_message']))
+	{
+		echo '<p class="error">Niet alle velden zijn juist ingevuld</p>';
+	}
+	else
+	{
+		echo '<p class="succes">Dank voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.</p>';
+	}
+
+}
+?>
 <p>Heeft u vragen of opmerkingen, dan horen wij dat graag. <br />
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
 
-<form action="index.php?page=contact_dank&semipage=contact" method="post">
+<form action="" method="post">
 	<table class="formtable" id="contact"><tbody>
 	<tr>
 		<td id="eerstecel">Naam</td>
