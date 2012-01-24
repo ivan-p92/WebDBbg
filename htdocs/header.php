@@ -46,7 +46,7 @@
 				echo '<div class="ingelogd">
 						<div id="ingelogd_info">
 							<p>Ingelogd als: <a href="index.php?page=account&amp;id='.$_SESSION['userid'].'" title="Account Informatie">'.$row['name'].'</a></p>
-							<p><a href="index.php?page=goodbye">Uitloggen</a></p>
+							<p><a href="goodbye.php">Uitloggen</a></p>
 						</div>
 					</div>';
 			}
@@ -55,7 +55,7 @@
 				echo '<div class="ingelogd">
 						<div id="ingelogd_info">
 							<p class="error">Informatie kon niet worden opgehaald</p>
-							<p><a href="index.php?page=goodbye">Uitloggen</a></p>
+							<p><a href="goodbye.php">Uitloggen</a></p>
 						</div>
 					</div>';
 			}
