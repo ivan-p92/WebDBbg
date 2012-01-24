@@ -97,7 +97,7 @@ else
 			if(count($events['unapproved']) != 0)
 			{
 				echo '<span class="b block paddingtop">Nog te keuren:</span>';
-				foreach($events['approved'] as $value)
+				foreach($events['unapproved'] as $value)
 				{
 					echo $value['title'].'<br />';
 				}
@@ -115,7 +115,7 @@ else
 			if(count($events['declined']) != 0)
 			{
 				echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
-				foreach($events['approved'] as $value)
+				foreach($events['declined'] as $value)
 				{
 					echo $value['title'].'<br />';
 				}
