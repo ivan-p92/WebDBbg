@@ -297,22 +297,22 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		<tr>
 			<td rowspan="4">Categorie</td>
 			<td><input type="checkbox" value="klant" name="categorie[]"';  
-				if(inarray("klant", $_SESSION["tijdelijke_evenementwaardes"]["categorie"])echo'checked="checked"';
+				if(in_array("klant", $_SESSION["tijdelijke_evenementwaardes"]["categorie"]))echo'checked="checked"';
 					echo'/>Klant</td>
 		</tr>
 		<tr>
 			<td><input type="checkbox" value="keuken" name="categorie[]"';  
-				if(inarray("keuken", $_SESSION["tijdelijke_evenementwaardes"]["categorie"])echo'checked="checked"';
+				if(in_array("keuken", $_SESSION["tijdelijke_evenementwaardes"]["categorie"]))echo'checked="checked"';
 					echo'/>Keuken</td>
 		</tr>
 		<tr>
 			<td><input type="checkbox" value="afwas" name="categorie[]"';  
-				if(inarray("afwas", $_SESSION["tijdelijke_evenementwaardes"]["categorie"])echo'checked="checked"';
+				if(in_array("afwas", $_SESSION["tijdelijke_evenementwaardes"]["categorie"]))echo'checked="checked"';
 					echo'/>Afwassers</td>
 		</tr>
 		<tr>
 			<td><input type="checkbox" value="bar" name="categorie[]"';  
-				if(inarray("bar", $_SESSION["tijdelijke_evenementwaardes"]["categorie"])echo'checked="checked"';
+				if(in_array("bar", $_SESSION["tijdelijke_evenementwaardes"]["categorie"]))echo'checked="checked"';
 					echo'/>Barpersoneel</td>
 		</tr>
 		<tr>
