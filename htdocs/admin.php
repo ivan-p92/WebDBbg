@@ -113,7 +113,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												if(strlen($on['title']) > 10)
+												if(strlen($on['title']) > 20)
 												{
 													$on['title']= substr($on['title'], 0, 10).'...';
 												}
@@ -136,7 +136,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												if(strlen($goed['title']) > 10)
+												if(strlen($goed['title']) > 15)
 												{
 													$goed['title']= substr($goed['title'], 0, 10).'...';
 												}
@@ -159,7 +159,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												if(strlen($af['title']) > 10)
+												if(strlen($af['title']) > 18)
 												{
 													$af['title']= substr($af['title'], 0, 10).'...';
 												}
