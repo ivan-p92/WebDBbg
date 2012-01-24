@@ -22,7 +22,7 @@
 		{			
 			echo '<div id="inlogbox">
 					<form action="index.php?page=login" method="post">
-						<input id="naam" type="text" placeholder="Email adres" name="naam" />
+						<input '.((isset($_POST['naam'])) ? 'value="'.$_POST['naam'].'" ' : '').'id="naam" type="text" placeholder="Email adres" name="naam" />
 						<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
 						<input id="inlogbutton" type="submit" value="" title="inloggen" />				
 					</form>
