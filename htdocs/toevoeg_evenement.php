@@ -10,7 +10,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		<tbody>
 		<tr>
 			<td id="eerstecel">Titel</td>
-			<td><input id="titel" type="text" name="titel" value="'._SESSION["tijdelijke_evenementwaardes"]["titel"].'" /></td>
+			<td><input id="titel" type="text" name="titel" value="'.$_SESSION["tijdelijke_evenementwaardes"]["titel"].'" /></td>
 		</tr>
 		<tr id="omschrijving">
 			<td>Omschrijving</td>
