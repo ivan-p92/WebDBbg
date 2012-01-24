@@ -134,7 +134,7 @@ else
 					echo '<span class="b block paddingtop">Goedgekeurde evenementen:</span>';
 					foreach($events['approved'] as $value)
 					{
-						echo $value['title'].'<br />';
+						echo '<a href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">'.$value['title'].'</a><br />';
 					}
 				}
 				
@@ -143,7 +143,7 @@ else
 					echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
 					foreach($events['declined'] as $value)
 					{
-						echo $value['title'].'<br />';
+						echo '<a href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">'.$value['title'].'</a><br />';
 					}
 				}
 			?>
