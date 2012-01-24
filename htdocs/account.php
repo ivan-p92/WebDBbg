@@ -90,7 +90,7 @@ else
 			$events = array('approved' => array(), 'unapproved' => array(), 'declined' => array());
 			while($row = $stmtEvents->fetch())
 			{
-				$events[$row['status']] = $row;
+				$events[$row['status']][] = $row;
 			}
 			
 			echo '<p>Deze evenementen zijn door u aangemaakt:</p>';
