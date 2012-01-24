@@ -113,8 +113,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a></li>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.$on['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
@@ -133,8 +132,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></li>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
@@ -153,8 +151,7 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></li>';
+												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
