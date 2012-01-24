@@ -242,7 +242,7 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			';if(in_array("klant", $info["categorie"]))
+			';if(in_array("klant", $info['categorie']))
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
 		echo'
