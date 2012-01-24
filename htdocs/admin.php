@@ -125,11 +125,9 @@ if(Functions::auth("admin_rights"))
 					<p>Op dit moment heeft '.$row['name'].' de volgende rechten:</p>
 					<form id="admin" action="index.php?page=admin&amp;semipage=lijst_van_gebruikers&amp;id='.$_GET['id'].'" method="post">
 					
-					<input type="checkbox" name="admin_check[]" value="submit_event" id="create" />Evenementen aanmaken
-					<input type="checkbox" name="admin_check[]" value="approve_event" id="approve" />Evenementen keuren
-					<input type="checkbox" name="admin_check[]" value="admin_rights" id="admin1" />Admin rechten<br />';
-					
-				
+					<input type="checkbox" name="admin_check[]" value="submit_event" id="submit_event" />Evenementen aanmaken
+					<input type="checkbox" name="admin_check[]" value="approve_event" id="approve_event" />Evenementen keuren
+					<input type="checkbox" name="admin_check[]" value="admin_rights" id="admin_rights" />Admin rechten<br />';
 					
 					echo' <span id="submit_rechten" class="submit_button"><button class="button" type="submit">
 							<span class="right">
