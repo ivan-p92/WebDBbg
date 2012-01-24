@@ -125,7 +125,7 @@ else
 					echo '<span class="b block paddingtop">Nog te keuren:</span>';
 					foreach($events['unapproved'] as $value)
 					{
-						echo '<a href="index.php?page=evenement&amp;id='.$vaule['id'].'&amp;semipage=agenda_week">'.$value['title'].'</a><br />';
+						echo '<a href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">'.$value['title'].'</a><br />';
 					}
 				}
 				
