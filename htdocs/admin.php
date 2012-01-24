@@ -18,20 +18,20 @@ if(Functions::auth("admin_rights"))
 		}
 		elseif(!empty($_POST))
 		{
-			$sql_submit = "DELETE FROM users_permissions WHERE user_id=:user_id";
-			$stmt_submit = $mysqli->prepare($sql_submit);
-			$stmt_submit->bindParam(":user_id",$_GET['id'],PDO::PARAM_INT);
-			$stmt_submit->execute();
+			$sql_delPermission = "DELETE FROM users_permissions WHERE user_id=:user_id";
+			$stmt_delPermission = $mysqli->prepare($sql_delPermission);
+			$stmt_delPermission->bindParam(":user_id",$_GET['id'],PDO::PARAM_INT);
+			$stmt_delPermission->execute();
 			
-			$sql_submit2 = "INSERT into users_permissions (user_id, permission_id)
+			$sql_addPermission = "INSERT into users_permissions (user_id, permission_id)
 							VALUES (:user_id,(SELECT id FROM permissions WHERE permission = :permission));";
-			$stmt_submit2 = $mysqli->prepare($sql_submit2);
+			$stmt_addPermission = $mysqli->prepare($sql_addPermission);
 			
 			foreach( $_POST['admin_check'] as $recht )
 			{
-				$stmt_submit2->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
-				$stmt_submit2->bindParam(':permission', $recht, PDO::PARAM_STR);
-				$stmt_submit2->execute();
+				$stmt_addPermission->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
+				$stmt_addPermission->bindParam(':permission', $recht, PDO::PARAM_STR);
+				$stmt_addPermission->execute();
 			}
 		}
 		elseif(empty($_POST))
