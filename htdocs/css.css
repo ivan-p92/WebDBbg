@@ -36,6 +36,10 @@ h1 {
 	display: block;
 }
 
+.padding {
+	padding: 5px 5px 5px 0px;
+}
+
 /* papyrus font wordt ingebed voor zekerheid */
 @font-face { font-family: papyrus; src: url(afbeeldingen/papyrus.ttf); }
 
