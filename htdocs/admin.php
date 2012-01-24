@@ -107,7 +107,7 @@ if(Functions::auth("admin_rights"))
 										
 										if($stmt_ongekeurd->rowCount() == 0)
 										{
-											echo '<li>Geen events</li>';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
@@ -126,7 +126,7 @@ if(Functions::auth("admin_rights"))
 										
 										if($stmt_goedgekeurd->rowCount() == 0)
 										{
-											echo '<li>Geen events</li>';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
@@ -145,7 +145,7 @@ if(Functions::auth("admin_rights"))
 										
 										if($stmt_afgekeurd->rowCount() == 0)
 										{
-											echo '<li>Geen events</li>';
+											echo '<li class="no_li">Geen events</li>';
 										}
 										else
 										{
