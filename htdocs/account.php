@@ -105,15 +105,15 @@ else
 					<tbody>
 						<tr>
 							<td>Oud wachtwoord: </td>
-							<td><input type="password" id="oldpswd" name="pswdo" required="" /></td>
+							<td><input type="password" name="pswdo" /></td>
 						</tr>
 						<tr>
 							<td>Nieuw wachtwoord: </td>
-							<td><input type="password" id="newpswd" name="pswd" required="" /></td>
+							<td><input type="password" name="pswd" /></td>
 						</tr>
 						<tr>
 							<td>Wachtwoord nogmaals: </td>
-							<td><input type="password" id="newpswd2" name="pswd2" required="" /></td>
+							<td><input type="password" name="pswd2" /></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
