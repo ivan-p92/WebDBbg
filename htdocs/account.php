@@ -55,21 +55,24 @@ else
 			U kunt in het onderstaande formulier ook uw wachtwoord wijzigen.</p>
 
 		<p>
-			Naam: <?php echo $userInfo['name']; ?><br />
-			Accountnaam (email): <?php echo $userInfo['email']; ?><br />
-			Huidige permissies: <?php
-								if($stmtUserRights->rowCount() == 0)
-								{
-									echo 'Geen rechten';
-								}
-								else
-								{
-									while($rightsRow = $stmtUserRights->fetch())
-									{
-										echo translateRights($rightsRow['permission']).'<br />';
-									}
-								}
-								?>
+			<span class="b">Naam:</span>
+			<?php echo $userInfo['name']; ?><br />
+			<span class="b">Accountnaam (email):</span>
+			<?php echo $userInfo['email']; ?><br />
+			<span class="b">Huidige permissies:</span>
+			<?php
+			if($stmtUserRights->rowCount() == 0)
+			{
+				echo 'Geen rechten';
+			}
+			else
+			{
+				while($rightsRow = $stmtUserRights->fetch())
+				{
+					echo translateRights($rightsRow['permission']).'<br />';
+				}
+			}
+			?>
 		</p>
 
 		<p>Deze evenementen zijn door u aangemaakt:</p>
