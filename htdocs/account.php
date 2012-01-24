@@ -58,7 +58,7 @@ else
 		
 		<h3 class="big nopadding">Persoonlijke informatie</h3>
 
-		<p>
+		<p class="nomargintop">
 			<span class="b block paddingtop">Naam:</span>
 			<?php echo $userInfo['name']; ?><br />
 			<span class="b block paddingtop">Accountnaam (email):</span>
@@ -90,7 +90,7 @@ else
 		
 		if($stmtEvents->rowCount() == 0)
 		{
-			echo '<p>U heeft nog geen events aangemaakt</p>';
+			echo '<p class="nomargintop">U heeft nog geen events aangemaakt</p>';
 		}
 		else
 		{
