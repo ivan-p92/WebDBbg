@@ -59,7 +59,7 @@ else
 				{
 					try
 					{
-						if(!isset($_POST['newpswd']) || !isset($_POST['newpswd2']) || !isset($_POST['oldpswd']))
+						if(!isset($_POST['pswdo']) || !isset($_POST['pswd']) || !isset($_POST['pswd2']))
 						{
 							throw new Exception("Vul alle velden in");
 						}
@@ -103,7 +103,7 @@ else
 					<tbody>
 						<tr>
 							<td>Oud wachtwoord: </td>
-							<td><input type="password" id="oldpswd" name="mail" required="" /></td>
+							<td><input type="password" id="oldpswd" name="pswdo" required="" /></td>
 						</tr>
 						<tr>
 							<td>Nieuw wachtwoord: </td>
