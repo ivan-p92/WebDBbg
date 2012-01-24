@@ -118,7 +118,43 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 
 elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]))
 {
-	Functions::info_evenement($_GET["id"]);
+	$database=Functions::getDB();
+
+	$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=:id';
+	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
+	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
+	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
+	$sql_bar = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=4';
+		
+	// dit bereidt de queries voor
+	$stmt = $database->prepare($sql);
+	$stmt_klant = $database->prepare($sql_klant);
+	$stmt_keuken = $database->prepare($sql_keuken);
+	$stmt_afwas = $database->prepare($sql_afwas);
+	$stmt_bar = $database->prepare($sql_bar);
+	
+	// nu wordt id overal gebind
+	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_klant->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_keuken->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_afwas->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_bar->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	
+	// de queries worden uitgevoerd
+	$stmt->execute();
+	$stmt_klant->execute();
+	$stmt_keuken->execute();
+	$stmt_afwas->execute();
+	$stmt_bar->execute();
+	
+	// info wordt in info gestopt
+	$info=$stmt->fetch();
+	
+	// bij de anderen moet alleen de rijen geteld worden
+	$klant = $stmt_klant->rowCount();
+	$keuken = $stmt_keuken->rowCount();
+	$afwas = $stmt_afwas->rowCount();
+	$bar = $stmt_bar->rowCount();
 
 	echo'
 	<h1>Evenement</h1>
