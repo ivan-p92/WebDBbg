@@ -3,7 +3,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	if(!isset($_POST['contact_name']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) || empty($_POST['contact_name']) || empty($_POST['contact_mail']) || empty($_POST['contact_message']))
+	if(!isset($_POST['contact_naam']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) || empty($_POST['contact_naam']) || empty($_POST['contact_mail']) || empty($_POST['contact_message']))
 	{
 		echo '<p class="error">Niet alle velden zijn juist ingevuld</p>';
 	}
