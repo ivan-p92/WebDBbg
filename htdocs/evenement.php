@@ -228,14 +228,40 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	$database=Functions::getDB();
 
 	$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=:id';
-
+	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
+	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
+	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
+	$sql_bar = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=4';
+		
+	// dit bereidt de queries voor
 	$stmt = $database->prepare($sql);
-
+	$stmt_klant = $database->prepare($sql_klant);
+	$stmt_keuken = $database->prepare($sql_keuken);
+	$stmt_afwas = $database->prepare($sql_afwas);
+	$stmt_bar = $database->prepare($sql_bar);
+	
+	// nu wordt id overal gebind
 	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
-
+	$stmt_klant->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_keuken->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_afwas->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_bar->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	
+	// de queries worden uitgevoerd
 	$stmt->execute();
-
+	$stmt_klant->execute();
+	$stmt_keuken->execute();
+	$stmt_afwas->execute();
+	$stmt_bar->execute();
+	
+	// info wordt in info gestopt
 	$info=$stmt->fetch();
+	
+	// bij de anderen moet alleen de rijen geteld worden
+	$klant = $stmt_klant->rowCount();
+	$keuken = $stmt_keuken->rowCount();
+	$afwas = $stmt_afwas->rowCount();
+	$bar = $stmt_bar->rowCount();
 
 	echo'
 	<h1>Evenement</h1>
@@ -245,10 +271,6 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		<tr>
 			<td>Titel</td>
 			<td class="rechts">'.out($info["title"]).'</td>
-		</tr>
-		<tr>
-			<td>Plaatsing</td>
-			<td class="rechts">'."Op ".$info["create_date"]." door ".$info["name"].'</td>
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
@@ -268,25 +290,25 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			';if(in_array("klant", $info["categorie"]))
+			';if($klant != 0)
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
 		echo'
 		</tr>
 		<tr>
-			';if(in_array("keuken", $info["categorie"]))
+			';if($keuken != 0)
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Keuken</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>';}
 		echo'
 		</tr>
 		<tr>
-			';if(in_array("afwas", $info["categorie"]))
+			';if($afwas != 0)
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwas</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Afwas</td>';}
 		echo'
 		</tr>
 		<tr>
-			';if(in_array("bar", $info["categorie"]))
+			';if($bar != 0)
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Barpersoneel</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>';}
 		echo'
