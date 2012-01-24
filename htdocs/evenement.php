@@ -1,7 +1,7 @@
 <?php
 if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
 {
-	if($_GET['k'] == G)
+	if($_GET['k'] == "G")
 	{
 		$database=Functions::getDB();
 
@@ -20,7 +20,7 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 		else
 			echo '<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
 	}
-	elseif($_GET['k'] == A)
+	elseif($_GET['k'] == "A")
 	{
 		$database=Functions::getDB();
 
