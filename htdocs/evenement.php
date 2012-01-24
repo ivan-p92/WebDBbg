@@ -54,15 +54,15 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 		<tbody>
 		<tr>
 			<td>Titel</td>
-			<td class="rechts">'.$_POST["titel"].'</td>
+			<td class="rechts">'.out($_POST["titel"]).'</td>
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
-			<td class="rechts">'.$_POST["omschrijving"].'</td>
+			<td class="rechts">'.out($_POST["omschrijving"]).'</td>
 		</tr>
 		<tr>
 			<td>Locatie</td>
-			<td>'.$_POST["locatie"].'</td>
+			<td>'.out($_POST["locatie"]).'</td>
 		</tr>
 		<tr>
 			<td>Begintijd</td>
@@ -137,7 +137,7 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 		<tbody>
 		<tr>
 			<td>Titel</td>
-			<td class="rechts">'.$info["title"].'</td>
+			<td class="rechts">'.out($info["title"]).'</td>
 		</tr>
 		<tr>
 			<td>Plaatsing</td>
@@ -145,11 +145,11 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
-			<td class="rechts">'.$info["description"].'.</td>
+			<td class="rechts">'.out($info["description"]).'.</td>
 		</tr>
 		<tr>
 			<td>Locatie</td>
-			<td>'.$info["location"].'</td>
+			<td>'.out($info["location"]).'</td>
 		</tr>
 		<tr>
 			<td>Begintijd</td>
@@ -161,16 +161,28 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>
+			';if(in_array("klant", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>
+			';if(in_array("keuken", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Keuken</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwassers</td>
+			';if(in_array("afwas", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwas</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Afwas</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>
+			';if(in_array("bar", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Barpersoneel</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>';}
+		echo'
 		</tr>
 		</tbody>
 	</table>
@@ -206,7 +218,7 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		<tbody>
 		<tr>
 			<td>Titel</td>
-			<td class="rechts">'.$info["title"].'</td>
+			<td class="rechts">'.out($info["title"]).'</td>
 		</tr>
 		<tr>
 			<td>Plaatsing</td>
@@ -214,11 +226,11 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
-			<td class="rechts">'.$info["description"].'.</td>
+			<td class="rechts">'.out($info["description"]).'.</td>
 		</tr>
 		<tr>
 			<td>Locatie</td>
-			<td>'.$info["location"].'</td>
+			<td>'.out($info["location"]).'</td>
 		</tr>
 		<tr>
 			<td>Begintijd</td>
@@ -230,16 +242,28 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>
+			';if(in_array("klant", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>
+			';if(in_array("keuken", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Keuken</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwassers</td>
+			';if(in_array("afwas", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwas</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Afwas</td>';}
+		echo'
 		</tr>
 		<tr>
-			<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>
+			';if(in_array("bar", $info["categorie"]))
+			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Barpersoneel</td>';}
+			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>';}
+		echo'
 		</tr>
 		</tbody>
 	</table>
