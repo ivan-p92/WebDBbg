@@ -516,6 +516,10 @@ li.event:hover > div p a, li.event:hover > div p.begintijd {
 }
 
 /* lijst van evenementen op de admin pagina */
+td.admin_td {
+	vertical-align: top;
+}
+
 li.no_li {
 	list-style: circle;
 }
@@ -761,7 +765,7 @@ ul#userlistlist {
      list-style: none outside none;
      margin: 0pt;
      padding: 0pt;
-     width: 800px;
+     width: 1000px;
 }
 
 	ul#userlistlist li {
