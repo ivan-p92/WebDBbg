@@ -115,7 +115,7 @@ if(Functions::auth("admin_rights"))
 											while($ongekeurd = $stmt_ongekeurd->fetch())
 											{
 												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$ongekeurd['id'].'&amp;semipage=keuren>'.$ongekeurd['title'].'</a></li>';
+															 href="index.php?page=evenement&amp;id='.$ongekeurd['id'].'&amp;semipage=keuren">'.$ongekeurd['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
