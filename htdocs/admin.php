@@ -35,7 +35,7 @@ if(Functions::auth("admin_rights"))
 				$stmt_addPermission->execute();
 			}
 			echo '<h1>Succes!</h1>
-				<p>Rechten voor '.$row['namen'].' aangepast</p>';
+				<p>Rechten voor '.$row['name'].' aangepast</p>';
 		}
 		elseif(empty($_POST))
 		{
