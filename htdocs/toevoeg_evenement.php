@@ -340,7 +340,7 @@ if(Functions::auth("submit_event") && in_array("tijdelijke_evenementwaardes",$_S
 		</tr>
 		</tbody>
 	</table></form></div>
-EOT;
+';
 }
 elseif(Functions::auth("submit_event")) 
 {
