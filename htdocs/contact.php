@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 try
 {
+	$row = null;
 	if(Functions::ingelogd())
 	{
 		$db = Functions::getDB();
@@ -23,11 +24,12 @@ try
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
 		$stmt->execute();
-		$row = null;
+		
 		if($stmt->rowCount() == 1)
 		{		
 			$row = $stmt->fetch();
 		}
+	}
 
 }
 catch(Exception $e)
