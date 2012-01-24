@@ -29,7 +29,7 @@ else
 	{
 		$db = Functions::getDB();
 		
-		$sqlUserInfo = "SELECT name FROM users WHERE id = :id;";
+		$sqlUserInfo = "SELECT email, name FROM users WHERE id = :id;";
 		$stmtUserInfo = $db->prepare($sqlUserInfo);
 		$stmtUserInfo->bindParam(":id", $_GET['id'], PDO::PARAM_INT);
 		$stmtUserInfo->execute();
@@ -47,7 +47,7 @@ else
 		}
 		else
 		{
-			$userInfo = $stmt->fetch();
+			$userInfo = $stmtUserInfo->fetch();
 ?>
 		<h1>Account informatie</h1>
 
