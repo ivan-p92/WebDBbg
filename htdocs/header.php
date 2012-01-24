@@ -45,7 +45,7 @@
 				
 				echo '<div class="ingelogd">
 						<div id="ingelogd_info">
-							<p>Ingelogd als: <a href="index.php?page=account&amp;id='.$_SESSION['userid'].'" title="Account Informatie">'.$row['name'].'</a></p>
+							<p>Ingelogd als: <a href="index.php?page=account" title="Account Informatie">'.out($row['name']).'</a></p>
 							<p><a href="goodbye.php">Uitloggen</a></p>
 						</div>
 					</div>';
