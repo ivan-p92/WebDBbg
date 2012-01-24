@@ -110,15 +110,15 @@ class Functions
 	//valideert of minstens één checkbox is ingevuld
 	public static function validateCheckbox($array)
 	{
-		$length=.count($array);
+		$length = count($array);
 		
 		if($length<1)
 		{
-			return FALSE
+			return FALSE;
 		}
 		else
 		{
-			return TRUE
+			return TRUE;
 		}
 	}
 }
