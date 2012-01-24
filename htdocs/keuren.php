@@ -93,7 +93,7 @@
 
 		else
 		{
-			echo 'Er zit een fout in de query: '.$mysqli->error;
+			echo 'Er zit een fout in de query.';
 		}
 		echo '</ul></div>';
 }
