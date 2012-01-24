@@ -113,9 +113,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												if(strlen($on['title']) > 50)
+												if(strlen($on['title']) > 25)
 												{
-													$on['title']= substr($on['title'], 0, 50).'...';
+													$on['title']= substr($on['title'], 0, 25).'...';
 												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.out($on['title']).'</a></li>';
 											}
@@ -136,9 +136,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												if(strlen($goed['title']) > 50)
+												if(strlen($goed['title']) > 25)
 												{
-													$goed['title']= substr($goed['title'], 0, 50).'...';
+													$goed['title']= substr($goed['title'], 0, 25).'...';
 												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.out($goed['title']).'</a></li>';
 											}
@@ -159,9 +159,9 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												if(strlen($af['title']) > 50)
+												if(strlen($af['title']) > 25)
 												{
-													$af['title']= substr($af['title'], 0, 50).'...';
+													$af['title']= substr($af['title'], 0, 25).'...';
 												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.out($af['title']).'</a></li>';
 											}
