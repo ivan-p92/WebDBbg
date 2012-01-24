@@ -7,10 +7,10 @@
 	<ul class="event_lijst">
 	
 	<form id="sorteer_events" action="http://websec.science.uva.nl/webdb1235/index.php?page=agenda_week_lijst" method="post">
-	<label><input type="checkbox" value="klant" name="categorie[]" />Klant</label>
-	<label><input type="checkbox" value="keuken" name="categorie[]" />Keuken</label>
-	<label><input type="checkbox" value="afwas" name="categorie[]" />Afwassers</label>
-	<label><input type="checkbox" value="bar" name="categorie[]" />Barpersoneel</label>
+	<label><input type="checkbox" value="klant" name="categorie[]" checked="checked" />Klant</label>
+	<label><input type="checkbox" value="keuken" name="categorie[]" checked="checked" />Keuken</label>
+	<label><input type="checkbox" value="afwas" name="categorie[]" checked="checked" />Afwassers</label>
+	<label><input type="checkbox" value="bar" name="categorie[]" checked="checked" />Barpersoneel</label>
 	<label class="submit_button">
 	<button type="submit" class="button" id="event_aanmaken">
 		<span class="right">
@@ -35,6 +35,26 @@
 			DATEDIFF(end_date, start_date) AS diff
 			FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC LIMIT 20 OFFSET 0;";
 
+	$sql2 = "SELECT events_groups.event_id, groups.`group` FROM `events_groups` JOIN groups ON groups.id=events_groups.group_id;";
+	
+	$stmt2 = $mysqli->prepare($sql2);
+	
+	$stmt2->execute();
+	
+	$koppel_array = array();
+	
+	while($var=$stmt2->fetch())
+	{
+		if(isset($koppel_array[$var["group"]]))
+		{
+			$koppel_array[$var["group"]][] = $var["event_id"];
+		}
+		else
+		{
+			$koppel_array[$var["group"]] = array($var["event_id"]);
+		}
+	}
+	
     if($stmt = $mysqli->prepare($sql))
     {
 		if(!$stmt->execute())
@@ -66,7 +86,15 @@
 
 				if($row['diff'] == 0)
 				{					
-					echo '<li class="event">';
+					echo '<li class="event';
+						foreach($koppel_array as $group => $array)
+						{
+							if(in_array($row['id'], $array))
+							{
+								echo " identifier_".$group;
+							}	
+						}
+					echo '">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
 					echo '<span class="jaar">'.$row['jaar'].'</span>';
@@ -84,7 +112,16 @@
 				}
 				else
 				{
-					echo '<li class="event">';
+					echo '<li class="event'; 
+					
+					foreach($koppel_array as $group => $array)
+						{
+							if(in_array($row['id'], $array))
+							{
+								echo " identifier_".$group;
+							}	
+						}
+					echo'">';
                                         echo '<p class="eendags_event">';
                                         echo '<span class="begin_datum">';
                                         echo '<span class="jaar">'.$row['jaar'].'</span>';
