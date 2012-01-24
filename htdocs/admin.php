@@ -98,11 +98,24 @@ if(Functions::auth("admin_rights"))
 								</tr>
 								<tr>
 									<td>
-										<ul>
-										<li>
-											<a href="index.php?page=evenement">TEST</a>
-										</li>
-										</ul>
+										<ul>';
+										
+										$sql_ongekeurd = "SELECT title FROM events_status WHERE create_id=".$_GET['id']." AND status=unapproved";
+										$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
+										$stmt_ongekeurd->execute();
+										
+										if($stmt_ongekeurd->rowCount() == 0)
+										{
+											echo '<li>Geen events</li>';
+										}
+										else
+										{
+											while($ongekeurd = $stmt_ongekeurd->fetch())
+											{
+												echo '<li>'.$ongekeurd['title'].'</li>';
+											}
+										}
+										echo '</ul>
 									</td>
 									<td>
 										<ul>
