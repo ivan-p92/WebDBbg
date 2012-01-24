@@ -134,7 +134,7 @@ if(Functions::auth("admin_rights"))
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
 												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=keuren">'.$goed['title'].'</a></li>';
+															 href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.$goed['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
@@ -154,7 +154,7 @@ if(Functions::auth("admin_rights"))
 											while($af = $stmt_afgekeurd->fetch())
 											{
 												echo '<li><a class="admin_link" 
-															 href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=keuren">'.$af['title'].'</a></li>';
+															 href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.$af['title'].'</a></li>';
 											}
 										}
 										echo '</ul>
