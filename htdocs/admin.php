@@ -8,6 +8,7 @@ if(Functions::auth("admin_rights"))
 		$sql = "SELECT name FROM users WHERE id=" . $_GET['id'] . ";";
 		$stmt = $mysqli->prepare($sql);
 		$stmt->execute();
+		$row = $stmt->fetch();
 				
 	echo '<div class="admin">';
 		
@@ -77,7 +78,6 @@ if(Functions::auth("admin_rights"))
 			</script>
 			
 			<?php
-				$row = $stmt->fetch();
 				echo'
 				<h1>Admin pagina van '.$row['name'].'</h1>
 					<p>U kunt hier zien welke evenementen door '.$row['name'].' aangemaakt/goedgekeurd/afgekeurd zijn.<br />
