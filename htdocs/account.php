@@ -87,7 +87,7 @@ else
 		}
 		else
 		{
-			echo '<pre>', $stmtEvents->fetchAll(), '</pre>';
+			echo '<pre>', print_r($stmtEvents->fetchAll(), true), '</pre>';
 		?>
 			<p>Deze evenementen zijn door u aangemaakt:</p>
 			<div class="user_events">
