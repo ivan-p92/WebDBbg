@@ -1,7 +1,7 @@
 <h1>Evenement toevoegen</h1>
 
 <?php
-if(Functions::auth("submit_event")) 
+if(Functions::auth("submit_event") && $_SESSION["tijdelijke_evenementwaardes"]==null) 
 {
 	echo <<<EOT
 	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
@@ -367,6 +367,8 @@ EOT;
 }
 else
 {
-	echo '<p>Log in om evenementen toe te voegen!</p>';
+	echo '<h1>Verboden toegang!</h1>
+    <p>U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
+    Log in of neem contact op met de administrator!</p>';
 }
 ?>
