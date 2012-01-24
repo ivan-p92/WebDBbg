@@ -1,23 +1,48 @@
 <?php
 if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
 {
-	$database=Functions::getDB();
+	if($_GET['k'] == G)
+	{
+		$database=Functions::getDB();
 
-	$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=1 WHERE id=:eid AND approve_id IS NULL';
+		$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=1 WHERE id=:eid AND approve_id IS NULL';
 
-	$stmt = $database->prepare($sql);
+		$stmt = $database->prepare($sql);
 
-	$stmt->bindParam(":uid", $_SESSION['userid'], PDO::PARAM_INT);
-	$stmt->bindParam(":eid", $_GET['id'], PDO::PARAM_INT);
+		$stmt->bindParam(":uid", $_SESSION['userid'], PDO::PARAM_INT);
+		$stmt->bindParam(":eid", $_GET['id'], PDO::PARAM_INT);
 
-	$stmt->execute();
+		$stmt->execute();
 
-	$count = $stmt->rowCount();
-	if($count == 1)
-		echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
+		$count = $stmt->rowCount();
+		if($count == 1)
+			echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
+		else
+			echo '<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
+	}
+	elseif($_GET['k'] == A)
+	{
+		$database=Functions::getDB();
+
+		$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=0 WHERE id=:eid AND approve_id IS NULL';
+
+		$stmt = $database->prepare($sql);
+
+		$stmt->bindParam(":uid", $_SESSION['userid'], PDO::PARAM_INT);
+		$stmt->bindParam(":eid", $_GET['id'], PDO::PARAM_INT);
+
+		$stmt->execute();
+
+		$count = $stmt->rowCount();
+		if($count == 1)
+			echo '<h1>Evenement afgekeurd!</h1> <p>Het evenement is succesvol afgekeurd!</p>';
+		else
+			echo '<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
+	}
 	else
-		echo '<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds goedgekeurd!</p>';
-		
+	{
+		echo '<h1>Fout!</h1> <p>Invalide link!</p>';
+	}
 }
 
 elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
@@ -154,7 +179,7 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 	<a class="submit_button" href="index.php?page=evenement&amp;id='.$_GET["id"].'&amp;k=G&amp;semipage=keuren" title="Goedkeuren">
 		<button class="button"><span class="right"><span class="inner">Goedkeuren</span></span></button>
 	</a>	
-	<a class="submit_button" href="#" title="Afkeuren">
+	<a class="submit_button" href="index.php?page=evenement&amp;id='.$_GET["id"].'&amp;k=A&amp;semipage=keuren" title="Afkeuren">
 			<button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
 	</a>	
 	</div>';
