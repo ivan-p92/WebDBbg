@@ -170,8 +170,7 @@ if(Functions::auth("admin_rights"))
 					
 					echo' <span class="submit_button">
 								<button class="button" type="submit">
-									<span class="right">
-									<span class="inner">Pas rechten aan</span></span>
+									<span class="right"><span class="inner">Pas rechten aan</span></span>
 								</button>
 						  </span>
 					</form>';
