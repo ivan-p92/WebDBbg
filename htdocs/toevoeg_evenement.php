@@ -1,7 +1,7 @@
 <h1>Evenement toevoegen</h1>
 
 <?php
-if(Functions::auth("submit_event") && $_SESSION["tijdelijke_evenementwaardes"]!=null) 
+if(Functions::auth("submit_event") && in_array("tijdelijke_evenementwaardes",$_SESSION)) 
 {
 	echo <<<EOT
 	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
