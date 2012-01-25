@@ -19,7 +19,7 @@ $(document).ready(function() {
 						$("#sresult").html(res);
 						$("li.clickable").click(function(e) {
 							$("#zoek_box").val($(this).html());
-							
+							$("#sresult").css("display", "none");
 						});
 					}
 		});
