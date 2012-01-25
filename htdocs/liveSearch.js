@@ -39,7 +39,7 @@ $(document).ready(function() {
 				if(tmp.hasClass("selected"))
 				{
 					current = index;
-					tmp.deleteClass("selected");
+					tmp.removeClass("selected");
 				}
 				total++;
 			});
