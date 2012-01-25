@@ -6,7 +6,6 @@
 		
 		for(x in id)
 		{
-		alert(id[x]);
 			id[x].style.background = "red";
 		}
 	} 
