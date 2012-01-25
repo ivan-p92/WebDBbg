@@ -7,7 +7,7 @@
 		for(x in id)
 		{	
 			alert(input.checked);
-			if(input.checked = "checked")
+			if(input.checked)
 			{
 				id[x].style.visibility = "hidden";
 			}
@@ -16,7 +16,6 @@
 				id[x].style.visibility = "visible";
 			}
 		}
-		return true;
 	} 
 </script>
 <?php
