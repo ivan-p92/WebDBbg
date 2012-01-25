@@ -10,14 +10,14 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").keyup(function(e) {
-		var a = "q="+$("#zoek_box").value();
+		var a = "q=" + $("#zoek_box").value();
 		alert(a);
-		$.ajax({
-		  url: "livesearch.php",
-		  cache: false,
-		  data: a,
-		  success: function(html){	$("#sresult").html(html); 	}
-		});
+		//$.ajax({
+		//  url: "livesearch.php",
+		//  cache: false,
+		//  data: a,
+		//  success: function(html){	$("#sresult").html(html); 	}
+		//});
 	});	
 
 });
