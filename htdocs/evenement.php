@@ -100,91 +100,102 @@ if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("a
 // ook hier wordt de gebruiker geauthenticeerd
 elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
-	// er moet minstens 1 categorie aangevinkt zijn (met validateCheckbox uit functions.php)
-	// hier wordt nu voor gecheckt, als dit niet het geval is wordt weer teruggelinkt naar toevoeg_evenement
-	if(!isset($_POST["categorie"]))
+	$not_titel = "Geef een titel op voor het evenement!<br />";
+	$not_omschrijving = "Geef een omschrijving van het evenement!<br />";
+	$not_locatie = "Geef een locatie op voor het evenement!<br />";
+	$not_vinkje = "Vink minstens één categorie aan!<br />";
+	$message = "";
+
+	if(empty($_POST["titel"])) $message = $message.$not_titel;
+	if(empty($_POST["omschrijving"])) $message = $message.$not_omschrijving;
+	if(empty($_POST["locatie"])) $message = $message.$not_locatie;
+	if(!isset($_POST["categorie"])) $message = $message.$not_vinkje;
+	
+	// als $message niet leeg is, dan is niet alles correct ingevuld en wordt
+	// de melding gegeven en toevoeg_evenement herladen
+	if($message != "") 
 	{
 		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
-		echo' <script>alert(\'Vul alle velden in en vink minsten EEN categorie aan!\')</script>
+		echo' <script>alert(\''.$message.'\')</script>
 		<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" />
-		';		
+		';
 	}
 	// hie rzal de tabel getoond worden
 	else
 	{
-	// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
-	// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
-	// html code zouden kunnen bevatten.
-	echo'
-	<h1>Evenement</h1>
-
-	<table id="evenement">
-		<tbody>
-		<tr>
-			<td>Titel</td>
-			<td class="rechts">'.out($_POST["titel"]).'</td>
-		</tr>
-		<tr>
-			<td>Omschrijving</td>
-			<td class="rechts">'.out($_POST["omschrijving"]).'</td>
-		</tr>
-		<tr>
-			<td>Locatie</td>
-			<td>'.out($_POST["locatie"]).'</td>
-		</tr>
-		<tr>
-			<td>Begintijd</td>
-			<td class="rechts">'.$_POST["datum1"]." ".$_POST["maand1"]." ".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
-		</tr>
-		<tr>
-			<td>Eindtijd</td>
-			<td class="rechts">'.$_POST["datum2"]." ".$_POST["maand2"]." ".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
-		</tr>
-		<tr>
-			<td rowspan="4">Categorie</td>
-			';
-			// afhankelijk van of een categorie aangekruist is, wordt een vinkje of een kruisje geladen
-			if(in_array("klant", $_POST["categorie"]))
-			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
-			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
+		// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
+		// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
+		// html code zouden kunnen bevatten.
 		echo'
-		</tr>
-		<tr>
-			';if(in_array("keuken", $_POST["categorie"]))
-			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Keuken</td>';}
-			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>';}
-		echo'
-		</tr>
-		<tr>
-			';if(in_array("afwas", $_POST["categorie"]))
-			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwas</td>';}
-			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Afwas</td>';}
-		echo'
-		</tr>
-		<tr>
-			';if(in_array("bar", $_POST["categorie"]))
-			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Barpersoneel</td>';}
-			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>';}
-		echo'
-		</tr>
-		</tbody>
-	</table>
+		<h1>Evenement</h1>
 
-	';
-	// de variabelen uit POST worden aan het SESSION array toegevoegd, zodat bij het aanpassen
-	// van het evenement (door op 'aanpassen' te klikken) de waardes al in het formulier gestopt worden
-	$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
+		<table id="evenement">
+			<tbody>
+			<tr>
+				<td>Titel</td>
+				<td class="rechts">'.out($_POST["titel"]).'</td>
+			</tr>
+			<tr>
+				<td>Omschrijving</td>
+				<td class="rechts">'.out($_POST["omschrijving"]).'</td>
+			</tr>
+			<tr>
+				<td>Locatie</td>
+				<td>'.out($_POST["locatie"]).'</td>
+			</tr>
+			<tr>
+				<td>Begintijd</td>
+				<td class="rechts">'.$_POST["datum1"]." ".$_POST["maand1"]." ".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
+			</tr>
+			<tr>
+				<td>Eindtijd</td>
+				<td class="rechts">'.$_POST["datum2"]." ".$_POST["maand2"]." ".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
+			</tr>
+			<tr>
+				<td rowspan="4">Categorie</td>
+				';
+				// afhankelijk van of een categorie aangekruist is, wordt een vinkje of een kruisje geladen
+				if(in_array("klant", $_POST["categorie"]))
+				{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
+				else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
+			echo'
+			</tr>
+			<tr>
+				';if(in_array("keuken", $_POST["categorie"]))
+				{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Keuken</td>';}
+				else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Keuken</td>';}
+			echo'
+			</tr>
+			<tr>
+				';if(in_array("afwas", $_POST["categorie"]))
+				{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Afwas</td>';}
+				else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Afwas</td>';}
+			echo'
+			</tr>
+			<tr>
+				';if(in_array("bar", $_POST["categorie"]))
+				{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Barpersoneel</td>';}
+				else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Barpersoneel</td>';}
+			echo'
+			</tr>
+			</tbody>
+		</table>
 
-	// dit zijn de twee knoppen: Aanpassen en Aanmaken
-	echo'
+		';
+		// de variabelen uit POST worden aan het SESSION array toegevoegd, zodat bij het aanpassen
+		// van het evenement (door op 'aanpassen' te klikken) de waardes al in het formulier gestopt worden
+		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
 
-	<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" title="Aanpassen">
-			<button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
-	</a>
-	<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=data_verstuur" 
-				onclick="alert(\'Uw evenement wordt zo snel mogelijk gekeurd en in de agenda gezet\')" title="Aanmaken">
-			<button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
-	</a>';
+		// dit zijn de twee knoppen: Aanpassen en Aanmaken
+		echo'
+
+		<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" title="Aanpassen">
+				<button class="button"><span class="right"><span class="inner">Aanpassen</span></span></button>
+		</a>
+		<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=data_verstuur" 
+					onclick="alert(\'Uw evenement wordt zo snel mogelijk gekeurd en in de agenda gezet\')" title="Aanmaken">
+				<button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
+		</a>';
 	}
 		
 }
