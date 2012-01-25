@@ -96,7 +96,7 @@ if(Functions::auth("admin_rights"))
 									break;
 							}
 						}
-						echo '<li class="'.$classes.'">';
+						echo '<li class="'.$classes.'" visibility="hidden">';
 						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
 						echo '</li>';
 					}
