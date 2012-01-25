@@ -11,7 +11,8 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").keyup(function(e) {
-		 console.log(e);
+		
+		console.log(e.keyCode);
 		var a = "q="+$("#zoek_box").val();
 		
 		$.ajax({
