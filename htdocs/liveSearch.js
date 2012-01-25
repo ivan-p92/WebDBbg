@@ -12,17 +12,21 @@ $(document).ready(function() {
 	
 	$("#zoek_box").keyup(function(e) {
 		
-		$.ajax({
-		  url: "livesearch.php",
-		  data: "q="+$("#zoek_box").val(),
-		  success:	function(res) {
-						$("#sresult").html(res);
-						$("li.clickable").mousedown(function(e) {
-							$("#zoek_box").val($(this).html());
-							$("#sresult").css("display", "none");
-						});
-					}
-		});
+		
+		if(e.keyCode != 40 && $(this).val() != '')
+		{
+			$.ajax({
+			  url: "livesearch.php",
+			  data: "q="+$("#zoek_box").val(),
+			  success:	function(res) {
+							$("#sresult").html(res);
+							$("li.clickable").mousedown(function(e) {
+								$("#zoek_box").val($(this).html());
+								$("#sresult").css("display", "none");
+							});
+						}
+			});
+		}
 		
 		if(e.keyCode == 40)
 		{
