@@ -30,7 +30,7 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			a = $("li.clickable.selected");
+			a = $("li");
 			console.log(a);
 		}
 	});
