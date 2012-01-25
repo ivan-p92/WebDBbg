@@ -30,7 +30,7 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			var current = 0;
+			var current = -1;
 			var total = 0;
 			
 			$("ul#livesearch li.clickable").each(function(index, element) {
@@ -43,7 +43,10 @@ $(document).ready(function() {
 				total++;
 			});
 			
-			console.log(current, total);
+			if(total > 0)
+			{
+			
+			}
 
 		}
 	});
