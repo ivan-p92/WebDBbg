@@ -102,7 +102,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	// er moet minstens 1 categorie aangevinkt zijn (met validateCheckbox uit functions.php)
 	// hier wordt nu voor gecheckt, als dit niet het geval is wordt weer teruggelinkt naar toevoeg_evenement
-	if(Functions::validateCheckbox($_POST["categorie"]))
+	if(isset($_POST["categorie"]) && Functions::validateCheckbox($_POST["categorie"]))
 	{
 	// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 	// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
