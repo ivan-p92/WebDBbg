@@ -1,9 +1,9 @@
 $(document).ready(function() {	
 	searchBox();
 	
-	/*$("#zoek_box").blur(function(e) {
+	$("#zoek_box").blur(function(e) {
 		$("#sresult").css("display", "none");
-	});*/
+	});
 		
 	$("#zoek_box").focus(function(e) {
 		$("#zoek_box").keyup();
@@ -19,7 +19,7 @@ $(document).ready(function() {
 		  data: a,
 		  success:	function(res) {
 						$("#sresult").html(res);
-						$("li.clickable").click(function(e) {
+						$("li.clickable").mousedown(function(e) {
 							$("#zoek_box").val($(this).html());
 							$("#sresult").css("display", "none");
 						});
