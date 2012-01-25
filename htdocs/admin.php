@@ -113,10 +113,6 @@ if(Functions::auth("admin_rights"))
 										{
 											while($on = $stmt_ongekeurd->fetch())
 											{
-												if(strlen($on['title']) > 20)
-												{
-													$on['title']= substr($on['title'], 0, 20).'...';
-												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$on['id'].'&amp;semipage=keuren">'.out($on['title']).'</a></li>';
 											}
 										}
@@ -136,10 +132,6 @@ if(Functions::auth("admin_rights"))
 										{
 											while($goed = $stmt_goedgekeurd->fetch())
 											{
-												if(strlen($goed['title']) > 20)
-												{
-													$goed['title']= substr($goed['title'], 0, 20).'...';
-												}
 												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$goed['id'].'&amp;semipage=agenda_week">'.out($goed['title']).'</a></li>';
 											}
 										}
@@ -159,10 +151,6 @@ if(Functions::auth("admin_rights"))
 										{
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												if(strlen($af['title']) > 20)
-												{
-													$af['title']= substr($af['title'], 0, 20).'...';
-												}
 												echo '<li class="admin_li">'.out($af['title']).'</li>';
 											}
 										}
