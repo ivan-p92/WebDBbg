@@ -163,7 +163,7 @@ if(Functions::auth("admin_rights"))
 												{
 													$af['title']= substr($af['title'], 0, 20).'...';
 												}
-												echo '<li class="admin_li"><a href="index.php?page=evenement&amp;id='.$af['id'].'&amp;semipage=agenda_week">'.out($af['title']).'</a></li>';
+												echo '<li class="admin_li">'.out($af['title']).'</li>';
 											}
 										}
 										echo '</ol>
