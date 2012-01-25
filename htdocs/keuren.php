@@ -39,16 +39,6 @@
 				{	
 				while($row = $stmt->fetch())
 				{
-					if(strlen($row['title']) > 50)
-					{
-						$row['title']= substr($row['title'], 0, 50).'...';
-					}
-
-					if(strlen($row['location']) > 25)
-					{
-						$row['location'] = substr($row['location'], 0, 25).'...';
-					}
-
 					if($row['diff'] == 0)
 					{					
 						echo '<li class="event">';
