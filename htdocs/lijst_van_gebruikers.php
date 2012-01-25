@@ -6,8 +6,8 @@
 		
 		for(x in id)
 		{
-		alert(x);
-			x.style.background = "red";
+		alert(id[x]);
+			id[x].style.background = "red";
 		}
 	} 
 </script>
