@@ -65,8 +65,8 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 			elseif($counter=3) $minuut==30;
 			elseif($counter=4) $minuut==45;
 			
-			if($uur.":".$minuut = $begintijd) echo'<option value="'.$uur.'":"'.$minuut.'" selected="selected">'.$uur.'":"'.$minuut.'</option>';
-			else echo'<option value="'.$uur.'":"'.$minuut.'">'.$uur.'":"'.$minuut.'</option>';
+			if($uur.':'.$minuut = $begintijd) echo'<option value="'.$uur.':'.$minuut.'" selected="selected">'.$uur.':'.$minuut.'</option>';
+			else echo'<option value="'.$uur.':'.$minuut.'">'.$uur.':'.$minuut.'</option>';
 		}
 	}
 	
