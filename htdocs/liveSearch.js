@@ -43,9 +43,6 @@ $(document).ready(function() {
 				$("li#" + (current+1)).addClass("selected");
 			}
 		}
-
-			
-		}
 	});
 	
 
