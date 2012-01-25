@@ -25,9 +25,9 @@ if(Functions::auth("admin_rights"))
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input type="checkbox" value="aanmaken" onclick="showhide(this) />Aanmaken</li>
-							<li><input type="checkbox" value="keuren" onclick="showhide(this) />Keuren</li>
-							<li><input type="checkbox" value="admin" onclick="showhide(this) />Admin</li>
+							<li><input type="checkbox" value="aanmaken" onclick="showhide(this)" />Aanmaken</li>
+							<li><input type="checkbox" value="keuren" onclick="showhide(this)" />Keuren</li>
+							<li><input type="checkbox" value="admin" onclick="showhide(this)" />Admin</li>
 						</ul>
 					</form>
 				</td>
