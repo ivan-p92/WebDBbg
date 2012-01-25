@@ -85,7 +85,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		for($i=1; $i<=31; $i++)
 		{
 			if($i == $datum2) echo'<option value="'.$i.'" selected="selected">'.$i.'</option>';
-			else echo'<option value="'.$i.'">'.$i.'</option>';
+			else echo'<option value="'.$j.'">'.$i.'</option>';
 		}
 	echo'
 	</select>
@@ -95,7 +95,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		for($j=1; $j<=12; $j++)
 		{
 			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
-			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
+			else echo'<option value="'.$j.'">'.$arraymonth[$j].'</option>';
 		}
 	echo'
 	</select>
@@ -206,7 +206,7 @@ elseif(Functions::auth("submit_event"))
 	'; 
 		for($j=1; $j<=12; $j++)
 		{
-			echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
+			echo'<option value="'.$j.'">'.$arraymonth[$j].'</option>';
 		}
 	echo'
 	</select>
@@ -257,7 +257,7 @@ elseif(Functions::auth("submit_event"))
 	'; 
 		for($j=1; $j<=12; $j++)
 		{
-			echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
+			echo'<option value="'.$j.'">'.$arraymonth[$j].'</option>';
 		}
 	echo'
 	</select>
