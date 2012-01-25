@@ -14,10 +14,9 @@ $(document).ready(function() {
 		
 		$.ajax({
 		  url: "livesearch.php",
-		  cache: false,
-		  context: document.body,
 		  data: a,
 		  success: function(res) {
+				alert("ha");
 				$("#sresult").html(res);
 				$("li.clickable").click(function() {
 					alert("ha");
