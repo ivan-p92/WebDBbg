@@ -102,7 +102,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	// er moet minstens 1 categorie aangevinkt zijn (met validateCheckbox uit functions.php)
 	// hier wordt nu voor gecheckt, als dit niet het geval is wordt weer teruggelinkt naar toevoeg_evenement
-	if(isset($_POST["categorie"]) && !Functions::validateCheckbox($_POST["categorie"]))
+	if(!isset($_POST["categorie"]))
 	{
 		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
 		echo' <script>alert(\'Vul alle velden in en vink minsten EEN categorie aan!\')</script>
