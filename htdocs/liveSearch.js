@@ -12,13 +12,11 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  data: a,
-		  success: function(res) { $("#sresult").html(res); }
+		  success: function(res) { $("#sresult").html(res); 	$("li.clickable").mouseover(function(e) {alert('d');}); }
 		});
 	});
 	
-	$("li.clickable").mouseover(function(e) {
-		alert('d');
-	});
+
 });
 	
 
