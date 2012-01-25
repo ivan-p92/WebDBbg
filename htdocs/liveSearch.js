@@ -87,8 +87,6 @@ $(document).ready(function() {
 				{
 					next = current;
 				}
-				console.log("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
-				
 				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
 			}
 		}
