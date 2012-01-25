@@ -21,6 +21,7 @@ try
 	
 	while($row = $stmt->fetch())
 	{
+		$row['name'] = str_replace($_GET['q'], '<span class="b">'.$_GET['q'].'</span>', $row['name']);
 		$i++;
 		$return .= '<li class="clickable">'.$row['name'].'</li>';
 	}
