@@ -1,8 +1,8 @@
 
 function initLiveSearch()
 {
-	el = $("zoek_box");
-	box = $("sresult");
+	el = $("#zoek_box");
+	box = $("#sresult");
 	
 	alert(el.offset());
 	
