@@ -1,9 +1,9 @@
 $(document).ready(function() {	
 	searchBox();
 	
-	$("#zoek_box").blur(function(e) {
+	/*$("#zoek_box").blur(function(e) {
 		$("#sresult").css("display", "none");
-	});
+	});*/
 		
 	$("#zoek_box").focus(function(e) {
 		$("#sresult").css("display", "block");
