@@ -5,6 +5,12 @@ $(document).ready(function() {
 	$("#zoek_box").focus(function(e) {
 		$("#sresult").css("display", "block");
 	});
+	
+	$("#zoek_box").blur(function(e) {
+		$("#sresult").css("display", "block");
+	});
+	
+	
 });
  
 $(window).resize(function() {
