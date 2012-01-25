@@ -112,6 +112,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$stmt->bindParam(":begin", $begindatumtijd, PDO::PARAM_STR);
 	$stmt->bindParam(":eind", $einddatumtijd, PDO::PARAM_STR);
 	$stmt->execute();
+	var_dump($stmt);
 	$result = $stmt->fetch();
 	var_dump($result);
 	$diff = $result["diff"];
