@@ -819,11 +819,21 @@ span#sresult {
 		font-weight: bold;
 		border-bottom-color: rgba(0, 0, 0, 0.2);
 	}
+	
 	ul#livesearch li {
 		padding: 6px 5px 5px 15px;
 		cursor: pointer;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	}
+	
+	ul#livesearch li.noclick {
+		cursor: auto;
+	}
+	
+	ul#livesearch li.noclick:hover {
+	
+	}
+	
 	ul#livesearch {
 		padding: 0px;
 		margin: 8px 0px 8px 0px;
