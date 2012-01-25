@@ -21,6 +21,7 @@ $(document).ready(function() {
 	});	
 	
 	$("#zoek_box ul#livesearch li.clickable").click(function() {
+		alert('a');
 		$("#zoek_box").val($(this).html());
 	});
 
