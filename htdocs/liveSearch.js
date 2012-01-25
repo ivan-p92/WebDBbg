@@ -30,8 +30,8 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			numberOfResults = $("ul#livesearch li.clickable").length;
-			current = $("ul#livesearch li.clickable.selected").prop("id");
+			var numberOfResults = $("ul#livesearch li.clickable").length;
+			var current = $("ul#livesearch li.clickable.selected").prop("id");
 			
 			if(current == numberOfResults)	//Onderste resultaat is actief
 			{
