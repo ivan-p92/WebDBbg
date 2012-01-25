@@ -14,9 +14,9 @@ if($_GET['view'] != 'lijst' && $_GET['view'] != 'block')
 
 echo '
 	<div id="weergave">
-		<a '.(($_GET['view'] == 'blok') ? 'class="active" ' : '').'href="index.php?page=agenda_week&amp;view=blok">Blok</a><span></span>
 		<a '.(($_GET['view'] == 'lijst') ? 'class="active" ' : '').'href="index.php?page=agenda_week&amp;view=lijst">Lijst</a>
-	</div>';
+		<a '.(($_GET['view'] == 'blok') ? 'class="active" ' : '').'href="index.php?page=agenda_week&amp;view=blok">Blok</a><span></span>
+		</div>';
 
 
 include('agenda_week_'.$_GET['view'].'.php');
