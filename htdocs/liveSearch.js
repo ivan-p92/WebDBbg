@@ -17,7 +17,7 @@ $(document).ready(function() {
 		  cache: false,
 		  context: document.body,
 		  data: a,
-		  success: function(html){	$("#sresult").html(html); 	}
+		  success: function(html){	$("#sresult").replaceWith(html); 	}
 		});
 	});	
 	
