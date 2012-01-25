@@ -20,6 +20,7 @@ if(Functions::auth("admin_rights"))
 				<td id="zoek">
 					<span id="zoek_text">Zoek:</span>
 					<input type="text" id="zoek_box" name="zoek" />
+					<span id="result"></span>
 				</td>
 			</tr>
 		</table>
