@@ -832,7 +832,7 @@ span#sresult {
 	ul#livesearch li {
 		padding: 6px 5px 5px 15px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		border-left: 2px solid transparant;
+		border-left: 2px solid transparent;
 	}
 	
 	ul#livesearch {
