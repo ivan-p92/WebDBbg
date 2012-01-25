@@ -81,14 +81,13 @@ $(document).ready(function() {
 				var next;
 				if(current == 0)
 				{
-					next = (total - 1);
+					next = total;
 				}
 				else
 				{
 					next = current - 1;
 				}
-				
-				console.log("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
+
 				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
 			}
 		}
