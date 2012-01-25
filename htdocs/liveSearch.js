@@ -1,8 +1,18 @@
-$(document).ready(function() {
-	inputzoek = $("#zoek_box");
+$(document).ready(function() {	
+	
+ });
+ 
+ $(window).resize(function() {
+	searchBox();
+ }
+ 
+ 
+ function searchBox()
+ {
+ 	inputzoek = $("#zoek_box");
 	resbox = $("#sresult");
 	
 	resbox.css("left", inputzoek.offset().left + "px");
 	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
-
- });
+}
+ 
