@@ -3,17 +3,27 @@ if(Functions::auth("admin_rights"))
 {
 	echo'
 	<div class="userlist">
+		<span id="sresult">
+		</span>
 		<table id="sort_table">
 			<tr>
 				<td id="sort_name">
-					Geef de volgende rechten weer:
+					Sorteren op:
+				</td>
+				<td id="sorteer">
+					<select name="sorteer">
+					<option value="-------">-------</option>
+					<option value="Naam">Naam</option>
+					<option value="Rechten">Rechten</option>
+					<option value="ID">ID</option>
+					</select>
 				</td>
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input id="r_aanmaken" type="checkbox" value="aanmaken" />Aanmaken</li>
-							<li><input id="r_keuren" type="checkbox" value="keuren" />Keuren</li>
-							<li><input id="r_admin" type="checkbox" value="admin" />Admin</li>
+							<li><input type="checkbox" value="aanmaken" />Aanmaken</li>
+							<li><input type="checkbox" value="keuren" />Keuren</li>
+							<li><input type="checkbox" value="admin" />Admin</li>
 						</ul>
 					</form>
 				</td>
