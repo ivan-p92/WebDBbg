@@ -555,6 +555,9 @@ table#evenement td {
 table#evenement {
     border: medium solid black;
 	margin-bottom: 8px;
+	table-layout: fixed;
+    width: 500px;
+    word-wrap: break-word;
 }
 
 table#user_events {
