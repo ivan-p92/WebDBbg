@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	function showhide (input)
 	{
+		alert('help');
 		var id = document.getElementsByClassName('id_recht_'+input.value);
 		var x;
 		
