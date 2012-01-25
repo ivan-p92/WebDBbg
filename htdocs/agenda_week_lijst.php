@@ -32,9 +32,11 @@
 			TIME_FORMAT(TIME(start_date), '%H:%i') AS begin_tijd,
 			TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 			DATEDIFF(end_date, start_date) AS diff
-			FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC LIMIT 20 OFFSET 0;";
+			FROM events WHERE public='1' AND end_date >= NOW() ORDER BY start_date ASC;";
 
-	$sql2 = "SELECT events_groups.event_id, groups.`group` FROM `events_groups` JOIN groups ON groups.id=events_groups.group_id;";
+	$sql2 = "SELECT events_groups.event_id, groups.`group` 
+			 FROM `events_groups` 
+			 JOIN groups ON groups.id=events_groups.group_id;";
 	
 	$stmt2 = $mysqli->prepare($sql2);
 	
@@ -62,9 +64,7 @@
 		}
 		else
 		{
-			//var_dump($stmt);
-			//$stmt->bind_column($titel, $id, $locatie, $jaar, $begin_dag, $begin_maand, $eind_dag, $eind_maand, $begin_tijd, $eind_tijd, $diff);
-			
+					
 			if($stmt->rowCount() == 0)
 			{
 				echo '<p>Er zijn geen aankomende evenementen.</p>';
