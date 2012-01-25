@@ -15,7 +15,7 @@ $(document).ready(function() {
 		  success:	function(res) {
 						$("#sresult").html(res);
 						$("li.clickable").click(function(e) {
-							alert($(this).html());
+							$("#zoek_box").val($(this).html());
 						});
 					}
 		});
