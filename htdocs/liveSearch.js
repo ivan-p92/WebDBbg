@@ -19,6 +19,10 @@ $(document).ready(function() {
 		  success: function(html){	$("#sresult").html(html); 	}
 		});
 	});	
+	
+	$("#zoek_box ul#livesearch li.clickable").click(function() {
+		$("#zoek_box").val($(this).html());
+	});
 
 });
 	
@@ -39,6 +43,6 @@ function searchBox()
 	resbox.css("display", "none");
 	resbox.css("left", inputzoek.offset().left + "px");
 	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
-	resbox.html("<ul id=\"livesearch\"><li class=\"noclick\">Geen resultaten</li></ul>");
+	resbox.html("<ul id=\"livesearch\"><li>Geen resultaten</li></ul>");
 }
  
