@@ -17,7 +17,7 @@ niet bestaan/al gekeurd zijn, dan zijn er meldingen.
 // de $_GET parameter 'k' is G om goed te keuren, of A om af te keuren
 // met Functions::auth wordt gekeken of de persoon genoeg rechten heeft om evenementen
 // te keuren. Ook wordt gekeken of 'id' en 'k' wel ingesteld zijn
-if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
+if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
 {
 	// als aan de eerste voorwaarden voldaan is wordt verbinding gemaakt met de database
 	$database = Functions::getDB();
@@ -98,7 +98,7 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 // in dit geval komt de bezoeker van de toevoeg_evenement pagina en zitten er dus gegevens in $_POST
 // als die er niet zijn volgt de algemene foutmelding (onderaan dit document)
 // ook hier wordt de gebruiker geauthenticeerd
-elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
+elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
 	// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 	// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
@@ -177,11 +177,18 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 	//</div>';
 }
 
-elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]))
+// in dit geval is de gebruiker afkomstig van 'keuren' en wordt een tabel getoond
+// met de opties om een knop goed of af te keuren
+// ook hier is de pagina beveiligd
+elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]))
 {
+	// er wordt verbinding gemaakt met de database
 	$database=Functions::getDB();
 
+	// deze query haalt alle info op over het betreffende evenement (incl status) en ook de auteur ervan
 	$sql = 'SELECT events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
+	
+	// deze queries kijken of het evenement tot bepaalde categorieën hoort
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
 	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
 	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
@@ -194,6 +201,7 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 	$stmt->execute();
 	$info=$stmt->fetch();
 	
+	// dus alleen als het nog niet gekeurd is wordt de tabel weergegeven, anders volgt een melding
 	if($info["status"] == "unapproved")
 	{
 	// dit bereidt de queries voor
@@ -214,12 +222,13 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 	$stmt_afwas->execute();
 	$stmt_bar->execute();
 	
-	// bij de anderen moet alleen de rijen geteld worden
+	// met rowCount wordt gekeken of de categorieën van toepassing zijn
 	$klant = $stmt_klant->rowCount();
 	$keuken = $stmt_keuken->rowCount();
 	$afwas = $stmt_afwas->rowCount();
 	$bar = $stmt_bar->rowCount();
 
+	// de tabel wordt op de juiste manier gecreëerd en ingevuld
 	echo'
 	<h1>Evenement</h1>
 
@@ -251,7 +260,8 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			';if($klant != 0)
+			';
+			if($klant != 0)
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
 		echo'
@@ -275,8 +285,11 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 		echo'
 		</tr>
 		</tbody>
-	</table>
+	</table>';
 
+	// deze knoppen zijn voor het goed of afkeuren
+	// de parameter 'k' wordt meegegeven
+	echo '
 	<div id="event_buttons">
 	<a class="submit_button" href="index.php?page=evenement&amp;id='.$_GET["id"].'&amp;k=G&amp;semipage=keuren" title="Goedkeuren">
 		<button class="button"><span class="right"><span class="inner">Goedkeuren</span></span></button>
@@ -286,13 +299,19 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 	</a>	
 	</div>';
 	}
+	// in het laatste geval bestaat het evenement niet of is het al gekeurd
 	else echo '<h1>Fout!</h1>Het door u opgegeven evenement kan niet gekeurd worden, omdat het niet bestaat of reeds gekeurd is!';
 } 
 
-elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
+// in dit geval komt de gebruiker van de agenda pagina
+// dit is voor iedereen toegankelijk, maar er wordt wel gekeken of het evenement id
+// valide is, of toegankelijk (je kunt immers zelf een ander id intypen in het adres)
+elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 {
+	// verbinding met database wordt aangemaakt
 	$database=Functions::getDB();
 
+	// de benodigde queries
 	$sql = 'SELECT events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
 	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
@@ -306,9 +325,10 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	$stmt->execute();
 	$info=$stmt->fetch();
 	
+	// dus tabel wordt alleen aangemaakt als het evenement te tonen is
 	if($info["status"] == "approved")
 	{
-	// dit bereidt de queries voor
+	// dit bereidt de andere queries voor
 	$stmt_klant = $database->prepare($sql_klant);
 	$stmt_keuken = $database->prepare($sql_keuken);
 	$stmt_afwas = $database->prepare($sql_afwas);
@@ -332,6 +352,7 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	$afwas = $stmt_afwas->rowCount();
 	$bar = $stmt_bar->rowCount();
 
+	// de tabel wordt aangemaakt
 	echo'
 	<h1>Evenement</h1>
 
@@ -386,8 +407,11 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	</table>
 	';
 	}
+	// de foutmelding: het id bestaat niet of is niet approved
 	else echo '<h1>Fout!</h1> <p>Het door u opgevraagde evenement bestaat niet of is op dit moment niet openbaar!</p>';
 } 
+
+// dit is de algemene foutmelding
 else
 {
 	echo'
