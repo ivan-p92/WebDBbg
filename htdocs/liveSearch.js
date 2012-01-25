@@ -7,7 +7,7 @@ function findPos(obj)
 		do {
 			curleft += obj.offsetLeft;
 			curtop += obj.offsetTop;
-			arr[] = obj.id;
+			arr[1] = obj.id;
 		} while (obj = obj.offsetParent);
 	}
 	
