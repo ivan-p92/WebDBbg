@@ -17,19 +17,16 @@ $(document).ready(function() {
 	
 });
 	
-	$("#zoek_box").blur(function(e) {
-		$("#sresult").css("display", "none");
-	});
-	
-	
+$("#zoek_box").blur(function(e) {
+	$("#sresult").css("display", "none");
 });
+	
  
 $(window).resize(function() {
 	searchBox();
 })
 
 
- 
  
 function searchBox()
  {
