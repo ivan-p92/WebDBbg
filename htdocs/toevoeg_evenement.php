@@ -176,7 +176,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	<select name="maand2">
 	'; 
 	$maand = $_SESSION["tijdelijke_evenementwaardes"]["maand2"];
-		for($j=1; $j<=31 $j++)
+		for($j=1; $j<=31; $j++)
 		{
 			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
 			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
