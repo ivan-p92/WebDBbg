@@ -16,7 +16,7 @@ $(document).ready(function() {
 		  url: "livesearch.php",
 		  data: a,
 		  success: function(res) { $("#sresult").html(res); },
-		  complete: function(d) { $("li.clickable").click(function(){alert('hi')});}
+		  complete: function(d) { $("li.clickable").mouseover(function(){alert('hi')});}
 		});
 	});
 });
