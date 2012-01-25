@@ -17,18 +17,26 @@ try
 	$stmt->execute();
 	
 	$return = '<ul id="livesearch">';
+	$i = 0;
 	
 	while($row = $stmt->fetch())
 	{
-		$return .= '<li>'.$row['name'].'</li>';
+		$i++;
+		$return .= '<li class="clickable">'.$row['name'].'</li>';
 	}
+	
+	if($i == 0)
+	{
+		throw new Exception();
+	}
+	
 	$return .= '</ul>';
 	
 	echo $return;
 }
 catch(Exception $e)
 {
-	echo '<ul id=\"livesearch\"><li class=\"noclick\">Geeen resultaten</li></ul>';
+	echo '<ul id=\"livesearch\"><li>Geen resultaten</li></ul>';
 }
 
 ?>
