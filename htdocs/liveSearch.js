@@ -15,13 +15,8 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  data: a,
-		  success: function(res) {
-				alert("ha");
-				$("#sresult").html(res);
-				$("li.clickable").click(function() {
-					alert("ha");
-				});
-		  }
+		  success: function(res) { $("#sresult").html(res); },
+		  complete: function(d) { alert('hi'); }
 		});
 	});
 });
@@ -35,8 +30,7 @@ $(window).resize(function() {
 
 
  
-function searchBox()
- {
+function searchBox() {
  	inputzoek = $("#zoek_box");
 	resbox = $("#sresult");
 	
