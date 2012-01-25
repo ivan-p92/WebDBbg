@@ -28,7 +28,7 @@ $(document).ready(function() {
 			});
 		}
 		
-		if(e.keyCode == 40)
+		if(e.keyCode == 40)	// pijltje naar benee
 		{
 			var current = -1;
 			var total = -1;
@@ -55,11 +55,42 @@ $(document).ready(function() {
 				{
 					next = current + 1;
 				}
+				
+				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
+			}
+		}
+		
+		if(e.keyCode == 38)	// pijltje omhoog
+		{
+			var current = -1;
+			var total = -1;
+			
+			$("ul#livesearch li.clickable").each(function(index, element) {
+				var tmp = $(element);
+				
+				if(tmp.hasClass("selected"))
+				{
+					current = index;
+					tmp.removeClass("selected");
+				}
+				total++;
+			});
+			
+			if(total > 0)
+			{
+				var next;
+				if(current == 0)
+				{
+					next = (total - 1);
+				}
+				else
+				{
+					next = current - 1;
+				}
 				console.log("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
 				
 				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
 			}
-
 		}
 	});
 	
