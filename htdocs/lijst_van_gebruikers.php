@@ -15,6 +15,7 @@
 				id[x].style.visibility = "hidden";
 			}
 		}
+		return true;
 	} 
 </script>
 <?php
