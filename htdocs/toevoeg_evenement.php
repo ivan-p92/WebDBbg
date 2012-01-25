@@ -43,7 +43,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	<select name="jaar1">
 	';
 	$jaar = $_SESSION["tijdelijke_evenementwaardes"]["jaar1"];
-		for($k=2012; $k<=2022; $j++)
+		for($k=2012; $k<=2022; $k++)
 		{
 			if($k == $jaar) echo'<option value="'.$k.'" selected="selected">'.$k.'</option>';
 			else echo'<option value="'.$k.'">'.$k.'</option>';
@@ -55,7 +55,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 			<td>Begintijd</td>
 			<td><select id="tijd1" name="begintijd">
 	';
-	/*$begintijd = $_SESSION["tijdelijke_evenementwaardes"]["begintijd"];
+	$begintijd = $_SESSION["tijdelijke_evenementwaardes"]["begintijd"];
 	for($uur=00; $uur<=23; $uur++)
 	{
 	for($counter=1; $counter<=4; $counter++)
@@ -70,7 +70,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 		}
 	}
 	
-	*/
+	
 	echo'
 			</select></td>
 		</tr>
