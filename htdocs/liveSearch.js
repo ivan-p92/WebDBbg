@@ -35,7 +35,7 @@ $(document).ready(function() {
 			
 			console.log(current);
 			
-			if(current == 0)
+			if(current == null)
 			{
 					$("ul#livesearch li.clickable").first().addClass("selected");
 			}			
