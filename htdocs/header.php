@@ -6,6 +6,7 @@
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<link rel="stylesheet" type="text/css" href="css.css" title="CSS" />
 	<link rel="shortcut icon" type="image/x-ico" href="afbeeldingen/favicon.ico" />
+	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="liveSearch.js"></script>
 </head>
 
