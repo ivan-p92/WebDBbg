@@ -49,7 +49,7 @@ $(document).ready(function() {
 				var next;
 				if(current == total)
 				{
-					next = current;
+					next = 0;
 				}
 				else
 				{
