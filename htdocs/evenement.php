@@ -184,7 +184,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	{
 		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
 		echo' <script>alert(\'Vink minsten EEN categorie aan\')</script>
-		<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" />
+		<meta http-equiv="Page-Enter" content="0; url=http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" />
 		';
 		
 	}
