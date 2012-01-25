@@ -819,6 +819,7 @@ span#sresult {
 		font-weight: bold;
 		border-bottom-color: rgba(0, 0, 0, 0.2);
 		border-left: 2px solid #222;
+		border-right: 2px solid #222;
 	}
 	
 	ul#livesearch li.clickable {
@@ -833,6 +834,7 @@ span#sresult {
 		padding: 6px 5px 5px 15px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		border-left: 2px solid transparent;
+		border-right: 2px solid transparent;
 	}
 	
 	ul#livesearch {
