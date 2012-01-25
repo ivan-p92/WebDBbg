@@ -1,5 +1,5 @@
 $(document).ready(function() {	
-	searchBoxInit();
+	searchBox();
 	
 	
 	$("#zoek_box").focus(function(e) {
