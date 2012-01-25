@@ -240,7 +240,7 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	$stmt->execute();
 	$info=$stmt->fetch();
 	
-	if($info[status == approved])
+	if($info["status"] == "approved")
 	{
 	// dit bereidt de queries voor
 	$stmt_klant = $database->prepare($sql_klant);
