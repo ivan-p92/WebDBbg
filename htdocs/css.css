@@ -823,7 +823,7 @@ span#sresult {
 		cursor: pointer;
 	}	
 	
-	ul#livesearch:first-child {
+	ul#livesearch li:first-child {
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 	}
 	
