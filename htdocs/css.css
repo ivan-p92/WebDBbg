@@ -518,6 +518,7 @@ li.event:hover > div p a, li.event:hover > div p.begintijd {
 /* lijst van evenementen op de admin pagina */
 td.admin_td {
 	vertical-align: top;
+	width: 215px;
 }
 
 li.no_li {
