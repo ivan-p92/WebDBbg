@@ -1,5 +1,5 @@
 <?php
-
+//functie voor het vertalen van de rechten
 function translateRights($right)
 {
 	switch($right)
@@ -11,7 +11,7 @@ function translateRights($right)
 			return 'Evenement keuren';
 		break;
 		case "admin_rights":
-			return 'Veranderen gebruikersrechten';
+			return 'Gebruikersrechten aanpassen';
 		break;
 		default:
 			return $right;
@@ -173,7 +173,7 @@ else
 					echo '<span class="b block paddingtop">Nog te keuren:</span>';
 					foreach($events['unapproved'] as $value)
 					{
-						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.out($value['title']).'</a><br />';
+						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=keuren">- '.out($value['title']).'</a><br />';
 					}
 				}
 				
