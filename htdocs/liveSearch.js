@@ -57,7 +57,7 @@ $(document).ready(function() {
 				}
 				console.log(next);
 				
-				$("ul#livesearch li.clickble:nth-child("+next+")").addClass("selected");
+				$("ul#livesearch li.clickble:nth-child("+ (next + 1) +")").addClass("selected");
 			}
 
 		}
