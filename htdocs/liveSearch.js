@@ -6,13 +6,15 @@ $(document).ready(function() {
 		$("#sresult").css("display", "block");
 	});
 	
-	$("#zoek_box").focus(function(e) {
+	$("#zoek_box").keyup(function(e) {
 		$.ajax({
-		  url: "test.html",
+		  url: "livesearch.php",
 		  cache: false,
+		  data: "q="+.$("#zoek_box").value();
 		  success: function(html){	$("#sresult").append(html); 	}
 		});
 	});
+	
 });
 	
 	$("#zoek_box").blur(function(e) {
