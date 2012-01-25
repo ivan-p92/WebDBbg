@@ -7,7 +7,7 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").blur(function(e) {
-		$("#sresult").css("display", "block");
+		$("#sresult").css("display", "none");
 	});
 	
 	
