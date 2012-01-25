@@ -8,7 +8,7 @@ if(Functions::auth("admin_rights"))
 		<table id="sort_table">
 			<tr>
 				<td id="sort_name">
-					Selecteer Box voor weergave
+					Toon gebruikers met de volgende rechten:
 				</td>
 				<td id="recht_checkbox">
 					<form action="" method="post">
