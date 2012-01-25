@@ -4,7 +4,10 @@ if(Functions::auth("admin_rights"))
 	echo'
 	<div class="userlist">
 		<span style="position: absolute; top: 268px; left: 974px; width: 208px; height: 50px; background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.7); -moz-border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.2); margin-top: 5px;">
-		
+			<ul>
+				<li>Resultaat 1</li>
+				<li>Res. 2</li>
+			</ul>
 		</span>
 		<table id="sort_table">
 			<tr>
