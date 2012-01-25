@@ -58,7 +58,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	$begintijd = $_SESSION["tijdelijke_evenementwaardes"]["begintijd"];
 	for($uur=00; $uur<=23; $uur++)
 	{
-	for($counter=1; $counter<=4; counter++)
+	for($counter=1; $counter<=4; $counter++)
 		{
 			if($counter=1) $minuut==00;
 			elseif($counter=2) $minuut==15;
