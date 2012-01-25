@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	function showhide (input)
+	{
+		var id = document.getElementsByClassName('id_recht_'+input.value);
+		var x;
+		
+		for(x in id)
+		{
+			x.style.background = "red";
+		}
+	} 
+</script>
 <?php
 if(Functions::auth("admin_rights"))
 {
@@ -13,9 +25,9 @@ if(Functions::auth("admin_rights"))
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input type="checkbox" value="aanmaken" />Aanmaken</li>
-							<li><input type="checkbox" value="keuren" />Keuren</li>
-							<li><input type="checkbox" value="admin" />Admin</li>
+							<li><input type="checkbox" value="aanmaken" onclick="showhide(this) />Aanmaken</li>
+							<li><input type="checkbox" value="keuren" onclick="showhide(this) />Keuren</li>
+							<li><input type="checkbox" value="admin" onclick="showhide(this) />Admin</li>
 						</ul>
 					</form>
 				</td>
