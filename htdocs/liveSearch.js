@@ -35,6 +35,7 @@ $(document).ready(function() {
 			
 			$("ul#livesearch li.clickable").each(function(index, element) {
 				var lal = $(element);
+				
 				if(lal.hasClass("selected"))
 				{
 					current = index;
@@ -42,7 +43,7 @@ $(document).ready(function() {
 				total++;
 			});
 			
-			console.log(
+			console.log(current, total);
 
 		}
 	});
