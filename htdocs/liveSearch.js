@@ -30,7 +30,8 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			$("ul#livesearch li.clickable").first().addClass('selected');
+			a = $("li.clickable.selected");
+			console.log(a);
 		}
 	});
 	
