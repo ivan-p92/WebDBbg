@@ -1,7 +1,7 @@
 <h1>Evenement toevoegen</h1>
 
 <?php
-$arraymonth = array(bla, januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december);
+$arraymonth = array("bla", "januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december");
 
 if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaardes"])) 
 {
