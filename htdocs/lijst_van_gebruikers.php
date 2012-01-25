@@ -5,8 +5,15 @@
 		var x;
 		
 		for(x in id)
-		{
-			id[x].style.visibility = id[x].style.visibility? "visible":"hidden";
+		{	
+			if(input.checked = "checked")
+			{
+				id[x].style.visibility = "visible";
+			}
+			else
+			{
+				id[x].style.visibility = "hidden";
+			}
 		}
 	} 
 </script>
