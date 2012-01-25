@@ -6,7 +6,8 @@
 		
 		for(x in id)
 		{	
-			if(input.checked != "checked")
+			alert(input.checked);
+			if(input.checked = "checked")
 			{
 				id[x].style.visibility = "hidden";
 			}
