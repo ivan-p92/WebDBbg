@@ -108,7 +108,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:begin,:eind);";
 	$stmt = $database->prepare($sql);
 	$stmt->bindParam(":begin", $begindatumtijd);
-	$stmt->bindParam(":eind", $einddatumtijd;
+	$stmt->bindParam(":eind", $einddatumtijd);
 	$stmt->execute();
 	$diff = (int) $stmt->fetch();
 	
