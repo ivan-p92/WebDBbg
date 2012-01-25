@@ -6,13 +6,13 @@
 		
 		for(x in id)
 		{	
-			if(input.checked = "checked")
+			if(input.checked != "checked")
 			{
-				id[x].style.visibility = "visible";
+				id[x].style.visibility = "hidden";
 			}
 			else
 			{
-				id[x].style.visibility = "hidden";
+				id[x].style.visibility = "visible";
 			}
 		}
 		return true;
