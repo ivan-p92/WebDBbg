@@ -10,10 +10,12 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").keyup(function(e) {
+		var a = "q="+$("#zoek_box").value()
 		$.ajax({
 		  url: "livesearch.php",
 		  cache: false,
-		  success: function(html){	$("#sresult").append(html); 	}
+		  data: a,
+		  success: function(html){	$("#sresult").html(html); 	}
 		});
 	});	
 
