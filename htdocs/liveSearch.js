@@ -31,4 +31,4 @@ function initLiveSearch()
 	alert(document.getElementById("zoek_box").offsetTop);
 }
 
-initLiveSearch();
+document.addEventListener("DOMContentLoaded", initLiveSearch, false);
