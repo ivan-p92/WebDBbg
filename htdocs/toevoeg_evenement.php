@@ -33,7 +33,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	<select name="maand1">
 	'; 
 	$maand = $_SESSION["tijdelijke_evenementwaardes"]["maand1"];
-		for($j=1; $j<=31; $j++)
+		for($j=1; $j<=12; $j++)
 		{
 			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
 			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
@@ -92,7 +92,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	<select name="maand2">
 	'; 
 	$maand = $_SESSION["tijdelijke_evenementwaardes"]["maand2"];
-		for($j=1; $j<=31; $j++)
+		for($j=1; $j<=12; $j++)
 		{
 			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
 			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
@@ -204,7 +204,7 @@ elseif(Functions::auth("submit_event"))
 	</select>
 	<select name="maand1">
 	'; 
-		for($j=1; $j<=31; $j++)
+		for($j=1; $j<=12; $j++)
 		{
 			echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
 		}
@@ -255,7 +255,7 @@ elseif(Functions::auth("submit_event"))
 	</select>
 	<select name="maand2">
 	'; 
-		for($j=1; $j<=31; $j++)
+		for($j=1; $j<=12; $j++)
 		{
 			echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
 		}
