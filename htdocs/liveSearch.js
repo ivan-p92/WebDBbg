@@ -4,7 +4,9 @@ function initLiveSearch()
 	el = $("#zoek_box");
 	box = $("#sresult");
 	
-	alert(el.offset().left);
+	box.css("left", el.offset().left+"px");
+	box.css("top", el.offset().top+"px");
+	
 
 }
 
