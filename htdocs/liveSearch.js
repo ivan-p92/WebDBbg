@@ -55,6 +55,7 @@ $(document).ready(function() {
 				{
 					next = current + 1;
 				}
+				console.log(next);
 				
 				$("ul#livesearch li.clickble:nth-child("+next+")").addClass("selected");
 			}
