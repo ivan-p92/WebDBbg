@@ -85,6 +85,8 @@
 								echo " identifier_".$group;
 							}	
 						}
+					echo ' wkstart_'.$row['wkstart'];
+					echo ' wkend_'.$row['wkend'];
 					echo '">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
