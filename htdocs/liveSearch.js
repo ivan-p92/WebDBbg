@@ -37,7 +37,7 @@ function initLiveSearch()
 	box = document.getElementById("sresult");
 	
 	box.style.left = findPosX(el)+"px"
-	box.style.top = findPosX(el)+"px";
+	box.style.top = findPosY(el)+"px";
 }
 
 document.addEventListener("DOMContentLoaded", initLiveSearch, false);
