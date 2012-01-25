@@ -6,7 +6,7 @@
 		
 		for(x in id)
 		{
-		alert('help');
+		alert(x);
 			x.style.background = "red";
 		}
 	} 
