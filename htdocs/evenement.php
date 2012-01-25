@@ -100,16 +100,29 @@ if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("a
 // ook hier wordt de gebruiker geauthenticeerd
 elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
+	$begindatumtijd = new DateTime($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00");					
+	$einddatumtijd = new DateTime($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00");
+	$interval = begindatumtijd->diff(einddatumtijd);
+	
+	$begindatum = new Date($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]);
+	$einddatum = new Date($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]);
+	
 	$not_titel = 'Geef een titel op voor het evenement!\n';
 	$not_omschrijving = 'Geef een omschrijving van het evenement!\n';
 	$not_locatie = 'Geef een locatie op voor het evenement!\n';
 	$not_vinkje = 'Vink minstens één categorie aan!\n';
+	$not_begindatum = 'De begindatum is geen valide datum!\n';
+	$not_einddatum = 'De einddatum is geen valide datum!\n';
+	$not_validdiff = 'De einddatum en tijd moet ná de begindatum zijn!'
 	$message = "";
 
 	if(empty($_POST["titel"])) $message = $message.$not_titel;
 	if(empty($_POST["omschrijving"])) $message = $message.$not_omschrijving;
 	if(empty($_POST["locatie"])) $message = $message.$not_locatie;
 	if(!isset($_POST["categorie"])) $message = $message.$not_vinkje;
+	if(!checkdate($_POST["maand1"], $_POST["datum1"], $_POST["jaar1"])) $message = $message.$not_begindatum;
+	if(!checkdate($_POST["maand2"], $_POST["datum2"], $_POST["jaar2"])) $message = $message.$not_einddatum;
+	if($interval->format(%i) < 0) $message = $message.$not_validdiff;	
 	
 	// als $message niet leeg is, dan is niet alles correct ingevuld en wordt
 	// de melding gegeven en toevoeg_evenement herladen
