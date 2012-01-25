@@ -233,31 +233,34 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
 	$sql_bar = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=4';
 		
-	// dit bereidt de queries voor
+	// alle info behalve categorieën wordt opgehaald.
+	// maar als het evenent niet zichtbaar mag zijn, wordt de rest niet uitgevoerd
 	$stmt = $database->prepare($sql);
+	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt->execute();
+	$info=$stmt->fetch();
+	
+	if($info[status == approved])
+	{
+	// dit bereidt de queries voor
 	$stmt_klant = $database->prepare($sql_klant);
 	$stmt_keuken = $database->prepare($sql_keuken);
 	$stmt_afwas = $database->prepare($sql_afwas);
 	$stmt_bar = $database->prepare($sql_bar);
 	
 	// nu wordt id overal gebind
-	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_klant->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_keuken->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_afwas->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_bar->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	
 	// de queries worden uitgevoerd
-	$stmt->execute();
 	$stmt_klant->execute();
 	$stmt_keuken->execute();
 	$stmt_afwas->execute();
 	$stmt_bar->execute();
 	
-	// info wordt in info gestopt
-	$info=$stmt->fetch();
-	
-	// bij de anderen moet alleen de rijen geteld worden
+	// bij de categorieën moet alleen de rijen geteld worden
 	$klant = $stmt_klant->rowCount();
 	$keuken = $stmt_keuken->rowCount();
 	$afwas = $stmt_afwas->rowCount();
@@ -315,8 +318,9 @@ elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
 		</tr>
 		</tbody>
 	</table>
-
 	';
+	}
+	else echo '<h1>Fout!</h1> <p>Het door u opgevraagde evenement bestaat niet of is op dit moment niet openbaar!</p>';
 } 
 else
 {
