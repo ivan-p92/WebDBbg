@@ -102,7 +102,15 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	$begindatumtijd = new DateTime($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00");					
 	$einddatumtijd = new DateTime($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00");
-	$interval = $begindatumtijd->diff($einddatumtijd);
+	
+	// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
+	$database = Functions::getDB();
+	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:begin,:eind);"
+	$stmt = $database->prepare($sql);
+	$stmt->bindParam(":begin", $begindatumtijd);
+	$stmt->bindParam(":eind", $einddatumtijd;
+	$stmt->execute();
+	$diff = (int) $stmt->fetch();
 	
 	$not_titel = 'Geef een titel op voor het evenement!\n';
 	$not_omschrijving = 'Geef een omschrijving van het evenement!\n';
@@ -119,8 +127,8 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	if(!isset($_POST["categorie"])) $message = $message.$not_vinkje;
 	if(!checkdate($_POST["maand1"], $_POST["datum1"], $_POST["jaar1"])) $message = $message.$not_begindatum;
 	if(!checkdate($_POST["maand2"], $_POST["datum2"], $_POST["jaar2"])) $message = $message.$not_einddatum;
-	//if((int)$interval->format('%i') < 0) $message = $message.$not_validdiff;	
-	//$message= $message.' interval:'.(int)$interval->format('%i');
+	if($diff < 0) $message = $message.$not_validdiff;	
+	
 	// als $message niet leeg is, dan is niet alles correct ingevuld en wordt
 	// de melding gegeven en toevoeg_evenement herladen
 	if($message != "") 
