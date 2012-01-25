@@ -17,9 +17,14 @@ $(document).ready(function() {
 		  cache: false,
 		  context: document.body,
 		  data: a,
-		  success: function(html){	$("#sresult").html(html); 	}
+		  success: function(res) {
+				$("#sresult").html(res);
+				$("li.clickable").click(function() {
+					alert("ha");
+				});
+		  }
 		});
-	});	
+	});
 });
 	
 
