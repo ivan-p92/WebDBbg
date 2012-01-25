@@ -484,6 +484,7 @@ li.event {
 }
 
 /* titel en tijd van evenementen*/
+
 p.event_titel, p.begintijd {
     line-height: 1.5;
     margin: 0;
