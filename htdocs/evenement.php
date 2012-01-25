@@ -1,10 +1,32 @@
+<!--
+Bestand: evenement.php
+Datum: januari 2012
+Groep: webdb1235
+
+Dit bestand geeft een opgevraagd evenement weer in een tabel met eventueel
+opties zoals het goed/afkeuren of toevoegen/aanpassen van een event.
+
+Er wordt gekeken naar de rechten die de persoon heeft die de pagina probeert
+te openen en naar de evenementen die opgevraagd worden. Op die manier worden
+alleen juiste evenementen getoond; als iemand geen rechten heeft of evenementen
+niet bestaan/al gekeurd zijn, dan zijn er meldingen.
+-->
+
 <?php
+// dit eerste geval is als iemand een evenement wil goed of afkeuren
+// de $_GET parameter 'k' is G om goed te keuren, of A om af te keuren
+// met Functions::auth wordt gekeken of de persoon genoeg rechten heeft om evenementen
+// te keuren. Ook wordt gekeken of 'id' en 'k' wel ingesteld zijn
 if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
 {
+	// als aan de eerste voorwaarden voldaan is wordt verbinding gemaakt met de database
 	$database = Functions::getDB();
+	
+	// Deze query is om te kijken of het via 'id' opgevraagde evenement nog ongekeurd is
 	$sql = 'SELECT status FROM events_status WHERE id=:id';
 	try
 	{
+		// de query wordt uitgevoerd
 		$stmt = $database->prepare($sql);
 		$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 		$stmt->execute();
@@ -12,31 +34,46 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 	}
 	catch(Exception $e) 
 	{
+		// als er een fout is, dan komt dat in principe doordat het evenement niet bestaat
 		echo '<h1>Fout!</h1> <p>Het door u opgevraagde evenement bestaat niet!</p>';
 	}
-
+	
+	// als 'k' op 'G' ingesteld is, en het evenement nog niet gekeurd is, dan zal het 
+	// goedgekeurd worden
 	if($_GET['k'] == "G" && $info["status"] == "unapproved")
 	{
-		$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=1 WHERE id=:eid AND approve_id IS NULL';
+		// deze query voegt id en datum-tijd toe van goedkeuring
+		// ook wordt het evenement publiek
+		$sql = 'UPDATE events 
+				SET approve_id=:uid, approve_date=NOW(), public=1 
+				WHERE id=:eid';
 
 		$stmt = $database->prepare($sql);
 
+		// userid wordt uit $_SESSION gehaald, id van het evenement uit $_GET
 		$stmt->bindParam(":uid", $_SESSION['userid'], PDO::PARAM_INT);
 		$stmt->bindParam(":eid", $_GET['id'], PDO::PARAM_INT);
 
 		$stmt->execute();
 
-		$count = $stmt->errorCode();
-		if($count == 00000)
+		// om te kijken of er daadwerkelijk een wijziging heeft plaatsgevonden
+		// rowCount wordt niet gebruikt, omdat dit soms 0 kan terugsturen, terwijl er
+		// wel row(s) zijn veranderd. Code 00000 betekent dat alles goed gaat
+		$err = $stmt->errorCode();
+		if($err == 00000)
 			echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
-		else
-			echo $count.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet goedgekeurd.</p>';
+		else // als er een fout is wordt een melding gegeven
+			echo $err.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet goedgekeurd.</p>';
 	}
+	// als 'k' op 'A' is ingesteld, zal het evenement goedgekeurd worden
+	// verder is de procedure net als hierboven, alleen wordt public op '0' gezet
 	elseif($_GET['k'] == "A" && $info["status"] == "unapproved")
 	{
 		$database=Functions::getDB();
 
-		$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=0 WHERE id=:eid AND approve_id IS NULL';
+		$sql = 'UPDATE events 
+				SET approve_id=:uid, approve_date=NOW(), public=0 
+				WHERE id=:eid';
 
 		$stmt = $database->prepare($sql);
 
@@ -45,20 +82,27 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 
 		$stmt->execute();
 
-		$count = $stmt->errorCode();
-		if($count == 00000)
+		$err = $stmt->errorCode();
+		if($err == 00000)
 			echo '<h1>Evenement afgekeurd!</h1> <p>Het evenement is succesvol afgekeurd!</p>';
 		else
-			echo $count.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet afgekeurd.</p>';
+			echo $err.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet afgekeurd.</p>';
 	}
+	// in het laatste geval is het evenement al gekeurd (dus $info["status"] is approved of declined
 	else
 	{
 		echo '<h1>Fout!</h1> <p>Het evenement is reeds gekeurd!</p>';
 	}
 }
 
+// in dit geval komt de bezoeker van de toevoeg_evenement pagina en zitten er dus gegevens in $_POST
+// als die er niet zijn volgt de algemene foutmelding (onderaan dit document)
+// ook hier wordt de gebruiker geauthenticeerd
 elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
+	// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
+	// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
+	// html code zouden kunnen bevatten.
 	echo'
 	<h1>Evenement</h1>
 
@@ -86,7 +130,9 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
-			';if(in_array("klant", $_POST["categorie"]))
+			';
+			// afhankelijk van of een categorie aangekruist is, wordt een vinkje of een kruisje geladen
+			if(in_array("klant", $_POST["categorie"]))
 			{echo'<td class="rechts"><img src="afbeeldingen/icons/tick.png" alt="Goedgekeurd! " title="Goedgekeurd" /> Klant</td>';}
 			else{echo'<td class="rechts"><img src="afbeeldingen/icons/cross.png" alt="Afgekeurd! " title="Afgekeurd" /> Klant</td>';}
 		echo'
@@ -113,8 +159,11 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 	</table>
 
 	';
+	// de variabelen uit POST worden aan het SESSION array toegevoegd, zodat bij het aanpassen
+	// van het evenement (door op 'aanpassen' te klikken) de waardes al in het formulier gestopt worden
 	$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
 
+	// dit zijn de twee knoppen: Aanpassen en Aanmaken
 	echo'
 
 	<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" title="Aanpassen">
