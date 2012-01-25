@@ -14,7 +14,11 @@ function findPos(obj)
 
 function initLiveSearch()
 {
-	alert(findPos(document.getElementById("zoek_box")));
+	array = findPos(document.getElementById("zoek_box"));
+	box = document.getElementById("sresult");
+	
+	box.style.left = array[0]+"px"
+	box.style.top = array[1]+"px";
 }
 
 document.addEventListener("DOMContentLoaded", initLiveSearch, false);
