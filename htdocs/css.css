@@ -814,7 +814,7 @@ span#sresult {
 	margin-top: 5px;
 }
 
-	ul#livesearch li.clickable:hover {
+	ul#livesearch li.clickable:hover , ul#livesearch li.selected {
 		background: rgba(255, 255, 255, 0.9);
 		font-weight: bold;
 		border-bottom-color: rgba(0, 0, 0, 0.2);
