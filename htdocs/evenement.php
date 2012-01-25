@@ -123,9 +123,9 @@ elseif($_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event")
 	<a class="submit_button" href="http://websec.science.uva.nl/webdb1235/index.php?page=data_verstuur" 
 				onclick="alert(\'Uw evenement wordt zo snel mogelijk gekeurd en in de agenda gezet\')" title="Aanmaken">
 			<button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
-	</a>
+	</a>';
 
-	</div>';
+	//</div>';
 }
 
 elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]))
