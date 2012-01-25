@@ -100,10 +100,10 @@ if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("a
 // ook hier wordt de gebruiker geauthenticeerd
 elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
-	$not_titel = "Geef een titel op voor het evenement!<br />";
-	$not_omschrijving = "Geef een omschrijving van het evenement!<br />";
-	$not_locatie = "Geef een locatie op voor het evenement!<br />";
-	$not_vinkje = "Vink minstens één categorie aan!<br />";
+	$not_titel = 'Geef een titel op voor het evenement!"\n"';
+	$not_omschrijving = 'Geef een omschrijving van het evenement!"\n"';
+	$not_locatie = 'Geef een locatie op voor het evenement!"\n"';
+	$not_vinkje = 'Vink minstens één categorie aan!"\n"';
 	$message = "";
 
 	if(empty($_POST["titel"])) $message = $message.$not_titel;
