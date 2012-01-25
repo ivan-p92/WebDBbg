@@ -102,7 +102,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	$begindatumtijd = new DateTime($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00");					
 	$einddatumtijd = new DateTime($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00");
-	$interval = begindatumtijd->diff(einddatumtijd);
+	$interval = $begindatumtijd->diff($einddatumtijd);
 	
 	$begindatum = new Date($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]);
 	$einddatum = new Date($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]);
