@@ -3,7 +3,7 @@ $(document).ready(function() {
 	
 	
 	$("#zoek_box").focus(function(e) {
-		$(this).css("display", "block");
+		$("#sresult").css("display", "block");
 	});
 });
  
