@@ -15,6 +15,7 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  cache: false,
+		  context: document.body,
 		  data: a,
 		  success: function(html){	$("#sresult").html(html); 	}
 		});
