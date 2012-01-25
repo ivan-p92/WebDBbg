@@ -110,7 +110,8 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$stmt->bindParam(":begin", $begindatumtijd);
 	$stmt->bindParam(":eind", $einddatumtijd);
 	$stmt->execute();
-	$diff = $stmt->fetch()["diff"];
+	$result = $stmt->fetch();
+	$diff = $result["diff"];
 	
 	// strings voor de eventuele foutmelding
 	$not_titel = 'Geef een titel op voor het evenement!\n';
