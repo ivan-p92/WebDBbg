@@ -85,7 +85,7 @@ $(document).ready(function() {
 				}
 				else
 				{
-					next = current;
+					next = current - 1;
 				}
 				
 				console.log("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
