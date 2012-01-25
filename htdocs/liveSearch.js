@@ -5,7 +5,7 @@ function initLiveSearch()
 	resbox = $("#sresult");
 	
 	resbox.css("left", inputzoek.offset().left + "px");
-	resbox.css("top", (inputzoek.offset().top + inputzoek.height()) + "px");
+	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
 	
 
 }
