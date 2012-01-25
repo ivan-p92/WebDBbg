@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 	
 	$("li.clickable").click(function(e) {
-		$("#zoek_box").val($(this).html());
+		alert($(this).html());
 	});
 });
 	
