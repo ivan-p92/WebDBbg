@@ -113,6 +113,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$stmt->bindParam(":eind", $einddatumtijd);
 	$stmt->execute();
 	$result = $stmt->fetch();
+	var_dump($result);
 	$diff = $result["diff"];
 	
 	// strings voor de eventuele foutmelding
