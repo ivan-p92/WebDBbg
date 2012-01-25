@@ -6,12 +6,12 @@ $(document).ready(function() {
 	});*/
 		
 	$("#zoek_box").focus(function(e) {
-		$("#sresult").css("display", "block");
 		$("#zoek_box").keyup();
+		$("#sresult").css("display", "block");
 	});
 	
 	$("#zoek_box").keyup(function(e) {
-		alert("A");
+
 		var a = "q="+$("#zoek_box").val();
 		
 		$.ajax({
