@@ -823,6 +823,10 @@ span#sresult {
 		cursor: pointer;
 	}	
 	
+	ul#livesearch li:first-child {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	
 	ul#livesearch li {
 		padding: 6px 5px 5px 15px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
