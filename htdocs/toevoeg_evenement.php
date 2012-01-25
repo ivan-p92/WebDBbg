@@ -225,6 +225,8 @@ elseif(Functions::auth("submit_event"))
 	<td><select id="tijd1" name="begintijd">
 	
 	';
+	for($uur=00; $uur<=23; $uur++)
+	{
 	for($counter=1; $counter<=4; $counter++)
 		{
 			if($counter==1) $minuut="00";
@@ -272,6 +274,8 @@ elseif(Functions::auth("submit_event"))
 			<td>Eindtijd</td>
 			<td><select id="tijd2" name="eindtijd">
 	';
+	for($uur=00; $uur<=23; $uur++)
+	{
 	for($counter=1; $counter<=4; $counter++)
 		{
 			if($counter==1) $minuut="00";
