@@ -34,18 +34,29 @@ $(document).ready(function() {
 			var total = 0;
 			
 			$("ul#livesearch li.clickable").each(function(index, element) {
-				var lal = $(element);
+				var tmp = $(element);
 				
-				if(lal.hasClass("selected"))
+				if(tmp.hasClass("selected"))
 				{
 					current = index;
+					tmp.deleteClass("selected");
 				}
 				total++;
 			});
 			
 			if(total > 0)
 			{
-			
+				var next;
+				if(current == total)
+				{
+					next = current;
+				}
+				else
+				{
+					next = current + 1;
+				}
+				
+				$("ul#livesearch li.clickble:nth-child("+next+")").addClass("selected");
 			}
 
 		}
