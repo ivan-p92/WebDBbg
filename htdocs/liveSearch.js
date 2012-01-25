@@ -1,11 +1,11 @@
 
 function initLiveSearch()
 {
-	el = $("#zoek_box");
-	box = $("#sresult");
+	inputzoek = $("#zoek_box");
+	resbox = $("#sresult");
 	
-	box.css("left", el.offset().left+"px");
-	box.css("top", el.offset().top+"px");
+	resbox.css("left", (inputzoek.offset().left)+"px");
+	resbox.css("top", (el.offset().top+inputzoek.height())+"px");
 	
 
 }
