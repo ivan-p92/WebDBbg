@@ -1,10 +1,7 @@
 $(document).ready(function() {	
 	searchBox();
 	
-	$("#zoek_box").blur(function(e) {
-		$("#sresult").css("display", "none");
-	});
-	
+		
 	$("#zoek_box").focus(function(e) {
 		$("#sresult").css("display", "block");
 	});
@@ -15,9 +12,12 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  data: a,
-		  success: function(res) { $("#sresult").html(res); },
-		  complete: function(d) { $("li.clickable").mouseover(function(){alert('hi')});}
+		  success: function(res) { $("#sresult").html(res); }
 		});
+	});
+	
+	$("li.clickable").click(function(e) {
+		$("#zoek_box").val($(this).html());
 	});
 });
 	
