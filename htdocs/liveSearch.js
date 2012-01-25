@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$("#zoek_box").keyup(function(e) {
 		
 		
-		if(e.keyCode != 40 && $(this).val() != '')
+		if(e.keyCode != 40)
 		{
 			$.ajax({
 			  url: "livesearch.php",
