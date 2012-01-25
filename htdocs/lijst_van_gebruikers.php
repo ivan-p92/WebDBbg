@@ -55,7 +55,29 @@ if(Functions::auth("admin_rights"))
 					echo '<ul id="userlistlist">';
 					while($row = $stmt->fetch())
 					{
-						echo '<li>';
+						$sql_recht = "SELECT permission_id FROM users_permissions WHERE user_id=:id";
+						$stmt_recht = $mysqli->prepare($sql_recht);
+						$stmt_recht->bindParam(":id",$row['id'],PDO::PARAM_INT);
+						$stmt_recht->execute();						
+						
+						$classes = NULL;
+						
+						while($recht = $stmt_recht->fetch())
+						{
+							switch($recht['permission_id'])
+							{
+								case 1: 
+									$classes .= 'id_recht_aanmaken ';
+									break;
+								case 2:
+									$classes .= 'id_recht_keuren';
+									break;
+								case 3:
+									$classes .= 'id_recht_admin';
+									break;
+							}
+						}
+						echo '<li class="'.$classes.'">';
 						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
 						echo '</li>';
 					}
@@ -67,24 +89,7 @@ if(Functions::auth("admin_rights"))
 		{
 			echo 'Er zit een fout in de query: '.$mysqli->error;
 		}
-
-		/*Statische weergave: nog gebruiken??
-		<ul id="userlistlist">
-			<li>
-				<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Freek Boutkan</a>
-			</li>
-			<li>
-				<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Ivan Plantevin</a>
-			</li>
-			<li>
-				<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">Vincent Velthuis</a>
-			</li>
-			<li>
-				<a href="index.php?page=admin&amp;semipage=lijst_van_gebruikers">David Woudenberg</a>
-			</li>
-		</ul>*/
-
-		echo '</div>';
+	echo '</div>';
 }
 else
 {
