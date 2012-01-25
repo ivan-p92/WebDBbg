@@ -34,12 +34,15 @@ $(document).ready(function() {
 			var total = 0;
 			
 			$("ul#livesearch li.clickable").each(function(index, element) {
-				if(element.hasClass("selected"))
+				var lal = $(element);
+				if(lal.hasClass("selected"))
 				{
 					current = index;
 				}
 				total++;
 			});
+			
+			console.log(
 
 		}
 	});
