@@ -1,25 +1,17 @@
 $(document).ready(function() {	
 	searchBox();
 	
+	$("#zoek_box").blur(function(e) {
+		$("#sresult").css("display", "none");
+	});
 	
 	$("#zoek_box").focus(function(e) {
 		$("#sresult").css("display", "block");
 	});
-	
-	$("#zoek_box").keyup(function(e) {
-		$.ajax({
-		  url: "livesearch.php",
-		  cache: false,
-		  data: "q="+.$("#zoek_box").value();
-		  success: function(html){	$("#sresult").append(html); 	}
-		});
-	});
-	
+
 });
 	
-$("#zoek_box").blur(function(e) {
-	$("#sresult").css("display", "none");
-});
+
 	
  
 $(window).resize(function() {
