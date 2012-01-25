@@ -322,8 +322,7 @@ elseif(Functions::auth("submit_event"))
 	</button></td>
 		</tr>
 		</tbody>
-	</table></form></div>
-EOT;
+	</table></form></div>';
 }
 else
 {
