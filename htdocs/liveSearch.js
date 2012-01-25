@@ -16,7 +16,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	$("li.clickable").click(function(e) {
+	$("li.clickable").mouseover(function(e) {
 		alert('d');
 	});
 });

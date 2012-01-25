@@ -36,7 +36,7 @@ try
 }
 catch(Exception $e)
 {
-	echo '<ul id=\"livesearch\"><li>Geen resultaten</li></ul>';
+	echo "<ul id=\"livesearch\"><li>Geen resultaten</li></ul>";
 }
 
 ?>
