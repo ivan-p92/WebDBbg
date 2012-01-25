@@ -13,7 +13,6 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  cache: false,
-		  data: "q="+.$("#zoek_box").value(),
 		  success: function(html){	$("#sresult").append(html); 	}
 		});
 	});	
