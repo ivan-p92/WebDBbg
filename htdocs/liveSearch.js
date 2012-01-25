@@ -17,14 +17,9 @@ $(document).ready(function() {
 		  cache: false,
 		  context: document.body,
 		  data: a,
-		  success: function(html){	$("#sresult").replaceWith(html); 	}
+		  success: function(html){	$("#sresult").append(html); 	}
 		});
 	});	
-	
-	$("li").click(function() {
-		alert('a');
-	});
-
 });
 	
 
