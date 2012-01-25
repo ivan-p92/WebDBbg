@@ -82,7 +82,7 @@ if(Functions::auth("admin_rights"))
 									$classes .= 'id_recht_aanmaken ';
 									break;
 								case 2:
-									$classes .= 'id_recht_keuren';
+									$classes .= 'id_recht_keuren ';
 									break;
 								case 3:
 									$classes .= 'id_recht_admin';
