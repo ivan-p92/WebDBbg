@@ -39,18 +39,6 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
 		}
 	echo'
-	'/*<option value="01">januari</option>
-	<option value="02">februari</option>
-	<option value="03">maart</option>
-	<option value="04">april</option>
-	<option value="05">mei</option>
-	<option value="06">juni</option>
-	<option value="07">juli</option>
-	<option value="08">augustus</option>
-	<option value="09">september</option>
-	<option value="10">oktober</option>
-	<option value="11">november</option>
-	<option value="12">december</option>*/'
 	</select>
 	<select name="jaar1">
 	<option value="2012">2012</option>
