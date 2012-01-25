@@ -7,7 +7,7 @@ if(!isset($_GET['view']) || empty($_GET['view']))
 	$_GET['view'] = 'lijst';
 }
 
-if($_GET['view'] != 'lijst' || $_GET['view'] != 'block')
+if($_GET['view'] != 'lijst' && $_GET['view'] != 'blok')
 {
 	$_GET['view'] = 'lijst';
 }
