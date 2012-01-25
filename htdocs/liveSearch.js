@@ -12,7 +12,7 @@ function findPos(obj) {
 
 function initLiveSearch()
 {
-	alert(document.getElementById("zoek_box").offsetTop);
+	alert(findPos(document.getElementById("zoek_box")));
 }
 
 document.addEventListener("DOMContentLoaded", initLiveSearch, false);
