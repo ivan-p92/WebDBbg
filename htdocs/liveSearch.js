@@ -1,13 +1,18 @@
-
-function initLiveSearch()
-{
-	el = $("#zoek_box");
-	box = $("#sresult");
+$(document).ready(function() {	
 	
-	box.css("left", el.offset().left+"px");
-	box.css("top", el.offset().top+"px");
+ });
+ 
+ $(window).resize(function() {
+	searchBox();
+ }
+ 
+ 
+ function searchBox()
+ {
+ 	inputzoek = $("#zoek_box");
+	resbox = $("#sresult");
 	
-
+	resbox.css("left", inputzoek.offset().left + "px");
+	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
 }
-
-document.addEventListener("DOMContentLoaded", initLiveSearch, false);
+ 
