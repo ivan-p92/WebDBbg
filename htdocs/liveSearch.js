@@ -10,7 +10,7 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").keyup(function(e) {
-		var a = "q=";
+		var a = "q="+$("#zoek_box").val();
 		alert(a);
 		//$.ajax({
 		//  url: "livesearch.php",
