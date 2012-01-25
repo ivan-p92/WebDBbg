@@ -100,20 +100,19 @@ if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("a
 // ook hier wordt de gebruiker geauthenticeerd
 elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
-	$begindatumtijd = $_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00";					
-	$einddatumtijd = $_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00";
-	
-	echo '<p>'.$begindatumtijd."  ".$einddatumtijd.'</p>';
+	$begindatumtijd = '"'.$_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00".'"';					
+	$einddatumtijd = '"'.$_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00".'"';
 	
 	// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
 	$database = Functions::getDB();
-	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:eind,:begin);";
+	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:begin,:eind);";
 	$stmt = $database->prepare($sql);
 	$stmt->bindParam(":begin", $begindatumtijd);
 	$stmt->bindParam(":eind", $einddatumtijd);
 	$stmt->execute();
 	$diff = (int) $stmt->fetch();
 	
+	// strings voor de eventuele foutmelding
 	$not_titel = 'Geef een titel op voor het evenement!\n';
 	$not_omschrijving = 'Geef een omschrijving van het evenement!\n';
 	$not_locatie = 'Geef een locatie op voor het evenement!\n';
