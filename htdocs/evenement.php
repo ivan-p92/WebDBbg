@@ -132,7 +132,7 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 {
 	$database=Functions::getDB();
 
-	$sql = 'SELECT events_status*, users.name FROM events INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
+	$sql = 'SELECT events_status*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
 	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
 	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
