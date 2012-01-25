@@ -1,6 +1,8 @@
 <h1>Evenement toevoegen</h1>
 
 <?php
+$arraymonth = array(bla, januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december);
+
 if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaardes"])) 
 {
 	echo'
@@ -29,7 +31,15 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	echo'
 	</select>
 	<select name="maand1">
-	<option value="01">januari</option>
+	'; 
+	$maand = $_SESSION["tijdelijke_evenementwaardes"]["maand1"];
+		for($j=1; $j<=31 $j++)
+		{
+			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
+			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
+		}
+	echo'
+	'/*<option value="01">januari</option>
 	<option value="02">februari</option>
 	<option value="03">maart</option>
 	<option value="04">april</option>
@@ -40,7 +50,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	<option value="09">september</option>
 	<option value="10">oktober</option>
 	<option value="11">november</option>
-	<option value="12">december</option>
+	<option value="12">december</option>*/'
 	</select>
 	<select name="jaar1">
 	<option value="2012">2012</option>
@@ -164,18 +174,14 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 	echo'
 	</select>
 	<select name="maand2">
-	<option value="01">januari</option>
-	<option value="02">februari</option>
-	<option value="03">maart</option>
-	<option value="04">april</option>
-	<option value="05">mei</option>
-	<option value="06">juni</option>
-	<option value="07">juli</option>
-	<option value="08">augustus</option>
-	<option value="09">september</option>
-	<option value="10">oktober</option>
-	<option value="11">november</option>
-	<option value="12">december</option>
+	'; 
+	$maand = $_SESSION["tijdelijke_evenementwaardes"]["maand2"];
+		for($j=1; $j<=31 $j++)
+		{
+			if($j == $maand) echo'<option value="'.$j.'" selected="selected">'.$arraymonth[$j].'</option>';
+			else echo'<option value="'.$i.'">'.$arraymonth[$j].'</option>';
+		}
+	echo'
 	</select>
 	<select name="jaar2">
 	<option value="2012">2012</option>
