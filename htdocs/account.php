@@ -191,54 +191,9 @@ else
 					echo '<span class="b block paddingtop">Afgekeurde evenementen:</span>';
 					foreach($events['declined'] as $value)
 					{
-						echo '<a class="colorinherit underlineswap" href="index.php?page=evenement&amp;id='.$value['id'].'&amp;semipage=agenda_week">- '.out($value['title']).'</a><br />';
+						echo '- '.out($value['title']).'<br />';
 					}
 				}
-			?>
-				<!--
-				<p>Deze evenementen zijn door u aangemaakt:</p>
-				<div class="user_events">
-					<table id="user_events">
-						<tbody>
-							<tr>
-								<th>
-								Ongekeurde Evenementen
-								</th>
-								<th>
-								Goedgekeurde Evenementen
-								</th>
-								<th>
-								Afgekeurde Evenementen
-								</th>
-							</tr>
-							<tr>
-								<td>
-									<ul>
-									<li>
-										<a href="index.php?page=evenement">TEST</a>
-									</li>
-									</ul>
-								</td>
-								<td>
-									<ul>
-									<li>
-										<a href="index.php?page=evenement">TEST</a>
-									</li>
-									</ul>
-								</td>
-								<td>
-									<ul>
-									<li>
-										<a href="index.php?page=evenement">TEST</a>
-									</li>
-									</ul>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				-->
-			<?php
 			}// End Else ~If(Er zijn geen events)
 		}// End Else ~If(user bestaat)
 	}

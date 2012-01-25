@@ -45,10 +45,10 @@ Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u o
 	<table class="formtable" id="contact"><tbody>
 	<tr>
 		<td id="eerstecel">Naam</td>
-		<td><input <?php echo ((isset($row['name'])) ? 'value="'.$row['name'].'"' : '');?> required="required" placeholder="Typ hier uw naam" name="contact_naam" /></td>
+		<td><input <?php echo ((isset($row['name'])) ? 'value="'.out($row['name']).'"' : '');?> required="required" placeholder="Typ hier uw naam" name="contact_naam" /></td>
 	</tr><tr>
 		<td>Email</td>
-		<td><input <?php echo ((isset($row['email'])) ? 'value="'.$row['email'].'"' : '');?>required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" /></td>
+		<td><input <?php echo ((isset($row['email'])) ? 'value="'.out($row['email']).'"' : '');?>required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" /></td>
 	</tr><tr>
 		<td>Bericht</td>
 		<td><textarea required="required" placeholder="Typ hier uw bericht" rows="10" cols="10" name="contact_message"></textarea></td>
