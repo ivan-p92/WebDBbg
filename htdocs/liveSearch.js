@@ -20,7 +20,7 @@ $(document).ready(function() {
 		});
 	});	
 	
-	$("li.clickable").each.click(function() {
+	$("li.clickable").click(function() {
 		alert('a');
 	});
 
