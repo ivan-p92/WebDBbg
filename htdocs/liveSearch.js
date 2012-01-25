@@ -12,7 +12,12 @@ $(document).ready(function() {
 		$.ajax({
 		  url: "livesearch.php",
 		  data: a,
-		  success: function(res) { $("#sresult").html(res); 	$("li.clickable").click(function(e) {alert('d');}); }
+		  success:	function(res) {
+						$("#sresult").html(res);
+						$("li.clickable").click(function(e) {
+							alert($(this).html());
+						});
+					}
 		});
 	});
 	
@@ -35,6 +40,6 @@ function searchBox() {
 	resbox.css("display", "none");
 	resbox.css("left", inputzoek.offset().left + "px");
 	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
-	resbox.html("<ul id=\"livesearch\"><li>Gen resultaten</li></ul>");
+	resbox.html("<ul id=\"livesearch\"><li>Geen resultaten</li></ul>");
 }
  
