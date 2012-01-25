@@ -31,7 +31,7 @@ $(document).ready(function() {
 		if(e.keyCode == 40)
 		{
 			var current = -1;
-			var total = 0;
+			var total = -1;
 			
 			$("ul#livesearch li.clickable").each(function(index, element) {
 				var tmp = $(element);
