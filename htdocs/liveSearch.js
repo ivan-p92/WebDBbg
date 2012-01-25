@@ -31,11 +31,10 @@ $(document).ready(function() {
 		if(e.keyCode == 40)
 		{
 			var numberOfResults = $("ul#livesearch li.clickable").length;
-			var current = $("ul#livesearch li.clickable.selected").prop("id");
+			var current = $("ul#livesearch li.clickable.selected");
+
 			
-			console.log(current);
-			
-			if(current == null)
+			if(current == null || current.prop("id"))
 			{
 					$("ul#livesearch li.clickable").first().addClass("selected");
 			}			
