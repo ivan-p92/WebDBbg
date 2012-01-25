@@ -6,6 +6,15 @@ $(document).ready(function() {
 		$("#sresult").css("display", "block");
 	});
 	
+	$("#zoek_box").focus(function(e) {
+		$.ajax({
+		  url: "test.html",
+		  cache: false,
+		  success: function(html){	$("#sresult").append(html); 	}
+		});
+	});
+});
+	
 	$("#zoek_box").blur(function(e) {
 		$("#sresult").css("display", "none");
 	});
