@@ -1,10 +1,22 @@
 <?php
 if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
 {
-	if($_GET['k'] == "G")
+	$database = Functions::getDB();
+	$sql = 'SELECT status FROM events_status WHERE id=:id';
+	try
 	{
-		$database=Functions::getDB();
+		$stmt = $database->prepare($sql);
+		$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+		$stmt->execute();
+		$info = $stmt->fetch();
+	}
+	catch(Exception $e) 
+	{
+		echo '<h1>Fout!</h1> <p>Het door u opgevraagde evenement bestaat niet!</p>';
+	}
 
+	if($_GET['k'] == "G" && $info["status"] == "unapproved")
+	{
 		$sql = 'UPDATE events SET approve_id=:uid, approve_date=NOW(), public=1 WHERE id=:eid AND approve_id IS NULL';
 
 		$stmt = $database->prepare($sql);
@@ -18,9 +30,9 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 		if($count == 00000)
 			echo '<h1>Evenement goedgekeurd!</h1> <p>Het evenement is succesvol goedgekeurd!</p>';
 		else
-			echo $count.'<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
+			echo $count.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet goedgekeurd.</p>';
 	}
-	elseif($_GET['k'] == "A")
+	elseif($_GET['k'] == "A" && $info["status"] == "unapproved")
 	{
 		$database=Functions::getDB();
 
@@ -37,11 +49,11 @@ if($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GE
 		if($count == 00000)
 			echo '<h1>Evenement afgekeurd!</h1> <p>Het evenement is succesvol afgekeurd!</p>';
 		else
-			echo $count.'<h1>Fout!</h1> <p>Het door u opgegeven evenement bestaat niet of is reeds gekeurd!</p>';
+			echo $count.'<h1>Fout!</h1> <p>Een fout is opgetreden. Dit evenement is mogelijk niet afgekeurd.</p>';
 	}
 	else
 	{
-		echo '<h1>Fout!</h1> <p>Invalide link!</p>';
+		echo '<h1>Fout!</h1> <p>Het evenement is reeds gekeurd!</p>';
 	}
 }
 
@@ -120,35 +132,38 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 {
 	$database=Functions::getDB();
 
-	$sql = 'SELECT events.*, users.name FROM events INNER JOIN users ON users.id=events.create_id WHERE events.id=:id';
+	$sql = 'SELECT events_status*, users.name FROM events INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
 	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
 	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
 	$sql_bar = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=4';
-		
-	// dit bereidt de queries voor
+	
+	// alle info behalve categorieën wordt opgehaald.
+	// maar als het evenent niet zichtbaar mag zijn (al gekeurd), wordt de rest niet uitgevoerd
 	$stmt = $database->prepare($sql);
+	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt->execute();
+	$info=$stmt->fetch();
+	
+	if($info["status"] == "unapproved")
+	{
+	// dit bereidt de queries voor
 	$stmt_klant = $database->prepare($sql_klant);
 	$stmt_keuken = $database->prepare($sql_keuken);
 	$stmt_afwas = $database->prepare($sql_afwas);
 	$stmt_bar = $database->prepare($sql_bar);
 	
 	// nu wordt id overal gebind
-	$stmt->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_klant->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_keuken->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_afwas->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	$stmt_bar->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
 	
 	// de queries worden uitgevoerd
-	$stmt->execute();
 	$stmt_klant->execute();
 	$stmt_keuken->execute();
 	$stmt_afwas->execute();
 	$stmt_bar->execute();
-	
-	// info wordt in info gestopt
-	$info=$stmt->fetch();
 	
 	// bij de anderen moet alleen de rijen geteld worden
 	$klant = $stmt_klant->rowCount();
@@ -221,6 +236,8 @@ elseif($_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset(
 			<button class="button"><span class="right"><span class="inner">Afkeuren</span></span></button>
 	</a>	
 	</div>';
+	}
+	else echo '<h1>Fout!</h1>Het door u opgegeven evenement kan niet gekeurd worden, omdat het niet bestaat of reeds gekeurd is!';
 } 
 
 elseif($_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
