@@ -20,7 +20,7 @@ $(document).ready(function() {
 		});
 	});	
 	
-	$("#zoek_box").click(function() {
+	$("li").click(function() {
 		alert('a');
 	});
 
