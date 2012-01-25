@@ -1,11 +1,12 @@
 $(document).ready(function() {	
 	
+	$(window).resize(function() {
+		alert('jaja');
+		searchBox();
+	})
  });
  
- $(window).resize(function() {
-	alert('jaja');
-	searchBox();
- }
+
  
  
  function searchBox()
