@@ -151,7 +151,7 @@ if(Functions::auth("admin_rights"))
 											echo '<p>';
 											while($af = $stmt_afgekeurd->fetch())
 											{
-												echo out($af['title'])'<br />';
+												echo ''.out($af['title']).'<br />';
 											}
 											echo '</p>';
 										}
