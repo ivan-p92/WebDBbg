@@ -562,8 +562,8 @@ table#user_events th {
 table#user_events td {
     border: 1px solid black;
 }
-td#sorteer, td#sort_name {
-    width: 77px;
+td#sort_name {
+    width: 200px;
 }
 table#sort_table {
     width: 100%;
