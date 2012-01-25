@@ -107,7 +107,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 						for($i=1; $i<=31; $i++)
 						{
 							if($i == $datum2) echo'<option value="'.$i.'" selected="selected">'.$i.'</option>';
-							else echo'<option value="'.$j.'">'.$i.'</option>';
+							else echo'<option value="'.$i.'">'.$i.'</option>';
 						}
 					echo'
 					</select>
