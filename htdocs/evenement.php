@@ -104,9 +104,6 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$einddatumtijd = new DateTime($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00");
 	$interval = $begindatumtijd->diff($einddatumtijd);
 	
-	$begindatum = new date($_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]);
-	$einddatum = new date($_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]);
-	
 	$not_titel = 'Geef een titel op voor het evenement!\n';
 	$not_omschrijving = 'Geef een omschrijving van het evenement!\n';
 	$not_locatie = 'Geef een locatie op voor het evenement!\n';
