@@ -10,6 +10,7 @@ function findPos(obj)
 			arr[] = obj.id;
 		} while (obj = obj.offsetParent);
 	}
+	
 	alert(arr);
 	return [curleft, curtop];
 }
