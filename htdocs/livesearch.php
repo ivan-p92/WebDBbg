@@ -10,7 +10,7 @@ try
 	
 	$db = Functions::getDB();
 	$stmt = $db->prepare("SELECT id, name FROM users WHERE name LIKE :name");
-	$stmt->bindParam(':name', '%'.%_GET['q'].'%', PDO::PARAM_STR);
+	$stmt->bindParam(':name', '%'.$_GET['q'].'%', PDO::PARAM_STR);
 	
 	$stmt->execute();
 	
