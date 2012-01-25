@@ -484,9 +484,13 @@ li.event {
 }
 
 /* titel en tijd van evenementen*/
-.event_titel, .begintijd {
+p.event_titel, p.begintijd {
     line-height: 1.5;
     margin: 0;
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .begintijd {
