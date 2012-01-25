@@ -246,7 +246,7 @@ elseif(Functions::auth("submit_event"))
 		</tr>
 		<tr id="omschrijving">
 			<td>Omschrijving</td>
-			<td><textarea name="omschrijving" rows="" cols=""></textarea></td>
+			<td><textarea name="omschrijving" rows="5" cols=""></textarea></td>
 		</tr>
 		<tr>
 			<td>Begindatum</td>
@@ -395,7 +395,7 @@ elseif(Functions::auth("submit_event"))
 			</td>
 		</tr>
 		<tr>
-			<td>&nbsp</td>
+			<td>&nbsp;</td>
 			<td class="submit_button">
 			<button type="submit" class="button" id="event_aanmaken">
 				<span class="right">
