@@ -119,8 +119,8 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	if(!isset($_POST["categorie"])) $message = $message.$not_vinkje;
 	if(!checkdate($_POST["maand1"], $_POST["datum1"], $_POST["jaar1"])) $message = $message.$not_begindatum;
 	if(!checkdate($_POST["maand2"], $_POST["datum2"], $_POST["jaar2"])) $message = $message.$not_einddatum;
-	if((int)$interval->format('%i') < 0) $message = $message.$not_validdiff;	
-	$message= $message.' interval:'.(int)$interval->format('%i');
+	//if((int)$interval->format('%i') < 0) $message = $message.$not_validdiff;	
+	//$message= $message.' interval:'.(int)$interval->format('%i');
 	// als $message niet leeg is, dan is niet alles correct ingevuld en wordt
 	// de melding gegeven en toevoeg_evenement herladen
 	if($message != "") 
