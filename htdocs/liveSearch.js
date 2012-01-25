@@ -7,7 +7,7 @@ $(document).ready(function() {
 		
 	$("#zoek_box").focus(function(e) {
 		$("#sresult").css("display", "block");
-		$("#sresult").keyup();
+		$("#zoek_box").keyup();
 	});
 	
 	$("#zoek_box").keyup(function(e) {
