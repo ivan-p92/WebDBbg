@@ -102,7 +102,15 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	// er moet minstens 1 categorie aangevinkt zijn (met validateCheckbox uit functions.php)
 	// hier wordt nu voor gecheckt, als dit niet het geval is wordt weer teruggelinkt naar toevoeg_evenement
-	if(isset($_POST["categorie"]) && Functions::validateCheckbox($_POST["categorie"]))
+	if(!isset($_POST["categorie"]) && !Functions::validateCheckbox($_POST["categorie"]))
+	{
+		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
+		echo' <script>alert(\'Vul alle velden in en vink minsten EEN categorie aan!\')</script>
+		<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" />
+		';		
+	}
+	// hie rzal de tabel getoond worden
+	else
 	{
 	// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 	// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
@@ -178,16 +186,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 			<button class="button"><span class="right"><span class="inner">Maak evenement aan</span></span></button>
 	</a>';
 	}
-	// er was geen categorie aangevinkt, dus er wordt terugverwezen naar toevoeg_evenement
-	// de inhoud van post wordt wel in $_SESSION gestopt
-	else
-	{
-		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
-		echo' <script>alert(\'Vink minsten EEN categorie aan\')</script>
-		<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php?page=toevoeg_evenement" />
-		';
 		
-	}
 }
 
 // in dit geval is de gebruiker afkomstig van 'keuren' en wordt een tabel getoond
