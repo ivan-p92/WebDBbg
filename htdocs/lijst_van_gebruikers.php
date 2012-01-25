@@ -6,7 +6,7 @@
 		
 		for(x in id)
 		{
-			id[x].style.background = "red";
+			id[x].style.visibility = id[x].style.visibility? "hidden":"visible";
 		}
 	} 
 </script>
