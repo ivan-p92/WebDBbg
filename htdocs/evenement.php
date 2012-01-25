@@ -102,15 +102,15 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 {
 	$begindatumtijd = '"'.$_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00".'"';					
 	$einddatumtijd = '"'.$_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00".'"';
-	
+		
 	// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
 	$database = Functions::getDB();
-	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:begin,:eind);";
+	$sql = "SELECT TIMESTAMPDIFF(MINUTE,:begin,:eind) AS diff;";
 	$stmt = $database->prepare($sql);
 	$stmt->bindParam(":begin", $begindatumtijd);
 	$stmt->bindParam(":eind", $einddatumtijd);
 	$stmt->execute();
-	$diff = (int) $stmt->fetch();
+	$diff = $stmt->fetch()["diff"];
 	
 	// strings voor de eventuele foutmelding
 	$not_titel = 'Geef een titel op voor het evenement!\n';
