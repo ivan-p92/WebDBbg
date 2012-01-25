@@ -6,11 +6,11 @@ $(document).ready(function() {
 	});
 		
 	$("#zoek_box").focus(function(e) {
-		$("#zoek_box").keyup();
+		$("#zoek_box").keypress();
 		$("#sresult").css("display", "block");
 	});
 	
-	$("#zoek_box").keyup(function(e) {
+	$("#zoek_box").keypress(function(e) {
 
 		var a = "q="+$("#zoek_box").val();
 		
