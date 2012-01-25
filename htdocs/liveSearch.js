@@ -28,6 +28,6 @@ function searchBox()
 	resbox.css("display", "none");
 	resbox.css("left", inputzoek.offset().left + "px");
 	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
-
+	resbox.html("Geen resultaten");
 }
  
