@@ -30,23 +30,17 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			var numberOfResults = $("ul#livesearch li.clickable").length;
-			var current = $("ul#livesearch li.clickable.selected");
-
+			var current = 0;
+			var total = 0;
 			
-			if(current == null || current.prop("id"))
-			{
-					$("ul#livesearch li.clickable").first().addClass("selected");
-			}			
-			else if(current == numberOfResults)	//Onderste resultaat is actief
-			{
-				// doe niets
-			}
-			else 
-			{
-				current.removeClass("selected");
-				$("li#" + (current+1)).addClass("selected");
-			}
+			$("ul#livesearch li.clickable").each(function(index, element) {
+				if(element.hasClass("selected"))
+				{
+					current = index;
+				}
+				total++;
+			});
+
 		}
 	});
 	
