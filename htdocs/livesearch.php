@@ -11,7 +11,7 @@ try
 	$q = '%'.$_GET['q'].'%';
 	
 	$db = Functions::getDB();
-	$stmt = $db->prepare("SELECT id, name FROM users WHERE name LIKE :name");
+	$stmt = $db->prepare("SELECT id, name FROM users WHERE name LIKE :name LIMIT 10");
 	$stmt->bindParam(':name', $q, PDO::PARAM_STR);
 	
 	$stmt->execute();
@@ -23,7 +23,7 @@ try
 	{
 		$row['name'] = str_ireplace($_GET['q'], '<span class="b">'.$_GET['q'].'</span>', $row['name']);
 		$i++;
-		$return .= '<li class="clickable">'.$row['name'].'</li>';
+		$return .= '<li id="ls_li_'.$i.'" class="clickable">'.$row['name'].'</li>';
 	}
 	
 	if($i == 0)

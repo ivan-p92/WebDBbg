@@ -30,8 +30,21 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 40)
 		{
-			a = $("li");
-			console.log(a);
+			numberOfResults = $("ul#livesearch li.clickable").length;
+			current = $("ul#livesearch li.clickable.selected").prop("id");
+			
+			if(current == numberOfResults)	//Onderste resultaat is actief
+			{
+				// doe niets
+			}
+			else 
+			{
+				current.removeClass("selected");
+				$("li#" + (current+1)).addClass("selected");
+			}
+		}
+
+			
 		}
 	});
 	
