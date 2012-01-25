@@ -8,15 +8,7 @@ if(Functions::auth("admin_rights"))
 		<table id="sort_table">
 			<tr>
 				<td id="sort_name">
-					Sorteren op:
-				</td>
-				<td id="sorteer">
-					<select name="sorteer">
-					<option value="-------">-------</option>
-					<option value="Naam">Naam</option>
-					<option value="Rechten">Rechten</option>
-					<option value="ID">ID</option>
-					</select>
+					Selecteer Box voor weergave
 				</td>
 				<td id="recht_checkbox">
 					<form action="" method="post">
