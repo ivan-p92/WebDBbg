@@ -107,7 +107,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 		
 	// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
 	$database = Functions::getDB();
-	$sql = "SELECT TIMESTAMPDIFF(MINUTE,?,?) AS diff;";
+	$sql = 'SELECT TIMESTAMPDIFF(MINUTE,?,?) AS diff;';
 	$stmt = $database->prepare($sql);
 	$stmt->bindParam(1, $begindatumtijd, PDO::PARAM_STR);
 	$stmt->bindParam(2, $einddatumtijd, PDO::PARAM_STR);
