@@ -13,7 +13,7 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 {
 	echo'
 	<p>Voeg hier een evenement toe, zorg ervoor dat alle velden worden ingevuld</p>
-	'
+	';
 	
 	//form, informatie gaat naar link bij action via post methode. Form elementen zitten in een tabel, dit maakt de opmaak in CSS simpeler
 	echo'
