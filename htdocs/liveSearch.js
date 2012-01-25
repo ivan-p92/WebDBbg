@@ -33,7 +33,11 @@ $(document).ready(function() {
 			var numberOfResults = $("ul#livesearch li.clickable").length;
 			var current = $("ul#livesearch li.clickable.selected").prop("id");
 			
-			if(current == numberOfResults)	//Onderste resultaat is actief
+			if(current == 0)
+			{
+					$("ul#livesearch li.clickable").first().addClass("selected");
+			}			
+			else if(current == numberOfResults)	//Onderste resultaat is actief
 			{
 				// doe niets
 			}
