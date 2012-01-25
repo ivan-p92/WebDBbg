@@ -28,7 +28,7 @@ try
 }
 catch(Exception $e)
 {
-
+	echo '<ul id=\"livesearch\"><li class=\"noclick\">Geen resultaten</li></ul>';
 }
 
 ?>
