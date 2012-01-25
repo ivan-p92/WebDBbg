@@ -113,7 +113,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	$not_vinkje = 'Vink minstens één categorie aan!\n';
 	$not_begindatum = 'De begindatum is geen valide datum!\n';
 	$not_einddatum = 'De einddatum is geen valide datum!\n';
-	$not_validdiff = 'De einddatum en tijd moet ná de begindatum zijn!'
+	$not_validdiff = 'De einddatum en tijd moet ná de begindatum zijn!';
 	$message = "";
 
 	if(empty($_POST["titel"])) $message = $message.$not_titel;
