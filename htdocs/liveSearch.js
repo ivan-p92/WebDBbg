@@ -12,12 +12,9 @@ $(document).ready(function() {
 	
 	$("#zoek_box").keyup(function(e) {
 		
-		console.log(e.keyCode);
-		var a = "q="+$("#zoek_box").val();
-		
 		$.ajax({
 		  url: "livesearch.php",
-		  data: a,
+		  data: "q="+$("#zoek_box").val(),
 		  success:	function(res) {
 						$("#sresult").html(res);
 						$("li.clickable").mousedown(function(e) {
@@ -26,6 +23,11 @@ $(document).ready(function() {
 						});
 					}
 		});
+		
+		if(e.keyCode == 40)
+		{
+			$("ul#livesearch li.clickable").first().css("background", "red");
+		}
 	});
 	
 
