@@ -95,7 +95,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{				
-				echo '<li class="event" onclick="goToEvent('.$row['id'].')"';
+				echo '<li class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
@@ -107,7 +107,7 @@
 				{
 					echo " w_".$i;
 				}
-				echo '">';
+				echo '" onclick="goToEvent('.$row['id'].')"';
 				echo '<p class="eendags_event">';
 				echo '<span class="begin_datum">';
 				if($row['diff'] == 0) // eendags evenement
