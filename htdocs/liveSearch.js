@@ -20,6 +20,7 @@ $(document).ready(function() {
 			  data: "q="+$("#zoek_box").val(),
 			  success:	function(res) {
 							$("#sresult").html(res);
+							$("#sresult").css("display", "block");
 							$("li.clickable").mousedown(function(e) {
 								$("#zoek_box").val($(this).html());
 								$("#sresult").css("display", "none");
