@@ -21,9 +21,10 @@
 					</form>
 				</td>
 				<td id="week">
+					<span class="prev"></span>
 					<span id="set_week">Week:</span>
 					<input type="text" id="week_box" name="week" />
-					<span id="result"></span>
+					<span class="next"></span>
 				</td>
 			</tr>
 		</table>
