@@ -38,7 +38,7 @@
 		}
 		
 		
-		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
+		var userBoxes = document.getElementsByClassName('id_recht_all');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
 			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
@@ -78,7 +78,7 @@ if(Functions::auth("admin_rights"))
 				</td>
 				<td id="recht_checkbox">
 						<ul>
-							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="" onclick="showhide()" checked="checked" />Iedereen</li>
+							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide()" checked="checked" />Iedereen</li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide()" />Aanmaken</li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide()" />Keuren</li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide()" />Admin</li>
@@ -125,7 +125,7 @@ if(Functions::auth("admin_rights"))
 						$stmt_recht->bindParam(":id",$row['id'],PDO::PARAM_INT);
 						$stmt_recht->execute();						
 						
-						$classes = 'user_box';
+						$classes = 'id_recht_all';
 						
 						while($recht = $stmt_recht->fetch())
 						{
