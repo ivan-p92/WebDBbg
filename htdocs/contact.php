@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$stmt2->bindParam(':message', $_POST['contact_message'], PDO::PARAM_STR);
 		
 		//voor de query uit
-		$stmt2->execute
+		$stmt2->execute();
 		
 		//volgend bericht, bevestigt een succesvolle versturing
 		echo '<p class="succes">Dank voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.</p>';
