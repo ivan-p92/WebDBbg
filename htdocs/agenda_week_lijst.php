@@ -35,7 +35,7 @@
 			DATEDIFF(end_date, start_date) AS diff,
 			WEEKOFYEAR(start_date) AS wkstart,
 			WEEKOFYEAR(end_date) AS wkend
-			FROM events WHERE public='1' ORDER BY end_date ASC;"; //AND end_date >= NOW()
+			FROM events WHERE public='1' ORDER BY start_date ASC;"; //AND end_date >= NOW()
 
 	$sql2 = "SELECT events_groups.event_id, groups.`group` 
 			 FROM `events_groups` 
