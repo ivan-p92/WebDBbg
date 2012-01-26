@@ -41,10 +41,6 @@ function hasClassArray(ele, clsArray)
 	return false;	// class niet gevonden, dus return false
 }
 
-function updateShownEvents(week)
-{
-	init(week);
-}
 
 function weekSubmitWithKey(keyEvent) {
     if (keyEvent.keyCode) var code = keyEvent.keyCode;
@@ -53,16 +49,20 @@ function weekSubmitWithKey(keyEvent) {
 	if (code == 13)
 	{
         var input = document.getElementById("week_box");
-        updateShownEvents(input.value);
+        setWeek(input.value);
     }
 }
 
-
-function init(week)
+function setWeek(week)
 {
-	var checkboxes = document.getElementsByClassName("catbox");
 	var weekbox = document.getElementById("week_box");
 	weekbox.value = week;
+	initEvents();
+{
+
+function initEvents()
+{
+	var checkboxes = document.getElementsByClassName("catbox");
 	var checked = new Array();
 	
 	for(var i = 0; i < checkboxes.length; i++)
