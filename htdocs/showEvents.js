@@ -1,4 +1,4 @@
-function showEvents(var week, var infoArray)
+function showEvents(week, infoArray)
 {
 	var events = document.getElementsByClassName("event");
 	for (var i=0; i<events.length; i++)
