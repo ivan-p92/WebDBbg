@@ -16,7 +16,8 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 				
 		if($stmt->rowCount() == 0)
 		{
-			echo '<p>Deze gebruiker bestaat niet</p>';
+			echo '<h1>Deze gebruiker bestaat niet</h1>
+				<p>Keer terug naar de lijst van gebruikers en probeer opnieuw</p>;
 		}
 		elseif(!empty($_POST))
 		{
@@ -194,7 +195,11 @@ else
 	else
 	{
 		echo '<h1>Onbruikbare URL</h1>
-			<p>Er ontbreekt een userID in de URL of de gebruikte userID is ongeldig!</p>';
+			<p>
+				U benadert deze pagina op de verkeerde manier!
+				Probeer zo veel mogelijk de website te bedienen via de interface.
+				URL-navigatie wordt in veel gevallen niet ondersteund.
+			</p>';
 	}
 }
 ?>
