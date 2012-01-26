@@ -94,77 +94,42 @@
 			else
 			{	
 			while($row = $stmt->fetch())
-			{
-				
-				//{					
-					echo '<li class="event';
-						foreach($koppel_array as $group => $array)
-						{
-							if(in_array($row['id'], $array))
-							{
-								echo " id_".$group;
-							}	
-						}
-					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
-					{
-						echo " w_".$i;
-					}
-					echo '">';
-					echo '<p class="eendags_event">';
-					echo '<span class="begin_datum">';
-					if($row['diff'] == 0) // eendags evenement
-					{
-						echo '<span class="jaar">'.$row['jaar'].'</span>';
-						echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
-					}
-					else // meerdaags evenement
-					{
-						echo '<span class="jaar">'.$row['jaar'].'</span>';
-						echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
-					}
-					echo '</span>';
-					echo '</p>';
-					
-					echo '<div class="event_details">';
-					echo '<p class="event_titel">';
-					echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
-					echo '</p>';
-					echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
-					echo '</div>';
-					echo '</li>';
-				/*}
-				else
-				{
-					echo '<li class="event'; 
-					
+			{				
+				echo '<li class="event';
 					foreach($koppel_array as $group => $array)
-						{
-							if(in_array($row['id'], $array))
-							{
-								echo " id_".$group;
-							}	
-						}
-					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
 					{
-						echo " w_".$i;
+						if(in_array($row['id'], $array))
+						{
+							echo " id_".$group;
+						}	
 					}
-					echo'">';
-					echo '<p class="eendags_event">';
-					echo '<span class="begin_datum">';
+				for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
+				{
+					echo " w_".$i;
+				}
+				echo '">';
+				echo '<p class="eendags_event">';
+				echo '<span class="begin_datum">';
+				if($row['diff'] == 0) // eendags evenement
+				{
+					echo '<span class="jaar">'.$row['jaar'].'</span>';
+					echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
+				}
+				else // meerdaags evenement
+				{
 					echo '<span class="jaar">'.$row['jaar'].'</span>';
 					echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
-					echo '</span>';
-					echo '</p>';
-
-					echo '<div class="event_details">';
-					echo '<p class="event_titel">';
-					echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
-					echo '</p>';
-					echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
-					echo '</div>';
-					echo '</li>';
-	
-				}*/
+				}
+				echo '</span>';
+				echo '</p>';
+				
+				echo '<div class="event_details">';
+				echo '<p class="event_titel">';
+				echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
+				echo '</p>';
+				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
+				echo '</div>';
+				echo '</li>';
 			}
 		}
 		}
