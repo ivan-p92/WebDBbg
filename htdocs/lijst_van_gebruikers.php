@@ -174,25 +174,33 @@ if(Functions::auth("admin_rights"))
 
 	$message_list="";
 	
-	$stmt->execute();
-	
-	while($messages=$stmt->fetch())
+	if(!$stmt->execute)
 	{
-		$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
-			.out($messages['name']).'</a></li>';
-	} 
-	
-	if($message_list != "")
-	{
-		echo '
-		<div id="message_list">
-			<ul>
-				'.$message_list.'
-			</ul>
-		</div>
-		';
+		echo'Het uitvoeren van de query is mislukt';
 	}
-	else echo'<div id="message_list">Er zijn op dit moment geen berichten</div>';
+	else
+	{
+		while($messages=$stmt->fetch())
+		{
+			$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
+				.out($messages['name']).'</a></li>';
+		} 
+		if($message_list = "")
+		{
+		
+			echo '<div id="message_list">Er zijn op dit moment geen berichten</div>';
+			
+		}
+		else 
+		{
+			echo'<div id="message_list">
+				<ul>
+					'.$message_list.'
+				</ul>
+			</div>
+			';
+		}	
+	}
 }
 else
 {
