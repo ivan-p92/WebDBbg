@@ -196,8 +196,8 @@ else
 	{
 		echo '<h1>Onbruikbare URL</h1>
 			<p>
-				U benadert deze pagina op de verkeerde manier!
-				Probeer zo veel mogelijk de website te bedienen via de interface.
+				U benadert deze pagina op de verkeerde manier!<br />
+				Probeer zo veel mogelijk de website te bedienen via de interface.<br />
 				URL-navigatie wordt in veel gevallen niet ondersteund.
 			</p>';
 	}
