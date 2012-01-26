@@ -76,14 +76,14 @@ if(Functions::auth("admin_rights"))
 		<table id="sort_table">
 			<tr>
 				<td id="sort_name">
-					Toon gebruikers met de volgende rechten:
+					Gebruikers met (mi. 1 van) de volgende rechten:
 				</td>
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input type="checkbox" id="input_1" value="aanmaken" onclick="showhide(3)" checked="checked" />Aanmaken</li>
-							<li><input type="checkbox" id="input_2" value="keuren" onclick="showhide(3)" checked="checked" />Keuren</li>
-							<li><input type="checkbox" id="input_3" value="admin" onclick="showhide(3)" checked="checked" />Admin</li>
+							<li><input type="checkbox" id="input_1" value="aanmaken" onclick="showhide(3)" />Aanmaken</li>
+							<li><input type="checkbox" id="input_2" value="keuren" onclick="showhide(3)" />Keuren</li>
+							<li><input type="checkbox" id="input_3" value="admin" onclick="showhide(3)" />Admin</li>
 						</ul>
 					</form>
 				</td>
