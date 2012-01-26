@@ -6,7 +6,7 @@
 		
 		// zoek uit welke classes getoond moeten worden
 		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
-		var showClasses = array();
+		var showClasses = new Array();
 		var i;
 		for (i = 1; i <= numberOfInputs; i++)
 		{
