@@ -95,8 +95,8 @@
 			{	
 			while($row = $stmt->fetch())
 			{
-				if($row['diff'] == 0)
-				{					
+				
+				//{					
 					echo '<li class="event';
 						foreach($koppel_array as $group => $array)
 						{
@@ -112,8 +112,16 @@
 					echo '">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
-					echo '<span class="jaar">'.$row['jaar'].'</span>';
-					echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
+					if($row['diff'] == 0) // eendags evenement
+					{
+						echo '<span class="jaar">'.$row['jaar'].'</span>';
+						echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
+					}
+					else // meerdaags evenement
+					{
+						echo '<span class="jaar">'.$row['jaar'].'</span>';
+						echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
+					}
 					echo '</span>';
 					echo '</p>';
 					
@@ -124,7 +132,7 @@
 					echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 					echo '</div>';
 					echo '</li>';
-				}
+				/*}
 				else
 				{
 					echo '<li class="event'; 
@@ -156,7 +164,7 @@
 					echo '</div>';
 					echo '</li>';
 	
-				}
+				}*/
 			}
 		}
 		}
