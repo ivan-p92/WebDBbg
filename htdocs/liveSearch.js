@@ -31,7 +31,7 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 27)	// escape
 		{
-			console.log("loeloe")';
+			console.log("loeloe");
 			$("#sresult").css("display", "none");
 		}
 		
