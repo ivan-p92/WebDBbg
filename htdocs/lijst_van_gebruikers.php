@@ -158,6 +158,40 @@ if(Functions::auth("admin_rights"))
 			echo 'Er zit een fout in de query: '.$mysqli->error;
 		}
 	echo '</div>';
+	
+	//haal een lijst met de berichten op
+	
+	//leg connectie met database
+	$db = Functions::getDB();
+
+	//sql query om informatie op te vragen
+	$sql = "SELECT id, name FROM messages;";
+
+	//bereid de query voor
+	$stmt = $db->prepare($sql);
+
+	//voer de query uit
+	$stmt->execute();
+	
+	$message_list="";
+	
+	while($messages=$stmt->fetch())
+	{
+		$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.$messages[id].'>"'
+			.$messages[name].'</a></li>';
+	} 
+	
+	if($message_list != "")
+	{
+		echo '
+		<div id="message_list">
+			<ul>
+				'.$message_list.'
+			</ul>
+		</div>
+		';
+	}
+	else echo'<div id="message_list">Er zijn op dit moment geen berichten</div>'	
 }
 else
 {
