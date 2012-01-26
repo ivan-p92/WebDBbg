@@ -593,6 +593,10 @@ td#recht_checkbox ul li {
     float: left;
 }
 
+td#recht_checkbox ul li input{
+	width: auto;
+}
+
 td#recht_checkbox ul li  span {
 	display: inline;
 }
