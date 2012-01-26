@@ -1,5 +1,5 @@
 <?php
-if(Functions::auth("admin_rights") && isset($_GET['id'] && is_numeric($_GET['id']))
+if(Functions::auth("admin_rights") && isset($_GET['id'] && is_numeric($_GET['id'])))
 {
 		try
 		{
