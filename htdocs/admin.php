@@ -1,7 +1,7 @@
 <?php
 if(Functions::auth("admin_rights"))
 {
-	if(is_int(2))
+	if(is_int(2ab))
 	{
 		try
 		{
