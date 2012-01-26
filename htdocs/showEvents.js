@@ -43,6 +43,17 @@ function hasClassArray(ele, clsArray)
 
 function init(week)
 {
-	showEvents(week, new Array("klant"));
+	var checkboxes = document.getElementsByClassName("catbox");
+	var checked = new Array();
+	
+	for(var i = 0; i < checkboxes.length; i++)
+	{
+		if(checkboxes[i].checked)
+		{
+			checked.push(checkboxes[i].value);
+		}
+	}
+	
+	showEvents(week, checked);
 }
 
