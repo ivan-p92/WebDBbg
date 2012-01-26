@@ -170,17 +170,17 @@ if(Functions::auth("admin_rights"))
 	$sql = "SELECT id, name FROM messages;";
 
 	//bereid de query voor
-	$stmt = $db->prepare($sql);
+	$stmt3 = $db->prepare($sql);
 
 	$message_list="";
 	
-	if(!$stmt->execute())
+	if(!$stmt3->execute())
 	{
 		echo'Het uitvoeren van de query is mislukt';
 	}
 	else
 	{
-		while($messages = $stmt->fetch())
+		while($messages = $stmt3->fetch())
 		{
 			$message_list .= '<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'.out($messages['name']).'</a></li>';
 		} 
