@@ -5,17 +5,11 @@
 <div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	
-	<form id="sorteer_events" action="http://websec.science.uva.nl/webdb1235/index.php?page=agenda_week_lijst" method="post">
-	<label><input type="checkbox" value="klant" name="categorie[]" checked="checked" />Klant</label>
-	<label><input type="checkbox" value="keuken" name="categorie[]" checked="checked" />Keuken</label>
-	<label><input type="checkbox" value="afwas" name="categorie[]" checked="checked" />Afwassers</label>
-	<label><input type="checkbox" value="bar" name="categorie[]" checked="checked" />Barpersoneel</label>
-	<label class="submit_button">
-	<button type="submit" class="button" id="event_aanmaken">
-		<span class="right">
-		<span class="inner">Herladen</span></span>
-	</button></label>
-	</form>
+	<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" />Klant</label>
+	<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" />Keuken</label>
+	<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" />Afwassers</label>
+	<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" />Barpersoneel</label>
+	
 	<ul class="event_lijst">
 <?php
 	
