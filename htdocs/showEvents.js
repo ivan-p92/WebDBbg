@@ -117,5 +117,5 @@ function goToEventA(id)
 
 function goToEventK(id)
 {
-	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=agenda_week");
+	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=keuren");
 }
