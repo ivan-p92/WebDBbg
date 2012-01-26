@@ -77,9 +77,9 @@ if(Functions::auth("admin_rights"))
 				</td>
 				<td id="recht_checkbox">
 						<ul>
-							<li><input type="radio" class="input_radio_search_users_rights" value="aanmaken" onclick="showhide()" />Aanmaken</li>
-							<li><input type="radio" class="input_radio_search_users_rights" value="keuren" onclick="showhide()" />Keuren</li>
-							<li><input type="radio" class="input_radio_search_users_rights" value="admin" onclick="showhide()" />Admin</li>
+							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide()" />Aanmaken</li>
+							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide()" />Keuren</li>
+							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide()" />Admin</li>
 						</ul>
 				</td>
 				<td id="zoek">
