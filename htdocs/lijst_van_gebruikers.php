@@ -15,7 +15,7 @@
 			{
 				if(input.checked)
 				{
-					showClasses[] = "id_recht_" + input.value;
+					showClasses.push("id_recht_" + input.value);
 				}
 			}
 		}
