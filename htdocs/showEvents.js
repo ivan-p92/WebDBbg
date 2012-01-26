@@ -1,9 +1,15 @@
 function showEvents(week, infoArray)
 {
 	var events = document.getElementsByClassName("event");
+	var classesArray = new Array();
+	for (var i=0; i<infoArray.length; i++)
+	{
+		classesArray.push("id_"+infoArray[i]);
+	}
+	
 	for (var i=0; i<events.length; i++)
 	{
-		if(hasClass(events[i], "w_"+week))
+		if(hasClass(events[i], "w_"+week) && hasClassArray(events[i], classesArray))
 		{
 			events[i].style.display = 'block';
 		}
@@ -20,8 +26,23 @@ function hasClass(ele,cls)
 	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
 }
 
+// deze is wel zelf geschreven
+// geeft true terug als element (ele) ten minste 1 van de classes uit de array met classes (clsArray) bevat.
+// anders false
+function hasClassArray(ele, clsArray)
+{
+	for(var i = 0; i < clsArray.length; i++)
+	{
+		if(hasClass(ele, clsArray[i]))
+		{
+			return true;			// stop de functie, class is gevonden
+		}
+	}
+	return false;	// class niet gevonden, dus return false
+}
+
 function init(week)
 {
-	showEvents(week, new Array());
+	showEvents(week, new Array("klant"));
 }
 
