@@ -842,3 +842,7 @@ span#sresult {
 		margin: 8px 0px 8px 0px;
 		list-style: none;
 	}
+	
+	ul#livesearch li.clickable span.ls_id {
+		display: none;
+	}
