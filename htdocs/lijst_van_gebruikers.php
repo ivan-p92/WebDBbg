@@ -180,16 +180,13 @@ if(Functions::auth("admin_rights"))
 	}
 	else
 	{
-		while($messages=$stmt->fetch())
+		while($messages = $stmt->fetch())
 		{
-			$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
-				.out($messages['name']).'</a></li>';
+			$message_list .= '<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'.out($messages['name']).'</a></li>';
 		} 
 		if($message_list = "")
-		{
-		
-			echo '<div id="message_list">Er zijn op dit moment geen berichten</div>';
-			
+		{		
+			echo '<div id="message_list">Er zijn op dit moment geen berichten</div>';			
 		}
 		else 
 		{
