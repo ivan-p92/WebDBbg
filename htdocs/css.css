@@ -544,6 +544,7 @@ td.admin_td p a {
 
 /* TABLES */
 
+/* Let op: wordt ook gebruikt door tabel op messages pagina!! */
 table#evenement td.rechts {
     width: 500px;
 }

@@ -33,10 +33,8 @@
 			if(inputs[i].checked)
 			{
 				showClasses.push("id_recht_" + inputs[i].value);
-				console.log("id_recht_" + inputs[i].value);
 			}
-		}
-		
+		}	
 		
 		var userBoxes = document.getElementsByClassName('id_recht_all');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
@@ -78,7 +76,7 @@ if(Functions::auth("admin_rights"))
 				</td>
 				<td id="recht_checkbox">
 						<ul>
-							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide()" checked="checked" />Iedereen</li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide()" checked="checked" />Iedereen</label></li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide()" />Aanmaken</li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide()" />Keuren</li>
 							<li><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide()" />Admin</li>
