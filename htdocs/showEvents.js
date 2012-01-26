@@ -7,17 +7,21 @@ function showEvents(infoArray)
 		classesArray.push("id_"+infoArray[i]);
 	}
 	
+	var count = 0;
 	for (var i=0; i<events.length; i++)
 	{
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
 			events[i].style.display = 'block';
+			count++
 		}
 		else
 		{
 			events[i].style.display = 'none';
 		}
-	}	
+	}
+	if(count == 0) document.getElementById("no_events").style.display = "block";
+	else document.getElementById("no_events").style.display = "none";
 }
 
 // BRON: http://www.openjs.com/scripts/dom/class_manipulation.php
