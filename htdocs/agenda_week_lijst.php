@@ -21,8 +21,12 @@
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
-    $mysqli = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
+    $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
     
+	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week;")->fetch();
+	echo '<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() { init('.$row["week"].');}, false);</script>';	
+	
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
 			YEAR(end_date) AS jaar2,
@@ -34,14 +38,14 @@
 			TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 			DATEDIFF(end_date, start_date) AS diff,
 			WEEKOFYEAR(start_date) AS wkstart,
-			WEEKOFYEAR(end_date) AS wkend
+			WEEKOFYEAR(end_date) AS wkend,
 			FROM events WHERE public='1' ORDER BY start_date ASC;"; //AND end_date >= NOW()
 
 	$sql2 = "SELECT events_groups.event_id, groups.`group` 
 			 FROM `events_groups` 
 			 JOIN groups ON groups.id=events_groups.group_id;";
 	
-	$stmt2 = $mysqli->prepare($sql2);
+	$stmt2 = $database->prepare($sql2);
 	
 	$stmt2->execute();
 	
@@ -59,7 +63,7 @@
 		}
 	}
 	
-    if($stmt = $mysqli->prepare($sql))
+    if($stmt = $database->prepare($sql))
     {
 		if(!$stmt->execute())
 		{
@@ -67,7 +71,7 @@
 		}
 		else
 		{
-					
+			
 			if($stmt->rowCount() == 0)
 			{
 				echo '<p>Er zijn geen aankomende evenementen.</p>';
@@ -145,7 +149,7 @@
 
     else
     {
-        echo 'Er zit een fout in de query: '.$mysqli->error;
+        echo 'Er zit een fout in de query: '.$database->error;
     }
 
 ?>
