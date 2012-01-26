@@ -174,7 +174,7 @@ if(Functions::auth("admin_rights"))
 
 	$message_list="";
 	
-	if(!$stmt->execute)
+	if(!$stmt->execute())
 	{
 		echo'Het uitvoeren van de query is mislukt';
 	}
