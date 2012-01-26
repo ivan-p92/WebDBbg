@@ -8,7 +8,7 @@ if($_GET["del"]="ja")
 	$stmt->execute();
 	
 	echo'<p>Het bericht is succesvol verwijderd</p>';
-	echo'<a class="submit_button" href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers title="OK">
+	echo'<a class="submit_button" href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers" title="OK">
 			<button class="button">
 				<span class="right">
 					<span class="inner">
@@ -86,7 +86,7 @@ else
 			</span>
 		</button>
 	</a>	
-	<a class="submit_button" href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers title="OK">
+	<a class="submit_button" href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers" title="OK">
 		<button class="button">
 			<span class="right">
 				<span class="inner">
