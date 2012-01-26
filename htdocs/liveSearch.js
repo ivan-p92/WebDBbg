@@ -28,12 +28,7 @@ $(document).ready(function() {
 						}
 			});
 		}
-		
-		if(e.keyCode == 27)
-		{
-			$("#sresult").css("display", "none");
-		}
-		
+
 		if(e.keyCode == 13)	// enter
 		{
 			$("ul#livesearch li.clickable").each(function(index, element) {
