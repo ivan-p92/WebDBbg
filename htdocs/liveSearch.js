@@ -53,6 +53,7 @@ $(document).ready(function() {
 				{
 					current = index;
 					tmp.removeClass("selected");
+					$("#sresult").css("display", "none");
 				}
 				total++;
 			});
