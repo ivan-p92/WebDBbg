@@ -1,4 +1,4 @@
-cript type="text/javascript">
+<script type="text/javascript">
 	
 	// BRON: http://www.openjs.com/scripts/dom/class_manipulation.php
 	function hasClass(ele,cls) {
