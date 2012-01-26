@@ -5,10 +5,30 @@
 <div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	
-	<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Klant</label>
-	<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Keuken</label>
-	<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Afwassers</label>
-	<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Barpersoneel</label>
+	<table id="sort_table">
+			<tr>
+				<td id="sort_name">
+					Toon evenementen uit de volgende categorieën:
+				</td>
+				<td id="recht_checkbox">
+					<form action="" method="post">
+						<ul>
+							<li><label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Klant</label></li>
+							<li><label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Keuken</label></li>
+							<li><label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Afwassers</label></li>
+							<li><label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Barpersoneel</label></li>
+						</ul>
+					</form>
+				</td>
+				<td id="week">
+					<span id="set_week">Week:</span>
+					<input type="text" id="week_box" name="week" />
+					<span id="result"></span>
+				</td>
+			</tr>
+		</table>
+	
+	
 	
 	<ul class="event_lijst">
 <?php
