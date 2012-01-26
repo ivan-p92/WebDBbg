@@ -53,7 +53,18 @@
 			}
 		}
 	}
-
+	
+	function showUser(id)
+	{
+		window.location.replace("index.php?page=admin&id=" + id + "&semipage=lijst_van_gebruikers");
+	}
+	
+	function init()
+	{
+		showhide(3);
+	}
+	
+	document.addEventListener("DOMContentLoaded", init, false);
 </script>
 <?php
 if(Functions::auth("admin_rights"))
@@ -134,7 +145,7 @@ if(Functions::auth("admin_rights"))
 									break;
 							}
 						}
-						echo '<li class="'.$classes.'">';
+						echo '<li onclick="showUser('.$row['id'].')" class="'.$classes.'">';
 						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
 						echo '</li>';
 					}
