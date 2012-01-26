@@ -23,7 +23,7 @@ try
 	{
 		//$row['name'] = str_ireplace($_GET['q'], '<span class="b">'.$_GET['q'].'</span>', $row['name']);
 		$i++;
-		$return .= '<li class="clickable">'.$row['name'].'</li>';
+		$return .= '<li class="clickable"><span class="ls_name">'.out($row['name']).'</span><span class="ls_id">'.$row['id'].'</span></li>';
 	}
 	
 	if($i == 0)
