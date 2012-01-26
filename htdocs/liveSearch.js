@@ -12,7 +12,7 @@ $(document).ready(function() {
 	
 	$("#zoek_box").keyup(function(e) {
 		
-		
+		console.log("test");
 		if(e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 13 && e.keyCode != 27)
 		{
 			$.ajax({
@@ -111,18 +111,11 @@ $(document).ready(function() {
 			}
 		}
 	});
-	
-
-});
-	
-
-	
+});	
  
 $(window).resize(function() {
 	searchBox();
-})
-
-
+});
  
 function searchBox() {
  	inputzoek = $("#zoek_box");
@@ -133,4 +126,3 @@ function searchBox() {
 	resbox.css("top", (inputzoek.offset().top + inputzoek.outerHeight()) + "px");
 	resbox.html("<ul id=\"livesearch\"><li>Geen resultaten</li></ul>");
 }
- 
