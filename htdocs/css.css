@@ -448,6 +448,7 @@ li.event {
     list-style: none outside none;
     margin-bottom: 15px;
     width: auto;
+    cursor: pointer;
     background: url(afbeeldingen/kalender_icon.png) no-repeat scroll 0 0 #988989;
 	-moz-border-radius: 5px 10px 10px 0px;
 	border-radius: 5px 10px 10px 0px;
