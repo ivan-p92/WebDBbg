@@ -65,12 +65,14 @@ function browseWeek(forward)
 {
 	if (!forward)
 	{
+		if(WEEK == 1) WEEK = 54;
 		WEEK -= 1;
 		setBox(WEEK);
 		initEvents();
 	}
 	else if (forward)
 	{
+		if(WEEK == 53) WEEK = 0;
 		WEEK += 1;
 		setBox(WEEK);
 		initEvents();
