@@ -25,6 +25,7 @@
     
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
+			YEAR(end_date) AS jaar2,
 			DAYOFMONTH(start_date) AS begin_dag,
 			MONTH(start_date) AS begin_maand,
 			DAYOFMONTH(end_date) AS eind_dag,
@@ -32,8 +33,8 @@
 			TIME_FORMAT(TIME(start_date), '%H:%i') AS begin_tijd,
 			TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 			DATEDIFF(end_date, start_date) AS diff,
-			WEEK(start_date) AS wkstart,
-			WEEK(end_date) AS wkend
+			WEEKOFYEAR(start_date) AS wkstart,
+			WEEKOFYEAR(end_date) AS wkend
 			FROM events WHERE public='1' ORDER BY start_date ASC;"; //AND end_date >= NOW()
 
 	$sql2 = "SELECT events_groups.event_id, groups.`group` 
@@ -85,8 +86,8 @@
 								echo " identifier_".$group;
 							}	
 						}
-					echo ' wkstart_'.$row['wkstart'];
-					echo ' wkend_'.$row['wkend'];
+					echo ' wkstart_'.$row['wkstart'].' jstart_'.$row['jaar'];
+					echo ' wkend_'.$row['wkend'].' jend_'.$row['jaar2'];
 					echo '">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
@@ -114,8 +115,8 @@
 								echo " identifier_".$group;
 							}	
 						}
-					echo ' wkstart_'.$row['wkstart'];
-					echo ' wkend_'.$row['wkend'];
+					echo ' wkstart_'.$row['wkstart'].' jstart_'.$row['jaar'];
+					echo ' wkend_'.$row['wkend'].' jend_'.$row['jaar2'];
 					echo'">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
