@@ -1,4 +1,22 @@
 
+<script type="text/javascript">
+function showEvents(var week, var infoArray)
+{
+	var events = document.getElementsByClassName("event");
+	for (var i=0; i<events.length; i++)
+	{
+		if(hasClass(events[i], "w_"+week)
+		{
+			events[i].style.display = 'block';
+		}
+		else
+		{
+			events[i].style.display = 'none';
+		}
+	}	
+}
+
+</script>
 
 <!-- div#weeklijst container bevat de lijst van de evenementen 
      De hoofdstructuur ervan is een unordered list -->
@@ -83,11 +101,13 @@
 						{
 							if(in_array($row['id'], $array))
 							{
-								echo " identifier_".$group;
+								echo " id_".$group;
 							}	
 						}
-					echo ' wkstart_'.$row['wkstart'].' jstart_'.$row['jaar'];
-					echo ' wkend_'.$row['wkend'].' jend_'.$row['jaar2'];
+					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
+					{
+						echo " w_".$i;
+					}
 					echo '">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
@@ -112,11 +132,13 @@
 						{
 							if(in_array($row['id'], $array))
 							{
-								echo " identifier_".$group;
+								echo " id_".$group;
 							}	
 						}
-					echo ' wkstart_'.$row['wkstart'].' jstart_'.$row['jaar'];
-					echo ' wkend_'.$row['wkend'].' jend_'.$row['jaar2'];
+					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
+					{
+						echo " w_".$i;
+					}
 					echo'">';
 					echo '<p class="eendags_event">';
 					echo '<span class="begin_datum">';
