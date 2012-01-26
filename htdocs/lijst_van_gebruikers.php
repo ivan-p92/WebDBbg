@@ -45,11 +45,11 @@
 		{
 			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
 			{
-				userBoxes[userBoxIndex].style.visibilty = "visible";
+				userBoxes[userBoxIndex].style.visibility = "visible";
 			}
 			else
 			{
-				userBoxes[userBoxIndex].style.visibilty = "hidden";
+				userBoxes[userBoxIndex].style.visibility = "hidden";
 			}
 		}
 	}
