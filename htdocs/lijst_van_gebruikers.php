@@ -17,6 +17,9 @@
 			}
 		}
 		
+		
+		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
+		var userBox;	// declaar var userBox, nodig voor loop
 		for(userBox in userBoxes)	// loop door alle li's 
 		{
 			console.log(userBox.className);
