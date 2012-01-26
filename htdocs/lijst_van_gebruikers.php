@@ -21,29 +21,26 @@
 	}
 
 
-	function showhide (numberOfInputs)
+	function showhide ()
 	{		
 		// zoek uit welke classes getoond moeten worden
 		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
+		var inputs = document.getElementsByClassName("input_userrights_radio");
 		var showClasses = new Array();
-		var i;
-		for (i = 1; i <= numberOfInputs; i++)
+	
+		for (var i = 0; i < inputs.length(); i++)
 		{
-			var input = document.getElementById("input_" + i);
-			if(input)
+			if(inputs[i].checked)		// deze checkbox is gechecked, users met deze rechten willen we zien.
 			{
-				if(input.checked)		// deze checkbox is gechecked, users met deze rechten willen we zien.
-				{
-					showClasses.push("id_recht_" + input.value);
-				}
-			}
+				showClasses.push("id_recht_" + input.value);
+			}			
 		}
 		
 		
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
-			if(showClasses.length == 0 || hasClassArray(userBoxes[userBoxIndex], showClasses))
+			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
 			{
 				userBoxes[userBoxIndex].style.visibility = "visible";
 			}
@@ -56,7 +53,7 @@
 	
 	function showUser(id)
 	{
-		window.location.replace("index.php?page=admin&amp;id=" + id + "&amp;semipage=lijst_van_gebruikers");
+		window.location.replace("index.php?page=admin&id=" + id + "&semipage=lijst_van_gebruikers");
 	}
 	
 	function init()
@@ -79,13 +76,11 @@ if(Functions::auth("admin_rights"))
 					Gebruikers met (mi. 1 van) de volgende rechten:
 				</td>
 				<td id="recht_checkbox">
-					<form action="" method="post">
-						<ul>
-							<li><input type="checkbox" id="input_1" value="aanmaken" onclick="showhide(3)" />Aanmaken</li>
-							<li><input type="checkbox" id="input_2" value="keuren" onclick="showhide(3)" />Keuren</li>
-							<li><input type="checkbox" id="input_3" value="admin" onclick="showhide(3)" />Admin</li>
-						</ul>
-					</form>
+					<ul>
+						<li><label><input type="radio" class="input_userrights_radio" value="aanmaken" onclick="showhide()" />Aanmaken</label></li>
+						<li><label><input type="radio" class="input_userrights_radio" value="keuren" onclick="showhide()" />Keuren</label></li>
+						<li><label><input type="radio" class="input_userrights_radio" value="admin" onclick="showhide()" />Admin</label></li>
+					</ul>
 				</td>
 				<td id="zoek">
 					<span id="zoek_text">Zoek:</span>
