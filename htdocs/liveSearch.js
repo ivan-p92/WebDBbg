@@ -11,8 +11,6 @@ $(document).ready(function() {
 	});
 	
 	$("#zoek_box").keyup(function(e) {
-		
-		console.log("test");
 		if(e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 13 && e.keyCode != 27)
 		{
 			$.ajax({
