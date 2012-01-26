@@ -49,6 +49,8 @@ function updateShownEvents()
 function init(week)
 {
 	var checkboxes = document.getElementsByClassName("catbox");
+	var weekbox = document.getElementByID("week_box");
+	weekbox.value = week;
 	var checked = new Array();
 	
 	for(var i = 0; i < checkboxes.length; i++)
