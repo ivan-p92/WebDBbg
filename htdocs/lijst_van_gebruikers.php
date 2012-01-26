@@ -33,6 +33,7 @@
 			if(inputs[i].checked)
 			{
 				showClasses.push("id_recht_" + inputs[i].value);
+				console.log("id_recht_" + inputs[i].value);
 			}
 		}
 		
