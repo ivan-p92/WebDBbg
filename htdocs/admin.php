@@ -1,7 +1,7 @@
 <?php
 if(Functions::auth("admin_rights"))
 {
-	if(is_int($_GET['id'])
+	if(is_int($_GET['id']))
 	{
 		try
 		{
