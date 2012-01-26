@@ -53,7 +53,7 @@
 	
 	function showUser(id)
 	{
-		window.location.replace("index.php?page=admin&amp;id=" + id + "&amp;semipage=lijst_van_gebruikers");
+		window.location.replace("index.php?page=admin&id=" + id + "&semipage=lijst_van_gebruikers");
 	}
 	
 	function init()
