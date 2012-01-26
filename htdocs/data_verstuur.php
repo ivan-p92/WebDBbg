@@ -54,7 +54,7 @@ $database = Functions::getDB();
 	}
 	
 	//leeg de array met de tijdelijke evenementwaardes, de waardes zitten immers nu in de database
-	unset($_SESSION["tijdelijke_evenementwaardes"];
+	unset($_SESSION["tijdelijke_evenementwaardes"]);
 	
 	//link door naar de homepage
 	echo'<meta http-equiv="refresh" content="0; url=http://websec.science.uva.nl/webdb1235/index.php" />';
