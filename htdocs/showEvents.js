@@ -41,9 +41,9 @@ function hasClassArray(ele, clsArray)
 	return false;	// class niet gevonden, dus return false
 }
 
-function updateShownEvents()
+function updateShownEvents(week)
 {
-	init(4);
+	init(week);
 }
 
 function init(week)
