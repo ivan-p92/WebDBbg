@@ -40,8 +40,9 @@ if(Functions::auth("admin_rights"))
 		}
 		elseif(empty($_POST))
 		{	
-			$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=" . $_GET['id'] . ";";
+			$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=:user_id;";
 			$stmt_check = $mysqli->prepare($sql_check);
+			$stmt_check->bindParam(":user_id",$_GET['id'],PDO::PARAM_INT);
 			$stmt_check->execute();
 				?>
 			
@@ -95,8 +96,9 @@ if(Functions::auth("admin_rights"))
 						</tr>
 						<tr>
 							<td class="admin_td">';
-								$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='unapproved'";
+								$sql_ongekeurd = "SELECT title,id FROM events_status WHERE create_id=:user_id AND status='unapproved'";
 								$stmt_ongekeurd = $mysqli->prepare($sql_ongekeurd);
+								$stmt_ongekeurd->bindParam( ":user_id", $_GET['id'], PDO::PARAM_INT );
 								$stmt_ongekeurd->execute();
 								
 								if($stmt_ongekeurd->rowCount() == 0)
@@ -114,8 +116,9 @@ if(Functions::auth("admin_rights"))
 								}
 							echo '</td>
 							<td class="admin_td">';
-								$sql_goedgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='approved'";
+								$sql_goedgekeurd = "SELECT title,id FROM events_status WHERE create_id=:user_id AND status='approved'";
 								$stmt_goedgekeurd = $mysqli->prepare($sql_goedgekeurd);
+								$stmt_goedgekeurd->bindParam( ":user_id", $_GET['id'], PDO::PARAM_INT );
 								$stmt_goedgekeurd->execute();
 								
 								if($stmt_goedgekeurd->rowCount() == 0)
@@ -133,8 +136,9 @@ if(Functions::auth("admin_rights"))
 								}
 							echo '</td>
 							<td class="admin_td">';
-								$sql_afgekeurd = "SELECT title,id FROM events_status WHERE create_id=".$_GET['id']." AND status='declined'";
+								$sql_afgekeurd = "SELECT title,id FROM events_status WHERE create_id=:user_id AND status='declined'";
 								$stmt_afgekeurd = $mysqli->prepare($sql_afgekeurd);
+								$stmt_afgekeurd->bindParam( ":user_id", $_GET['id'], PDO::PARAM_INT );
 								$stmt_afgekeurd->execute();
 								
 								if($stmt_afgekeurd->rowCount() == 0)
@@ -180,7 +184,9 @@ if(Functions::auth("admin_rights"))
 else
 {
 	echo '<h1>Verboden toegang!</h1> 
-	<p>U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
-	Log in of neem contact op met de administrator!</p>';
+	<p>
+		U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
+		Log in of neem contact op met de administrator!
+	</p>';
 }
 ?>
