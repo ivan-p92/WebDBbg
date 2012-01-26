@@ -13,7 +13,7 @@ ini_set('display_errors', true); // true in ontwikkelomgeving, false in  de live
 
 $ext = '.php'; // de bestandsextensie van de pagina's (nu .html later .php)  
 
-$valid_pages = array("404", "login", "data_verstuur", "agenda_week", "footer", "header", "lijst_van_gebruikers", "tabel_events", "toevoeg_evenement", "account", "agenda_week_blok", "contact_dank", "index", "admin", "agenda_week_lijst", "contact", "evenement", "goodbye", "keuren", "registratie");
+$valid_pages = array("404", "login", "data_verstuur", "agenda_week", "footer", "header", "lijst_van_gebruikers", "tabel_events", "toevoeg_evenement", "account", "agenda_week_blok", "contact_dank", "index", "admin", "agenda_week_lijst", "contact", "evenement", "goodbye", "keuren", "registratie", "bericht");
 
 // controleer of er een page is gespecificeerd in de url, als dat zo is en het is niet leeg en niet gelijk aan index 
 if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != 'index')
