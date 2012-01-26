@@ -65,18 +65,19 @@ function setWeek(week)
 {
 	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week > -2 && week < 54)
 	{
-		switch(week)
+		var wk = parseInt(week);
+		switch(wk)
 		{
-		case "-1":
-			setBox("test-1");
+		case -1:
+			setBox(wk-1);
 			initEvents();
 			break;
-		case "0":
-			setBox("test0");
+		case 0:
+			setBox(wk+1);
 			initEvents();
 			break;
 		default:
-			setBox(week);
+			setBox(wk);
 			initEvents();
 			break;		
 		}
