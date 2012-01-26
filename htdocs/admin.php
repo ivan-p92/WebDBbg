@@ -17,7 +17,7 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 		if($stmt->rowCount() == 0)
 		{
 			echo '<h1>Deze gebruiker bestaat niet</h1>
-				<p>Keer terug naar de lijst van gebruikers en probeer opnieuw</p>;
+				<p>Keer terug naar de lijst van gebruikers en probeer opnieuw</p>';
 		}
 		elseif(!empty($_POST))
 		{
