@@ -19,8 +19,7 @@
 		
 		
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
-		var userBoxIndex;	// declaar var userBox, nodig voor loop
-		for(userBoxIndex in userBoxes)	// loop door alle li's 
+		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
 			console.log(userBoxes[userBoxIndex]);
 		}
