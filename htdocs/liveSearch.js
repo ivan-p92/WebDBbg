@@ -30,7 +30,7 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 13)	// enter
 		{
-			("ul#livesearch li.clickable").each(function(index, element) {
+			$("ul#livesearch li.clickable").each(function(index, element) {
 					var tmp = $(element);
 					
 					if(tmp.hasClass("selected"))
