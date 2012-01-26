@@ -582,14 +582,21 @@ table#sort_table {
     -moz-border-radius: 5px 5px 5px 5px;
     padding: 5px;
 }
-td#recht_checkbox form ul {
+
+td#recht_checkbox ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-td#recht_checkbox form ul li {
+
+td#recht_checkbox ul li {
     float: left;
 }
+
+td#recht_checkbox ul li  span {
+	display: inline;
+}
+
 td#zoek {
 	float:right;
 }
