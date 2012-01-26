@@ -39,12 +39,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		
 		//volgend bericht, bevestigt een succesvolle versturing
 		echo '<p class="succes">Dank voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.</p>';
-	}
-	
-	//als er een fout in het ingevulde form zit
+		
+	}//als er een fout in het ingevulde form zit	
 	catch(Exception $e)
 	{
-		echo $e;
+		echo $e->getMessage();
 	}
 }
 
@@ -101,18 +100,18 @@ Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u o
 			</td>
 		</tr>
 		<tr>
-			<td>Onderwerp</td>
-			<td>
-				<input type="text" required="required" placeholder="Typ hier uw naam" name="contact_subject" />
-			</td>
-		</tr>
-		<tr>
 			<td>Email</td>
 			<td>
 				<input type="text" <?php echo ((isset($row['email'])) ? 'readonly="readonly" value="'.out($row['email']).'"' : '');?>
 				required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" />
 			</td>
-		</tr>
+		</tr>		
+		<tr>
+			<td>Onderwerp</td>
+			<td>
+				<input type="text" required="required" placeholder="Typ hier een onderwerp" name="contact_subject" />
+			</td>
+		</tr>		
 		<tr>
 			<td>Bericht</td>
 			<td>
