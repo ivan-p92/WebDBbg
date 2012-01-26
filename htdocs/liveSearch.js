@@ -36,6 +36,7 @@ $(document).ready(function() {
 					if(tmp.hasClass("selected"))
 					{
 						$("#zoek_box").val(tmp.html());
+						$("#sresult").css("display", "none");
 					}
 				});
 		}
@@ -52,8 +53,7 @@ $(document).ready(function() {
 				if(tmp.hasClass("selected"))
 				{
 					current = index;
-					tmp.removeClass("selected");
-					$("#sresult").css("display", "none");
+					tmp.removeClass("selected");					
 				}
 				total++;
 			});
