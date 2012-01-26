@@ -47,7 +47,11 @@ function updateShownEvents(week)
 }
 
 function weekSubmitWithKey(keyEvent) {
-    if (keyEvent.keyCode == 13) {
+    if (keyEvent.keyCode) var code = keyEvent.keyCode;
+	else if (keyEvent.which) var code = keyEvent.which;
+	
+	if (code == 13)
+	{
         var input = document.getElementById("week_box");
         updateShownEvents(input.value);
     }
