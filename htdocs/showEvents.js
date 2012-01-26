@@ -1,5 +1,7 @@
-function showEvents(week, infoArray)
+function showEvents(infoArray)
 {
+	var week = document.getElementById("week_box").value;
+
 	var events = document.getElementsByClassName("event");
 	var classesArray = new Array();
 	for (var i=0; i<infoArray.length; i++)
@@ -55,8 +57,7 @@ function weekSubmitWithKey(keyEvent) {
 
 function setWeek(week)
 {
-	var weekbox = document.getElementById("week_box");
-	weekbox.value = week;
+	document.getElementById("week_box").value = week;
 	initEvents();
 {
 
@@ -73,6 +74,6 @@ function initEvents()
 		}
 	}
 	
-	showEvents(week, checked);
+	showEvents(checked);
 }
 
