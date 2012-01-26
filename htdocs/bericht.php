@@ -1,5 +1,3 @@
-<h1>Bericht</h1>
-
 <?php
 
 //leg connectie met database
@@ -58,5 +56,15 @@ echo'
 		</tr>
 	</tbody>
 </table>
+
+<a class="submit_button" href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.$_GET["messageid"].'&amp;k=G&amp;del=ja" title="Verwijderen">
+		<button class="button">
+			<span class="right">
+				<span class="inner">
+					Verwijder
+				</span>
+			</span>
+		</button>
+</a>	
 ';
 ?>
