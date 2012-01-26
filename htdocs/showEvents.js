@@ -3,7 +3,7 @@ function showEvents(week, infoArray)
 	var events = document.getElementsByClassName("event");
 	for (var i=0; i<events.length; i++)
 	{
-		if(hasClass(events[i], "w_"+week)
+		if(hasClass(events[i], "w_"+week))
 		{
 			events[i].style.display = 'block';
 		}
