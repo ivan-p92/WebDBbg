@@ -1,8 +1,6 @@
 <?php
-if(Functions::auth("admin_rights"))
+if(Functions::auth("admin_rights") && isset($_GET['id'] && is_numeric($_GET['id']))
 {
-	if(is_numeric($_GET['id']))
-	{
 		try
 		{
 			$mysqli = Functions::getDB();
@@ -182,18 +180,21 @@ if(Functions::auth("admin_rights"))
 			var_dump($exception);
 		}
 			echo '</div>';
-	}
-	else
-	{
-	echo '<h1>Fout!</h1>';
-	}
 }
 else
 {
-	echo '<h1>Verboden toegang!</h1> 
-		<p>
-		U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
-		Log in of neem contact op met de administrator!
-		</p>';
+	if(!(isset($_GET['id']) || is_numeric($_GET['id'])))
+	{
+		echo '<h1>Onbruikbare URL</h1>
+			<p>Er ontbreekt een userID in de URL of de gebruikte userID is ongeldig!</p>';
+	}
+	else
+	{
+		echo '<h1>Verboden toegang!</h1> 
+			<p>
+			U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
+			Log in of neem contact op met de administrator!
+			</p>';
+	}
 }
 ?>
