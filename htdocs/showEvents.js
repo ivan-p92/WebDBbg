@@ -68,11 +68,11 @@ function setWeek(week)
 		switch(week)
 		{
 		case -1:
-			setBox(week-1);
+			setBox("test-1");
 			initEvents();
 			break;
 		case 0:
-			setBox(week+1);
+			setBox("test0");
 			initEvents();
 			break;
 		default:
