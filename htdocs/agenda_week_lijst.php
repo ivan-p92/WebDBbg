@@ -23,7 +23,7 @@
 				<td id="week">
 					<span class="prev"></span>
 					<span id="set_week">Week:</span>
-					<input type="text" id="week_box" name="week" value="" />
+					<input type="text" id="week_box" name="week" value="" onkeypressed="weekSubmitWithKey(event)" />
 					<span class="next"></span>
 				</td>
 			</tr>
