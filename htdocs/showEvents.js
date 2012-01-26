@@ -61,26 +61,26 @@ function setBox(val)
 	document.getElementById("week_box").value = val;
 }
 
+function browseWeek(forward)
+{
+	if (!forward)
+	{
+		setBox(WEEK-1)
+	}
+	else if (forward)
+	{
+		setBox(WEEK+1)
+	}
+}
+
 function setWeek(week)
 {
-	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week > -2 && week < 54)
+	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week > 0 && week < 54)
 	{
-		var wk = parseInt(week);
-		switch(wk)
-		{
-		case -1:
-			setBox(wk-1);
-			initEvents();
-			break;
-		case 0:
-			setBox(wk+1);
-			initEvents();
-			break;
-		default:
-			setBox(wk);
-			initEvents();
-			break;		
-		}
+		WEEK = parseInt(week);
+		setBox(week);
+		initEvents();
+		
 	}
 	else
 	{
