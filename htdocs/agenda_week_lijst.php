@@ -107,6 +107,10 @@
 				{
 					echo " w_".$i;
 				}
+				for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
+				{
+					echo " w_".$i;
+				}
 				echo '">';
 				echo '<p class="eendags_event">';
 				echo '<span class="begin_datum">';
