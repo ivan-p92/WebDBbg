@@ -194,6 +194,6 @@ if(Functions::auth("admin_rights"))
 	}
 	else
 	{
-		echo '<h1>Fout!</h1>
+		echo '<h1>Fout!</h1>';
 	}
 ?>
