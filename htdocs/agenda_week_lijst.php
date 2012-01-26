@@ -13,10 +13,10 @@
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Klant</label></li>
-							<li><label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Keuken</label></li>
-							<li><label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Afwassers</label></li>
-							<li><label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Barpersoneel</label></li>
+							<li><label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label></li>
+							<li><label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label></li>
+							<li><label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label></li>
+							<li><label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label></li>
 						</ul>
 					</form>
 				</td>
@@ -40,7 +40,7 @@
     
 	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week;")->fetch();
 	echo '<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() { init('.$row["week"].');}, false);</script>';	
+	document.addEventListener("DOMContentLoaded", function() { setWeek('.$row["week"].');}, false);</script>';	
 	
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
