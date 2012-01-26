@@ -1,21 +1,33 @@
 <script type="text/javascript">
-	function showhide (input)
+	function showhide (numberOfInputs)
 	{
-		var id = document.getElementsByClassName('id_recht_'+input.value);
-		var x;
+		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
+		var userBox;	// declaar var userBox, nodig voor loop
 		
-		for(x in id)
-		{	
-			if(input.checked)
+		// zoek uit welke classes getoond moeten worden
+		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
+		var showClasses = array();
+		var i;
+		for (i = 1; i <= numberOfInputs; i++)
+		{
+			var input = document.getElementById("input_" + i);
+			if(input)
 			{
-				id[x].style.visibility = "visible";
-			}
-			else
-			{
-				id[x].style.visibility = "hidden";
+				if(input.checked)
+				{
+					showClasses[] = "id_recht_" + input.value;
+				}
 			}
 		}
-	} 
+		
+		console.log(showClasses);
+		
+		for(userBox in userBoxes)	// loop door alle li's 
+		{
+		
+		}
+	}
+
 </script>
 <?php
 if(Functions::auth("admin_rights"))
@@ -32,9 +44,9 @@ if(Functions::auth("admin_rights"))
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input type="checkbox" value="aanmaken" onclick="showhide(this)" checked="checked" />Aanmaken</li>
-							<li><input type="checkbox" value="keuren" onclick="showhide(this)" checked="checked" />Keuren</li>
-							<li><input type="checkbox" value="admin" onclick="showhide(this)" checked="checked" />Admin</li>
+							<li><input type="checkbox" id="input_1" value="aanmaken" onclick="showhide(3)" checked="checked" />Aanmaken</li>
+							<li><input type="checkbox" id="input_2" value="keuren" onclick="showhide(3)" checked="checked" />Keuren</li>
+							<li><input type="checkbox" id="input_3" value="admin" onclick="showhide(3)" checked="checked" />Admin</li>
 						</ul>
 					</form>
 				</td>
@@ -79,20 +91,20 @@ if(Functions::auth("admin_rights"))
 						$stmt_recht->bindParam(":id",$row['id'],PDO::PARAM_INT);
 						$stmt_recht->execute();						
 						
-						$classes = NULL;
+						$classes = 'user_box';
 						
 						while($recht = $stmt_recht->fetch())
 						{
 							switch($recht['permission_id'])
 							{
 								case 1: 
-									$classes .= 'id_recht_aanmaken ';
+									$classes .= ' id_recht_aanmaken';
 									break;
 								case 2:
-									$classes .= 'id_recht_keuren ';
+									$classes .= ' id_recht_keuren';
 									break;
 								case 3:
-									$classes .= 'id_recht_admin';
+									$classes .= ' id_recht_admin';
 									break;
 							}
 						}
