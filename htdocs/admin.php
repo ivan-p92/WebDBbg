@@ -182,19 +182,18 @@ if(Functions::auth("admin_rights"))
 			var_dump($exception);
 		}
 			echo '</div>';
-		}
-		else
-		{
-		echo '<h1>Verboden toegang!</h1> 
-		<p>
-			U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
-			Log in of neem contact op met de administrator!
-		</p>';
-		}
 	}
 	else
 	{
-		echo '<h1>Fout!</h1>';
+	echo '<h1>Fout!</h1>';
 	}
+}
+else
+{
+	echo '<h1>Verboden toegang!</h1> 
+		<p>
+		U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
+		Log in of neem contact op met de administrator!
+		</p>';
 }
 ?>
