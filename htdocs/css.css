@@ -843,6 +843,6 @@ span#sresult {
 		list-style: none;
 	}
 	
-	ul#livesearch li.clickable span.ls_id {
+	.ls_id  {
 		display: none;
 	}
