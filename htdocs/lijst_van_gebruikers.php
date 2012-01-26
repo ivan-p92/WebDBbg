@@ -159,6 +159,8 @@ if(Functions::auth("admin_rights"))
 		}
 	echo '</div>';
 	
+	echo'<h1>Berichten</h1>';
+	
 	//haal een lijst met de berichten op
 	
 	//leg connectie met database
@@ -171,6 +173,8 @@ if(Functions::auth("admin_rights"))
 	$stmt = $db->prepare($sql);
 
 	$message_list="";
+	
+	$stmt->execute();
 	
 	while($messages=$stmt->fetch())
 	{
