@@ -29,6 +29,7 @@ else
 }
 
 echo'
+<h1>'.out($row["subject"].'
 <table id="message">
 	<tbody>
 		<tr>
