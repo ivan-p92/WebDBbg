@@ -23,7 +23,7 @@ $(document).ready(function() {
 							$("#sresult").css("display", "block");
 							$("li.clickable").mousedown(function(e) {
 								$("#sresult").css("display", "none");
-								window.location.replace("index.php?page=admin&id=" + $(this).find("span.ls_name").html() + "&semipage=lijst_van_gebruikers");
+								window.location.replace("index.php?page=admin&id=" + $(this).find("span.ls_id").html() + "&semipage=lijst_van_gebruikers");
 							});
 						}
 			});
@@ -37,7 +37,7 @@ $(document).ready(function() {
 					if(tmp.hasClass("selected"))
 					{
 						$("#sresult").css("display", "none");						
-						window.location.replace("index.php?page=admin&id=" + tmp.find("span.ls_name").html() + "&semipage=lijst_van_gebruikers");
+						window.location.replace("index.php?page=admin&id=" + tmp.find("span.ls_id").html() + "&semipage=lijst_van_gebruikers");
 					}
 				});
 		}
