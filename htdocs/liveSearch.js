@@ -22,7 +22,7 @@ $(document).ready(function() {
 							$("#sresult").html(res);
 							$("#sresult").css("display", "block");
 							$("li.clickable").mousedown(function(e) {
-								$("#zoek_box").val($(this).html());
+								$("#zoek_box").val($(this).find("span.ls_name").html());
 								$("#sresult").css("display", "none");
 							});
 						}
@@ -36,7 +36,7 @@ $(document).ready(function() {
 					
 					if(tmp.hasClass("selected"))
 					{
-						$("#zoek_box").val(tmp.html());
+						$("#zoek_box").val(tmp.find("span.ls_name").html());
 						$("#sresult").css("display", "none");
 					}
 				});
