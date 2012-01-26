@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$("#zoek_box").keyup(function(e) {
 		
 		
-		if(e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 13)
+		if(e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 13 && e.keyCode != 27)
 		{
 			$.ajax({
 			  url: "livesearch.php",
@@ -29,9 +29,9 @@ $(document).ready(function() {
 			});
 		}
 		
-		if(e.keyCode == 27)	// escape
+		if(e.keyCode == 27)
 		{
-			$("#zoek_box").blur();
+			$("#sresult").css("display", "none");
 		}
 		
 		if(e.keyCode == 13)	// enter
