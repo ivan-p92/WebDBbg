@@ -110,8 +110,12 @@ function initEvents()
 	showEvents(checked);
 }
 
-function goToEvent(id)
+function goToEventA(id)
 {
 	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=agenda_week");
 } 
 
+function goToEventK(id)
+{
+	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=agenda_week");
+}
