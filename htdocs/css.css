@@ -592,6 +592,7 @@ td#recht_checkbox ul {
 
 td#recht_checkbox ul li {
     float: left;
+	margin: 5px;
 }
 
 td#recht_checkbox ul li label input, td#recht_checkbox ul li label {
