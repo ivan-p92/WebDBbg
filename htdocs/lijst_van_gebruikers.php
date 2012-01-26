@@ -1,9 +1,6 @@
 <script type="text/javascript">
 	function showhide (numberOfInputs)
-	{
-		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
-		var userBox;	// declaar var userBox, nodig voor loop
-		
+	{		
 		// zoek uit welke classes getoond moeten worden
 		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
 		var showClasses = new Array();
@@ -13,18 +10,16 @@
 			var input = document.getElementById("input_" + i);
 			if(input)
 			{
-				if(input.checked)
+				if(input.checked)		// deze checkbox is gechecked, users met deze rechten willen we zien.
 				{
 					showClasses.push("id_recht_" + input.value);
 				}
 			}
 		}
 		
-		console.log(showClasses);
-		
 		for(userBox in userBoxes)	// loop door alle li's 
 		{
-		
+			console.log(userBox.className);
 		}
 	}
 
