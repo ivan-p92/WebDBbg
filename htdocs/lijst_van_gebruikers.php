@@ -175,7 +175,7 @@ if(Functions::auth("admin_rights"))
 	
 	$message_list="";
 	
-	foreach($messages=$stmt->fetch() as $messages)
+	while($messages=$stmt->fetch())
 	{
 		$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
 			.out($messages['name']).'</a></li>';
