@@ -31,8 +31,7 @@ $(document).ready(function() {
 		
 		if(e.keyCode == 27)	// escape
 		{
-			console.log("loeloe");
-			$("#sresult").css("display", "none");
+			$("#zoek_box").blur();
 		}
 		
 		if(e.keyCode == 13)	// enter
