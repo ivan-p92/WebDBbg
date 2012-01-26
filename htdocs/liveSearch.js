@@ -73,7 +73,7 @@ $(document).ready(function() {
 				
 				var temp  = $("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
 				temp.addClass("selected");
-				${"#zoek_box").val(temp.find("span.ls_name").html());
+				$("#zoek_box").val(temp.find("span.ls_name").html());
 			}
 		}
 		
