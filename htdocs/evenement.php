@@ -100,13 +100,18 @@ if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("a
 // ook hier wordt de gebruiker geauthenticeerd
 elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Functions::auth("submit_event") && !empty($_POST))
 {
-	$begindatumtijd = '"'.$_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00".'"';					
-	$einddatumtijd = '"'.$_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00".'"';
-		
+	//$begindatumtijd = '"'.$_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00".'"';					
+	//$einddatumtijd = '"'.$_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00".'"';
+	$begindatumtijd = $_POST["jaar1"]."-".$_POST["maand1"]."-".$_POST["datum1"]." ".$_POST["begintijd"].":"."00";					
+	$einddatumtijd = $_POST["jaar2"]."-".$_POST["maand2"]."-".$_POST["datum2"]." ".$_POST["eindtijd"].":"."00";
+	
 	// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
 	$database = Functions::getDB();
-	$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$einddatumtijd.') AS diff;';
+	//$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$einddatumtijd.') AS diff;';
+	$sql = 'SELECT TIMESTAMPDIFF(MINUTE,"?","?") AS diff;';
 	$stmt = $database->prepare($sql);
+	$stmt = bindParam(1, $begindatumtijd, PDO::PARAM_STR);
+	$stmt = bindParam(2, $einddatumtijd, PDO::PARAM_STR);
 	$stmt->execute();
 	$result = $stmt->fetch();
 	$diff = $result["diff"];
