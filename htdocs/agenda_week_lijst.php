@@ -31,7 +31,7 @@
 	
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
-	echo '<ul class="event_lijst">';
+	
 <?php
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
