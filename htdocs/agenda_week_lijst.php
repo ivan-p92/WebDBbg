@@ -40,7 +40,8 @@
     
 	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() { setWeek('.$row["week"].'); setYear('.$row["jr"].');}, false);</script>';	
+	document.addEventListener("DOMContentLoaded", function() { setWeek('.$row["week"].'); setYear('.$row["jr"].');}, false);</script>';
+	echo '<p>'.$row["jr"].'</p>';
 	
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
