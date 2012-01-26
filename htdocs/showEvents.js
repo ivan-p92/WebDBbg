@@ -41,6 +41,11 @@ function hasClassArray(ele, clsArray)
 	return false;	// class niet gevonden, dus return false
 }
 
+function updateShownEvents()
+{
+	init(4);
+}
+
 function init(week)
 {
 	var checkboxes = document.getElementsByClassName("catbox");

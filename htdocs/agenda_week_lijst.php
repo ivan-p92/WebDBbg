@@ -5,10 +5,10 @@
 <div id="event_lijst_container">
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	
-	<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" />Klant</label>
-	<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" />Keuken</label>
-	<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" />Afwassers</label>
-	<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" />Barpersoneel</label>
+	<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Klant</label>
+	<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Keuken</label>
+	<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Afwassers</label>
+	<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="updateShownEvents();" />Barpersoneel</label>
 	
 	<ul class="event_lijst">
 <?php
