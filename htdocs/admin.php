@@ -1,7 +1,7 @@
 <?php
 if(Functions::auth("admin_rights"))
 {
-	if(is_int('2ab'))
+	if(is_numeric($_GET['id']))
 	{
 		try
 		{
