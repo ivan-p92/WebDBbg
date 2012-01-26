@@ -21,10 +21,10 @@
 					</form>
 				</td>
 				<td id="week">
-					<span class="prev"></span>
+					<span class="prev" onclick="browseWeek(false)"></span>
 					<span id="set_week">Week:</span>
 					<input type="text" id="week_box" name="week" value="" onkeyup="weekSubmitWithKey(event)" />
-					<span class="next"></span>
+					<span class="next" onclick="browseWeek(true)"></span>
 				</td>
 			</tr>
 		</table>
