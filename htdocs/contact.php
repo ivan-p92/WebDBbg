@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$sql2 = "INSERT INTO messages (id, name, email, message) VALUES (NULL, :name, :email, :message);";
 		
 		//bereid query voor
-		$stmt2 = $ database->prepare($sql2);
+		$stmt2 = $database->prepare($sql2);
 		
 		//zet de waardes van de parameters
 		$stmt2->bindParam(':name', $_POST['contact_naam'], PDO::PARAM_STR);
