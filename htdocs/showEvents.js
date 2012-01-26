@@ -1,7 +1,5 @@
 function showEvents(infoArray)
 {
-	var week = document.getElementById("week_box").value;
-
 	var events = document.getElementsByClassName("event");
 	var classesArray = new Array();
 	for (var i=0; i<infoArray.length; i++)
@@ -11,7 +9,7 @@ function showEvents(infoArray)
 	
 	for (var i=0; i<events.length; i++)
 	{
-		if(hasClass(events[i], "w_"+week) && hasClassArray(events[i], classesArray))
+		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
 			events[i].style.display = 'block';
 		}
@@ -77,6 +75,11 @@ function browseWeek(forward)
 		setBox(WEEK);
 		initEvents();
 	}
+}
+
+function setYear(year)
+{
+	YEAR = year;
 }
 
 function setWeek(week)

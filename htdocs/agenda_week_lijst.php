@@ -38,9 +38,9 @@
 	
     $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
     
-	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week;")->fetch();
+	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() { setWeek('.$row["week"].');}, false);</script>';	
+	document.addEventListener("DOMContentLoaded", function() { setWeek('.$row["week"].'); setYear('.$row["jr"].');}, false);</script>';	
 	
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
@@ -109,7 +109,7 @@
 				}
 				for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
 				{
-					echo " w_".$i;
+					echo " y_".$i;
 				}
 				echo '">';
 				echo '<p class="eendags_event">';
