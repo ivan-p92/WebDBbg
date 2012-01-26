@@ -167,10 +167,10 @@ if(Functions::auth("admin_rights"))
 	$db = Functions::getDB();
 
 	//sql query om informatie op te vragen
-	$sql = "SELECT id, name FROM messages;";
+	$sqll = "SELECT id, name FROM messages;";
 
 	//bereid de query voor
-	$stmt3 = $db->prepare($sql);
+	$stmt3 = $db->prepare($sqll);
 
 	$message_list="";
 	
