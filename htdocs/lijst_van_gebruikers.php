@@ -140,8 +140,8 @@ if(Functions::auth("admin_rights"))
 									break;
 							}
 						}
-						echo '<li onclick="showUser('.$row['id'].')" class="'.$classes.'">';
-						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
+						echo '<li onclick="showUser('.$row['id'].');" class="'.$classes.'">';
+							echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers" >'.$row['name'].'</a>';
 						echo '</li>';
 					}
 					echo '</ul>';
