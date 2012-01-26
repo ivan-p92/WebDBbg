@@ -110,8 +110,8 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	//$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$einddatumtijd.') AS diff;';
 	$sql = 'SELECT TIMESTAMPDIFF(MINUTE,"?","?") AS diff;';
 	$stmt = $database->prepare($sql);
-	$stmt = bindParam(1, $begindatumtijd, PDO::PARAM_STR);
-	$stmt = bindParam(2, $einddatumtijd, PDO::PARAM_STR);
+	$stmt->bindParam(1, $begindatumtijd, PDO::PARAM_STR);
+	$stmt->bindParam(2, $einddatumtijd, PDO::PARAM_STR);
 	$stmt->execute();
 	$result = $stmt->fetch();
 	$diff = $result["diff"];
