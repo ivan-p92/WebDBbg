@@ -1,4 +1,4 @@
-<script type="text/javascript">
+cript type="text/javascript">
 	
 	// BRON: http://www.openjs.com/scripts/dom/class_manipulation.php
 	function hasClass(ele,cls) {
@@ -21,26 +21,29 @@
 	}
 
 
-	function showhide ()
+	function showhide (numberOfInputs)
 	{		
 		// zoek uit welke classes getoond moeten worden
 		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
-		var inputs = document.getElementsByClassName("input_userrights_radio");
 		var showClasses = new Array();
-	
-		for (var i = 0; i < inputs.length; i++)
+		var i;
+		for (i = 1; i <= numberOfInputs; i++)
 		{
-			if(inputs[i].checked)		// deze checkbox is gechecked, users met deze rechten willen we zien.
+			var input = document.getElementById("input_" + i);
+			if(input)
 			{
-				showClasses.push("id_recht_" + input.value);
-			}			
+				if(input.checked)		// deze checkbox is gechecked, users met deze rechten willen we zien.
+				{
+					showClasses.push("id_recht_" + input.value);
+				}
+			}
 		}
 		
 		
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
-			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
+			if(showClasses.length == 0 || hasClassArray(userBoxes[userBoxIndex], showClasses))
 			{
 				userBoxes[userBoxIndex].style.visibility = "visible";
 			}
@@ -53,7 +56,7 @@
 	
 	function showUser(id)
 	{
-		window.location.replace("index.php?page=admin&id=" + id + "&semipage=lijst_van_gebruikers");
+		window.location.replace("index.php?page=admin&amp;id=" + id + "&amp;semipage=lijst_van_gebruikers");
 	}
 	
 	function init()
@@ -76,11 +79,13 @@ if(Functions::auth("admin_rights"))
 					Gebruikers met (mi. 1 van) de volgende rechten:
 				</td>
 				<td id="recht_checkbox">
-					<ul>
-						<li><label><input type="radio" class="input_userrights_radio" value="aanmaken" onclick="showhide()" />Aanmaken</label></li>
-						<li><label><input type="radio" class="input_userrights_radio" value="keuren" onclick="showhide()" />Keuren</label></li>
-						<li><label><input type="radio" class="input_userrights_radio" value="admin" onclick="showhide()" />Admin</label></li>
-					</ul>
+					<form action="" method="post">
+						<ul>
+							<li><input type="checkbox" id="input_1" value="aanmaken" onclick="showhide(3)" />Aanmaken</li>
+							<li><input type="checkbox" id="input_2" value="keuren" onclick="showhide(3)" />Keuren</li>
+							<li><input type="checkbox" id="input_3" value="admin" onclick="showhide(3)" />Admin</li>
+						</ul>
+					</form>
 				</td>
 				<td id="zoek">
 					<span id="zoek_text">Zoek:</span>
@@ -140,8 +145,8 @@ if(Functions::auth("admin_rights"))
 									break;
 							}
 						}
-						echo '<li onclick="showUser('.$row['id'].');" class="'.$classes.'">';
-							echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers" >'.$row['name'].'</a>';
+						echo '<li onclick="showUser('.$row['id'].')" class="'.$classes.'">';
+						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
 						echo '</li>';
 					}
 					echo '</ul>';
@@ -154,6 +159,8 @@ if(Functions::auth("admin_rights"))
 		}
 	echo '</div>';
 	
+	echo'<h1>Berichten</h1>';
+	
 	//haal een lijst met de berichten op
 	
 	//leg connectie met database
@@ -165,31 +172,39 @@ if(Functions::auth("admin_rights"))
 	//bereid de query voor
 	$stmt = $db->prepare($sql);
 
-	//voer de query uit
-	$stmt->execute();
-	
 	$message_list="";
 	
-	while($messages=$stmt->fetch())
+	if(!$stmt->execute)
 	{
-		$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
-			.out($messages['name']).'</a></li>';
-	} 
-	
-	if($message_list != "")
-	{
-		echo '
-		<div id="message_list">
-			<ul>
-				'.$message_list.'
-			</ul>
-		</div>
-		';
+		echo'Het uitvoeren van de query is mislukt';
 	}
-	else echo'<div id="message_list">Er zijn op dit moment geen berichten</div>';
+	else
+	{
+		while($messages=$stmt->fetch())
+		{
+			$message_list = $message_list.'<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'
+				.out($messages['name']).'</a></li>';
+		} 
+		if($message_list = "")
+		{
+		
+			echo '<div id="message_list">Er zijn op dit moment geen berichten</div>';
+			
+		}
+		else 
+		{
+			echo'<div id="message_list">
+				<ul>
+					'.$message_list.'
+				</ul>
+			</div>
+			';
+		}	
+	}
 }
 else
 {
 	echo '<h1>Verboden toegang!</h1> <p>U moet inloggen om deze pagina te kunnen bekijken!</p>';
 }
 ?>	
+
