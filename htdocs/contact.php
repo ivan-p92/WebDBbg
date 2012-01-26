@@ -8,31 +8,70 @@ webdb1235, contact.php
 //if statement, als er iets wordt verstuurd van het formulier kijkt het of het goed is ingevuld
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	//als het niet goed is ingevuld volgende message
-	if(!isset($_POST['contact_naam']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) || empty($_POST['contact_naam']) || empty($_POST['contact_mail']) || empty($_POST['contact_message']))
+	try
 	{
-		echo '<p class="error">Niet alle velden zijn juist ingevuld</p>';
-	}
-	//als het wel goed is ingevuld, volgend bericht: 
-	else
-	{
+		//als het niet goed is ingevuld throw exception met bericht
+		if(!isset($_POST['contact_naam']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) //als hij niet is ingevuld
+			|| empty($_POST['contact_naam']) || empty($_POST['contact_mail']) || empty($_POST['contact_message'])//als het leeg is ingevuld
+			|| strlen($_POST['contact_naam']) > 64 || strlen($_POST['contact_mail']) > 256) //als naam of mail te lang is voor de database
+		{
+			throw new Exception('<p class="error">Niet alle velden zijn juist ingevuld</p>');
+		}
+		
+		//zet het bericht in de database, als het formulier wel is ingevuld
+		
+		//conectie met database tot stand brengen
+		$datbase = Functions::getDB();
+		
+		//de daadwerkelijke query
+		$sql2 = "INSERT INTO messages (id, name, email, message) VALUES (NULL, :name, :email, :message);";
+		
+		//bereid query voor
+		$stmt2 = $ database->prepare($sql2);
+		
+		//zet de waardes van de parameters
+		$stmt2->bindParam(':name', $_POST['contact_naam'], PDO::PARAM_STR);
+		$stmt2->bindParam(':email', $_POST['contact_mail'], PDO::PARAM_STR);
+		$stmt2->bindParam(':message', $_POST['contact_message'], PDO::PARAM_STR);
+		
+		//voor de query uit
+		$stmt2->execute
+		
+		//volgend bericht, bevestigt een succesvolle versturing
 		echo '<p class="succes">Dank voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.</p>';
 	}
-
+	
+	//als er een fout in het ingevulde form zit
+	catch(Exception $e)
+	{
+		echo $e;
+	}
 }
 
+
+//als je ingelogd bent, worden je gegevens voor je ingevuld
 try
 {
-	//als je ingelogd bent, worden je gegevens voor je ingevuld
 	$row = null;
 	if(Functions::ingelogd())
 	{
+	
+		//leg connectie met database
 		$db = Functions::getDB();
+		
+		//sql query om informatie op te vragen
 		$sql = "SELECT name, email FROM users WHERE id = :id;";
+		
+		//bereid de query voor
 		$stmt = $db->prepare($sql);
+		
+		//zet de waardes van de parameters
 		$stmt->bindParam(':id', $_SESSION['userid'], PDO::PARAM_INT);
+		
+		//voer de query uit
 		$stmt->execute();
 		
+		//als er iets wordt gevonden, zet het in de variabele row
 		if($stmt->rowCount() == 1)
 		{		
 			$row = $stmt->fetch();
@@ -52,27 +91,42 @@ Het daadwerkelijke contact fomulier, form stuurt informatie naar deze pagina via
 Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u op.</p>
 
 <form action="" method="post">
-	<table class="formtable" id="contact"><tbody>
-	<tr>
-		<td id="eerstecel">Naam</td>
-		<td><input <?php echo ((isset($row['name'])) ? 'value="'.out($row['name']).'"' : '');?> required="required" placeholder="Typ hier uw naam" name="contact_naam" /></td>
-	</tr><tr>
-		<td>Email</td>
-		<td><input <?php echo ((isset($row['email'])) ? 'value="'.out($row['email']).'"' : '');?>required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" /></td>
-	</tr><tr>
-		<td>Bericht</td>
-		<td><textarea required="required" placeholder="Typ hier uw bericht" rows="10" cols="10" name="contact_message"></textarea></td>
-	</tr><tr>
-		<td>&nbsp</td>
-		<td><span class="submit_button" id="submit_contact">
-			<button type="submit" class="button">
-				<span class="right">
-					<span class="inner">
-						Verstuur bericht
-					</span>
+	<table class="formtable" id="contact">
+		<tbody>
+		<tr>
+			<td id="eerstecel">Naam</td>
+			<td>
+				<input <?php echo ((isset($row['name'])) ? 'readonly="readonly" value="'.out($row['name']).'"' : '');?> 
+				required="required" placeholder="Typ hier uw naam" name="contact_naam" />
+			</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>
+				<input <?php echo ((isset($row['email'])) ? 'readonly="readonly" value="'.out($row['email']).'"' : '');?>
+				required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" />
+			</td>
+		</tr>
+		<tr>
+			<td>Bericht</td>
+			<td>
+				<textarea required="required" placeholder="Typ hier uw bericht" rows="10" cols="10" name="contact_message"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp</td>
+			<td>
+				<span class="submit_button" id="submit_contact">
+					<button type="submit" class="button">
+						<span class="right">
+							<span class="inner">
+								Verstuur bericht
+							</span>
+						</span>
+					</button>
 				</span>
-			</button></span>
-		</td>
-	</tr>
-	</tbody></table>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 </form>
