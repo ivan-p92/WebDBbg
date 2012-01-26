@@ -22,7 +22,7 @@
 		var userBox;	// declaar var userBox, nodig voor loop
 		for(userBox in userBoxes)	// loop door alle li's 
 		{
-			console.log(userBox.className);
+			console.log(userBox);
 		}
 	}
 
