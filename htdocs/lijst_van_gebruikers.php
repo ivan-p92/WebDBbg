@@ -1,4 +1,26 @@
 <script type="text/javascript">
+	
+	// BRON: http://www.openjs.com/scripts/dom/class_manipulation.php
+	function hasClass(ele,cls) {
+		return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+	}
+	
+	// deze is wel zelf geschreven
+	// geeft true terug als element (ele) ten minste 1 van de classes uit de array met classes (clsArray) bevat.
+	// anders false
+	function hasClassArray(ele, clsArray)
+	{
+		for(var i = 0; i < clsArray.length; i++)
+		{
+			if(hasClass(ele, clsArray[i]))
+			{
+				return true;			// stop de functie, class is gevonden
+			}
+		}
+		return false;	// class niet gevonden, dus return false
+	}
+
+
 	function showhide (numberOfInputs)
 	{		
 		// zoek uit welke classes getoond moeten worden
@@ -21,7 +43,14 @@
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
-			console.log(userBoxes[userBoxIndex].className);
+			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
+			{
+				userBoxes[userBoxIndex].style.display = "block";
+			}
+			else
+			{
+				userBoxes[userBoxIndex].style.display = "none";
+			}
 		}
 	}
 
