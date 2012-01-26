@@ -91,7 +91,7 @@ $(document).ready(function() {
 				total++;
 			});
 			
-			if(total > 0)
+			if(total >= 0)
 			{
 				var next;
 				if(current == 0)
