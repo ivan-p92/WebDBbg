@@ -191,7 +191,7 @@ if(Functions::auth("admin_rights"))
 		</div>
 		';
 	}
-	else echo'<div id="message_list">Er zijn op dit moment geen berichten</div>'	
+	else echo'<div id="message_list">Er zijn op dit moment geen berichten</div>';
 }
 else
 {
