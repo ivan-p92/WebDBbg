@@ -13,3 +13,9 @@ function showEvents(week, infoArray)
 		}
 	}	
 }
+
+// BRON: http://www.openjs.com/scripts/dom/class_manipulation.php
+function hasClass(ele,cls) 
+{
+	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
