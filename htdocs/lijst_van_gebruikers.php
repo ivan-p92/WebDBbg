@@ -182,7 +182,7 @@ if(Functions::auth("admin_rights"))
 	{
 		while($messages = $stmt3->fetch())
 		{
-			$message_list .= '<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'.out($messages['name']).'</a></li>';
+			$message_list .= '<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'">'.out($messages['name']).'</a></li>';
 		} 
 		if($message_list == "")
 		{		
