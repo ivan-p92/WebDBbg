@@ -29,7 +29,7 @@ else
 }
 
 echo'
-<h1>'.out($row["subject"].'
+<h1>'.out($row["subject"]).'</h1>
 <table id="message">
 	<tbody>
 		<tr>
