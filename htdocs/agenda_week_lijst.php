@@ -95,7 +95,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{				
-				echo '<li class="event';
+				echo '<li onclick="goToEvent('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
