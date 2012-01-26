@@ -183,7 +183,7 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 }
 else
 {
-	if(!(isset($_GET['id']) || is_numeric($_GET['id'])))
+	if(!(isset($_GET['id']) && is_numeric($_GET['id'])))
 	{
 		echo '<h1>Onbruikbare URL</h1>
 			<p>Er ontbreekt een userID in de URL of de gebruikte userID is ongeldig!</p>';
