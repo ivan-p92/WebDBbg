@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		//zet het bericht in de database, als het formulier wel is ingevuld
 		
 		//conectie met database tot stand brengen
-		$datbase = Functions::getDB();
+		$database = Functions::getDB();
 		
 		//de daadwerkelijke query
 		$sql2 = "INSERT INTO messages (id, name, email, message) VALUES (NULL, :name, :email, :message);";
