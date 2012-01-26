@@ -56,10 +56,35 @@ function weekSubmitWithKey(keyEvent)
     }
 }
 
+function setBox(val)
+{
+	document.getElementById("week_box").value = val;
+}
+
 function setWeek(week)
 {
-	document.getElementById("week_box").value = week;
-	initEvents();
+	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week > -2 && week < 54)
+	{
+		switch(week)
+		{
+		case -1:
+			setBox(week-1);
+			initEvents();
+			break;
+		case 0:
+			setBox(week+1);
+			initEvents();
+			break;
+		default:
+			setBox(week);
+			initEvents();
+			break;		
+		}
+	}
+	else
+	{
+		setBox("Fout!");
+	}
 }
 
 function initEvents()
