@@ -170,9 +170,6 @@ if(Functions::auth("admin_rights"))
 	//bereid de query voor
 	$stmt = $db->prepare($sql);
 
-	//voer de query uit
-	$stmt->execute();
-	
 	$message_list="";
 	
 	while($messages=$stmt->fetch())
