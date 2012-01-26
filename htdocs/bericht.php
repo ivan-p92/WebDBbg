@@ -58,8 +58,5 @@ echo'
 		</tr>
 	</tbody>
 </table>
-
-
-
-
+';
 ?>
