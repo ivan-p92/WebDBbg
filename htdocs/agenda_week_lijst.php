@@ -95,7 +95,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{				
-				echo '<li class="event';
+				echo '<li class="event onclick="goToEvent('.$row['id'].')"';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
@@ -125,7 +125,7 @@
 				
 				echo '<div class="event_details">';
 				echo '<p class="event_titel">';
-				echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
+				echo '<a class="event_link" href="#'.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 				echo '</div>';
