@@ -1,7 +1,7 @@
 <?php
 if($_GET["del"]="ja")
 {
-	$db = Functions::getDB()
+	$db = Functions::getDB();
 	$sql = "DELETE FROM messages WHERE id = :id;";
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':id', $_GET['messageid'], PDO::PARAM_INT);
