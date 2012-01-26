@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$("#zoek_box").keyup(function(e) {
 		
 		
-		if(e.keyCode != 40 && e.keyCode != 38)
+		if(e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 13)
 		{
 			$.ajax({
 			  url: "livesearch.php",
@@ -27,6 +27,19 @@ $(document).ready(function() {
 						}
 			});
 		}
+		
+		if(e.keyCode == 13)	// enter
+		{
+			("ul#livesearch li.clickable").each(function(index, element) {
+					var tmp = $(element);
+					
+					if(tmp.hasClass("selected"))
+					{
+						$("#zoek_box").val(tmp.html());
+					}
+				});
+		}
+		
 		
 		if(e.keyCode == 40)	// pijltje naar benee
 		{
