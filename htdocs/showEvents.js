@@ -19,3 +19,17 @@ function hasClass(ele,cls)
 {
 	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
 }
+
+// BRON: http://javascript.about.com/library/blweekyear.htm
+function getWeek() 
+{
+	var onejan = new Date(this.getFullYear(),0,1);
+	return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
+} 
+
+function init()
+{
+	showEvents(getWeek(), new Array());
+}
+
+document.addEventListener("DOMContentLoaded", init, false);
