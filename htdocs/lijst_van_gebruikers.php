@@ -19,10 +19,11 @@
 		
 		
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
+		console.log(userBoxes);
 		var userBox;	// declaar var userBox, nodig voor loop
 		for(userBox in userBoxes)	// loop door alle li's 
 		{
-			console.log(userBox);
+			//console.log(userBox);
 		}
 	}
 
