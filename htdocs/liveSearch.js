@@ -71,7 +71,9 @@ $(document).ready(function() {
 					next = current + 1;
 				}
 				
-				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
+				var temp  = $("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
+				temp.addClass("selected");
+				${"#zoek_box").val(temp.find("span.ls_name").html());
 			}
 		}
 		
@@ -103,7 +105,9 @@ $(document).ready(function() {
 					next = current - 1;
 				}
 
-				$("ul#livesearch li.clickable:nth-child("+ (next + 1) +")").addClass("selected");
+				var temp = $("ul#livesearch li.clickable:nth-child("+ (next + 1) +")");
+				temp.addClass("selected");
+				$("#zoek_box").val(temp.find("span.ls_name").html());
 			}
 		}
 	});
