@@ -11,9 +11,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	try
 	{
 		//als het niet goed is ingevuld throw exception met bericht
-		if(!isset($_POST['contact_naam']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) //als hij niet is ingevuld
-			|| empty($_POST['contact_naam']) || empty($_POST['contact_mail']) || empty($_POST['contact_message'])//als het leeg is ingevuld
-			|| strlen($_POST['contact_naam']) > 64 || strlen($_POST['contact_mail']) > 256) //als naam of mail te lang is voor de database
+		if(!isset($_POST['contact_naam']) || !isset($_POST['contact_mail']) || !isset($_POST['contact_message']) || !isset($_POST['contact_subject']) //als hij niet is ingevuld
+			|| empty($_POST['contact_naam']) || empty($_POST['contact_mail']) || empty($_POST['contact_message']) || empty($_POST['contact_subject'])//als het leeg is ingevuld
+			|| strlen($_POST['contact_naam']) > 64 || strlen($_POST['contact_mail']) > 256 || strlen($_POST['contact_subject']) > 64 ) //als naam of mail te lang is voor de database
 		{
 			throw new Exception('<p class="error">Niet alle velden zijn juist ingevuld</p>');
 		}
@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$database = Functions::getDB();
 		
 		//de daadwerkelijke query
-		$sql2 = "INSERT INTO messages (id, name, email, message) VALUES (NULL, :name, :email, :message);";
+		$sql2 = "INSERT INTO messages (id, name, email, message, subject) VALUES (NULL, :name, :email, :message, :subject);";
 		
 		//bereid query voor
 		$stmt2 = $database->prepare($sql2);
@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$stmt2->bindParam(':name', $_POST['contact_naam'], PDO::PARAM_STR);
 		$stmt2->bindParam(':email', $_POST['contact_mail'], PDO::PARAM_STR);
 		$stmt2->bindParam(':message', $_POST['contact_message'], PDO::PARAM_STR);
-		
+		$stmt2->bindParam(':subject', $_POST['contact_subject'], PDO::PARAM_STR);	
 		//voor de query uit
 		$stmt2->execute();
 		
@@ -96,14 +96,20 @@ Laat een bericht bij ons achter en wij nemen zo spoedig mogelijk contact met u o
 		<tr>
 			<td id="eerstecel">Naam</td>
 			<td>
-				<input <?php echo ((isset($row['name'])) ? 'readonly="readonly" value="'.out($row['name']).'"' : '');?> 
+				<input type="text" <?php echo ((isset($row['name'])) ? 'readonly="readonly" value="'.out($row['name']).'"' : '');?> 
 				required="required" placeholder="Typ hier uw naam" name="contact_naam" />
+			</td>
+		</tr>
+		<tr>
+			<td>Onderwerp</td>
+			<td>
+				<input type="text" required="required" placeholder="Typ hier uw naam" name="contact_subject" />
 			</td>
 		</tr>
 		<tr>
 			<td>Email</td>
 			<td>
-				<input <?php echo ((isset($row['email'])) ? 'readonly="readonly" value="'.out($row['email']).'"' : '');?>
+				<input type="text" <?php echo ((isset($row['email'])) ? 'readonly="readonly" value="'.out($row['email']).'"' : '');?>
 				required="required" placeholder="Typ hier uw e-mail adres" name="contact_mail" />
 			</td>
 		</tr>
