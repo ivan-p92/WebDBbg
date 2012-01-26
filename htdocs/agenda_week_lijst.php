@@ -29,9 +29,9 @@
 			</tr>
 		</table>
 	
+	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
-	
-	<ul class="event_lijst">
+	echo '<ul class="event_lijst">';
 <?php
 	
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
@@ -41,6 +41,8 @@
 	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function() {setYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
+	
+		echo '<ul class="event_lijst">';
 	
     $sql = "SELECT title, id, location,
 			YEAR(start_date) AS jaar,
