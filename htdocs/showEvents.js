@@ -65,11 +65,15 @@ function browseWeek(forward)
 {
 	if (!forward)
 	{
-		setBox(WEEK-1)
+		WEEK -= 1;
+		setBox(WEEK);
+		initEvents();
 	}
 	else if (forward)
 	{
-		setBox(WEEK+1)
+		WEEK += 1;
+		setBox(WEEK);
+		initEvents();
 	}
 }
 
