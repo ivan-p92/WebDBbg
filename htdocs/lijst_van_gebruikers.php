@@ -32,9 +32,9 @@ if(Functions::auth("admin_rights"))
 				<td id="recht_checkbox">
 					<form action="" method="post">
 						<ul>
-							<li><input type="checkbox" value="aanmaken" onclick="showhide(this)" />Aanmaken</li>
-							<li><input type="checkbox" value="keuren" onclick="showhide(this)" />Keuren</li>
-							<li><input type="checkbox" value="admin" onclick="showhide(this)" />Admin</li>
+							<li><input type="checkbox" value="aanmaken" onclick="showhide(this)" checked="checked" />Aanmaken</li>
+							<li><input type="checkbox" value="keuren" onclick="showhide(this)" checked="checked" />Keuren</li>
+							<li><input type="checkbox" value="admin" onclick="showhide(this)" checked="checked" />Admin</li>
 						</ul>
 					</form>
 				</td>
@@ -96,7 +96,7 @@ if(Functions::auth("admin_rights"))
 									break;
 							}
 						}
-						echo '<li class="'.$classes.'" visibility="hidden">';
+						echo '<li class="'.$classes.'">';
 						echo '<a href="index.php?page=admin&amp;id='.$row['id'].'&amp;semipage=lijst_van_gebruikers">'.$row['name'].'</a>';
 						echo '</li>';
 					}
