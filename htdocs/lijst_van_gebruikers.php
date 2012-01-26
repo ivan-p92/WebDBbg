@@ -43,7 +43,7 @@
 		var userBoxes = document.getElementsByClassName('user_box');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
-			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
+			if(showClasses.length == 0 || hasClassArray(userBoxes[userBoxIndex], showClasses))
 			{
 				userBoxes[userBoxIndex].style.visibility = "visible";
 			}
