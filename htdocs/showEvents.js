@@ -44,7 +44,8 @@ function hasClassArray(ele, clsArray)
 }
 
 
-function weekSubmitWithKey(keyEvent) {
+function weekSubmitWithKey(keyEvent) 
+{
     if (keyEvent.keyCode) var code = keyEvent.keyCode;
 	else if (keyEvent.which) var code = keyEvent.which;
 	
@@ -59,7 +60,7 @@ function setWeek(week)
 {
 	document.getElementById("week_box").value = week;
 	initEvents();
-{
+}
 
 function initEvents()
 {
