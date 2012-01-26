@@ -23,7 +23,7 @@ function hasClass(ele,cls)
 // BRON: http://javascript.about.com/library/blweekyear.htm
 function getWeek() 
 {
-	var onejan = new Date(this.getFullYear(),0,1);
+	var onejan = new Date(Date.getFullYear(),0,1);
 	return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
 } 
 
