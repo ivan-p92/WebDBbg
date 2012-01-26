@@ -184,7 +184,7 @@ if(Functions::auth("admin_rights"))
 		{
 			$message_list .= '<li><a href="index.php?page=bericht&amp;semipage=lijst_van_gebruikers&amp;messageid='.out($messages['id']).'>"'.out($messages['name']).'</a></li>';
 		} 
-		if($message_list = "")
+		if($message_list == "")
 		{		
 			echo '<div id="message_list">Er zijn op dit moment geen berichten</div>';			
 		}
