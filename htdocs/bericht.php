@@ -45,7 +45,7 @@ echo'
 				Email
 			</td>
 			<td>
-				'.out(row["email"]).'
+				'.out($row["email"]).'
 			</td>
 		</tr>
 		<tr>
