@@ -183,18 +183,18 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 }
 else
 {
-	if(!(isset($_GET['id']) && is_numeric($_GET['id'])))
-	{
-		echo '<h1>Onbruikbare URL</h1>
-			<p>Er ontbreekt een userID in de URL of de gebruikte userID is ongeldig!</p>';
-	}
-	else
+	if(!Functions::auth("admin_rights"))
 	{
 		echo '<h1>Verboden toegang!</h1> 
 			<p>
 			U heeft niet de benodigde rechten om deze pagina te bezoeken.<br />
 			Log in of neem contact op met de administrator!
 			</p>';
+	}
+	else
+	{
+		echo '<h1>Onbruikbare URL</h1>
+			<p>Er ontbreekt een userID in de URL of de gebruikte userID is ongeldig!</p>';
 	}
 }
 ?>
