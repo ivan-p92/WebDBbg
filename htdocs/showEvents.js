@@ -17,7 +17,7 @@ function showEvents(infoArray)
 		}
 		else
 		{
-			if(events[i].style.display == 'block') fade(events[i], 500);
+			if(events[i].style.display == 'block') fade(events[i], 10000);
 			events[i].style.display = 'none';
 		}
 	}
