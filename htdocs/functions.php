@@ -37,6 +37,7 @@ class Functions
 				self::$db = new PDO($dsn, $user, $password);
 				self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				self::$db->query("SET NAMES 'utf8';");
+				self::$db->query("SET lc_time_names = 'nl_NL';");
 				
 			}
 			catch (PDOException $e)
