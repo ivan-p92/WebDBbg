@@ -47,13 +47,14 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 								  VALUES (:user_id,(SELECT id FROM permissions WHERE permission = :permission));";
 			$stmt_addPermission = $mysqli->prepare($sql_addPermission);
 			
-			var_dump($_POST['admin_check']);
-			
-			foreach( $_POST['admin_check'] as $recht )
+			if(isset($_POST['admin_check']))
 			{
-				$stmt_addPermission->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
-				$stmt_addPermission->bindParam(':permission', $recht, PDO::PARAM_STR);
-				$stmt_addPermission->execute();
+				foreach( $_POST['admin_check'] as $recht )
+				{
+					$stmt_addPermission->bindParam(':user_id',$_GET['id'],PDO::PARAM_INT);
+					$stmt_addPermission->bindParam(':permission', $recht, PDO::PARAM_STR);
+					$stmt_addPermission->execute();
+				}
 			}
 			
 			//melding dat de rechten succesvol zijn aangepast
