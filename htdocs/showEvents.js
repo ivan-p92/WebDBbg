@@ -94,6 +94,11 @@ function browseWeek(forward)
 	}
 }
 
+function initYear(year)
+{
+	YEAR = year;
+}
+
 function setYear(year)
 {
 	if(!isNaN(year) && (parseFloat(year) == parseInt(year)) && year >= 2000 && year <= 2100)
