@@ -31,11 +31,10 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 		{
 			echo '<h1>Deze gebruiker bestaat niet</h1>
 				<p>Keer terug naar de lijst van gebruikers en probeer opnieuw</p>';
-		}
-		
+		}		
 		//Het formulier waarme de rechten worden aangepast maakt gebruik van de $_POST variabele
 		//Als admin.php een $_POST variabele mee heeft gekregen, moeten de rechten dus worden aangepast
-		elseif(!empty($_POST))
+		elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			//query om alle rechten te verwijderen
 			$sql_delPermission = "DELETE FROM users_permissions WHERE user_id=:user_id";
@@ -60,10 +59,8 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 			//melding dat de rechten succesvol zijn aangepast
 			echo '<h1>Succes!</h1>
 				  <p>Rechten voor '.$row['name'].' aangepast.</p>';
-		}
-		
-		//Als de pagina geen $_POST variabele mee heeft gekregen, wordt deze normaal geladen.
-		elseif(empty($_POST))
+		}//Als de pagina geen $_POST variabele mee heeft gekregen, wordt deze normaal geladen.
+		else
 		{	
 			//query om de rechten van de gebruiker op te halen
 			$sql_check = "SELECT permission_id FROM users_permissions WHERE user_id=:user_id;";
