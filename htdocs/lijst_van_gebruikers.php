@@ -44,24 +44,24 @@
 			{
 				if(!hasClass(userBoxes[userBoxIndex], 'id_recht_aanmaken') && !hasClass(userBoxes[userBoxIndex], 'id_recht_keuren') && !hasClass(userBoxes[userBoxIndex], 'id_recht_admin'))
 				{					
-					userBoxes[userBoxIndex].style.visibility = "visible";
+					userBoxes[userBoxIndex].style.display = "block";
 					numberVis++;
 				}
 				else
 				{
-					userBoxes[userBoxIndex].style.visibility = "hidden";
+					userBoxes[userBoxIndex].style.display = "none";
 				}
 			}
 			else
 			{			
 				if(hasClass(userBoxes[userBoxIndex], showClasses))
 				{
-					userBoxes[userBoxIndex].style.visibility = "visible";
+					userBoxes[userBoxIndex].style.display = "block";
 					numberVis++;
 				}
 				else
 				{
-					userBoxes[userBoxIndex].style.visibility = "hidden";
+					userBoxes[userBoxIndex].style.display = "none";
 				}
 			}
 		}
