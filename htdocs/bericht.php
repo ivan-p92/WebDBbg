@@ -1,5 +1,5 @@
 <?php
-if(Functions::auth("admin_rights") && $_GET["semipage"]="lijst_van_gebruikers")
+if(Functions::auth("admin_rights") && isset$_GET["semipage"] && $_GET["semipage"]="lijst_van_gebruikers")
 {
 	//als het bericht verwijderd moet worden, wordt deze functie aangeroepen
 	if(isset($_GET["del"]))
