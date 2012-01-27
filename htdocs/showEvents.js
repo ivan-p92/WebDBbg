@@ -12,9 +12,9 @@ function showEvents(infoArray)
 	{
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
-			//if(events[i].style.display == 'none') fadein(events[i], 2000);
-			events[i].style.display = 'block';
-			events[i].style.opacity = 1;
+			if(events[i].style.display == 'none') fadein(events[i], 2000);
+			//events[i].style.display = 'block';
+			//events[i].style.opacity = 1;
 			count++;
 		}
 		else
@@ -163,8 +163,8 @@ function goToEventK(id)
 // Bron: http://www.lateralcode.com/javascript-fade-effect/
 function fadeout(elem, time)
 {
-	var startOpacity = elem.style.opacity || 1;
-	elem.style.opacity = startOpacity;
+	//var startOpacity = elem.style.opacity || 1;
+	elem.style.opacity = 1;//startOpacity;
 
 	(function go() {
 		elem.style.opacity -= startOpacity / ( time / 100 );
@@ -181,9 +181,10 @@ function fadeout(elem, time)
 
 function fadein(elem, time)
 {
-	var startOpacity = elem.style.opacity || 0;
-	elem.style.opacity = startOpacity;
-
+	//var startOpacity = elem.style.opacity || 0;
+	elem.style.opacity = 0;//startOpacity;
+	elem.style.display = 'block';
+	
 	(function go() {
 		elem.style.opacity += startOpacity / ( time / 100 );
 
@@ -193,6 +194,6 @@ function fadein(elem, time)
 		if( elem.style.opacity < 1 )
 			setTimeout( go, 100 );
 		else
-			elem.style.display = 'block';
+			return;
 	})();
 }
