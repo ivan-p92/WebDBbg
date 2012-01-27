@@ -432,6 +432,26 @@ div#event_lijst_container {
     clear: left;
 }
 
+/* opmaak sorteerbalk */
+.sort_table label {
+    width: auto;
+}
+.sort_table #sort_name {
+    width: 200px;
+}
+
+#week_box, #jaar_box {
+    width: 35px;
+}
+
+#browse_week {
+    width: 110px;
+}
+
+.sort_table button {
+    padding: 0px;
+}
+
 /* datum en details evenement moeten naast elkaar */
 .eendags_event, .event_details {
     float: left;
