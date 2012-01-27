@@ -163,11 +163,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 			</tr>
 			<tr>
 				<td>Begintijd</td>
-				<td class="rechts">'.$_POST["datum1"]." ".$_POST["maand1"]." ".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
+				<td class="rechts">'.$_POST["datum1"]."-".$_POST["maand1"]."-".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
 			</tr>
 			<tr>
 				<td>Eindtijd</td>
-				<td class="rechts">'.$_POST["datum2"]." ".$_POST["maand2"]." ".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
+				<td class="rechts">'.$_POST["datum2"]."-".$_POST["maand2"]."-".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
 			</tr>
 			<tr>
 				<td rowspan="4">Categorie</td>
