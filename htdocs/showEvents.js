@@ -194,6 +194,6 @@ function fadein(elem, time)
 		if( elem.style.opacity < 1 )
 			setTimeout( go, 50 );
 		else
-			return;
+			elem.style.display = 'block';
 	})();
 }
