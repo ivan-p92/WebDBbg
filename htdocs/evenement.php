@@ -142,7 +142,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	else
 	{
 		$nu = date("Y/m/d", time());
-		if($begindatumtijd < time())
+		if($begindatumtijd < $nu)
 		{
 			echo'<script>alert(Uw begindatum ligt in het verleden!</script>';
 		}
