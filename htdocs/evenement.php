@@ -142,7 +142,15 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	else
 	{
 		$nu = date("Y/m/d", time());
-		if($begindatumtijd < $nu)
+		// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
+		$database = Functions::getDB();
+		$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$nu.') AS diff;';
+		$stmt = $database->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetch();
+		$diff = $result["diff"];
+		
+		if($diff<0)
 		{
 			echo'<script>alert(Uw begindatum ligt in het verleden!)</script>';
 		}
