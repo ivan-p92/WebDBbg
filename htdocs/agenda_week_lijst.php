@@ -38,7 +38,7 @@
 	
     $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
     
-	$row = $database->query("SELECT WEEKOFYEAR(NOW()) AS week, YEAR(NOW()) AS jr;")->fetch();
+	$row = $database->query("SELECT WEEK(NOW(), 1) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function() {setYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
 	

@@ -67,14 +67,14 @@ function browseWeek(forward)
 {
 	if (!forward)
 	{
-		if(WEEK == 1) WEEK = 54;
+		if(WEEK == 0) WEEK = 54;
 		WEEK -= 1;
 		setBox(WEEK);
 		initEvents();
 	}
 	else if (forward)
 	{
-		if(WEEK == 53) WEEK = 0;
+		if(WEEK == 53) WEEK = -1;
 		WEEK += 1;
 		setBox(WEEK);
 		initEvents();
@@ -88,7 +88,7 @@ function setYear(year)
 
 function setWeek(week)
 {
-	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week > 0 && week < 54)
+	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week >= 0 && week < 54)
 	{
 		WEEK = parseInt(week);
 		setBox(week);
