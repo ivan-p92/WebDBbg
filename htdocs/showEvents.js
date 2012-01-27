@@ -18,8 +18,8 @@ function showEvents(infoArray)
 		}
 		else
 		{
-			if(events[i].style.display == 'block') fade(events[i], 10000);
-			events[i].style.display = 'none';
+			if(events[i].style.display == 'block') fade(events[i], 3000);
+			//events[i].style.display = 'none';
 		}
 	}
 	if(count == 0) document.getElementById("no_events").style.display = "block";
