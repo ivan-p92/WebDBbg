@@ -36,10 +36,10 @@
 					<input type="text" id="jaar_box" name="week" value="1992" />
 				</td>
 				<td id="p_week">
-					<span class="submit_button"><button class="button"><span class="right" onclick="browseWeek(false)"><span class="inner">&lt;</span></span></button></span>
+					<span class="submit_button" onclick="browseWeek(false)"><button class="button"><span class="right"><span class="inner">&lt;</span></span></button></span>
 				</td>
 				<td id="n_week">
-					<span class="submit_button"><button class="button"><span class="right" onclick="browseWeek(true)"><span class="inner">&gt;</span></span></button></span>
+					<span class="submit_button" onclick="browseWeek(true)"><button class="button"><span class="right"><span class="inner">&gt;</span></span></button></span>
 				</td>
 				
 			</tr>
