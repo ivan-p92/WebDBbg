@@ -17,6 +17,7 @@ function showEvents(infoArray)
 		}
 		else
 		{
+			if(events[i].style.display == 'block') fade(events[i], 500);
 			events[i].style.display = 'none';
 		}
 	}
@@ -155,4 +156,23 @@ function goToEventA(id)
 function goToEventK(id)
 {
 	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=keuren");
+}
+
+// Bron: http://www.lateralcode.com/javascript-fade-effect/
+function fade(elem, time)
+{
+	var startOpacity = elem.style.opacity || 1;
+	elem.style.opacity = startOpacity;
+
+	(function go() {
+		elem.style.opacity -= startOpacity / ( time / 100 );
+
+		// for IE
+		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
+
+		if( elem.style.opacity > 0 )
+			setTimeout( go, 100 );
+		else
+			elem.style.display = 'none';
+	})();
 }
