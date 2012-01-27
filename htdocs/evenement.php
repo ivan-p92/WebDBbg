@@ -227,9 +227,9 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 	$database=Functions::getDB();
 
 	// deze query haalt alle info op over het betreffende evenement (incl status) en ook de auteur ervan
-	$sql = "SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%i') AS start_datum,
-				   DATE_FORMAT(end_date, '%W %e %M %Y, %H:%i') AS eind_datum,
-				   DATE_FORMAT(create_date, '%W %e %M %Y, %H:%i') AS aanmaak_datum,
+	$sql = "SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%iu') AS start_datum,
+				   DATE_FORMAT(end_date, '%W %e %M %Y, %H:%iu') AS eind_datum,
+				   DATE_FORMAT(create_date, '%W %e %M %Y, %H:%iu') AS aanmaak_datum,
 				   events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id";
 	
 	// deze queries kijken of het evenement tot bepaalde categorieën hoort
@@ -296,11 +296,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 		</tr>
 		<tr>
 			<td>Begintijd</td>
-			<td class="rechts">'.$info["start_datum"].'</td>
+			<td class="rechts">'.ucfirst($info["start_datum"]).'</td>
 		</tr>
 		<tr>
 			<td>Eindtijd</td>
-			<td class="rechts">'.$info["eind_datum"].'</td>
+			<td class="rechts">'.ucfirst($info["eind_datum"]).'</td>
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
