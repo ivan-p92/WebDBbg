@@ -182,7 +182,7 @@ function fadeout(elem, time)
 function fadein(elem, time)
 {
 	//var startOpacity = elem.style.opacity || 0;
-	elem.style.opacity = 0;//startOpacity;
+	elem.style.opacity = 0.5;//startOpacity;
 	elem.style.display = 'block';
 	
 	(function go() {
