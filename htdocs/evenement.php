@@ -153,7 +153,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 		
 		if($diff>0)
 		{
-			echo'<script>alert(Uw begindatum ligt in het verleden!)</script>';
+			echo'<script>alert("Uw begindatum ligt in het verleden!")</script>';
 		}
 		// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 		// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
