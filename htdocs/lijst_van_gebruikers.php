@@ -43,6 +43,7 @@
 			{
 				if(!hasClass(userBoxes[userBoxIndex], 'id_recht_aanmaken') && !hasClass(userBoxes[userBoxIndex], 'id_recht_keuren') && !hasClass(userBoxes[userBoxIndex], 'id_recht_admin'))
 				{
+					console.log('hallo');
 					userBoxes[userBoxIndex].style.visibility = "visible";
 				}
 				else
