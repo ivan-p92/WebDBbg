@@ -37,6 +37,7 @@
 		}	
 		
 		var userBoxes = document.getElementsByClassName('id_recht_all');	// haal alle li's op
+		var numberVis = 0;
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
 			if(showClasses == 'id_recht_none')
@@ -45,6 +46,7 @@
 				{
 					console.log('hallo');
 					userBoxes[userBoxIndex].style.visibility = "visible";
+					numberVis++;
 				}
 				else
 				{
@@ -56,12 +58,18 @@
 				if(hasClass(userBoxes[userBoxIndex], showClasses))
 				{
 					userBoxes[userBoxIndex].style.visibility = "visible";
+					numberVis++;
 				}
 				else
 				{
 					userBoxes[userBoxIndex].style.visibility = "hidden";
 				}
 			}
+		}
+		
+		if(numberVis == 0)
+		{
+			document.getElementById("msg_no_users").style.display = "block";
 		}
 	}
 	
@@ -161,6 +169,7 @@ if(Functions::auth("admin_rights"))
 						echo '</li>';
 					}
 					echo '</ul>';
+					echo '<span id="msg_no_users"  style="display: hidden;">Er zijn geen gebruikers die aan dit selectiecriterium voldoen</span>';
 				}
 			}
 		}
