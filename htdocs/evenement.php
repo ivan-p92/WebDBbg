@@ -141,7 +141,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	// hie rzal de tabel getoond worden
 	else
 	{
-		$nu = date("Y/m/d", time());
+		$nu = date("Y-m-d H:i:s", time());
 		// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
 		$database = Functions::getDB();
 		$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$nu.') AS diff;';
