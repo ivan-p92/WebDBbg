@@ -4,7 +4,7 @@
      De hoofdstructuur ervan is een unordered list -->
 <div id="event_lijst_container">
 	
-	<table id="sort_table">
+	<table id="sort_table" class="sort_table">
 			<tr>
 				<td id="sort_name">
 					Toon evenementen uit de volgende categorieën:
