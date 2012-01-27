@@ -12,13 +12,14 @@ function showEvents(infoArray)
 	{
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
-			events[i].style.display = 'block';
-			events[i].style.opacity = 1;
+			if (events[i].style.display == 'none') fadein(events[i], 2000);
+			//events[i].style.display = 'block';
+			//events[i].style.opacity = 1;
 			count++;
 		}
 		else
 		{
-			if(events[i].style.display == 'block') fade(events[i], 3000);
+			if(events[i].style.display == 'block') fadeout(events[i], 2000);
 			//events[i].style.display = 'none';
 		}
 	}
@@ -160,7 +161,7 @@ function goToEventK(id)
 }
 
 // Bron: http://www.lateralcode.com/javascript-fade-effect/
-function fade(elem, time)
+function fadeout(elem, time)
 {
 	var startOpacity = elem.style.opacity || 1;
 	elem.style.opacity = startOpacity;
@@ -175,5 +176,22 @@ function fade(elem, time)
 			setTimeout( go, 100 );
 		else
 			elem.style.display = 'none';
+	})();
+	
+function fadein(elem, time)
+{
+	var startOpacity = elem.style.opacity || 0;
+	elem.style.opacity = startOpacity;
+
+	(function go() {
+		elem.style.opacity += startOpacity / ( time / 100 );
+
+		// for IE
+		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
+
+		if( elem.style.opacity < 1 )
+			setTimeout( go, 100 );
+		else
+			elem.style.display = 'block';
 	})();
 }
