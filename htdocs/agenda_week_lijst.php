@@ -10,8 +10,23 @@
 				<td id="sort_name">
 					Toon evenementen uit de volgende categorieën:
 				</td>
+				<form action="" method="post">
+				<td>
+					<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
+				</td>
+				<td>
+					<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label>
+				</td>
+				<td>
+					<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label>
+				</td>
+				<td>
+					<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
+				</td>
+				</form>
+				<!--
 				<td id="recht_checkbox">
-					<form action="" method="post">
+					
 						<ul>
 							<li><label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label></li>
 							<li><label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label></li>
@@ -19,12 +34,24 @@
 							<li><label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label></li>
 						</ul>
 					</form>
+				</td> -->
+				<td id="p_week">
+					<span class="prev" onclick="browseWeek(false)"></span>
 				</td>
 				<td id="week">
-					<span class="prev" onclick="browseWeek(false)"></span>
-					<span id="set_week">Week:</span>
+					Week:
+				</td>
+				<td id="wkbox">
 					<input type="text" id="week_box" name="week" value="" onkeyup="weekSubmitWithKey(event)" />
+				</td>
+				<td ="n_week">
 					<span class="next" onclick="browseWeek(true)"></span>
+				</td>
+				<td id="jaar">
+					Jaar:
+				</td>
+				<td id="jaarbox">
+					<input type="text" id="jaar_box" name="week" value="1992" />
 				</td>
 			</tr>
 		</table>
