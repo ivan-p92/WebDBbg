@@ -410,7 +410,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_G
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
-			<td class="rechts">'.out($info["description"]).'.</td>
+			<td class="rechts">'.out($info["description"]).'</td>
 		</tr>
 		<tr>
 			<td>Locatie</td>
