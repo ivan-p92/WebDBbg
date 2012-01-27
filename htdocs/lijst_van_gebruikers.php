@@ -26,20 +26,32 @@
 		// zoek uit welke classes getoond moeten worden
 		// selecteer elke checkbox en kijk of ze gechecked zijn of niet
 		var inputs = document.getElementsByClassName("input_radio_search_users_rights");		
-		var showClasses = new Array();
+		var showClasses;
 		
 		for (var i = 0; i < inputs.length; i++)
 		{
 			if(inputs[i].checked)
 			{
-				showClasses.push("id_recht_" + inputs[i].value);
+				showClasses = "id_recht_" + inputs[i].value;
 			}
 		}	
 		
 		var userBoxes = document.getElementsByClassName('id_recht_all');	// haal alle li's op
 		for(var userBoxIndex = 0; userBoxIndex < userBoxes.length; userBoxIndex++)	// loop door alle li's 
 		{
-			if(hasClassArray(userBoxes[userBoxIndex], showClasses))
+			if(showClasses == 'id_recht_none')
+			{
+				if(!hasClass(userBoxes[userBoxIndex], 'id_recht_aanmaken') && !hasClass(userBoxes[userBoxIndex], 'id_recht_keuren') && !hasClass(userBoxes[userBoxIndex], 'id_recht_admin'))
+				{
+					userBoxes[userBoxIndex].style.visibility = "visible";
+				}
+				else
+				{
+					userBoxes[userBoxIndex].style.visibility = "hidden";
+				}
+			}
+			
+			if(hasClass(userBoxes[userBoxIndex], showClasses))
 			{
 				userBoxes[userBoxIndex].style.visibility = "visible";
 			}
@@ -77,6 +89,7 @@ if(Functions::auth("admin_rights"))
 				<td id="recht_checkbox">
 						<ul>
 							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide()" checked="checked" />Iedereen</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="none" onclick="showhide()" checked="checked" />Geen rechten</label></li>
 							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide()" />Aanmaken</label></li>
 							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide()" />Keuren</label></li>
 							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide()" />Admin</label></li>
