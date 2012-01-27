@@ -24,8 +24,8 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 		$stmt->execute();
 		
 		$row = $stmt->fetch();
-				
-	echo '<div class="admin">';
+		
+		echo '<div class="admin">';
 		//Als de gebruiker niet bestaat, is de lijst leeg		
 		if($stmt->rowCount() == 0)
 		{
@@ -47,6 +47,8 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 			$sql_addPermission = "INSERT into users_permissions (user_id, permission_id)
 								  VALUES (:user_id,(SELECT id FROM permissions WHERE permission = :permission));";
 			$stmt_addPermission = $mysqli->prepare($sql_addPermission);
+			
+			var_dump($_POST['admin_check']);
 			
 			foreach( $_POST['admin_check'] as $recht )
 			{
