@@ -12,15 +12,15 @@ function showEvents(infoArray)
 	{
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
-			if(events[i].style.display == 'none') fadein(events[i], 2000); // bij faden
-			//events[i].style.display = 'block';
-			//events[i].style.opacity = 1; // bij faden
+			//if(events[i].style.display == 'none') fadein(events[i], 1000); // bij faden
+			events[i].style.display = 'block';
+			events[i].style.opacity = 1; // bij faden
 			count++;
 		}
 		else
 		{
-			//if(events[i].style.display == 'block') fadeout(events[i], 1000); // bij faden
-			events[i].style.display = 'none';
+			if(events[i].style.display == 'block') fadeout(events[i], 1000); // bij faden
+			//events[i].style.display = 'none';
 		}
 	}
 	if(count == 0) document.getElementById("no_events").style.display = "block";
