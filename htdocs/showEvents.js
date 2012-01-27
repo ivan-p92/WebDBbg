@@ -13,7 +13,8 @@ function showEvents(infoArray)
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
 			events[i].style.display = 'block';
-			count++
+			events[i].style.opacity = 1;
+			count++;
 		}
 		else
 		{
