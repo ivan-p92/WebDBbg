@@ -227,10 +227,10 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 	$database=Functions::getDB();
 
 	// deze query haalt alle info op over het betreffende evenement (incl status) en ook de auteur ervan
-	$sql = 'SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%i') AS start_datum,
+	$sql = "SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%i') AS start_datum,
 				   DATE_FORMAT(end_date, '%W %e %M %Y, %H:%i') AS eind_datum,
 				   DATE_FORMAT(create_date, '%W %e %M %Y, %H:%i') AS aanmaak_datum,
-				   events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
+				   events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id";
 	
 	// deze queries kijken of het evenement tot bepaalde categorieën hoort
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
