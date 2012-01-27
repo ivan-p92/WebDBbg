@@ -811,7 +811,7 @@ ul#userlistlist {
 }
 
 	ul#userlistlist li {
-		 border-radus: 8px;
+		 border-radius: 8px;
 		 -moz-border-radius: 8px 8px 8px 8px;
 		 background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.8);
 		 border: 1px solid rgba(0, 0, 0, 0.2);
