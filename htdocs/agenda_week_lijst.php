@@ -3,7 +3,6 @@
 <!-- div#weeklijst container bevat de lijst van de evenementen 
      De hoofdstructuur ervan is een unordered list -->
 <div id="event_lijst_container">
-	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	
 	<table id="sort_table">
 			<tr>
@@ -24,28 +23,11 @@
 					<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
 				</td>
 				</form>
-				<!--
-				<td id="recht_checkbox">
-					
-						<ul>
-							<li><label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label></li>
-							<li><label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label></li>
-							<li><label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label></li>
-							<li><label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label></li>
-						</ul>
-					</form>
-				</td> -->
-				<td id="p_week">
-					<span class="prev" onclick="browseWeek(false)"></span>
-				</td>
 				<td id="week">
 					Week:
 				</td>
 				<td id="wkbox">
 					<input type="text" id="week_box" name="week" value="" onkeyup="weekSubmitWithKey(event)" />
-				</td>
-				<td ="n_week">
-					<span class="next" onclick="browseWeek(true)"></span>
 				</td>
 				<td id="jaar">
 					Jaar:
@@ -53,9 +35,18 @@
 				<td id="jaarbox">
 					<input type="text" id="jaar_box" name="week" value="1992" />
 				</td>
+				<td id="p_week">
+					<span class="submit_button"><button class="button"><span class="right" onclick="browseWeek(false)"><span class="inner">&lt;</span></span></button></span>
+				</td>
+				<td id="n_week">
+					<span class="submit_button"><button class="button"><span class="right" onclick="browseWeek(true)"><span class="inner">&gt;</span></span></button></span>
+				</td>
+				
 			</tr>
 		</table>
 	
+	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
+		
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
 	
