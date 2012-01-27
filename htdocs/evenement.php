@@ -17,7 +17,7 @@ niet bestaan/al gekeurd zijn, dan zijn er meldingen.
 // de $_GET parameter 'k' is G om goed te keuren, of A om af te keuren
 // met Functions::auth wordt gekeken of de persoon genoeg rechten heeft om evenementen
 // te keuren. Ook wordt gekeken of 'id' en 'k' wel ingesteld zijn
-if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]))
+if(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && isset($_GET["k"]) && is_numeric($_GET['id']))
 {
 	// als aan de eerste voorwaarden voldaan is wordt verbinding gemaakt met de database
 	$database = Functions::getDB();
@@ -235,7 +235,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 // in dit geval is de gebruiker afkomstig van 'keuren' en wordt een tabel getoond
 // met de opties om een knop goed of af te keuren
 // ook hier is de pagina beveiligd
-elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]))
+elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::auth("approve_event") && isset($_GET["id"]) && is_numeric($_GET['id']))
 {
 	// er wordt verbinding gemaakt met de database
 	$database=Functions::getDB();
@@ -364,7 +364,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 // in dit geval komt de gebruiker van de agenda pagina
 // dit is voor iedereen toegankelijk, maar er wordt wel gekeken of het evenement id
 // valide is, of toegankelijk (je kunt immers zelf een ander id intypen in het adres)
-elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_GET["id"]))
+elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_GET["id"]) && is_numeric($_GET['id']))
 {
 	// verbinding met database wordt aangemaakt
 	$database=Functions::getDB();
