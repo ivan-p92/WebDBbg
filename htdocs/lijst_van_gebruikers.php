@@ -43,8 +43,7 @@
 			if(showClasses == 'id_recht_none')
 			{
 				if(!hasClass(userBoxes[userBoxIndex], 'id_recht_aanmaken') && !hasClass(userBoxes[userBoxIndex], 'id_recht_keuren') && !hasClass(userBoxes[userBoxIndex], 'id_recht_admin'))
-				{
-					console.log('hallo');
+				{					
 					userBoxes[userBoxIndex].style.visibility = "visible";
 					numberVis++;
 				}
@@ -69,6 +68,7 @@
 		
 		if(numberVis == 0)
 		{
+			console.log('hallo');
 			document.getElementById("msg_no_users").style.display = "block";
 		}
 	}
@@ -169,7 +169,7 @@ if(Functions::auth("admin_rights"))
 						echo '</li>';
 					}
 					echo '</ul>';
-					echo '<span id="msg_no_users"  style="display: hidden;">Er zijn geen gebruikers die aan dit selectiecriterium voldoen</span>';
+					echo '<span id="msg_no_users" style="display: none;">Er zijn geen gebruikers die aan dit selectiecriterium voldoen</span>';
 				}
 			}
 		}
