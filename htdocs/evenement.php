@@ -288,7 +288,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
-			<td class="rechts">'.out($info["description"]).'.</td>
+			<td class="rechts">'.out($info["description"]).'</td>
 		</tr>
 		<tr>
 			<td>Locatie</td>
