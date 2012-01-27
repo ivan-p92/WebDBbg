@@ -51,14 +51,16 @@
 					userBoxes[userBoxIndex].style.visibility = "hidden";
 				}
 			}
-			
-			if(hasClass(userBoxes[userBoxIndex], showClasses))
-			{
-				userBoxes[userBoxIndex].style.visibility = "visible";
-			}
 			else
-			{
-				userBoxes[userBoxIndex].style.visibility = "hidden";
+			{			
+				if(hasClass(userBoxes[userBoxIndex], showClasses))
+				{
+					userBoxes[userBoxIndex].style.visibility = "visible";
+				}
+				else
+				{
+					userBoxes[userBoxIndex].style.visibility = "hidden";
+				}
 			}
 		}
 	}
