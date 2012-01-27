@@ -68,8 +68,11 @@
 		
 		if(numberVis == 0)
 		{
-			console.log('hallo');
 			document.getElementById("msg_no_users").style.display = "block";
+		}
+		else
+		{
+			document.getElementById("msg_no_users").style.display = "none";
 		}
 	}
 	
@@ -123,7 +126,7 @@ if(Functions::auth("admin_rights"))
 			
 		$mysqli = Functions::getDB();
 
-		$sql = "SELECT id, name FROM users;";
+		$sql = "SELECT id, name FROM users ORDER BY name ASC;";
 
 		if($stmt = $mysqli->prepare($sql))
 		{

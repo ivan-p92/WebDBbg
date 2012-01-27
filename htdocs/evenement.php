@@ -141,6 +141,20 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	// hie rzal de tabel getoond worden
 	else
 	{
+		$nu = date("Y-m-d H:i:s", time());
+		// sql wordt gebruikt bij het berekenen van het verschil tussen de twee datums
+		$database = Functions::getDB();
+		$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.',"'.$nu.'") AS diff;';
+		$stmt = $database->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetch();
+		$diff = $result["diff"];
+		
+		
+		if($diff>0)
+		{
+			echo'<script>alert("Uw begindatum ligt in het verleden!")</script>';
+		}
 		// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 		// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
 		// html code zouden kunnen bevatten.
