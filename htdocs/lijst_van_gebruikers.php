@@ -126,7 +126,7 @@ if(Functions::auth("admin_rights"))
 			
 		$mysqli = Functions::getDB();
 
-		$sql = "SELECT id, name FROM users;";
+		$sql = "SELECT id, name FROM users ORDER BY name ASC;";
 
 		if($stmt = $mysqli->prepare($sql))
 		{
