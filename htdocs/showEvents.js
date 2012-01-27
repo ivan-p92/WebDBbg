@@ -19,7 +19,7 @@ function showEvents(infoArray)
 		}
 		else
 		{
-			if(events[i].style.display == 'block') fadeout(events[i], 2000);
+			if(events[i].style.display == 'block') fadeout(events[i], 1000);
 			//events[i].style.display = 'none';
 		}
 	}
@@ -167,13 +167,13 @@ function fadeout(elem, time)
 	elem.style.opacity = 1;//startOpacity;
 
 	(function go() {
-		elem.style.opacity -= 1 / ( time / 100 );
+		elem.style.opacity -= 1 / ( time / 50 );
 
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
 
 		if( elem.style.opacity > 0 )
-			setTimeout( go, 100 );
+			setTimeout( go, 50 );
 		else
 			elem.style.display = 'none';
 	})();
