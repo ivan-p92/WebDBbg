@@ -59,7 +59,7 @@ if(Functions::auth("admin_rights") && $_GET["semipage"]="lijst_van_gebruikers")
 		//Laat de informatie van het evenement zien
 		echo'
 		<h1>'.out($row["subject"]).'</h1>
-		<table id="events">
+		<table id="evenement">
 			<tbody>
 				<tr>
 					<td>
