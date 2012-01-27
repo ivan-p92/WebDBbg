@@ -97,6 +97,7 @@ function browseWeek(forward)
 function initYear(year)
 {
 	YEAR = year;
+	setBox2(year);
 }
 
 function setYear(year)
