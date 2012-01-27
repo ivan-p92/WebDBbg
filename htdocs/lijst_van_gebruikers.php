@@ -68,8 +68,11 @@
 		
 		if(numberVis == 0)
 		{
-			console.log('hallo');
 			document.getElementById("msg_no_users").style.display = "block";
+		}
+		else
+		{
+			document.getElementById("msg_no_users").style.display = "none";
 		}
 	}
 	
