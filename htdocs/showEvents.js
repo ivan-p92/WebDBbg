@@ -83,6 +83,7 @@ function browseWeek(forward)
 		if(WEEK == 0) { WEEK = 54; YEAR -= 1; setBox2(YEAR) }
 		WEEK -= 1;
 		setBox(WEEK);
+		setBox2(YEAR);
 		initEvents();
 	}
 	else if (forward)
@@ -90,6 +91,7 @@ function browseWeek(forward)
 		if(WEEK == 53) { WEEK = -1; YEAR += 1; setBox2(YEAR) }
 		WEEK += 1;
 		setBox(WEEK);
+		setBox2(YEAR);
 		initEvents();
 	}
 }
