@@ -141,6 +141,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	// hie rzal de tabel getoond worden
 	else
 	{
+	
+		if($begindatumtijd < $_SERVER['requst_time'])
+		{
+			echo'<script>alert(Uw begindatum ligt in het verleden!</script>';
+		}
 		// hier wordt de tabel weergave gevormd met als inhoud de gegevens uit $_POST
 		// bij titel, omschrijving en locatie wordt .out() (uit functions.php) gebruikt omdat de gegevens 
 		// html code zouden kunnen bevatten.
