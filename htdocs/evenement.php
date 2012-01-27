@@ -142,7 +142,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 	else
 	{
 	
-		if($begindatumtijd < $_SERVER['requst_time'])
+		if($begindatumtijd < $_SERVER['REQUEST_TIME'])
 		{
 			echo'<script>alert(Uw begindatum ligt in het verleden!</script>';
 		}
