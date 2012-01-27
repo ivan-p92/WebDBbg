@@ -56,7 +56,7 @@
     
 	$row = $database->query("SELECT WEEK(NOW(), 1) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() {setYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
+	document.addEventListener("DOMContentLoaded", function() {initYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
 	
 		echo '<ul class="event_lijst">';
 	
