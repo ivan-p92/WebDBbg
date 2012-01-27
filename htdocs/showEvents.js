@@ -167,7 +167,7 @@ function fadeout(elem, time)
 	elem.style.opacity = 1;//startOpacity;
 
 	(function go() {
-		elem.style.opacity -= startOpacity / ( time / 100 );
+		elem.style.opacity -= 1 / ( time / 100 );
 
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
@@ -186,7 +186,7 @@ function fadein(elem, time)
 	elem.style.display = 'block';
 	
 	(function go() {
-		elem.style.opacity += startOpacity / ( time / 100 );
+		elem.style.opacity += 0 / ( time / 100 );
 
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
