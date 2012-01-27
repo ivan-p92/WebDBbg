@@ -27,13 +27,13 @@
 					Week:
 				</td>
 				<td id="wkbox">
-					<input type="text" id="week_box" name="week" value="" onkeyup="weekSubmitWithKey(event)" />
+					<input type="text" id="week_box" name="week" value="" onkeyup="dateSubmitWithKey(event, true)" />
 				</td>
 				<td id="jaar">
 					Jaar:
 				</td>
 				<td id="jaarbox">
-					<input type="text" id="jaar_box" name="week" value="1992" />
+					<input type="text" id="jaar_box" name="week" value="" onkeyup="dateSubmitWithKey(event, false)" />
 				</td>
 				<td id="browse_week">
 					<span class="submit_button" onclick="browseWeek(false)"><button class="button"><span class="right"><span class="inner">&lt;</span></span></button></span>
