@@ -46,16 +46,24 @@ function hasClassArray(ele, clsArray)
 }
 
 
-function weekSubmitWithKey(keyEvent) 
+function dateSubmitWithKey(keyEvent, wk) // wk true als week, anders wordt jaar ingesteld 
 {
     if (keyEvent.keyCode) var code = keyEvent.keyCode;
 	else if (keyEvent.which) var code = keyEvent.which;
 	
 	if (code == 13)
 	{
-        var input = document.getElementById("week_box");
-        setWeek(input.value);
-    }
+		if(wk)
+		{
+			var input = document.getElementById("week_box");
+			setWeek(input.value);
+		}
+		else
+		{
+			var input = document.getElementById("jaar_box");
+			setYear(input.value);
+		}
+	}
 }
 
 function setBox(val)
@@ -63,18 +71,23 @@ function setBox(val)
 	document.getElementById("week_box").value = val;
 }
 
+function setBox2(val)
+{
+	document.getElementById("jaar_box").value = val;
+}
+
 function browseWeek(forward)
 {
 	if (!forward)
 	{
-		if(WEEK == 0) WEEK = 54;
+		if(WEEK == 0) { WEEK = 54; YEAR -= 1; setBox2(YEAR) }
 		WEEK -= 1;
 		setBox(WEEK);
 		initEvents();
 	}
 	else if (forward)
 	{
-		if(WEEK == 53) WEEK = -1;
+		if(WEEK == 53) { WEEK = -1; YEAR += 1; setBox2(YEAR) }
 		WEEK += 1;
 		setBox(WEEK);
 		initEvents();
@@ -83,7 +96,16 @@ function browseWeek(forward)
 
 function setYear(year)
 {
-	YEAR = year;
+	if(!isNaN(year) && (parseFloat(year) == parseInt(year)) && year >= 2000 && year <= 2100)
+	{
+		YEAR = year;
+		setBox2(year);
+		initEvents();
+	}
+	else
+	{
+		setBox2("Fout!")
+	}
 }
 
 function setWeek(week)
