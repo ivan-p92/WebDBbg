@@ -88,11 +88,11 @@ if(Functions::auth("admin_rights"))
 				</td>
 				<td id="recht_checkbox">
 						<ul>
-							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide()" checked="checked" />Iedereen</label></li>
-							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="none" onclick="showhide()" checked="checked" />Geen rechten</label></li>
-							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide()" />Aanmaken</label></li>
-							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide()" />Keuren</label></li>
-							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide()" />Admin</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="all" onclick="showhide();" checked="checked" />Iedereen</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="none" onclick="showhide();" />Geen rechten</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="aanmaken" onclick="showhide();" />Aanmaken</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="keuren" onclick="showhide();" />Keuren</label></li>
+							<li><label><input type="radio" class="input_radio_search_users_rights" name="rad" value="admin" onclick="showhide();" />Admin</label></li>
 						</ul>
 				</td>
 				<td id="zoek">
@@ -103,7 +103,7 @@ if(Functions::auth("admin_rights"))
 			</tr>
 		</table>
 		
-		<h1>Gebruikers</h1>
+		<h1>Lijst van gebruikers</h1>
 			<p>
 				Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen
 			</p>
