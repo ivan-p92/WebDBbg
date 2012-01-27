@@ -146,9 +146,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 		$database = Functions::getDB();
 		$sql = 'SELECT TIMESTAMPDIFF(MINUTE,'.$begindatumtijd.','.$nu.') AS diff;';
 		$stmt = $database->prepare($sql);
+		echo $sql;
 		$stmt->execute();
 		$result = $stmt->fetch();
 		$diff = $result["diff"];
+		
 		
 		if($diff<0)
 		{
