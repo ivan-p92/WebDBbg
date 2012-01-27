@@ -89,7 +89,7 @@
 							$menuItems['keuren'] = 'Evenementen keuren';
 						break;
 						case "admin_rights":
-							$menuItems['lijst_van_gebruikers'] = 'Gebruikersrechten aanpassen';
+							$menuItems['lijst_van_gebruikers'] = 'Admin';
 						break;
 					}
 				}

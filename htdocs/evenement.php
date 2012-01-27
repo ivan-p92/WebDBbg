@@ -163,11 +163,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 			</tr>
 			<tr>
 				<td>Begintijd</td>
-				<td class="rechts">'.$_POST["datum1"]." ".$_POST["maand1"]." ".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
+				<td class="rechts">'.$_POST["datum1"]."-".$_POST["maand1"]."-".$_POST["jaar1"]." ".$_POST["begintijd"].'</td>
 			</tr>
 			<tr>
 				<td>Eindtijd</td>
-				<td class="rechts">'.$_POST["datum2"]." ".$_POST["maand2"]." ".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
+				<td class="rechts">'.$_POST["datum2"]."-".$_POST["maand2"]."-".$_POST["jaar2"]." ".$_POST["eindtijd"].'</td>
 			</tr>
 			<tr>
 				<td rowspan="4">Categorie</td>
@@ -227,7 +227,10 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 	$database=Functions::getDB();
 
 	// deze query haalt alle info op over het betreffende evenement (incl status) en ook de auteur ervan
-	$sql = 'SELECT events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
+	$sql = "SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%iu') AS start_datum,
+				   DATE_FORMAT(end_date, '%W %e %M %Y, %H:%iu') AS eind_datum,
+				   DATE_FORMAT(create_date, '%W %e %M %Y, %H:%iu') AS aanmaak_datum,
+				   events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id";
 	
 	// deze queries kijken of het evenement tot bepaalde categorieën hoort
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
@@ -281,7 +284,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 		</tr>
 		<tr>
 			<td>Plaatsing</td>
-			<td class="rechts">'."Op ".$info["create_date"]." door ".$info["name"].'</td>
+			<td class="rechts">'."Op ".$info["aanmaak_datum"]." door ".$info["name"].'</td>
 		</tr>
 		<tr>
 			<td>Omschrijving</td>
@@ -293,11 +296,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="keuren" && Functions::aut
 		</tr>
 		<tr>
 			<td>Begintijd</td>
-			<td class="rechts">'.$info["start_date"].'</td>
+			<td class="rechts">'.ucfirst($info["start_datum"]).'</td>
 		</tr>
 		<tr>
 			<td>Eindtijd</td>
-			<td class="rechts">'.$info["end_date"].'</td>
+			<td class="rechts">'.ucfirst($info["eind_datum"]).'</td>
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>
@@ -353,7 +356,9 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_G
 	$database=Functions::getDB();
 
 	// de benodigde queries
-	$sql = 'SELECT events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id';
+	$sql = "SELECT DATE_FORMAT(start_date, '%W %e %M %Y, %H:%iu') AS start_datum,
+				   DATE_FORMAT(end_date, '%W %e %M %Y, %H:%iu') AS eind_datum,
+				   events_status.*, users.name FROM events_status INNER JOIN users ON users.id=events_status.create_id WHERE events_status.id=:id";
 	$sql_klant = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=1';
 	$sql_keuken = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=2';
 	$sql_afwas = 'SELECT * FROM `events_groups` WHERE event_id=:id AND group_id=3';	
@@ -413,11 +418,11 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="agenda_week" && isset($_G
 		</tr>
 		<tr>
 			<td>Begintijd</td>
-			<td class="rechts">'.$info["start_date"].'</td>
+			<td class="rechts">'.ucfirst($info["start_datum"]).'</td>
 		</tr>
 		<tr>
 			<td>Eindtijd</td>
-			<td class="rechts">'.$info["end_date"].'</td>
+			<td class="rechts">'.ucfirst($info["eind_datum"]).'</td>
 		</tr>
 		<tr>
 			<td rowspan="4">Categorie</td>

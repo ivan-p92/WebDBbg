@@ -103,7 +103,7 @@ if(Functions::auth("admin_rights"))
 			</tr>
 		</table>
 		
-		<h1>Lijst van gebruikers</h1>
+		<h1>Gebruikers</h1>
 			<p>
 				Klik op een gebruiker om gegevens van deze gebruiker te bekijken en zijn rechten aan te passen
 			</p>
