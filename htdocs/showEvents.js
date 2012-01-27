@@ -12,9 +12,9 @@ function showEvents(infoArray)
 	{
 		if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
 		{
-			if(events[i].style.display == 'none') fadein(events[i], 2000);
-			//events[i].style.display = 'block';
-			//events[i].style.opacity = 1;
+			//if(events[i].style.display == 'none') fadein(events[i], 2000);
+			events[i].style.display = 'block';
+			events[i].style.opacity = 1;
 			count++;
 		}
 		else
