@@ -235,7 +235,11 @@ function findPos(obj)
 function showPos(obj)
 {
 	var coor = findPos(obj);
-	document.getElementById("event_omschrijving").innerHTML = "left:"+coor[0]+" top:"+coor[1];
+	var div = document.getElementById("event_omschrijving");
+	div.innerHTML = "left:"+coor[0]+" top:"+coor[1];
+	div.offsetLeft = coor[0] + 500;
+	div.offsetTop = coor[1];
+	
 }
 
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
