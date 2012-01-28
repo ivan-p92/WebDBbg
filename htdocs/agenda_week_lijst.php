@@ -129,6 +129,24 @@
 				{
 					echo " y_".$i;
 				}
+				// nieuwe jaar/week lus; jaar aan week geplakt
+				for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
+				{
+					switch($i)
+					{
+					case $row['jaar']:
+						for($j = $row['wkstart']; $j <=53; $j++)
+							echo " ".$i.$j;
+						break;
+					case $row['jaar2']:
+						for($j = 0; $j <= $row['wkend']; $j++)
+							echo " ".$i.$j;
+						break;
+					default:
+						for($j = 0; $j <= 53; $j++)
+							echo " ".$i.$j;
+					}
+				}
 				echo '">';
 				echo '<p class="eendags_event">';
 				echo '<span class="begin_datum">';
