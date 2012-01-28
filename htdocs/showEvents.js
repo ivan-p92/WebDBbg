@@ -236,7 +236,7 @@ function showPos(obj)
 {
 	var coor = findPos(obj);
 	var div = document.getElementById("event_omschrijving");
-	div.style.position = absolute;
+	div.style.position = "absolute";
 	div.innerHTML = "left:"+coor[0]+" top:"+coor[1];
 	div.style.left = coor[0] + 500;
 	div.style.top = coor[1];
