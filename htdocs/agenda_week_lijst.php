@@ -47,6 +47,9 @@
 		
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
+	<p id="event_omschrijving">Test test test test test test test test test test test test test test test test test test test
+	 test test test test test test test test test test test</p>
+	
 	
 <?php
 	
@@ -121,17 +124,7 @@
 							echo " id_".$group;
 						}	
 					}
-				/* oude jaar/week methode
-				for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
-				{
-					echo " w_".$i;
-				}
-				for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
-				{
-					echo " y_".$i;
-				}
-				*/
-				// nieuwe jaar/week lus; jaar aan week geplakt
+				
 				if($row['jaar'] == $row['jaar2'])
 				{
 					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
