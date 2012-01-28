@@ -121,6 +121,7 @@
 							echo " id_".$group;
 						}	
 					}
+				/* oude jaar/week methode
 				for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
 				{
 					echo " w_".$i;
@@ -129,6 +130,7 @@
 				{
 					echo " y_".$i;
 				}
+				*/
 				// nieuwe jaar/week lus; jaar aan week geplakt
 				if($row['jaar'] == $row['jaar2'])
 				{
