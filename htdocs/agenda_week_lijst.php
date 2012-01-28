@@ -116,7 +116,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{	
-				$description = '"'.$row["description"].'"';
+				$description = "'".$row["description"]."'";
 				echo '<li onmouseover="showPos(this,'.$description.')" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
