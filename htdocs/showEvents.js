@@ -28,7 +28,7 @@ function showEvents(infoArray)
 			// er wordt gekeken (met hasClass en hasClassArray) of het evenement
 			// in de huidige week en jaar getoond moet worden
 			// als dat het geval is krijgt het display:block als eigenschap mee
-			if(hasClass(events[i], "w_"+WEEK) && hasClass(events[i], "y_"+YEAR) && hasClassArray(events[i], classesArray))
+			if(hasClass(events[i], ""+YEAR+WEEK) && hasClassArray(events[i], classesArray))
 			{
 				//if(events[i].style.display == 'none') fadein(events[i], 1000); // bij faden
 				events[i].style.display = 'block';
