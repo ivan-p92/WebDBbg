@@ -47,8 +47,8 @@
 		
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
-	<p id="event_omschrijving">Test test test test test test test test test test test test test test test test test test test
-	 test test test test test test test test test test test</p>
+	<div id="event_omschrijving">Test test test test test test test test test test test test test test test test test test test
+	 test test test test test test test test test test test</div>
 	
 	
 <?php
@@ -116,7 +116,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{				
-				echo '<li onclick="goToEventA('.$row["id"].')" class="event';
+				echo '<li onmouseover="showPos(this)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
