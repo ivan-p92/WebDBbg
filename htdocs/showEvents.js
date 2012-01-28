@@ -215,6 +215,29 @@ function goToEventK(id)
 	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=keuren");
 }
 
+// bepaalt de huidige positie van een opgevraagd element
+// Bron: http://www.quirksmode.org/js/findpos.html
+function findPos(obj) 
+{
+	var curleft = curtop = 0;
+	if (obj.offsetParent) 
+	{
+		do 
+		{
+			curleft += obj.offsetLeft;
+			curtop += obj.offsetTop;
+		} while (obj = obj.offsetParent);
+		
+		return [curleft,curtop];
+	}
+}
+
+function showPos(obj)
+{
+	var coor = findPos(obj);
+	document.getElementById("event_omschrijving").innerHTML = "left:"+coor[0]+" top:"+coor[1];
+}
+
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
 // Bron: http://www.lateralcode.com/javascript-fade-effect/
 function fadeout(elem, time)
