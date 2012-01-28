@@ -452,6 +452,16 @@ div#event_lijst_container {
     padding: 0px;
 }
 
+/* opmaak van de evenement omschrijving die verschijnt bij hoveren */
+div#event_omschrijving {
+    width: 450px;
+    word-wrap: break-word;
+    padding: 8px;
+    background: #988989;
+    border-radius: 10px;
+    min-height: 34px;
+}
+
 /* datum en details evenement moeten naast elkaar */
 .eendags_event, .event_details {
     float: left;
