@@ -130,21 +130,29 @@
 					echo " y_".$i;
 				}
 				// nieuwe jaar/week lus; jaar aan week geplakt
-				for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
+				if($row['jaar'] == $row['jaar2'])
 				{
-					switch($i)
+					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
+								echo " ".$row['jaar'].$i;
+				}
+				else
+				{
+					for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
 					{
-					case $row['jaar']:
-						for($j = $row['wkstart']; $j <=53; $j++)
-							echo " ".$i.$j;
-						break;
-					case $row['jaar2']:
-						for($j = 0; $j <= $row['wkend']; $j++)
-							echo " ".$i.$j;
-						break;
-					default:
-						for($j = 0; $j <= 53; $j++)
-							echo " ".$i.$j;
+						switch($i)
+						{
+						case $row['jaar']:
+							for($j = $row['wkstart']; $j <=53; $j++)
+								echo " ".$i.$j;
+							break;
+						case $row['jaar2']:
+							for($j = 0; $j <= $row['wkend']; $j++)
+								echo " ".$i.$j;
+							break;
+						default:
+							for($j = 0; $j <= 53; $j++)
+								echo " ".$i.$j;
+						}
 					}
 				}
 				echo '">';
