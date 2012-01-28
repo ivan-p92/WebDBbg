@@ -63,7 +63,7 @@
 	
 		echo '<ul class="event_lijst">';
 	
-    $sql = "SELECT title, id, location,
+    $sql = "SELECT title, id, location, description,
 			YEAR(start_date) AS jaar,
 			YEAR(end_date) AS jaar2,
 			DAYOFMONTH(start_date) AS begin_dag,
@@ -116,7 +116,7 @@
 			{	
 			while($row = $stmt->fetch())
 			{				
-				echo '<li onmouseover="showPos(this)" onclick="goToEventA('.$row["id"].')" class="event';
+				echo '<li onmouseover="showPos(this,'.$row["description"].')" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
