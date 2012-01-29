@@ -236,6 +236,11 @@ function showDetails(obj, text)
 {
 	var coor = findPos(obj);
 	var div = document.getElementById("event_omschrijving");
+	if(div.style.display == "none" || div.style.opacity < 1)
+	{
+		div.style.opacity = 1;
+		div.style.display = "block";
+	}
 	div.style.position = "absolute";
 	div.innerHTML = text;
 	div.style.left = (coor[0] + 500)+"px";
@@ -254,12 +259,7 @@ function showDetails(obj, text)
 // NB: het is voor eigen doeleinden ietwat aangepast
 function fixOMO(element, event)
 {
-	var div = document.getElementById("event_omschrijving");
-	if(div.style.display == "none" || div.style.opacity < 1)
-	{
-		div.style.opacity = 1;
-		div.style.display = "block";
-	}
+	//var div = document.getElementById("event_omschrijving");
 	var current_mouse_target = null;
 	if( event.relatedTarget ) {				
 		current_mouse_target = event.relatedTarget;
