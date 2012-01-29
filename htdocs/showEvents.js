@@ -254,11 +254,11 @@ function showDetails(obj, text)
 function fadeDetails(e)
 {
 	if (!e) var e = window.event; // get mouse event
-	var tg = e.srcElement; // target element van de muisbeweging
-	if (tg.nodeName != 'UL') return; // als het niet uit het LI is, stop dan
-	var reltg = e.relatedTarget; // geen IE ondersteuning
+	var tg = (window.event) ? e.srcElement : e.target;
+	if (tg.nodeName != 'DIV') return;
+	var reltg = (e.relatedTarget) ? e.relatedTarget : e.toElement;
 	while (reltg != tg && reltg.nodeName != 'BODY')
-		reltg = reltg.parentNode;
+		reltg= reltg.parentNode;
 	if (reltg == tg) return;
 	// Het is nu zeker dat mouseout plaatsvond bij verlaten van het list item
 	// nu wordt fadeout aangeroepen op de details div
