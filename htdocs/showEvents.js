@@ -290,19 +290,19 @@ function is_child_of(parent, child) {
 
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
 // Bron: http://www.lateralcode.com/javascript-fade-effect/
-function fadeout(elem, time)
+function fadeout(elem)
 {
 	//var startOpacity = elem.style.opacity || 1;
 	elem.style.opacity = 1;//startOpacity;
 
 	(function go() {
-		elem.style.opacity -= 1 / ( time / 50 );
+		elem.style.opacity -= 0.4 );
 
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
 
 		if( elem.style.opacity > 0 )
-			TIME = setTimeout( go, 50 );
+			TIME = setTimeout( go, 25 );
 		else
 			elem.style.display = 'none';
 	})();
