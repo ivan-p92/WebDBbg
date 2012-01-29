@@ -251,9 +251,9 @@ function showDetails(obj, text)
 // als de muis daadwerkelijk het list item verlaten heeft. Anders wordt
 // het ook getriggered als het over andere elementen binnen het list item gaat.
 // Bron: http://www.quirksmode.org/js/events_mouse.html
-function fadeDetails()
+function fadeDetails(e)
 {
-	var e = window.event; // get mouse event
+	if (!e) var e = window.event; // get mouse event
 	var tg = e.srcElement; // target element van de muisbeweging
 	if (tg.nodeName != 'UL') return; // als het niet uit het LI is, stop dan
 	var reltg = e.relatedTarget; // geen IE ondersteuning
