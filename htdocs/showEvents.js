@@ -259,7 +259,7 @@ function showDetails(obj, text)
 // NB: het is voor eigen doeleinden ietwat aangepast
 function fixOMO(element, event)
 {
-	//var div = document.getElementById("event_omschrijving");
+	var div = document.getElementById("event_omschrijving");
 	var current_mouse_target = null;
 	if( event.relatedTarget ) {				
 		current_mouse_target = event.relatedTarget;
