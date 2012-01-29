@@ -236,7 +236,7 @@ function showDetails(obj, text)
 {
 	var coor = findPos(obj);
 	var div = document.getElementById("event_omschrijving");
-	if(div.style.display == "none" || div.style.opacity < 1)
+	if(TIME && (div.style.display == "none" || div.style.opacity < 1))
 	{
 		clearTimeout(TIME);
 		//div.style.opacity = 1;
