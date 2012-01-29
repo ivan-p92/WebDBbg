@@ -240,7 +240,13 @@ function showDetails(obj, text)
 	div.innerHTML = text;
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
+	div.style.opacity = 1;
 	
+}
+
+function fadeDetails()
+{
+	fadeout(document.getElementById("event_omschrijving", 500);
 }
 
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
