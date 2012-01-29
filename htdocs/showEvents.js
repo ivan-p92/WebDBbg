@@ -238,8 +238,9 @@ function showDetails(obj, text)
 	var div = document.getElementById("event_omschrijving");
 	if(div.style.display == "none" || div.style.opacity < 1)
 	{
-		div.style.opacity = 1;
-		div.style.display = "block";
+		clearTimeout(TIME);
+		//div.style.opacity = 1;
+		//div.style.display = "block";
 	}
 	div.style.position = "absolute";
 	div.innerHTML = text;
@@ -299,7 +300,7 @@ function fadeout(elem, time)
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
 
 		if( elem.style.opacity > 0 )
-			setTimeout( go, 50 );
+			TIME = setTimeout( go, 50 );
 		else
 			elem.style.display = 'none';
 	})();
