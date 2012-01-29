@@ -245,8 +245,23 @@ function showDetails(obj, text)
 	
 }
 
+// deze functie laat de omschrijving van een evenement 'faden' bij
+// het mouseout event
+// de functie bevat code die ervoor zorgt dat mouseout alleen getriggered wordt
+// als de muis daadwerkelijk het list item verlaten heeft. Anders wordt
+// het ook getriggered als het over andere elementen binnen het list item gaat.
+// Bron: http://www.quirksmode.org/js/events_mouse.html
 function fadeDetails()
 {
+	var e = window.event; // get mouse event
+	var tg = e.srcElement; // target element van de muisbeweging
+	if (tg.nodeName != 'UL') return; // als het niet uit het LI is, stop dan
+	var reltg = e.relatedTarget; // geen IE ondersteuning
+	while (reltg != tg && reltg.nodeName != 'BODY')
+		reltg = reltg.parentNode;
+	if (reltg == tg) return;
+	// Het is nu zeker dat mouseout plaatsvond bij verlaten van het list item
+	// nu wordt fadeout aangeroepen op de details div
 	fadeout(document.getElementById("event_omschrijving"), 500);
 }
 
