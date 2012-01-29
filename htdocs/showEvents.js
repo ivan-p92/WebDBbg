@@ -241,6 +241,7 @@ function showDetails(obj, text)
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
 	div.style.opacity = 1;
+	div.style.display = block;
 	
 }
 
