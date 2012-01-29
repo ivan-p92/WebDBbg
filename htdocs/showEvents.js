@@ -246,7 +246,7 @@ function showDetails(obj, text)
 
 function fadeDetails()
 {
-	fadeout(document.getElementById("event_omschrijving", 500);
+	fadeout(document.getElementById("event_omschrijving", 500));
 }
 
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
