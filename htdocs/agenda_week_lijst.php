@@ -47,8 +47,7 @@
 		
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
-	<div id="event_omschrijving">Test test test test test test test test test test test test test test test test test test test
-	 test test test test test test test test test test test</div>
+	<div id="event_omschrijving" style="display: none;"></div>
 	
 	
 <?php
