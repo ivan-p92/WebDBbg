@@ -150,6 +150,8 @@ function initYear(year)
 {
 	YEAR = year;
 	setBox2(year);
+	// voor het gemak wordt hier ook TIME geinstantieerd
+	TIME = false;
 }
 
 // deze functie wordt bij verdere manipulaties van YEAR gebruikt
