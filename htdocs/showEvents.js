@@ -254,6 +254,12 @@ function showDetails(obj, text)
 // NB: het is voor eigen doeleinden ietwat aangepast
 function fixOMO(element, event)
 {
+	var div = document.getElementById("event_omschrijving");
+	if(div.style.display == "none" || div.style.opacity < 1)
+	{
+		div.style.opacity = 1;
+		div.style.display = "block";
+	}
 	var current_mouse_target = null;
 	if( event.relatedTarget ) {				
 		current_mouse_target = event.relatedTarget;
@@ -261,7 +267,7 @@ function fixOMO(element, event)
 		current_mouse_target = event.toElement;
 	}
 	if( !is_child_of(element, current_mouse_target) && element != current_mouse_target )
-		fadeout(document.getElementById("event_omschrijving"), 500);
+		fadeout(div, 500);
 }
 
 // deze functie wordt door fixOMO (fixOnMouseOut) aangeroepen om te kijken of 
