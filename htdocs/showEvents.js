@@ -245,24 +245,38 @@ function showDetails(obj, text)
 	
 }
 
-// deze functie laat de omschrijving van een evenement 'faden' bij
-// het mouseout event
+// deze functie handelt het mouseout event af en roept fadeout aan voor
+// de div "event_omschrijving"
 // de functie bevat code die ervoor zorgt dat mouseout alleen getriggered wordt
 // als de muis daadwerkelijk het list item verlaten heeft. Anders wordt
 // het ook getriggered als het over andere elementen binnen het list item gaat.
-// Bron: http://www.quirksmode.org/js/events_mouse.html
-function fadeDetails(e)
+// Bron: http://codingrecipes.com/onmouseout-fix-on-nested-elements-javascript
+// NB: het is voor eigen doeleinden ietwat aangepast
+function fixOMO(element, event)
 {
-	if (!e) var e = window.event; // get mouse event
-	var tg = (window.event) ? e.srcElement : e.target;
-	if (tg.nodeName != 'DIV') return;
-	var reltg = (e.relatedTarget) ? e.relatedTarget : e.toElement;
-	while (reltg != tg && reltg.nodeName != 'BODY')
-		reltg= reltg.parentNode;
-	if (reltg == tg) return;
-	// Het is nu zeker dat mouseout plaatsvond bij verlaten van het list item
-	// nu wordt fadeout aangeroepen op de details div
-	fadeout(document.getElementById("event_omschrijving"), 500);
+	var current_mouse_target = null;
+	if( event.relatedTarget ) {				
+		current_mouse_target = event.relatedTarget;
+	} else if( event.toElement ) {				
+		current_mouse_target = event.toElement;
+	}
+	if( !is_child_of(element, current_mouse_target) && element != current_mouse_target )
+		fadeout(document.getElementById("event_omschrijving"), 500);
+}
+
+// deze functie wordt door fixOMO (fixOnMouseOut) aangeroepen om te kijken of 
+// een bepaald element genest is in een ander element
+// Bron: http://codingrecipes.com/onmouseout-fix-on-nested-elements-javascript
+function is_child_of(parent, child) {
+	if( child != null ) 
+	{			
+		while( child.parentNode ) 
+		{
+			if( (child = child.parentNode) == parent )
+				return true;
+		}
+	}
+	return false;
 }
 
 // deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
