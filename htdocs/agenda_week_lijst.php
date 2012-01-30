@@ -125,7 +125,7 @@
 			while($row = $stmt->fetch())
 			{	
 				$description = $row['description'];
-				$desc_id = '"desc_'.$row['id'].'"';
+				$desc_id = "'desc_".$row['id']."'";
 				echo '<div class="event_omschrijving" id="'.$desc_id.'" style="display: none;">'.out($description).'</div>';
 				echo '<li onmouseover="showDetails(this,'.$desc_id.')" onmouseout="fixOMO(this,'.$desc_id.', event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
