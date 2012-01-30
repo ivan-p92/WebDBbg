@@ -10,13 +10,13 @@
 	<!-- sort_table bevat de checkboxes voor de categorieën en ook
 	textboxjes voor de week en jaar. Verder zitten er ook knoppen in
 	om vooruit/achteruit te gaan -->
-	<form action="" method="post">
+	
 	<table id="sort_table" class="sort_table">
 			<tr>
 				<td id="sort_name">
 					Toon evenementen uit de volgende categorieën:
 				</td>
-				
+				<form action="" method="post">
 				<td>
 					<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
 				</td>
@@ -29,7 +29,7 @@
 				<td>
 					<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
 				</td>
-				
+				</form>
 				<td id="week">
 					Week:
 				</td>
@@ -49,7 +49,7 @@
 				
 			</tr>
 		</table>
-	</form>
+
 	
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
 	
