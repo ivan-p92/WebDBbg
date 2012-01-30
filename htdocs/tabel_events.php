@@ -1,3 +1,5 @@
+<!--Niet meer in gebruik!!
+Tabel wordt nu live weergegeven in admin.php-->
 <div class="user_events">
 	<table>
 		<tbody>
