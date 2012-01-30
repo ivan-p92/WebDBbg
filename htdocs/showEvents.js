@@ -288,7 +288,7 @@ function fadeout(elem)
 	elem.style.opacity = 1;//startOpacity;
 
 	(function go() {
-		elem.style.opacity -= 0.04;
+		elem.style.opacity -= 0.08;
 
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
