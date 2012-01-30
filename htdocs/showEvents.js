@@ -234,18 +234,16 @@ function findPos(obj)
 	}
 }
 
-function showDetails(obj, text)
+function showDetails(obj, id)
 {
 	var coor = findPos(obj);
-	var div = document.getElementById("event_omschrijving");
+	var div = document.getElementById(id);
 	if(TIME && (div.style.display == "none" || div.style.opacity < 1))
 	{
 		clearTimeout(TIME);
 		//div.style.opacity = 1;
 		//div.style.display = "block";
 	}
-	div.style.position = "absolute";
-	div.innerHTML = text;
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
 	div.style.opacity = 1;
@@ -260,9 +258,9 @@ function showDetails(obj, text)
 // het ook getriggered als het over andere elementen binnen het list item gaat.
 // Bron: http://codingrecipes.com/onmouseout-fix-on-nested-elements-javascript
 // NB: het is voor eigen doeleinden ietwat aangepast
-function fixOMO(element, event)
+function fixOMO(element, id, event)
 {
-	var div = document.getElementById("event_omschrijving");
+	var div = document.getElementById(id);
 	var current_mouse_target = null;
 	if( event.relatedTarget ) {				
 		current_mouse_target = event.relatedTarget;

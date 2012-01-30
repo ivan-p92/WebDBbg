@@ -57,8 +57,8 @@
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
 	<!-- Deze div wordt zichtbaar (dmv javascript) wanneer de gebruiker over een evenement
-	hovert. Het bevat dan de omschrijving van het evenement -->
-	<div id="event_omschrijving" style="display: none;"></div>
+	hovert. Het bevat dan de omschrijving van het evenement ->
+	<div id="event_omschrijving" style="display: none;"></div> -->
 	
 	
 <?php // in dit stuk php worden alle evenementen uit de database gehaald en geformatteerd
@@ -124,13 +124,9 @@
 			{
 			while($row = $stmt->fetch())
 			{	
-				$quotes = array( "'", "\"");
-				$quotes_replaced = array( "\\&apos;", '\\&quot;');
-				$description = htmlentities($row["description"], ENT_QUOTES, 'UTF-8');
-				//$description = htmlspecialchars($description, ENT_QUOTES);
-				$description = nl2br($description);
-				//$description = str_replace($quotes, $quotes_replaced, $description);
-				echo '<li onmouseover="showDetails(this, \''.$description.'\')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
+				$description = $row['description'];
+				echo '<div class="event_omschrijving" id="'.$row['id'].'" style="display: none;">'.out($description).'</div>';
+				echo '<li onmouseover="showDetails(this, \"'.$row['id'].'\")" onmouseout="fixOMO(this,\"'.$row['id'].'\", event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
