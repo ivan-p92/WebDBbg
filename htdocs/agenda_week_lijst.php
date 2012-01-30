@@ -122,8 +122,8 @@
 			{
 			while($row = $stmt->fetch())
 			{	
-				$description = out("'".$row["description"]."'");
-				echo '<li onmouseover="showDetails(this,'.$description.')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
+				$description = "'".$row["description"]."'";
+				echo '<li onmouseover="showDetails(this,'.out($description).')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
