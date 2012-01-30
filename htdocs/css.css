@@ -453,7 +453,7 @@ div#event_lijst_container {
 }
 
 /* opmaak van de evenement omschrijving die verschijnt bij hoveren */
-div.event_omschrijving {
+span.event_omschrijving {
 	position: absolute;
     width: 450px;
     word-wrap: break-word;
