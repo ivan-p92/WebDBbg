@@ -16,7 +16,7 @@
 				<td id="sort_name">
 					Toon evenementen uit de volgende categorieën:
 				</td>
-				<form action="" method="post">
+				<!-- <form action="" method="post"> -->
 				<td>
 					<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
 				</td>
@@ -29,7 +29,7 @@
 				<td>
 					<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
 				</td>
-				</form>
+				<!-- </form> -->
 				<td id="week">
 					Week:
 				</td>
