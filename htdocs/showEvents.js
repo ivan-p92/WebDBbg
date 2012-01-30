@@ -238,12 +238,6 @@ function showDetails(obj, id)
 {
 	var coor = findPos(obj);
 	var div = document.getElementById(id);
-	if(TIME && (div.style.display == "none" || div.style.opacity < 1))
-	{
-		clearTimeout(TIME);
-		//div.style.opacity = 1;
-		//div.style.display = "block";
-	}
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
 	div.style.opacity = 1;
