@@ -1,15 +1,16 @@
 <!-- Header wordt hiervoor geladen -->
-<!-- Dit zijn de navigatieknoppen voor de vorige/volgende lijst evenementen-->
-<?php
 
+<?php
+// deze pagina heeft nu geen doel meer, eerste diende deze pagina
+// om verschillende weergaven te kunnen gebruiken
 if(!isset($_GET['view']) || empty($_GET['view']))
 {
-	$_GET['view'] = 'lijst';
+	$_GET['view'] = 'lijst'; // standaard weergave indien niets ingevoerd
 }
 
 if($_GET['view'] != 'lijst' && $_GET['view'] != 'blok')
 {
-	$_GET['view'] = 'lijst';
+	$_GET['view'] = 'lijst'; // standaard weergave indien ongeldig ingevoerd
 }
 
 
