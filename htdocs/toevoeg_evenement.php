@@ -58,11 +58,11 @@ if(Functions::auth("submit_event") && isset($_SESSION["tijdelijke_evenementwaard
 					';
 					//for loop voor het dynamisch genereren van een drop down select list voor het jaar, waarin het eerder gekozen jaar als default wordt geselecteerd
 					$jaar = $_SESSION["tijdelijke_evenementwaardes"]["jaar1"];
-						for($k=2012; $k<=2022; $k++)
-						{
-							if($k == $jaar) echo'<option value="'.$k.'" selected="selected">'.$k.'</option>';
-							else echo'<option value="'.$k.'">'.$k.'</option>';
-						}
+					for($k=2012; $k<=2022; $k++)
+					{
+						if($k == $jaar) echo'<option value="'.$k.'" selected="selected">'.$k.'</option>';
+						else echo'<option value="'.$k.'">'.$k.'</option>';
+					}
 					echo'
 					</select>
 				</td>
