@@ -125,9 +125,9 @@
 				$quotes = array( "'", "\"");
 				$quotes_replaced = array( "\\&apos;", '\\&quot;');
 				$description = htmlentities($row["description"], ENT_QUOTES, 'UTF-8');
-				$description = nl2br($description);
 				$description = htmlspecialchars($description, ENT_QUOTES);
-				$description = str_replace($quotes, $quotes_replaced, $description);
+				$description = nl2br($description);
+				//$description = str_replace($quotes, $quotes_replaced, $description);
 				echo '<li onmouseover="showDetails(this, \''.$description.'\')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
