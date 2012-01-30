@@ -126,7 +126,7 @@
 			{	
 				$description = $row['description'];
 				echo '<div class="event_omschrijving" id="'.$row['id'].'" style="display: none;">'.out($description).'</div>';
-				echo '<li onmouseover="showDetails(this, \"'.$row['id'].'\")" onmouseout="fixOMO(this,\"'.$row['id'].'\", event)" onclick="goToEventA('.$row["id"].')" class="event';
+				echo '<li onmouseover="showDetails(this, "'.$row['id'].'")" onmouseout="fixOMO(this,"'.$row['id'].'", event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
