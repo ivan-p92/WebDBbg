@@ -1,9 +1,15 @@
+<!--
+	agenda_week_lijst.php
+	creëert de weeklijst weergave van de openbare agenda
+-->
 
-
-<!-- div#weeklijst container bevat de lijst van de evenementen 
+<!-- div#event_lijst_container bevat de lijst van de evenementen 
      De hoofdstructuur ervan is een unordered list -->
 <div id="event_lijst_container">
 	
+	<!-- sort_table bevat de checkboxes voor de categorieën en ook
+	textboxjes voor de week en jaar. Verder zitten er ook knoppen in
+	om vooruit/achteruit te gaan -->
 	<table id="sort_table" class="sort_table">
 			<tr>
 				<td id="sort_name">
@@ -44,14 +50,19 @@
 		</table>
 	
 	<h1 id="event_lijst_titel">Aankomende evenementen</h1>
-		
+	
+	<!-- Deze tekst wordt getoond (dmv javascript) wanneer er geen evenementen getoond worden -->
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
+	<!-- Deze div wordt zichtbaar (dmv javascript) wanneer de gebruiker over een evenement
+	hovert. Het bevat dan de omschrijving van het evenement -->
 	<div id="event_omschrijving" style="display: none;"></div>
 	
 	
-<?php
+<?php // in dit stuk php worden alle evenementen uit de database gehaald en geformatteerd
+	  // javascript functies bepalen uiteindelijk welke getoond worden en welke niet
 	
+	// dit array bevat de maanden van het jaar zoals ze 
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
     $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
@@ -107,15 +118,11 @@
 		else
 		{
 			
-			if($stmt->rowCount() == 0)
+			if($stmt->rowCount() > 0)
 			{
-				echo '<p>Er zijn geen aankomende evenementen.</p>';
-			}
-			else
-			{	
 			while($row = $stmt->fetch())
 			{	
-				$description = "'".$row["description"]."'";
+				$description = out("'".$row["description"]."'");
 				echo '<li onmouseover="showDetails(this,'.$description.')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
@@ -181,7 +188,7 @@
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 				echo '</div>';
-				echo '</li>';
+				echo '</li>"\n"';
 			}
 		}
 		}
