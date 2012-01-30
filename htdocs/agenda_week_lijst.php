@@ -123,7 +123,7 @@
 			while($row = $stmt->fetch())
 			{	
 				$description = $row["description"];
-				echo '<li onmouseover="showDetails(this, "'.out($description).'")" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
+				echo '<li onmouseover="showDetails(this, \''.out($description).'\')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
@@ -188,7 +188,7 @@
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 				echo '</div>';
-				echo '</li>"\n"';
+				echo "</li>\n";
 			}
 		}
 		}
