@@ -308,13 +308,15 @@ function fadein(elem, time)
 	
 	(function go() {
 		elem.style.opacity += 1 / ( time / 50 );
-
+	
+		var time;
 		// for IE
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
 
 		if( elem.style.opacity < 1 )
-			setTimeout( go, 50 );
+			time = setTimeout( go, 50 );
 		else
 			elem.style.display = 'block';
+			clearTimeout(time);
 	})();
 }
