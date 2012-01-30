@@ -150,8 +150,6 @@ function initYear(year)
 {
 	YEAR = year;
 	setBox2(year);
-	// voor het gemak wordt hier ook TIME geinstantieerd
-	TIME = false;
 }
 
 // deze functie wordt bij verdere manipulaties van YEAR gebruikt
@@ -294,7 +292,7 @@ function fadeout(elem)
 		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
 
 		if( elem.style.opacity > 0 )
-			TIME = setTimeout( go, 25 );
+			setTimeout( go, 25 );
 		else
 			elem.style.display = 'none';
 	})();
