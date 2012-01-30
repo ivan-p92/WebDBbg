@@ -605,7 +605,7 @@ table#user_events td {
     border: 1px solid black;
 }
 td#sort_name {
-    width: 265px;
+    width: 150px;
 }
 table#sort_table {
     width: 100%;
