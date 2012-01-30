@@ -71,7 +71,7 @@
 	echo '<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function() {initYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
 	
-		echo '<ul class="event_lijst">'."\n";
+		echo '<ul class="event_lijst">'."\n\n";
 	
     $sql = "SELECT title, id, location, description,
 			YEAR(start_date) AS jaar,
@@ -123,7 +123,7 @@
 			while($row = $stmt->fetch())
 			{	
 				$quotes = array( "'", "\"");
-				$quotes_replaced = array( "\\'", '\\"');
+				$quotes_replaced = array( "\\&apos;", '\\&quot;');
 				$description = htmlentities($row["description"], ENT_NOQUOTES, 'UTF-8');
 				$description = nl2br($description);
 				$description = str_replace($quotes, $quotes_replaced, $description);
@@ -192,7 +192,7 @@
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 				echo '</div>';
-				echo "</li>\n";
+				echo "</li>\n\n";
 			}
 		}
 		}
