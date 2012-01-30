@@ -33,7 +33,7 @@
 				
 				if($stmt->rowCount() == 0)
 				{
-					echo '<p>Er zijn geen aankomende evenementen.</p>';
+					echo '<p>Er zijn geen te keuren evenementen.</p>';
 				}
 				else
 				{	
