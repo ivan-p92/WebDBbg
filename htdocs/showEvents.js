@@ -238,8 +238,8 @@ function showDetails(obj, id)
 	var div = document.getElementById(id);
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
+	div.style.display = 'block';
 	div.style.opacity = 1;
-	div.style.display = "block";
 	
 }
 
