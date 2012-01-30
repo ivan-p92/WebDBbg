@@ -71,7 +71,7 @@
 	echo '<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function() {initYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
 	
-		echo '<ul class="event_lijst">';
+		echo '<ul class="event_lijst">'."\n";
 	
     $sql = "SELECT title, id, location, description,
 			YEAR(start_date) AS jaar,
@@ -122,8 +122,11 @@
 			{
 			while($row = $stmt->fetch())
 			{	
-				$description = $row["description"];
-				echo '<li onmouseover="showDetails(this, \''.out($description).'\')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
+				$quotes = array( "&quot;", "&apos;");
+				$quotes_replaced = array( "\&quot;", "\&apos;");
+				$description = htmlentities($row["description"], EMT_NOQUOTES, 'UTF-8');
+				$description = str_replace($quotes, $quotes_replaced, $description);
+				echo '<li onmouseover="showDetails(this, \''.$description.'\')" onmouseout="fixOMO(this, event)" onclick="goToEventA('.$row["id"].')" class="event';
 					foreach($koppel_array as $group => $array)
 					{
 						if(in_array($row['id'], $array))
