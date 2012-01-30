@@ -30,14 +30,11 @@ function showEvents(infoArray)
 			// als dat het geval is krijgt het display:block als eigenschap mee
 			if(hasClass(events[i], ""+YEAR+WEEK) && hasClassArray(events[i], classesArray))
 			{
-				//if(events[i].style.display == 'none') fadein(events[i], 1000); // bij faden
 				events[i].style.display = 'block';
-				//events[i].style.opacity = 1; // bij faden
 				count++;
 			}
 			else // als een element niet getoond moet worden, krijgt het display:none als eigenschap
 			{
-				//if(events[i].style.display == 'block') fadeout(events[i], 1000); // bij faden
 				events[i].style.display = 'none';
 			}
 		}
@@ -239,8 +236,6 @@ function showDetails(obj, id)
 	div.style.left = (coor[0] + 500)+"px";
 	div.style.top = coor[1]+"px";
 	div.style.display = 'block';
-	div.style.opacity = 1;
-	
 }
 
 // deze functie handelt het mouseout event af en roept fadeout aan voor
@@ -260,7 +255,7 @@ function fixOMO(element, id, event)
 		current_mouse_target = event.toElement;
 	}
 	if( !is_child_of(element, current_mouse_target) && element != current_mouse_target )
-		fadeout(div);
+		div.style.display = 'none';
 }
 
 // deze functie wordt door fixOMO (fixOnMouseOut) aangeroepen om te kijken of 
@@ -276,47 +271,4 @@ function is_child_of(parent, child) {
 		}
 	}
 	return false;
-}
-
-// deze functie zorgt voor een geleidelijke overgang dmv een 'fade' effect
-// Bron: http://www.lateralcode.com/javascript-fade-effect/
-function fadeout(elem)
-{
-	//var startOpacity = elem.style.opacity || 1;
-	elem.style.opacity = 1;//startOpacity;
-
-	(function go() {
-		elem.style.opacity -= 0.2;
-
-		// for IE
-		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
-
-		if( elem.style.opacity > 0 )
-			setTimeout( go, 25 );
-		else
-			return true;
-	})();
-	elem.style.display = 'none';
-}
-
-// dezelfde functie als hierboven, maar zo gewijzigd dat het de andere kant op gaat
-function fadein(elem, time)
-{
-	//var startOpacity = elem.style.opacity || 0;
-	elem.style.opacity = 0.5;//startOpacity;
-	elem.style.display = 'block';
-	
-	(function go() {
-		elem.style.opacity += 1 / ( time / 50 );
-	
-		var time;
-		// for IE
-		//elem.style.filter = 'alpha(opacity=' + elem.style.opacity * 100 + ')';
-
-		if( elem.style.opacity < 1 )
-			time = setTimeout( go, 50 );
-		else
-			elem.style.display = 'block';
-			clearTimeout(time);
-	})();
 }
