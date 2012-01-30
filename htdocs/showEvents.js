@@ -259,8 +259,8 @@ function fixOMO(element, id, event)
 	} else if( event.toElement ) {				
 		current_mouse_target = event.toElement;
 	}
-	if( !is_child_of(element, current_mouse_target) && element != current_mouse_target )
-		fadeout(div);
+	//if( !is_child_of(element, current_mouse_target) && element != current_mouse_target )
+	//	fadeout(div);
 }
 
 // deze functie wordt door fixOMO (fixOnMouseOut) aangeroepen om te kijken of 
