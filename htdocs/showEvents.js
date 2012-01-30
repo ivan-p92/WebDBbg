@@ -294,8 +294,9 @@ function fadeout(elem)
 		if( elem.style.opacity > 0 )
 			setTimeout( go, 25 );
 		else
-			elem.style.display = 'none';
+			return true;
 	})();
+	elem.style.display = 'none';
 }
 
 // dezelfde functie als hierboven, maar zo gewijzigd dat het de andere kant op gaat
