@@ -311,6 +311,7 @@ function setFromCookie()
 	//console.log("setfromcookie aangeroepen");
 	cookie = getCookie("sorteerWaardes");
 	var valArray = cookie.split(':');
+	if(valArray[2]) console.log("het resulteert in boolean true");
 	document.getElementById("klantbox").checked = Boolean(valArray[2]);
 	document.getElementById("keukenbox").checked = Boolean(valArray[3]);
 	document.getElementById("afwasbox").checked = Boolean(valArray[4]);
