@@ -97,6 +97,11 @@ else // gebruiker mag  hier komen
 							throw new Exception("Minimaal 4 tekens");
 						}
 						
+						if($_POST['pswd'] == $_POST['pswdo'])
+						{
+							throw new Exception ("Nieuwe wachtwoord is gelijk aan het oude wachtwoord");
+						}
+						
 						try // genestelde try
 						{
 							// Data is correct, nu de db in
