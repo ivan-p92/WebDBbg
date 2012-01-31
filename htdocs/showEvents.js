@@ -329,7 +329,7 @@ function checkCookie(year, week)
 	{
 		document.getElementById("klantbox").checked = true;
 		document.getElementById("keukenbox").checked = true;
-		document.getElementById("afwasbox").checked = true;
+		document.getElementById("afwasbox").checked = false;
 		document.getElementById("barbox").checked = true;
 		initYear(year);
 		setWeek(week);
