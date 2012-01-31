@@ -325,6 +325,7 @@ function checkCookie()
 
 function in_array(array, value) 
 {
+	console.log("inarray");
 	for(var i = 0, l = array.length; i < l; i++) 
 	{
 		if(array[i] == value) 
