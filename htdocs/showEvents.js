@@ -315,10 +315,10 @@ function checkCookie()
 		var keuken = false;
 		var afwas = false;
 		var bar = false;
-		if(in_array(INFOARRAY, klant)) klant = true;
-		if(in_array(INFOARRAY, keuken)) keuken = true;
-		if(in_array(INFOARRAY, afwas)) afwas = true;
-		if(in_array(INFOARRAY, bar)) bar = true
+		if(in_array(INFOARRAY, "klant")) klant = true;
+		if(in_array(INFOARRAY, "keuken")) keuken = true;
+		if(in_array(INFOARRAY, "afwas")) afwas = true;
+		if(in_array(INFOARRAY, "bar")) bar = true
 		setCookie(name, WEEK, YEAR, klant, keuken, afwas, bar, 1)
 	}
 }
