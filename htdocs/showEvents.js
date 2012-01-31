@@ -197,7 +197,6 @@ function initEvents()
 	{
 		if(checkboxes[i].checked) // als de box aangevinkt is, wordt de categorie in checked gestopt
 		{
-			//console.log(checkboxes[i].value);
 			checked.push(checkboxes[i].value);
 		}
 	}
@@ -282,16 +281,12 @@ function is_child_of(parent, child) {
 // categorieën en week/jaar opslaat
 function setCookie()
 {
-var exdate=new Date();
-exdate.setDate(exdate.getDate() + 1);
-var name = 'sorteerWaardes';
-var klant = in_array(INFOARRAY, "klant");
-var keuken = in_array(INFOARRAY, "keuken");
-var afwas = in_array(INFOARRAY, "afwas");
-var bar = in_array(INFOARRAY, "bar");
+	var exdate=new Date();
+	exdate.setDate(exdate.getDate() + 1);
+	var name = 'sorteerWaardes';
 
-var c_value = ""+WEEK+":"+YEAR+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
-document.cookie = name + "=" + c_value;
+	var c_value = ""+WEEK+":"+YEAR+"; expires="+exdate.toUTCString();
+	document.cookie = name + "=" + c_value;
 }
 
 function getCookie(name)
@@ -308,14 +303,8 @@ function getCookie(name)
 
 function setFromCookie()
 {	
-	//console.log("setfromcookie aangeroepen");
 	cookie = getCookie("sorteerWaardes");
 	var valArray = cookie.split(':');
-	if(valArray[2]) console.log("het resulteert in boolean true");
-	document.getElementById("klantbox").checked = Boolean(valArray[2]);
-	document.getElementById("keukenbox").checked = Boolean(valArray[3]);
-	document.getElementById("afwasbox").checked = Boolean(valArray[4]);
-	document.getElementById("barbox").checked = Boolean(valArray[5]);
 	initYear(valArray[1]);
 	setWeek(valArray[0]);
 }
@@ -325,15 +314,14 @@ function checkCookie(year, week)
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
-		//alert("Cookie values: " + sorteerWaardes);
 		setFromCookie();
 	}
 	else
 	{
-		document.getElementById("klantbox").checked = true;
-		document.getElementById("keukenbox").checked = true;
-		document.getElementById("afwasbox").checked = false;
-		document.getElementById("barbox").checked = true;
+		//document.getElementById("klantbox").checked = true;
+		//document.getElementById("keukenbox").checked = true;
+		//document.getElementById("afwasbox").checked = true;
+		//document.getElementById("barbox").checked = true;
 		initYear(year);
 		setWeek(week);
 	}
