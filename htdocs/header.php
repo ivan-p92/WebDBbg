@@ -36,7 +36,7 @@
 		if(!Functions::ingelogd())
 		{			
 			echo '<div id="inlogbox">
-					<form action="index.php?page=login" method="post">
+					<form action="https://websec.science.uva.nl/webdb1235/index.php?page=login" method="post">
 						<input id="naam" type="text" placeholder="Email adres" name="naam" />
 						<input id="pwd" type="password" placeholder="Wachtwoord" name="pwd" />
 						<input id="inlogbutton" type="submit" value="" title="inloggen" />				
