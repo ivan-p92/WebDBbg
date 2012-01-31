@@ -301,7 +301,7 @@ function checkCookie()
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
-		alert("Cookie value: " + sorteerWaardes);
+		alert("Cookie values: " + sorteerWaardes);
 	}
 	else
 	{
@@ -319,7 +319,7 @@ function checkCookie()
 		if(in_array(INFOARRAY, keuken)) keuken = true;
 		if(in_array(INFOARRAY, afwas)) afwas = true;
 		if(in_array(INFOARRAY, bar)) bar = true
-		setCookie(name, WEAK, YEAR, klant, keuken, afwas, bar, 1)
+		setCookie(name, WEEK, YEAR, klant, keuken, afwas, bar, 1)
 	}
 }
 
