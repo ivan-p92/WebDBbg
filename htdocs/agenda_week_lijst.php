@@ -18,16 +18,16 @@
 				</td>
 				<!-- <form action="" method="post"> -->
 				<td>
-					<label><input type="checkbox" id="klantbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
+					<label><input type="checkbox" id="klantbox" class="catbox" value="klant" name="categorie[]" onclick="initEvents();" />Klant</label>
 				</td>
 				<td>
-					<label><input type="checkbox" id="keukenbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label>
+					<label><input type="checkbox" id="keukenbox" class="catbox" value="keuken" name="categorie[]" onclick="initEvents();" />Keuken</label>
 				</td>
 				<td>
-					<label><input type="checkbox" id="afwasbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label>
+					<label><input type="checkbox" id="afwasbox" class="catbox" value="afwas" name="categorie[]" onclick="initEvents();" />Afwassers</label>
 				</td>
 				<td>
-					<label><input type="checkbox" id="barbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
+					<label><input type="checkbox" id="barbox" class="catbox" value="bar" name="categorie[]" onclick="initEvents();" />Barpersoneel</label>
 				</td>
 				<!-- </form> -->
 				<td id="week">
