@@ -314,7 +314,7 @@ function setFromCookie()
 	document.getElementById("klantbox").checked = Boolean(valArray[2]);
 	document.getElementById("keukenbox").checked = Boolean(valArray[3]);
 	document.getElementById("afwasbox").checked = Boolean(valArray[4]);
-	document.getElementById("barbox").checked = Boolean(alArray[5]);
+	document.getElementById("barbox").checked = Boolean(valArray[5]);
 	initYear(valArray[1]);
 	setWeek(valArray[0]);
 }
