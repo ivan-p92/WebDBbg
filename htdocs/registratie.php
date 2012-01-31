@@ -56,8 +56,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 			//log nieuwe gebruiker gelijk in
 			$_SESSION['userid'] = $db->lastInsertId();
 		}
-		catch(Exception $e)
+		catch(Exception $e)	// we vangen een database fout op en rethrowen dit met een nette foutmelding
 		{
+			if($stmt->errorCode() == '23000')		// SQLSTATE 23000 = unique key violation (dus, emailadres bestaat al daar dat de enige unique key is)
+			{
+				throw new Exception("Dit emailadres is al in gebruik", 0 , $e);
+			}
 			throw new Exception("Technisch probleem, excuses", 0, $e);
 		}			
 		
