@@ -197,6 +197,7 @@ function initEvents()
 	{
 		if(checkboxes[i].checked) // als de box aangevinkt is, wordt de categorie in checked gestopt
 		{
+			console.log(checkboxes[i].value);
 			checked.push(checkboxes[i].value);
 		}
 	}
@@ -334,7 +335,6 @@ function checkCookie(year, week)
 		document.getElementById("barbox").checked = true;
 		initYear(year);
 		setWeek(week);
-		setCookie();
 	}
 }
 
