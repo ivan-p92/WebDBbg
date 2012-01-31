@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Pagina kan niet via de URL worden geladen
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
@@ -35,7 +36,7 @@ if($stmt->rowCount() == 1)
 	$_SESSION['userid'] = $row['id'];
 	
 	
-	header("Location: index.php?p=agenda_week");
+	header("Location: index.php?page=agenda_week");
 	
 }
 //Als username en password niet samengaan, krijg je een foutmelding
