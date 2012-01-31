@@ -217,7 +217,7 @@ elseif(isset($_GET["semipage"]) && $_GET["semipage"]=="toevoeg_evenement" && Fun
 		// de variabelen uit POST worden aan het SESSION array toegevoegd, zodat bij het aanpassen
 		// van het evenement (door op 'aanpassen' te klikken) de waardes al in het formulier gestopt worden
 		$_SESSION["tijdelijke_evenementwaardes"]=$_POST;
-
+		var_dump($_SESSION);
 		// dit zijn de twee knoppen: Aanpassen en Aanmaken
 		echo'
 
