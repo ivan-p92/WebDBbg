@@ -175,7 +175,7 @@ function setWeek(week)
 	{
 		WEEK = parseInt(week);
 		setBox(week);
-		getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - Week "+week;
+		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - Week "+week;
 		initEvents();
 	}
 	else
