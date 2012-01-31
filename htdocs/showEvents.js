@@ -197,7 +197,7 @@ function initEvents()
 	{
 		if(checkboxes[i].checked) // als de box aangevinkt is, wordt de categorie in checked gestopt
 		{
-			console.log(checkboxes[i].value);
+			//console.log(checkboxes[i].value);
 			checked.push(checkboxes[i].value);
 		}
 	}
@@ -307,13 +307,14 @@ function getCookie(name)
 }
 
 function setFromCookie()
-{
+{	
+	console.log("setfromcookie aangeroepen");
 	cookie = getCookie("sorteerWaardes");
 	var valArray = cookie.split(':');
 	document.getElementById("klantbox").checked = valArray[2];
 	document.getElementById("keukenbox").checked = valArray[3];
 	document.getElementById("afwasbox").checked = valArray[4];
-	console.log(valArray[4]);
+	
 	document.getElementById("barbox").checked = valArray[5];
 	initYear(valArray[1]);
 	setWeek(valArray[0]);
