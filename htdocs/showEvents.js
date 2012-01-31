@@ -311,6 +311,10 @@ function setFromCookie()
 
 function checkCookie(year, week)
 {
+	document.getElementById("klantbox").checked = true;
+	document.getElementById("keukenbox").checked = true;
+	document.getElementById("afwasbox").checked = true;
+	document.getElementById("barbox").checked = true;
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
@@ -318,10 +322,6 @@ function checkCookie(year, week)
 	}
 	else
 	{
-		document.getElementById("klantbox").checked = true;
-		document.getElementById("keukenbox").checked = true;
-		document.getElementById("afwasbox").checked = true;
-		document.getElementById("barbox").checked = true;
 		initYear(year);
 		setWeek(week);
 	}
