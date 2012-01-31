@@ -10,7 +10,7 @@
 function showEvents(infoArray)
 {	
 	INFOARRAY = infoArray;
-	setCookie();
+	//setCookie();
 	var events = document.getElementsByClassName("event"); // alle list items (evenementen)
 	var classesArray = new Array(); // nieuw array
 	
