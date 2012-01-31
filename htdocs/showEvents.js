@@ -311,14 +311,10 @@ function checkCookie()
 			setCookie("sorteerWaardes", sorteerWaardes, 1);
 		}*/
 		var name = 'sorteerWaardes';
-		var klant = false;
-		var keuken = false;
-		var afwas = false;
-		var bar = false;
-		if(in_array(INFOARRAY, "klant")) klant = true;
-		if(in_array(INFOARRAY, "keuken")) keuken = true;
-		if(in_array(INFOARRAY, "afwas")) afwas = true;
-		if(in_array(INFOARRAY, "bar")) bar = true
+		var klant = in_array(INFOARRAY, "klant");
+		var keuken = in_array(INFOARRAY, "keuken");
+		var afwas = in_array(INFOARRAY, "afwas");
+		var bar = in_array(INFOARRAY, "bar");
 		setCookie(name, WEEK, YEAR, klant, keuken, afwas, bar, 1)
 	}
 }
