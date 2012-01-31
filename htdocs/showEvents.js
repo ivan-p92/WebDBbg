@@ -313,8 +313,8 @@ function setFromCookie()
 	document.getElementById("keukenbox").checked = valArray[3];
 	document.getElementById("afwasbox").checked = valArray[4];
 	document.getElementById("barbox").checked = valArray[5];
-	initYear(valArray[0]);
-	setWeek(valArray[1]);
+	initYear(valArray[1]);
+	setWeek(valArray[0]);
 }
 
 function checkCookie(year, week)
