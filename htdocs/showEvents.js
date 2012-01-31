@@ -288,7 +288,7 @@ var keuken = in_array(INFOARRAY, "keuken");
 var afwas = in_array(INFOARRAY, "afwas");
 var bar = in_array(INFOARRAY, "bar");
 
-var c_value = ""+WEAK+":"+YEAR+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
+var c_value = ""+WEEK+":"+YEAR+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
 document.cookie = name + "=" + c_value;
 }
 
