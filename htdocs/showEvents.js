@@ -278,11 +278,17 @@ function is_child_of(parent, child) {
 
 // hier volgen de cookie functies die de door de gebruiker gekozen
 // categorieën en week/jaar opslaat
-function setCookie(name,week,year,klant,keuken,afwas,bar,exdays)
+function setCookie()
 {
 var exdate=new Date();
-exdate.setDate(exdate.getDate() + exdays);
-var c_value = ""+week+":"+year+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
+exdate.setDate(exdate.getDate() + 1);
+var name = 'sorteerWaardes';
+var klant = in_array(INFOARRAY, "klant");
+var keuken = in_array(INFOARRAY, "keuken");
+var afwas = in_array(INFOARRAY, "afwas");
+var bar = in_array(INFOARRAY, "bar");
+
+var c_value = ""+WEAK+":"+YEAR+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
 document.cookie = name + "=" + c_value;
 }
 
@@ -307,17 +313,7 @@ function checkCookie()
 	}
 	else
 	{
-		/*sorteerWaardes = prompt("Please enter your name:","");
-		if (sorteerWaardes != null && sorteerWaardes != "")
-		{
-			setCookie("sorteerWaardes", sorteerWaardes, 1);
-		}*/
-		var name = 'sorteerWaardes';
-		var klant = in_array(INFOARRAY, "klant");
-		var keuken = in_array(INFOARRAY, "keuken");
-		var afwas = in_array(INFOARRAY, "afwas");
-		var bar = in_array(INFOARRAY, "bar");
-		setCookie(name, WEEK, YEAR, klant, keuken, afwas, bar, 1)
+		setCookie();
 	}
 }
 
