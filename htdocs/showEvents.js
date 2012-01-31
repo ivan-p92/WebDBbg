@@ -322,7 +322,7 @@ function checkCookie(year, week)
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
-		alert("Cookie values: " + sorteerWaardes);
+		//alert("Cookie values: " + sorteerWaardes);
 		setFromCookie();
 	}
 	else
