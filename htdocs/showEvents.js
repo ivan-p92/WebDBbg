@@ -275,42 +275,39 @@ function is_child_of(parent, child) {
 
 // hier volgen de cookie functies die de door de gebruiker gekozen
 // categorieën en week/jaar opslaat
-function setCookie(c_name,value,exdays)
+function setCookie(name,value,exdays)
 {
 var exdate=new Date();
 exdate.setDate(exdate.getDate() + exdays);
 var c_value = escape(value) + "; expires="+exdate.toUTCString();
-document.cookie = c_name + "=" + c_value;
+document.cookie = name + "=" + c_value;
 }
 
-function getCookie(c_name)
+function getCookie(name)
 {
-var i,x,y,ARRcookies = document.cookie.split(";");
-for (i = 0; i < ARRcookies.length; i++)
-{
-  x = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-  y = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-  x = x.replace(/^\s+|\s+$/g,"");
-  if (x == c_name)
-    {
-    return unescape(y);
-    }
-  }
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
 }
 
 function checkCookie()
 {
-var username = getCookie("username");
-  if (username != null && username != "")
-  {
-  alert("Welcome again " + username);
-  }
-else
-  {
-  username = prompt("Please enter your name:","");
-  if (username != null && username != "")
-    {
-    setCookie("username", username, 1);
-    }
-  }
+	var sorteerWaardes = getCookie("sorteerWaardes");
+	if (sorteerWaardes != null && sorteerWaardes != "")
+	{
+		alert("Welcome again " + sorteerWaardes);
+	}
+	else
+	{
+		sorteerWaardes = prompt("Please enter your name:","");
+		if (sorteerWaardes != null && sorteerWaardes != "")
+		{
+			setCookie("sorteerWaardes", sorteerWaardes, 1);
+		}
+	}
 }
