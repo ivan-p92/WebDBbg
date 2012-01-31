@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <!--
 Het daadwerkelijke form, stuurt de informatie naar deze pagina dus action is leeg, verstuurt informatie via de post methode
 -->
-<form id="register" action="" method="post">
+<form id="register" action="https://websec.science.uva.nl/webdb1235/index.php?page=registratie" method="post">
 	<table>
 		<tbody>
 			<tr>
