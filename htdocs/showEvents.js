@@ -310,6 +310,7 @@ function setFromCookie()
 	cookie = getCookie("sorteerWaardes");
 	var valArray = cookie.split(':');
 	document.getElementById("klantbox").checked = valArray[2];
+	console.log(valArray[2]);
 	document.getElementById("keukenbox").checked = valArray[3];
 	document.getElementById("afwasbox").checked = valArray[4];
 	document.getElementById("barbox").checked = valArray[5];
