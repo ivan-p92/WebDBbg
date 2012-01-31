@@ -63,7 +63,7 @@
 	
 <?php // in dit stuk php worden alle evenementen uit de database gehaald en geformatteerd
 	  // javascript functies bepalen uiteindelijk welke getoond worden en welke niet
-	
+	var_dump($_SESSION);
 	// dit array bevat de maanden van het jaar zoals ze 
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
