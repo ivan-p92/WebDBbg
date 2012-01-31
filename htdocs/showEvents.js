@@ -8,7 +8,8 @@
 // elk list item wordt geanaliseerd en ofwel getoond of verborgen (met display
 // block/none)
 function showEvents(infoArray)
-{
+{	
+	INFOARRAY = infoArray;
 	var events = document.getElementsByClassName("event"); // alle list items (evenementen)
 	var classesArray = new Array(); // nieuw array
 	
@@ -275,11 +276,11 @@ function is_child_of(parent, child) {
 
 // hier volgen de cookie functies die de door de gebruiker gekozen
 // categorieën en week/jaar opslaat
-function setCookie(name,value,exdays)
+function setCookie(name,week,year,klant,keuken,afwas,bar,exdays)
 {
 var exdate=new Date();
 exdate.setDate(exdate.getDate() + exdays);
-var c_value = escape(value) + "; expires="+exdate.toUTCString();
+var c_value = ""+week+":"+year+":"+klant+":"+keuken+":"+afwas+":"+bar +"; expires="+exdate.toUTCString();
 document.cookie = name + "=" + c_value;
 }
 
@@ -300,14 +301,36 @@ function checkCookie()
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
-		alert("Welcome again " + sorteerWaardes);
+		alert("Cookie value: " + sorteerWaardes);
 	}
 	else
 	{
-		sorteerWaardes = prompt("Please enter your name:","");
+		/*sorteerWaardes = prompt("Please enter your name:","");
 		if (sorteerWaardes != null && sorteerWaardes != "")
 		{
 			setCookie("sorteerWaardes", sorteerWaardes, 1);
+		}*/
+		var name = 'sorteerWaardes';
+		var klant = false;
+		var keuken = false;
+		var afwas = false;
+		var bar = false;
+		if(in_array(INFOARRAY, klant)) klant = true;
+		if(in_array(INFOARRAY, keuken)) keuken = true;
+		if(in_array(INFOARRAY, afwas)) afwas = true;
+		if(in_array(INFOARRAY, bar)) bar = true
+		setCookie(name, WEAK, YEAR, klant, keuken, afwas, bar, 1)
+	}
+}
+
+function in_array(array, value) 
+{
+	for(var i = 0, l = array.length; i < l; i++) 
+	{
+		if(array[i] == value) 
+		{
+			return true;
 		}
 	}
+	return false;
 }
