@@ -125,7 +125,7 @@ function browseWeek(forward)
 		if(WEEK == 0) { WEEK = 54; YEAR -= 1; setBox2(YEAR) } // jaarwisseling
 		WEEK -= 1; // één week terug
 		setBox(WEEK); // week weergeven
-		
+		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - week "+WEEK;
 		// jaar weergeven, omdat je zeker wilt zijn dat het er altijd staat,
 		// zou ook op 'fout!' kunnen staan
 		setBox2(YEAR);
@@ -137,6 +137,7 @@ function browseWeek(forward)
 		if(WEEK == 53) { WEEK = -1; YEAR += 1; setBox2(YEAR) }
 		WEEK += 1;
 		setBox(WEEK);
+		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - week "+WEEK;
 		setBox2(YEAR);
 		initEvents();
 	}
@@ -175,7 +176,7 @@ function setWeek(week)
 	{
 		WEEK = parseInt(week);
 		setBox(week);
-		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - Week "+week;
+		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - week "+week;
 		initEvents();
 	}
 	else
