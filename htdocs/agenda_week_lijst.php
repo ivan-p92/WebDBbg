@@ -18,16 +18,16 @@
 				</td>
 				<!-- <form action="" method="post"> -->
 				<td>
-					<label><input type="checkbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
+					<label><input type="checkbox" id="klantbox" class="catbox" value="klant" name="categorie[]" checked="checked" onclick="initEvents();" />Klant</label>
 				</td>
 				<td>
-					<label><input type="checkbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label>
+					<label><input type="checkbox" id="keukenbox" class="catbox" value="keuken" name="categorie[]" checked="checked" onclick="initEvents();" />Keuken</label>
 				</td>
 				<td>
-					<label><input type="checkbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label>
+					<label><input type="checkbox" id="afwasbox" class="catbox" value="afwas" name="categorie[]" checked="checked" onclick="initEvents();" />Afwassers</label>
 				</td>
 				<td>
-					<label><input type="checkbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
+					<label><input type="checkbox" id="barbox" class="catbox" value="bar" name="categorie[]" checked="checked" onclick="initEvents();" />Barpersoneel</label>
 				</td>
 				<!-- </form> -->
 				<td id="week">
@@ -71,7 +71,7 @@
     
 	$row = $database->query("SELECT WEEK(NOW(), 1) AS week, YEAR(NOW()) AS jr;")->fetch();
 	echo '<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() {checkCookie(); initYear('.$row["jr"].'); setWeek('.$row["week"].');}, false);</script>';
+	document.addEventListener("DOMContentLoaded", function() {checkCookie(',$row["jr"].','.$row["week"].');}, false);</script>';
 	
 		echo '<ul class="event_lijst">'."\n\n";
 	

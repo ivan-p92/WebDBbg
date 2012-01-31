@@ -305,15 +305,30 @@ function getCookie(name)
 	return null;
 }
 
-function checkCookie()
+function setFromCookie()
+{
+	cookie = getCookie("sorteerWaardes");
+	var valArray = cookie.split(':');
+	document.getElementById("klantbox").checked = valArray[2];
+	document.getElementById("keukenbox").checked = valArray[3];
+	document.getElementById("afwasbox").checked = valArray[4];
+	document.getElementById("barbox").checked = valArray[5];
+	initYear(valArray[1]);
+	setWeek(valArray[2]);
+}
+
+function checkCookie(year, week)
 {
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
 		alert("Cookie values: " + sorteerWaardes);
+		setFromCookie();
 	}
 	else
 	{
+		initYear(year);
+		setWeek(week);
 		setCookie();
 	}
 }
