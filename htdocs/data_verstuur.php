@@ -5,7 +5,7 @@ webdb1235, data_verstuur.php
 
 <?php
 try{
-
+var_dump($_SESSION);
 //er worden twee DateTime objecten aangemaakt, deze kunnen makkelijk in de database worden geïmplementeerd, en maken de code leesbaarder
 $begindatum = new DateTime($_SESSION["tijdelijke_evenementwaardes"]["jaar1"]."-".$_SESSION["tijdelijke_evenementwaardes"]["maand1"]."-".
 					$_SESSION["tijdelijke_evenementwaardes"]["datum1"]." ".$_SESSION["tijdelijke_evenementwaardes"]["begintijd"].":"."00");
