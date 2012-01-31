@@ -308,14 +308,13 @@ function getCookie(name)
 
 function setFromCookie()
 {	
-	console.log("setfromcookie aangeroepen");
+	//console.log("setfromcookie aangeroepen");
 	cookie = getCookie("sorteerWaardes");
 	var valArray = cookie.split(':');
-	document.getElementById("klantbox").checked = valArray[2];
-	document.getElementById("keukenbox").checked = valArray[3];
-	document.getElementById("afwasbox").checked = valArray[4];
-	
-	document.getElementById("barbox").checked = valArray[5];
+	document.getElementById("klantbox").checked = Boolean(valArray[2]);
+	document.getElementById("keukenbox").checked = Boolean(valArray[3]);
+	document.getElementById("afwasbox").checked = Boolean(valArray[4]);
+	document.getElementById("barbox").checked = Boolean(alArray[5]);
 	initYear(valArray[1]);
 	setWeek(valArray[0]);
 }
