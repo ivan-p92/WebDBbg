@@ -225,7 +225,7 @@ function browseWeek(forward)
 // implementatie voor onclick functie van de agenda list items
 function goToEventA(id)
 {
-	window.location.replace("index.php?page=evenement&amp;id=" + id + "&amp;semipage=agenda_week");
+	window.location.replace("index.php?page=evenement&id=" + id + "&semipage=agenda_week");
 } 
 
 // deze is voor de 'keuren' pagina

@@ -9,14 +9,13 @@
 	
 	<!-- sort_table bevat de checkboxes voor de categorieën en ook
 	textboxjes voor de week en jaar. Verder zitten er ook knoppen in
-	om vooruit/achteruit te gaan -->
+	om vooruit/achteruit en naar de huidige week te gaan -->
 	
 	<table id="sort_table" class="sort_table">
 			<tr>
 				<td id="sort_name">
 					Toon evenementen uit de volgende categorieën:
 				</td>
-				<!-- <form action="" method="post"> -->
 				<td>
 					<label><input type="checkbox" id="klantbox" class="catbox" value="klant" name="categorie[]" onclick="initEvents();" />Klant</label>
 				</td>
@@ -29,7 +28,6 @@
 				<td>
 					<label><input type="checkbox" id="barbox" class="catbox" value="bar" name="categorie[]" onclick="initEvents();" />Barpersoneel</label>
 				</td>
-				<!-- </form> -->
 				<td id="week">
 					Week:
 				</td>
@@ -57,26 +55,33 @@
 	<!-- Deze tekst wordt getoond (dmv javascript) wanneer er geen evenementen getoond worden -->
 	<p id="no_events">Er zijn geen evenementen op dit moment of voor de opgegeven criteria!</p>
 	
-	<!-- Deze div wordt zichtbaar (dmv javascript) wanneer de gebruiker over een evenement
-	hovert. Het bevat dan de omschrijving van het evenement ->
-	<div id="event_omschrijving" style="display: none;"></div> -->
-	
 	
 <?php // in dit stuk php worden alle evenementen uit de database gehaald en geformatteerd
 	  // javascript functies bepalen uiteindelijk welke getoond worden en welke niet
 	
-	// dit array bevat de maanden van het jaar zoals ze 
+	// dit array bevat de maanden van het jaar zoals ze in de lijst weergegeven worden
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
 	
-    $database = Functions::getDB(); /*new mysqli('localhost', 'webdb1235', 'sadru2ew', 'webdb1235');*/
+	// een verbinding met de database wordt aangemaakt
+    $database = Functions::getDB();
     
+	// de huidige week en jaar worden via sql opgevraagd
 	$row = $database->query("SELECT WEEK(NOW(), 1) AS week, YEAR(NOW()) AS jr;")->fetch();
+	
+	// dit stuk javascript zorgt ervoor dat zodra de pagina geladen is, de cookie gecheckt of
+	// ingesteld wordt. Het huidige jaar en week worden ook meegegeven (zie showEvents.js)
 	echo '<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function() {checkCookie(',$row["jr"].','.$row["week"].');}, false);</script>'; //initYear('.$row["jr"].'); setWeek('.$row["week"].');checkCookie(',$row["jr"].','.$row["week"].');
 	
-		echo '<ul class="event_lijst">'."\n\n";
+	// de hoofdstructuur van de agenda is een unordered list. Alle evenementen en evenement
+	// omschrijvingen zijn list items
+	echo '<ul class="event_lijst">'."\n\n";
 	
-    $sql = "SELECT title, id, location, description,
+	// deze monster query haalt alle evenementen op, zodat bij het bladeren door de weken heen
+	// de pagina niet herladen hoeft te worden, gezien alles met javascript wordt afgehandeld
+	// De query haalt de informatie van de evenementen op en voert gelijk al meerdere operaties
+	// uit over de start en eind datums.
+    $sql = "SELECT title, id, location, description, status
 			YEAR(start_date) AS jaar,
 			YEAR(end_date) AS jaar2,
 			DAYOFMONTH(start_date) AS begin_dag,
@@ -88,18 +93,23 @@
 			DATEDIFF(end_date, start_date) AS diff,
 			WEEK(start_date, 1) AS wkstart,
 			WEEK(end_date, 1) AS wkend
-			FROM events WHERE public='1' ORDER BY start_date ASC;"; //AND end_date >= NOW()
+			FROM events_status WHERE status='approved' ORDER BY start_date ASC;";
 
+	// deze query haalt de bij de evenementen horende categorieën op uit de koppeltabel events_groups
 	$sql2 = "SELECT events_groups.event_id, groups.`group` 
 			 FROM `events_groups` 
 			 JOIN groups ON groups.id=events_groups.group_id;";
 	
-	$stmt2 = $database->prepare($sql2);
+	// de categorieën query wordt voorbereid en uitgevoerd
+	$stmt2 = $database->prepare($sql2);	
+	$stmt2->execute();	
 	
-	$stmt2->execute();
-	
+	// koppel_array wordt een tweedimensionaal array met als eerste dimensie
+	// de verschillende groepen als array en per 'groep array' de bijbehorende id's
+	// van de juiste evenementen
 	$koppel_array = array();
 	
+	// nu wordt koppel_array gevuld met de groepen en de bijbehorende id's
 	while($var=$stmt2->fetch())
 	{
 		if(isset($koppel_array[$var["group"]]))
@@ -112,6 +122,7 @@
 		}
 	}
 	
+	// nu wordt het ophalen van de evenementen uitgevoerd
     if($stmt = $database->prepare($sql))
     {
 		if(!$stmt->execute())
@@ -123,39 +134,66 @@
 			
 			if($stmt->rowCount() > 0)
 			{
+			// elke keer dat deze lus doorlopen wordt, wordt er een nieuw evenement toegevoegd
+			// aan de pagina
 			while($row = $stmt->fetch())
 			{	
+				// eerst wordt de omschrijving van het evenement in een li gestopt
+				// het krijgt als id 'desc_id' mee waarbij 'id' de id is van het evenement
 				$description = $row['description'];
 				$desc_id = 'desc_'.$row['id'];
 				echo '<li class="event_omschrijving" id="'.$desc_id.'" style="display: none;">'.out($description).'</li>';
-				echo '<li onmouseover="showDetails(this,\''.$desc_id.'\')" onmouseout="fixOMO(this,\''.$desc_id.'\', event)" onclick="goToEventA('.$row["id"].')" class="event';
-					foreach($koppel_array as $group => $array)
-					{
-						if(in_array($row['id'], $array))
-						{
-							echo " id_".$group;
-						}	
-					}
 				
+				// dit is het begin van de list item van het evenement zelf
+				// de juiste javascript acties worden samengesteld
+				echo '<li onmouseover="showDetails(this,\''.$desc_id.'\')" onmouseout="fixOMO(this,\''.$desc_id.'\', event)" onclick="goToEventA('.$row["id"].')" class="event';
+				
+				// nu krijgt het evenement de groepen waarin het zit mee als class
+				// aan de classnaam wordt 'id_' toegevoegd
+				foreach($koppel_array as $group => $array)
+				{
+					if(in_array($row['id'], $array))
+					{
+						echo " id_".$group;
+					}	
+				}
+				
+				// in het volgende stuk wordt worden de juiste jaar/week klassen meegegeven
+				// voor het sorteren op jaar/week
+				// elke jaar/week klasse bestaat uit 'd'+jaar+week en elk evenement krijgt voor
+				// elke week waarin het plaatsvindt een jaar/week klasse mee
+				// dus een evenement dat in week 4 en 5 van 2012 plaatsvindt krijgt de volgende
+				// klassen mee: d20124 en d20125
+				
+				// dit eerste geval is voor een evenement dat in één jaar plaatsvindt
 				if($row['jaar'] == $row['jaar2'])
 				{
+					// voor alle weken tussen wkstart en wkend wordt een class aangemaakt
 					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
 								echo " d".$row['jaar'].$i;
 				}
+				// in dit geval gaat het om een meerjaars evenement
 				else
 				{
+					// de jaren worden doorlopen
 					for($i = $row['jaar']; $i <= $row['jaar2']; $i++)
 					{
+						// nu wordt gekeken of het betreffende jaar het beginjaar, eindjaar
+						// of een jaar ertussen in is
 						switch($i)
 						{
+						// als het een beginjaar is, dan betreft het de weken vanaf de startweek
+						// t/m week 53
 						case $row['jaar']:
 							for($j = $row['wkstart']; $j <=53; $j++)
 								echo " d".$i.$j;
 							break;
+						// als het een eindjaar is, dan betreft het de weken vanaf 0 t/m de eindweek
 						case $row['jaar2']:
 							for($j = 0; $j <= $row['wkend']; $j++)
 								echo " d".$i.$j;
 							break;
+						// als het een jaar tussenin is, dan betreft het de weken vanaf 0 t/m 53
 						default:
 							for($j = 0; $j <= 53; $j++)
 								echo " d".$i.$j;
@@ -165,6 +203,9 @@
 				echo '">';
 				echo '<p class="eendags_event">';
 				echo '<span class="begin_datum">';
+				// nu wordt de juiste html code aangemaakt. Het resultaat hangt af van meerdere dingen:
+				// - of het een eendags of meerdaags evenement is
+				// - als het een meerdaags evenement is, of het dan ook een meerjaars evenement is
 				if($row['diff'] == 0) // eendags evenement
 				{
 					echo '<span class="jaar">'.$row['jaar'].'</span>';
@@ -189,6 +230,7 @@
 				
 				echo '<div class="event_details">';
 				echo '<p class="event_titel">';
+				// dit is het link gedeelte van de titel, linkt door naar de detailpagina
 				echo '<a class="event_link" href="index.php?page=evenement&amp;id='.$row['id'].'&amp;semipage=agenda_week">'.out($row['title']).'</a>';
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';

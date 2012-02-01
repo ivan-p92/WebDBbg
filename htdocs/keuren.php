@@ -6,7 +6,7 @@ if(Functions::auth("approve_event"))
 {	// dat is het geval
 
 	echo '<div id="event_lijst_container">';
-	echo '<ul class="event_lijst">';
+	echo '<ul class="event_lijst">'."\n\n";
 	
 	// hulp array, eerste element is opvul zodat de key's en maandnummers overeen komen
 	$arr = array("bla", "JAN", "FEB", "MAA", "APR", "MEI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
@@ -56,14 +56,23 @@ if(Functions::auth("approve_event"))
 				echo '<li onclick="goToEventK('.$row["id"].')" class="event">';
 				echo '<p class="eendags_event">';
 				echo '<span class="begin_datum">';
-				if($row['diff'] == 0) // dit is een 1-dags events
+				if($row['diff'] == 0) // eendags evenement
 				{
 					echo '<span class="jaar">'.$row['jaar'].'</span>';
 					echo '<span class="dd-mm">'.$row['begin_dag'].'<br />'.$arr[$row['begin_maand']].'</span>';
 				}
-				else	// dit is een meerdaags event, dus beetje andere opmaak
+				else // meerdaags evenement
 				{
-					echo '<span class="jaar">'.$row['jaar'].'</span>';
+					if($row["jaar"] == $row["jaar2"]) // evenement in hetzelfde jaar
+					{
+						echo '<span class="jaar">'.$row['jaar'].'</span>';
+					}
+					else // meerjaars evenement
+					{
+						$jr1 = substr($row["jaar"], 2, 2);
+						$jr2 = substr($row["jaar2"], 2, 2);
+						echo '<span class="jaar">\''.$jr1.' - \''.$jr2.'</span>';
+					}
 					echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
 				}
 				echo '</span>';
@@ -75,7 +84,7 @@ if(Functions::auth("approve_event"))
 				echo '</p>';
 				echo '<p class="begintijd">Begin: '.$row['begin_tijd'].'u. Eind: '.$row['eind_tijd'].'u. @'.out($row['location']).'</p>';
 				echo '</div>';
-				echo '</li>';
+				echo "</li>\n\n";
 			} // end while
 		} // end else		
 	
