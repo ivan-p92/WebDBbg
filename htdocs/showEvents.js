@@ -194,6 +194,7 @@ function browseWeek(forward)
 		{
 			WEEK = 54; 
 			YEAR -= 1;
+			setBox2(YEAR);
 		} 
 		WEEK -= 1; // één week terug
 		setBox(WEEK); // week weergeven
@@ -212,6 +213,7 @@ function browseWeek(forward)
 		{ 
 			WEEK = -1; 
 			YEAR += 1;
+			setBox2(YEAR);
 		}
 		WEEK += 1;
 		setBox(WEEK);
