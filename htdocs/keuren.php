@@ -70,7 +70,7 @@ if(Functions::auth("approve_event"))
 					{
 						$jr1 = substr($row["jaar"], 2, 2);
 						$jr2 = substr($row["jaar2"], 2, 2);
-						echo '<span class="jaar">\''.$jr1.' - \''.$jr2.'</span>';
+						echo '<span class="jaar">\''.$jr1.' -\''.$jr2.'</span>';
 					}
 					echo '<span class="dd-mm">'.$row['begin_dag'].' '.$arr[$row['begin_maand']].'<br />'.$row['eind_dag'].' '.$arr[$row['eind_maand']].'</span>';
 				}
