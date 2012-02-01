@@ -437,7 +437,7 @@ div#event_lijst_container {
     width: auto;
 }
 .sort_table #sort_name {
-    width: 200px;
+    width: 165px;
 }
 
 #week_box, #jaar_box {
@@ -445,7 +445,7 @@ div#event_lijst_container {
 }
 
 #browse_week {
-    width: 115px;
+    width: 230px;
 }
 
 .sort_table button {
