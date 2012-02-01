@@ -1,4 +1,4 @@
-AuthType basic
+AuthUserFile ../login
 AuthName http://websec.science.uva.nl/webdb1235
-AuthUserFile /home/implant/public_html/login
+AuthType basic
 Require valid-user
