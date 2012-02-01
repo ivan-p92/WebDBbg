@@ -1,4 +1,4 @@
 AuthType basic
-AuthName "This directory is protected"
+AuthName http://websec.science.uva.nl/webdb1235
 AuthUserFile /home/implant/public_html/login
 Require valid-user
