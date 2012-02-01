@@ -1,7 +1,9 @@
+<!--[if IE]><p>You are using Internet Explorer.</p><![endif]-->
+
+
 <?php
 session_start();
 header("Content-type: text/html; charset=utf-8");
-
 
 
 include('functions.php');
