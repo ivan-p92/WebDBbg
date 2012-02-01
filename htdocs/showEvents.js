@@ -1,16 +1,83 @@
 // showEvents.js
 // bevat de benodigde scripts om de weeklijst van de agenda
 // dynamisch te kunnen gebruiken (agenda_week_lijst.php)
+// ook wordt hier een cookie aangemaakt die de door de gebruiker
+// bekeken week en jaar opslaat
 
-// showEvents wordt via initEvents (zie beneden) aangeroepen wanneer
+// deze functie wordt aangeroepen bij het laden van de pagina
+// en stelt het jaar in. YEAR is een globale variabele.
+function initYear(year)
+{
+	YEAR = year;
+	setBox2(year); // het tekstvak van het jaar wordt ingevuld
+}
+
+// deze functie wordt bij verdere manipulaties van YEAR gebruikt
+// de waarde wordt op geldigheid gecontroleerd
+// belangrijk verschil met initYear is dat deze functie ook initEvents
+// aanroept en daarmee dus gelijk de weergegeven evenementen beïnvloedt
+function setYear(year)
+{
+	// parseFloat en parseInt worden met elkaar vergeleken, zodat ook decimale getallen
+	// gedetecteerd worden
+	if(!isNaN(year) && (parseFloat(year) == parseInt(year)) && year >= 2000 && year <= 2100)
+	{
+		YEAR = year;
+		setBox2(year); // tekstvak wordt gevuld
+		initEvents(); // lijst wordt opnieuw geladen
+	}
+	else
+	{
+		setBox2("Fout!"); // foutmelding
+	}
+}
+
+// deze functie stelt de waarde in van de globale WEEK variabele en stopt die ook in het tekstvak
+// ook wordt de ontvangen waarde gecontroleerd en initEvents aangeroepen
+// NB: de weken lopen van 0-53
+function setWeek(week)
+{
+	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week >= 0 && week < 54)
+	{
+		WEEK = parseInt(week);
+		setBox(week); // tekstvak wordt gewijzigd
+		
+		// De titel van de pagina wordt ook aangepast: de weergegeven week wordt getoond
+		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - week "+week;
+		initEvents(); // lijst zal opnieuw weergegeven worden
+	}
+	else
+	{
+		setBox("Fout!"); // foutmelding
+	}
+}
+
+// deze functie leest de checkboxes uit en geeft het array met de aangevinkte
+// categorieën door aan showEvents
+function initEvents()
+{
+	var checkboxes = document.getElementsByClassName("catbox"); // haal checkboxes op
+	var checked = new Array();
+	
+	for(var i = 0; i < checkboxes.length; i++)
+	{
+		if(checkboxes[i].checked) // als de box aangevinkt is, wordt de categorie in checked gestopt
+		{
+			checked.push(checkboxes[i].value);
+		}
+	}
+	
+	showEvents(checked); // showEvents wordt aangeroepen met checked als argument
+}
+
+// showEvents wordt via initEvents (zie hierboven) aangeroepen wanneer
 // de weergave van agenda_week_lijst gewijzigd moet worden
 // de functie ontvangt een array van initEvents met de aangevinkte categorieën
 // elk list item wordt geanaliseerd en ofwel getoond of verborgen (met display
 // block/none)
 function showEvents(infoArray)
 {	
-	INFOARRAY = infoArray;
-	setCookie();
+	setCookie(); // cookie wordt aangemaakt/ververst
 	var events = document.getElementsByClassName("event"); // alle list items (evenementen)
 	var classesArray = new Array(); // nieuw array
 	
@@ -18,7 +85,7 @@ function showEvents(infoArray)
 	{
 		// eerst wordt nog 'id_' aan de categorieën geplakt, want zo
 		// zijn de categorieën 'opgeslagen' in de class properties van de
-		// lijst elementen
+		// lijst elementen.
 		for (var i=0; i<infoArray.length; i++)
 		{
 			classesArray.push("id_"+infoArray[i]);
@@ -144,65 +211,6 @@ function browseWeek(forward)
 	}
 }
 
-// deze functie wordt aangeroepen bij het laden van de pagina
-// en stelt het jaar in
-function initYear(year)
-{
-	YEAR = year;
-	setBox2(year);
-}
-
-// deze functie wordt bij verdere manipulaties van YEAR gebruikt
-// de waarde wordt op geldigheid gecontroleerd
-function setYear(year)
-{
-	if(!isNaN(year) && (parseFloat(year) == parseInt(year)) && year >= 2000 && year <= 2100)
-	{
-		YEAR = year;
-		setBox2(year); // tekstvak wordt gevuld
-		initEvents(); // lijst wordt opnieuw geladen
-	}
-	else
-	{
-		setBox2("Fout!")
-	}
-}
-
-// deze functie stelt de waarde in van de globale WEEK variabele en stopt die ook in het tekstvak
-// ook wordt de ontvangen waarde gecontroleerd
-// NB: de weken lopen van 0-53
-function setWeek(week)
-{
-	if(!isNaN(week) && (parseFloat(week) == parseInt(week)) && week >= 0 && week < 54)
-	{
-		WEEK = parseInt(week);
-		setBox(week);
-		document.getElementById("event_lijst_titel").innerHTML = "Aankomende evenementen - week "+week;
-		initEvents();
-	}
-	else
-	{
-		setBox("Fout!");
-	}
-}
-
-// deze functie leest de checkboxes uit en geeft het array met de aangevinkte
-// categorieën door aan showEvents
-function initEvents()
-{
-	var checkboxes = document.getElementsByClassName("catbox"); // haal checkboxes op
-	var checked = new Array();
-	
-	for(var i = 0; i < checkboxes.length; i++)
-	{
-		if(checkboxes[i].checked) // als de box aangevinkt is, wordt de categorie in checked gestopt
-		{
-			checked.push(checkboxes[i].value);
-		}
-	}
-	
-	showEvents(checked);
-}
 
 // implementatie voor onclick functie van de agenda list items
 function goToEventA(id)
