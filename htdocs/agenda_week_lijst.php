@@ -140,7 +140,7 @@
 				if($row['jaar'] == $row['jaar2'])
 				{
 					for($i = $row['wkstart']; $i <= $row['wkend']; $i++)
-								echo " ".$row['jaar'].$i;
+								echo " d".$row['jaar'].$i;
 				}
 				else
 				{
@@ -150,15 +150,15 @@
 						{
 						case $row['jaar']:
 							for($j = $row['wkstart']; $j <=53; $j++)
-								echo " ".$i.$j;
+								echo " d".$i.$j;
 							break;
 						case $row['jaar2']:
 							for($j = 0; $j <= $row['wkend']; $j++)
-								echo " ".$i.$j;
+								echo " d".$i.$j;
 							break;
 						default:
 							for($j = 0; $j <= 53; $j++)
-								echo " ".$i.$j;
+								echo " d".$i.$j;
 						}
 					}
 				}
