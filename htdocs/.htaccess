@@ -1,5 +1,4 @@
 AuthType basic
 AuthName "This directory is protected"
-AuthUserFile /home/path/.htpasswd
-AuthGroupFile /dev/null
+AuthUserFile /home/implant/public_html/login
 Require valid-user
