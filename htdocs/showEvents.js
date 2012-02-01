@@ -193,7 +193,7 @@ function browseWeek(forward)
 		if(WEEK == 0) // jaarwisseling 
 		{
 			WEEK = 54; 
-			YEAR -= 1;
+			YEAR = parseInt(YEAR - 1);
 			setBox2(YEAR);
 		} 
 		WEEK -= 1; // één week terug
@@ -212,7 +212,7 @@ function browseWeek(forward)
 		if(WEEK == 53) 
 		{ 
 			WEEK = -1; 
-			YEAR += 1;
+			YEAR = parseInt(YEAR + 1);
 			setBox2(YEAR);
 		}
 		WEEK += 1;
