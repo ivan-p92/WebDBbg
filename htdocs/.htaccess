@@ -1,13 +1,5 @@
-RewriteEngine On
-
-RewriteCond %{HTTP_REFERER} !^https://websec.science.uva.nl/webdb1235* [NC]
-RewriteCond %{HTTP_REFERER} !^http://websec.science.uva.nl/webdb1235* [NC]
-RewriteCond %{HTTP_REFERER} !^https://websec.science.uva.nl/webdb1235/index.php* [NC]
-RewriteCond %{HTTP_REFERER} !^http://websec.science.uva.nl/webdb1235/index.php* [NC]
-RewriteCond %{HTTP_REFERER} !^https://websec.science.uva.nl/login.php* [NC]
-RewriteCond %{HTTP_REFERER} !^http://websec.science.uva.nl/login.php* [NC]
-RewriteCond %{HTTP_REFERER} !^https://websec.science.uva.nl/livesearch.php* [NC]
-RewriteCond %{HTTP_REFERER} !^http://websec.science.uva.nl/livesearch.php* [NC]
-
-
-RewriteRule /* http://websec.science.uva.nl/webdb1235/index.php [R,L]
+AuthType basic
+AuthName "This directory is protected"
+AuthUserFile /home/path/.htpasswd
+AuthGroupFile /dev/null
+Require valid-user
