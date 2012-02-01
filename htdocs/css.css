@@ -513,6 +513,7 @@ li.event {
 /* opmaak dag/maand */
 .dd-mm {
     font-weight: bold;
+    line-height: 14px;
     margin-top: 2px;
 }
 
