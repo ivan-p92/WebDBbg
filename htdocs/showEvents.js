@@ -22,7 +22,7 @@ function setYear(year)
 	// gedetecteerd worden
 	if(!isNaN(year) && (parseFloat(year) == parseInt(year)) && year >= 2000 && year <= 2100)
 	{
-		YEAR = year;
+		YEAR = parseInt(year);
 		setBox2(year); // tekstvak wordt gevuld
 		initEvents(); // lijst wordt opnieuw geladen
 	}
@@ -193,7 +193,7 @@ function browseWeek(forward)
 		if(WEEK == 0) // jaarwisseling 
 		{
 			WEEK = 54; 
-			YEAR = parseInt(YEAR - 1);
+			YEAR -= 1;
 			setBox2(YEAR);
 		} 
 		WEEK -= 1; // één week terug
@@ -212,7 +212,7 @@ function browseWeek(forward)
 		if(WEEK == 53) 
 		{ 
 			WEEK = -1; 
-			YEAR = parseInt(YEAR + 1);
+			YEAR += 1;
 			setBox2(YEAR);
 		}
 		WEEK += 1;
