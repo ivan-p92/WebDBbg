@@ -1,5 +1,6 @@
 <!--[if IE]>
 <script type="text/javascript">
+	alert("Internet Explorer wordt niet ondersteund. U wordt doorverwezen naar de website van Mozilla. Firefox is namelijk een veel betere webbrowser!");
     window.location = "http://www.mozilla.org/nl/firefox/new/";
 </script>
 <![endif]-->
