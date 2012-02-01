@@ -331,9 +331,8 @@ function checkCookie(year, week)
 
 function backToNow()
 {
-	WEEK = CURRENTWEEK;
-	YEAR = CURRENTYEAR;
-	initEvents();
+	initYear(CURRENTYEAR);
+	setWeek(CURRENTWEEK);
 }
 
 function in_array(array, value) 
