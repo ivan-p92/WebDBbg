@@ -1,4 +1,8 @@
-<!--[if IE]><p>You are using Internet Explorer.</p><![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.location = "http://www.mozilla.org/nl/firefox/new/";
+</script>
+<![endif]-->
 
 
 <?php
