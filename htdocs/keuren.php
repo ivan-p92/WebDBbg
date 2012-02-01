@@ -24,6 +24,7 @@ if(Functions::auth("approve_event"))
 					id,
 					location,
 					YEAR(start_date) AS jaar,
+					YEAR(end_date) AS jaar2,
 					DAYOFMONTH(start_date) AS begin_dag,
 					MONTH(start_date) AS begin_maand,
 					DAYOFMONTH(end_date) AS eind_dag,
