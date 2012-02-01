@@ -37,11 +37,12 @@ class Functions
 	{
 		if(self::$db === null) // er is nog geen verbinding in dit object?
 		{	// nee dus maak een verbinding
-			
-			$dsn = 'mysql:dbname=webdb1235;host=localhost';
+			$dbname = 'webdb1235';
+			$host = 'localhost';
 			$user = 'webdb1235';
 			$password = 'sadru2ew';
-
+			
+	 		$dsn = 'mysql:dbname='.$dbname.';host='.$host;
 			try
 			{
 				// stel ook gelijk wat standaardinstellingen in
