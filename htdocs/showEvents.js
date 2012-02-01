@@ -315,6 +315,8 @@ function checkCookie(year, week)
 	document.getElementById("keukenbox").checked = true;
 	document.getElementById("afwasbox").checked = true;
 	document.getElementById("barbox").checked = true;
+	CURRENTWEEK = week;
+	CURRENTYEAR = year;
 	var sorteerWaardes = getCookie("sorteerWaardes");
 	if (sorteerWaardes != null && sorteerWaardes != "")
 	{
@@ -325,6 +327,13 @@ function checkCookie(year, week)
 		initYear(year);
 		setWeek(week);
 	}
+}
+
+function backToNow()
+{
+	WEEK = CURRENTWEEK;
+	YEAR = CURRENTYEAR;
+	initEvents();
 }
 
 function in_array(array, value) 

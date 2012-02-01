@@ -44,6 +44,7 @@
 				</td>
 				<td id="browse_week">
 					<span class="submit_button" onclick="browseWeek(false)"><button class="button"><span class="right"><span class="inner">&lt;</span></span></button></span>
+					<span class="submit_button" onclick="backToNow()"><button class="button"><span class="right"><span class="inner">Deze week</span></span></button></span>
 					<span class="submit_button" onclick="browseWeek(true)"><button class="button"><span class="right"><span class="inner">&gt;</span></span></button></span>
 				</td>
 				
