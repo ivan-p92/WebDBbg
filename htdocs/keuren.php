@@ -23,6 +23,7 @@ if(Functions::auth("approve_event"))
 					title,
 					id,
 					location,
+					status,
 					YEAR(start_date) AS jaar,
 					YEAR(end_date) AS jaar2,
 					DAYOFMONTH(start_date) AS begin_dag,
@@ -33,14 +34,11 @@ if(Functions::auth("approve_event"))
 					TIME_FORMAT(TIME(end_date), '%H:%i') AS eind_tijd,
 					DATEDIFF(end_date, start_date) AS diff	
 				FROM
-					events
+					events_status
 				WHERE
-					approve_id IS NULL
+					status = 'unapproved'
 				ORDER BY
-					start_date ASC
-				LIMIT
-					20
-				OFFSET 0;";
+					start_date ASC";
 
 		$stmt = $mysqli->prepare($sql);		
 		$stmt->execute();	
