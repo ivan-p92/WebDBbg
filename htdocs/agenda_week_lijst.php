@@ -81,7 +81,7 @@
 	// de pagina niet herladen hoeft te worden, gezien alles met javascript wordt afgehandeld
 	// De query haalt de informatie van de evenementen op en voert gelijk al meerdere operaties
 	// uit over de start en eind datums.
-    $sql = "SELECT title, id, location, description, status
+    $sql = "SELECT title, id, location, description, status,
 			YEAR(start_date) AS jaar,
 			YEAR(end_date) AS jaar2,
 			DAYOFMONTH(start_date) AS begin_dag,
