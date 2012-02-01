@@ -496,6 +496,7 @@ li.event {
     display: block;
     text-align: center;
     width: 50px;
+    font-size: 13px;
 }
 
 /* opmaak jaar */
@@ -503,7 +504,6 @@ li.event {
     color: white;
     font-weight: bold;
     height: 15px;
-	margin-top: -2px;
 }
 
 .event_details {
