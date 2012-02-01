@@ -35,6 +35,8 @@ if($stmt->rowCount() == 1)
 	$row = $stmt->fetch();
 	$_SESSION['userid'] = $row['id'];
 	
+	session_regenerate_id();
+	
 	
 	header("Location: index.php?page=agenda_week");
 	
