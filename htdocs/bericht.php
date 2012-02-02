@@ -33,7 +33,7 @@ if(Functions::auth("admin_rights") && isset($_GET["semipage"]) && $_GET["semipag
 		$db = Functions::getDB();
 
 		//sql query om informatie op te vragen
-		$sql = "SELECT * FROM messages WHERE id = :id;";
+		$sql = "SELECT *, DATE_FORMAT(datetime, '%H:%i %e-%m-%Y') AS date_f FROM messages WHERE id = :id;";
 
 		//bereid de query voor
 		$stmt = $db->prepare($sql);
@@ -67,7 +67,7 @@ if(Functions::auth("admin_rights") && isset($_GET["semipage"]) && $_GET["semipag
 					</td>
 					<td>
 						'.out($row["name"]).'
-					</td>
+					</td>					
 				</tr>
 				<tr>
 					<td>
@@ -76,6 +76,14 @@ if(Functions::auth("admin_rights") && isset($_GET["semipage"]) && $_GET["semipag
 					<td>
 						'.out($row["email"]).'
 					</td>
+				</tr>
+				<tr>
+					<td>
+						Bericht geplaatst op
+					</td>
+					<td>
+						'.out($row["date_f"]).'
+					</td>					
 				</tr>
 				<tr>
 					<td>

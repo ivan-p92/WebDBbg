@@ -216,7 +216,7 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 	catch(Exception $exception)
 	{
 		echo '<p>Er is iets fout gegaan</p>';
-		var_dump($exception);
+		//var_dump($exception);
 	}
 }
 else
