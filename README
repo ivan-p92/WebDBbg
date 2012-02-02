@@ -1,9 +1,23 @@
+Dit is onze website:
+http://websec.science.uva.nl/webdb1235/
 
+Inloggen met alle rechten:
+e-mail: r.g.belleman@uva.nl
+ww: Robbel1235
+
+Deze bronnen hebben wij gebruikt:
 http://www.monkeyphysics.com/mootools/script/2/datepicker **bron van javascript van de date picker**
 http://www.oscaralexander.com/tutorials/how-to-make-sexy-buttons-with-css.html **bron van sexy buttons**
 http://www.ladysign-apps.com/blog/lee/submit-button.html# **submit button ook "sexy" maken**
+http://code.jquery.com/jquery-1.7.1.min.js ** wordt alleen icm liveSearch.js gebruikt **
+http://http://www.openjs.com/scripts/dom/class_manipulation.php **hasClass**
+http://www.quirksmode.org/js/findpos.html ** positioneren hover effecten **
+http://codingrecipes.com/onmouseout-fix-on-nested-elements-javascript ** mouse out fix **
 
+Onze gegevens:
 David Woudenberg 6324738
 Freek Boutkan 6303846
 Vincent Velthuis 6381448
 Ivan Plantevin 6298923
+
+
