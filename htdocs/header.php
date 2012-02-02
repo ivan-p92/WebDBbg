@@ -107,7 +107,19 @@
 							$menuItems['toevoeg_evenement'] = 'Evenement toevoegen';
 						break;
 						case "approve_event"://Recht om evenementen te keuren
-							$menuItems['keuren'] = 'Evenementen keuren';
+							try
+							{
+								$menuItems['keuren'] = 'Evenementen keuren';
+								$stmt = $db->prepare("SELECT COUNT(*) AS aantal FROM events_status WHERE status = 'unapproved';");
+								$stmt->execute();
+								$row = $stmt->fetch();
+								$menuItems['keuren'] .= ' ('.$row['aantal'].')';
+								
+							}
+							catch(Exception $e)
+							{
+								
+							}							
 						break;
 						case "admin_rights"://Administrator rechten om profielinformatie aan te passen
 							$menuItems['lijst_van_gebruikers'] = 'Admin';
