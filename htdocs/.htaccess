@@ -1,4 +1,0 @@
-AuthUserFile ../login
-AuthName http://websec.science.uva.nl/webdb1235
-AuthType basic
-Require valid-user
