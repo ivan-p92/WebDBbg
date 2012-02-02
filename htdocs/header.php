@@ -113,7 +113,7 @@
 								$stmt = $db->prepare("SELECT COUNT(*) AS aantal FROM events_status WHERE status = 'unapproved';");
 								$stmt->execute();
 								$row = $stmt->fetch();
-								if($row['aantal'] != 0) { $menuItems['keuren'] .= ' ('.$row['aantal'].')'; }
+								if($row['aantal'] != 0) { $menuItems['keuren'] .= ' <span class="b">('.$row['aantal'].')</span>'; }
 								
 							}
 							catch(Exception $e)
