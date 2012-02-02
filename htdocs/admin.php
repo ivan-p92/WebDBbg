@@ -18,7 +18,7 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 		$mysqli = Functions::getDB();
 		
 		//query om de gebruikersnaam weer te geven op de pagina
-		$sql = "SELECT name FROM users WHERE id=:user_id";
+		$sql = "SELECT name, email FROM users WHERE id=:user_id";
 		$stmt = $mysqli->prepare($sql);
 		$stmt->bindParam(":user_id",$_GET['id'],PDO::PARAM_INT);
 		$stmt->execute();
@@ -193,10 +193,9 @@ if(Functions::auth("admin_rights") && isset($_GET['id']) && is_numeric($_GET['id
 					</tbody>
 				</table>
 			</div>';
-			
 			//Bij het laden van de pagina staat een aangevinkte checkbox voor het bezitten van dat specifieke gebruikersrecht
 			//De admin kan de rechten naar eigen inzicht veranderen door de boxes aan of af te vinken en op submit te drukken
-			echo '<p>Op dit moment heeft '.$row['name'].' de volgende rechten:</p>
+			echo '<p>Op dit moment heeft '.$row['name'].' ('.$row['email'].')de volgende rechten:</p>
 			<form id="admin" action="index.php?page=admin&amp;semipage=lijst_van_gebruikers&amp;id='.$_GET['id'].'" method="post">
 				<input type="checkbox" name="admin_check[]" value="submit_event" id="submit_event" />Evenementen aanmaken
 				<input type="checkbox" name="admin_check[]" value="approve_event" id="approve_event" />Evenementen keuren
