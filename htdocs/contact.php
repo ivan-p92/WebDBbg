@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$database = Functions::getDB();
 		
 		//de daadwerkelijke query
-		$sql2 = "INSERT INTO messages (id, name, email, message, subject) VALUES (NULL, :name, :email, :message, :subject);";
+		$sql2 = "INSERT INTO messages (id, name, email, message, subject, datetime) VALUES (NULL, :name, :email, :message, :subject, NOW());";
 		
 		//bereid query voor
 		$stmt2 = $database->prepare($sql2);
