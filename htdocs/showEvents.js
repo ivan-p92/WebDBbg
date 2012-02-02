@@ -352,8 +352,8 @@ function setFromCookie()
 {	
 	cookie = getCookie("sorteerWaardes"); // cookie wordt opgehaald
 	var valArray = cookie.split(':'); // waarde wordt gesplitst (dus week en jaar gesplitst)
-	initYear(valArray[1]); // jaar wordt ingesteld
-	setWeek(valArray[0]); // week wordt ingesteld en daarmee de lijst herladen
+	initYear(parseInt(valArray[1])); // jaar wordt ingesteld
+	setWeek(parseInt(valArray[0])); // week wordt ingesteld en daarmee de lijst herladen
 }
 
 // checkCookie wordt door agenda_week_lijst.php aangeroepen om te kijken of de cookie er al/nog is
