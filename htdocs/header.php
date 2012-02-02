@@ -122,7 +122,7 @@
 							}							
 						break;
 						case "admin_rights"://Administrator rechten om profielinformatie aan te passen
-							$menuItems['lijst_van_gebruikers'] = 'Admin';
+							$menuItems['lijst_van_gebruikers'] = 'Admin';						
 						break;
 					}
 				}
