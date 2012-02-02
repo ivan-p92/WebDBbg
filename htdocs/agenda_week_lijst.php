@@ -201,7 +201,7 @@
 					}
 				}
 				echo '">';
-				echo '<p class="eendags_event">';
+				echo '<p class="event_datum">';
 				echo '<span class="begin_datum">';
 				// nu wordt de juiste html code aangemaakt. Het resultaat hangt af van meerdere dingen:
 				// - of het een eendags of meerdaags evenement is

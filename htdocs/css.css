@@ -465,7 +465,7 @@ li.event_omschrijving {
 }
 
 /* datum en details evenement moeten naast elkaar */
-.eendags_event, .event_details {
+.event_datum, .event_details {
     float: left;
 }
 
@@ -486,7 +486,7 @@ li.event {
 	border-radius: 5px 10px 10px 0px;
 }
 
-.event_lijst, .eendags_event {
+.event_lijst, .event_datum {
     margin: 0;
     padding: 0;
 }

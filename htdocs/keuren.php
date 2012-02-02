@@ -53,7 +53,7 @@ if(Functions::auth("approve_event"))
 			while($row = $stmt->fetch())
 			{										
 				echo '<li onclick="goToEventK('.$row["id"].')" class="event">';
-				echo '<p class="eendags_event">';
+				echo '<p class="event_datum">';
 				echo '<span class="begin_datum">';
 				if($row['diff'] == 0) // eendags evenement
 				{
